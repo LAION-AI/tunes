@@ -2,6 +2,7 @@
 
 > **Anonymous submission — NeurIPS 2026 Datasets and Evaluations Track**
 
+[![Project Page](https://img.shields.io/badge/Project%20Page-4open.science-blue?logo=github)](https://anonymous.4open.science/w/anonymized-for-double-blind-review/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Tracks: 1.4M](https://img.shields.io/badge/Tracks-1%2C429%2C734-brightgreen)]()
 [![Benchmark Songs: 10,521](https://img.shields.io/badge/Benchmark%20Songs-10%2C521-orange)]()
