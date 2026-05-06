@@ -1,15 +1,893 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Double-Blind Review</title>
+  <title>REDACTED-Tunes — NeurIPS 2026 D&amp;E</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f14;
+      --bg2:       #13161e;
+      --bg3:       #1a1e28;
+      --border:    #252a38;
+      --text:      #e2e6f0;
+      --muted:     #7a8099;
+      --accent:    #6c8fff;
+      --accent2:   #a78bfa;
+      --accent3:   #34d399;
+      --gold:      #fbbf24;
+      --red:       #f87171;
+      --radius:    12px;
+      --font:      'Inter', system-ui, sans-serif;
+      --mono:      'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,15,20,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    nav .nav-brand {
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .03em;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--text); }
+
+    /* ── Layout helpers ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    section { padding: 5rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: .75rem;
+      color: var(--text);
+    }
+    p { color: #b0b8d0; margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); font-weight: 600; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    #hero {
+      padding: 6rem 0 5rem;
+      border-top: none;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(108,143,255,.12) 0%, transparent 70%);
+    }
+    .venue-badge {
+      display: inline-block;
+      background: rgba(108,143,255,.12);
+      border: 1px solid rgba(108,143,255,.3);
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    #hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #fff 30%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .6rem 1.25rem;
+      border-radius: 8px;
+      font-size: .875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: filter .2s, transform .15s;
+    }
+    .btn:hover { filter: brightness(1.15); transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary { background: var(--bg3); border: 1px solid var(--border); color: var(--text); }
+    .btn-purple { background: rgba(167,139,250,.15); border: 1px solid rgba(167,139,250,.35); color: var(--accent2); }
+    .btn-green { background: rgba(52,211,153,.12); border: 1px solid rgba(52,211,153,.3); color: var(--accent3); }
+
+    /* ── Stats strip ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+    .stat-cell {
+      background: var(--bg2);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: .3rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* ── Artifact cards ── */
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .artifact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .artifact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .artifact-icon { font-size: 1.6rem; }
+    .artifact-card h3 { font-size: 1rem; margin: 0; }
+    .artifact-card p { font-size: .875rem; color: var(--muted); margin: 0; flex: 1; }
+    .artifact-chip {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .2rem .6rem;
+      border-radius: 6px;
+      background: rgba(108,143,255,.1);
+      color: var(--accent);
+      border: 1px solid rgba(108,143,255,.25);
+      width: fit-content;
+    }
+    .artifact-link {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: .25rem;
+    }
+
+    /* ── Pipeline ── */
+    .pipeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .pipeline-step {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: .9rem 1.25rem;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+    }
+    .pipeline-step:last-child { border-bottom: none; }
+    .pipeline-step:hover { background: var(--bg3); }
+    .step-num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-model { font-size: .875rem; font-family: var(--mono); color: var(--accent2); }
+    .step-output { font-size: .8rem; color: var(--muted); }
+
+    /* ── Tables ── */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    thead th {
+      background: var(--bg3);
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: .75rem 1rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+    tbody tr { border-top: 1px solid var(--border); }
+    tbody tr:hover { background: var(--bg2); }
+    tbody td { padding: .65rem 1rem; color: #c0c8e0; }
+    tbody td.num { font-family: var(--mono); font-size: .82rem; }
+    tbody td.highlight { color: var(--text); font-weight: 600; }
+    tbody td.good { color: var(--accent3); font-weight: 600; }
+    tbody td.warn { color: var(--gold); font-weight: 600; }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-left: 3px solid var(--accent);
+      background: rgba(108,143,255,.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: .925rem;
+      color: #c8d0e8;
+    }
+    .callout.green { border-color: var(--accent3); background: rgba(52,211,153,.06); }
+    .callout.gold { border-color: var(--gold); background: rgba(251,191,36,.06); }
+    .callout strong { color: var(--text); }
+
+    /* ── Code block ── */
+    pre {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: .82rem;
+      line-height: 1.6;
+      color: #c9d1e8;
+      margin: 1.5rem 0;
+    }
+    pre .c { color: var(--muted); }
+    pre .s { color: var(--accent3); }
+    pre .k { color: var(--accent); }
+
+    /* ── RPG genre chips ── */
+    .genre-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+    .genre-chip {
+      padding: .3rem .8rem;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 500;
+      background: rgba(167,139,250,.08);
+      border: 1px solid rgba(167,139,250,.2);
+      color: var(--accent2);
+    }
+
+    /* ── Two-col layout ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .info-card h3 { font-size: .95rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
+    .kv-row { display: flex; justify-content: space-between; align-items: baseline; padding: .35rem 0; border-bottom: 1px solid rgba(255,255,255,.04); font-size: .875rem; }
+    .kv-row:last-child { border-bottom: none; }
+    .kv-key { color: var(--muted); }
+    .kv-val { font-family: var(--mono); font-size: .82rem; color: var(--text); font-weight: 500; }
+
+    /* ── Citation ── */
+    .citation-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-family: var(--mono);
+      font-size: .8rem;
+      line-height: 1.8;
+      color: #b0b8d0;
+      position: relative;
+      margin-top: 1.25rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: .75rem;
+      padding: .25rem .65rem;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: color .2s, border-color .2s;
+    }
+    .copy-btn:hover { color: var(--text); border-color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+
+    /* ── Responsive nav ── */
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .pipeline-step { grid-template-columns: 2.5rem 1fr; }
+      .step-output { display: none; }
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Double-Blind Review</h1>
-  </header>
-  <main>
-    <p>A repository that contains information for reviews that require the double-blind best practice standard.</p>
-  </main>
-  <footer>
-  </footer>
-</body></html>
+
+<!-- ── Navbar ── -->
+<nav>
+  <span class="nav-brand">REDACTED-Tunes</span>
+  <ul>
+    <li><a href="#corpus">Corpus</a></li>
+    <li><a href="#model">Model</a></li>
+    <li><a href="#rpg">RPG</a></li>
+    <li><a href="#benchmark">Benchmark</a></li>
+    <li><a href="#citation">Cite</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="container">
+    <div class="venue-badge">NeurIPS 2026 · Datasets &amp; Evaluations Track · Anonymous Submission</div>
+    <h1>REDACTED-Tunes</h1>
+    <p class="hero-sub">
+      A large-scale, richly annotated ecosystem for AI-generated music research —
+      1.4M tracks, a perceptual benchmark with human annotations, a music captioning model,
+      and a situation-aware RPG music subset.
+    </p>
+    <div class="btn-row">
+      <a href="https://anonymous-hf.up.railway.app/a/pib3syfuxp02/" class="btn btn-primary" target="_blank">
+        🗄️ Corpus
+      </a>
+      <a href="https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/" class="btn btn-secondary" target="_blank">
+        📊 Benchmark
+      </a>
+      <a href="https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/" class="btn btn-purple" target="_blank">
+        🎮 RPG Subset
+      </a>
+      <a href="https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/" class="btn btn-green" target="_blank">
+        🧠 Music-Whisper
+      </a>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-value">1.4M</div>
+        <div class="stat-label">AI-Generated Tracks</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">68K</div>
+        <div class="stat-label">Hours of Audio</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">10,521</div>
+        <div class="stat-label">Benchmark Songs</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">591</div>
+        <div class="stat-label">Human Annotations</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">7</div>
+        <div class="stat-label">AI Platforms</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">18</div>
+        <div class="stat-label">RPG Genres</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Overview ── -->
+<section id="overview">
+  <div class="container">
+    <div class="section-label">Overview</div>
+    <h2>Four Interoperable Artifacts</h2>
+    <p>
+      The rapid proliferation of AI music generators has outpaced the availability of structured,
+      richly annotated datasets for studying them. Existing benchmarks are small, cover only one
+      or two generators, lack human perceptual data, or rely on proprietary audio. 
+      <strong>REDACTED-Tunes</strong> closes this gap at scale.
+    </p>
+    <div class="artifact-grid">
+      <div class="artifact-card">
+        <div class="artifact-icon">🗄️</div>
+        <div class="artifact-chip">Dataset · 1.4M tracks</div>
+        <h3>REDACTED-Tunes Corpus</h3>
+        <p>Annotated metadata for 1,429,734 AI-generated tracks from Suno, Udio &amp; Mureka — captions, ASR, embeddings, aesthetics, NSFW labels, and pre-built search indices.</p>
+        <a href="https://anonymous-hf.up.railway.app/a/pib3syfuxp02/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+      </div>
+      <div class="artifact-card">
+        <div class="artifact-icon">🧠</div>
+        <div class="artifact-chip">Model · 922 MB</div>
+        <h3>REDACTED-Music-Whisper</h3>
+        <p>Whisper Small fine-tuned for music captioning. Generates detailed paragraph-length descriptions covering instrumentation, tempo, mood, vocals, and production quality.</p>
+        <a href="https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+      </div>
+      <div class="artifact-card">
+        <div class="artifact-icon">🎮</div>
+        <div class="artifact-chip">Dataset · 2,580 tracks</div>
+        <h3>REDACTED-RPG</h3>
+        <p>Instrumental subset annotated by Gemini 3 Flash Preview with gameplay situations across 18 RPG genres. Includes per-genre FAISS indices and a purple-themed search UI.</p>
+        <a href="https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+      </div>
+      <div class="artifact-card">
+        <div class="artifact-icon">📊</div>
+        <div class="artifact-chip">Benchmark · 10,521 songs</div>
+        <h3>REDACTED-Tunes-Benchmark</h3>
+        <p>Perceptual evaluation dataset pairing 7 AI generators with human Apple Music previews. 591 annotation trials from 61 participants across 6 perceptual dimensions.</p>
+        <a href="https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Corpus ── -->
+<section id="corpus">
+  <div class="container">
+    <div class="section-label">Corpus</div>
+    <h2>REDACTED-Tunes Corpus</h2>
+    <p>
+      Metadata and annotations for <strong>1,429,734 AI-generated tracks</strong> from three
+      publicly accessible platforms. Audio files are not distributed; all <code>audio_url</code>
+      fields point to the originating platform CDNs.
+    </p>
+
+    <div class="two-col">
+      <div class="info-card">
+        <h3>Source Platforms</h3>
+        <div class="kv-row"><span class="kv-key">Suno</span><span class="kv-val">1,037,381 tracks</span></div>
+        <div class="kv-row"><span class="kv-key">Mureka</span><span class="kv-val">383,549 tracks</span></div>
+        <div class="kv-row"><span class="kv-key">Udio</span><span class="kv-val">8,804 tracks</span></div>
+        <div class="kv-row"><span class="kv-key">Total duration</span><span class="kv-val">~68,471 hrs</span></div>
+      </div>
+      <div class="info-card">
+        <h3>Annotation Coverage</h3>
+        <div class="kv-row"><span class="kv-key">Music-Whisper captions</span><span class="kv-val">94.8%</span></div>
+        <div class="kv-row"><span class="kv-key">Parakeet ASR transcriptions</span><span class="kv-val">72.8%</span></div>
+        <div class="kv-row"><span class="kv-key">Instrumental tracks</span><span class="kv-val">27.2%</span></div>
+        <div class="kv-row"><span class="kv-key">NSFW flagged (≥likely)</span><span class="kv-val">1.65%</span></div>
+        <div class="kv-row"><span class="kv-key">Avg. aesthetics score</span><span class="kv-val">3.29 / 5.0</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem;">7-Stage Annotation Pipeline</h3>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="step-num">1</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">Music Captioning</div>
+          <div class="step-model">REDACTED/music-whisper</div>
+        </div>
+        <div class="step-output">Free-text music description per track</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">2</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">ASR Transcription</div>
+          <div class="step-model">nvidia/parakeet-tdt-0.6b-v3</div>
+        </div>
+        <div class="step-output">Lyric text + word-level timestamps</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">3</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">Text Embeddings</div>
+          <div class="step-model">google/embeddinggemma-300m</div>
+        </div>
+        <div class="step-output">768-dim L2-normalised vectors (5 fields)</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">4</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">Audio Embeddings</div>
+          <div class="step-model">music-whisper encoder</div>
+        </div>
+        <div class="step-output">768-dim mean-pooled Whisper encoder states</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">5</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">Aesthetics Scoring</div>
+          <div class="step-model">SongEval MLP (5-head)</div>
+        </div>
+        <div class="step-output">Coherence · Musicality · Memorability · Clarity · Naturalness (1–5)</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">6</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">NSFW Classification</div>
+          <div class="step-model">Cosine sim vs. reference prompts</div>
+        </div>
+        <div class="step-output">Three-tier labels × 3 dimensions (gore, sexual, hate)</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">7</div>
+        <div>
+          <div style="font-size:.875rem;font-weight:600;">Language Detection</div>
+          <div class="step-model">langdetect on ASR output</div>
+        </div>
+        <div class="step-output">ISO 639-1 language code</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem;">Aesthetics Scores by Platform</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th><th>Coherence</th><th>Musicality</th><th>Memorability</th><th>Clarity</th><th>Naturalness</th><th>Average</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="highlight">Mureka</td><td class="num">3.54</td><td class="num">3.34</td><td class="num">3.42</td><td class="num">3.22</td><td class="num">3.18</td><td class="num good">3.34</td></tr>
+          <tr><td class="highlight">Suno</td><td class="num">3.45</td><td class="num">3.26</td><td class="num">3.35</td><td class="num">3.17</td><td class="num">3.15</td><td class="num">3.28</td></tr>
+          <tr><td class="highlight">Udio</td><td class="num">3.29</td><td class="num">3.04</td><td class="num">3.14</td><td class="num">2.98</td><td class="num">2.94</td><td class="num">3.08</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Search Infrastructure</h3>
+    <p>The corpus ships with a production-ready FastAPI server and a dark-mode web UI with Simple and Advanced search modes — including vector similarity, BM25 text search, two-stage refinement, and audio-upload similarity via the Music-Whisper encoder.</p>
+    <pre><span class="c"># Quick start (HF_TOKEN needed for google/embeddinggemma-300m)</span>
+pip install fastapi uvicorn faiss-cpu numpy pandas sentence-transformers \
+            torch scipy tqdm python-multipart transformers
+HF_TOKEN=<span class="s">your_token</span> python server.py --port 7860
+<span class="c"># → http://localhost:7860</span></pre>
+  </div>
+</section>
+
+<!-- ── Model ── -->
+<section id="model">
+  <div class="container">
+    <div class="section-label">Model</div>
+    <h2>REDACTED-Music-Whisper</h2>
+    <p>
+      A fine-tuned version of <strong>OpenAI Whisper Small</strong> trained for music captioning.
+      The model generates detailed, paragraph-length descriptions of audio tracks and was used to
+      annotate <strong>1,356,009 tracks</strong> (94.8%) in the corpus.
+    </p>
+
+    <div class="two-col">
+      <div class="info-card">
+        <h3>Model Details</h3>
+        <div class="kv-row"><span class="kv-key">Base model</span><span class="kv-val">Whisper Small</span></div>
+        <div class="kv-row"><span class="kv-key">Task</span><span class="kv-val">Music captioning</span></div>
+        <div class="kv-row"><span class="kv-key">Model size</span><span class="kv-val">922 MB</span></div>
+        <div class="kv-row"><span class="kv-key">Embedding dim</span><span class="kv-val">768</span></div>
+        <div class="kv-row"><span class="kv-key">License</span><span class="kv-val">CC-BY-4.0</span></div>
+      </div>
+      <div class="info-card">
+        <h3>Caption Covers</h3>
+        <div class="kv-row"><span class="kv-key">Instrumentation &amp; timbre</span><span class="kv-val">✓</span></div>
+        <div class="kv-row"><span class="kv-key">Tempo &amp; rhythm</span><span class="kv-val">✓</span></div>
+        <div class="kv-row"><span class="kv-key">Vocal characteristics</span><span class="kv-val">✓</span></div>
+        <div class="kv-row"><span class="kv-key">Genre &amp; mood</span><span class="kv-val">✓</span></div>
+        <div class="kv-row"><span class="kv-key">Production quality</span><span class="kv-val">✓</span></div>
+        <div class="kv-row"><span class="kv-key">Suggested use-cases</span><span class="kv-val">✓</span></div>
+      </div>
+    </div>
+
+    <div class="callout green" style="margin-top:1.5rem;">
+      <strong>Audio Similarity Search:</strong> Mean-pooled encoder hidden states from Music-Whisper are stored as
+      L2-normalised 768-dim vectors in <code>faiss_whisper.index</code>, enabling audio-upload similarity search across
+      402,649 base-subset tracks.
+    </div>
+  </div>
+</section>
+
+<!-- ── RPG ── -->
+<section id="rpg">
+  <div class="container">
+    <div class="section-label">RPG Subset</div>
+    <h2>REDACTED-RPG</h2>
+    <p>
+      A curated subset of <strong>2,580 instrumental tracks</strong> from the corpus (Suno + Udio),
+      annotated at full audio length by <strong>Gemini 3 Flash Preview</strong> with structured
+      gameplay situations across 18 RPG genre categories.
+    </p>
+
+    <h3>18 RPG Genres</h3>
+    <div class="genre-chips">
+      <span class="genre-chip">High Fantasy</span>
+      <span class="genre-chip">Low / Gritty Fantasy</span>
+      <span class="genre-chip">Dark Fantasy</span>
+      <span class="genre-chip">Mythic / Ancient World</span>
+      <span class="genre-chip">Medieval Historical</span>
+      <span class="genre-chip">Renaissance / Pirate Age</span>
+      <span class="genre-chip">Wild West</span>
+      <span class="genre-chip">Gothic Horror</span>
+      <span class="genre-chip">Cosmic Horror</span>
+      <span class="genre-chip">Modern Supernatural</span>
+      <span class="genre-chip">Modern Realistic</span>
+      <span class="genre-chip">Superhero</span>
+      <span class="genre-chip">Post-Apocalyptic</span>
+      <span class="genre-chip">Cyberpunk</span>
+      <span class="genre-chip">Hard Sci-Fi</span>
+      <span class="genre-chip">Space Opera</span>
+      <span class="genre-chip">Science Fantasy</span>
+      <span class="genre-chip">Alternate History</span>
+    </div>
+
+    <div class="callout" style="margin-top:1.5rem;">
+      <strong>Situation-based search:</strong> Query <em>"sneaking through a dark dungeon"</em> — the server embeds the query
+      with EmbeddingGemma 300M and retrieves the most situationally-matched tracks from per-genre FAISS indices
+      (39,605 situation vectors total).
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem;">
+      <div class="info-card">
+        <h3>Dataset Stats</h3>
+        <div class="kv-row"><span class="kv-key">Total tracks</span><span class="kv-val">2,580</span></div>
+        <div class="kv-row"><span class="kv-key">Instrumental</span><span class="kv-val">80.4%</span></div>
+        <div class="kv-row"><span class="kv-key">Avg. duration</span><span class="kv-val">183.4 s</span></div>
+        <div class="kv-row"><span class="kv-key">Situation vectors</span><span class="kv-val">39,605</span></div>
+        <div class="kv-row"><span class="kv-key">Annotation cost</span><span class="kv-val">~$41.59</span></div>
+        <div class="kv-row"><span class="kv-key">License</span><span class="kv-val">CC-BY-4.0</span></div>
+      </div>
+      <div class="info-card">
+        <h3>Search Modes</h3>
+        <div class="kv-row"><span class="kv-key">Situation (vector)</span><span class="kv-val">EmbeddingGemma</span></div>
+        <div class="kv-row"><span class="kv-key">Emotion (vector)</span><span class="kv-val">EmbeddingGemma</span></div>
+        <div class="kv-row"><span class="kv-key">Caption (vector)</span><span class="kv-val">EmbeddingGemma</span></div>
+        <div class="kv-row"><span class="kv-key">Audio upload</span><span class="kv-val">Music-Whisper</span></div>
+        <div class="kv-row"><span class="kv-key">Situation (BM25)</span><span class="kv-val">keyword</span></div>
+        <div class="kv-row"><span class="kv-key">Emotion / Caption (BM25)</span><span class="kv-val">keyword</span></div>
+      </div>
+    </div>
+
+    <pre><span class="c"># No GPU required for BM25 keyword search</span>
+pip install fastapi uvicorn faiss-cpu numpy scipy sentence-transformers onnxruntime pandas
+python rpg_server.py --port 7862 --no-whisper
+<span class="c"># → http://localhost:7862</span></pre>
+  </div>
+</section>
+
+<!-- ── Benchmark ── -->
+<section id="benchmark">
+  <div class="container">
+    <div class="section-label">Benchmark</div>
+    <h2>REDACTED-Tunes-Benchmark</h2>
+    <p>
+      A <strong>10,521-song perceptual evaluation dataset</strong> for AI music detection and quality
+      assessment, pairing AI-generated tracks from seven commercial platforms with 840 human Apple
+      Music previews (30-second clips, genre-matched via the Genius index).
+    </p>
+
+    <h3>Split Composition</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Split</th><th>Human</th><th>Suno</th><th>Udio</th><th>Mureka</th><th>Sonauto</th><th>OOD</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>train</td><td class="num">685</td><td class="num">2,131</td><td class="num">2,145</td><td class="num">2,123</td><td class="num">1,742</td><td class="num">—</td><td class="num highlight">8,826</td></tr>
+          <tr><td>validation</td><td class="num">74</td><td class="num">243</td><td class="num">242</td><td class="num">248</td><td class="num">198</td><td class="num">—</td><td class="num highlight">1,005</td></tr>
+          <tr><td>test</td><td class="num">31</td><td class="num">126</td><td class="num">113</td><td class="num">129</td><td class="num">123</td><td class="num">—</td><td class="num highlight">522</td></tr>
+          <tr><td>test_ood</td><td class="num">50</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td style="font-size:.78rem;color:var(--muted);">Lyria 3 · Riffusion · SilverknightAI</td><td class="num highlight">168</td></tr>
+          <tr style="border-top:2px solid var(--border)"><td class="highlight">Total</td><td class="num highlight">840</td><td class="num highlight">2,500</td><td class="num highlight">2,500</td><td class="num highlight">2,500</td><td class="num highlight">2,063</td><td class="num highlight">118</td><td class="num highlight">10,521</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:2rem;">Human Annotation Study</h3>
+    <p>
+      Annotations collected via a purpose-built web platform across two phases
+      (<strong>591 trials</strong>, <strong>61 participants</strong>, mean age 29.4 yrs).
+      Each trial included an authenticity assessment, familiarity rating, five continuous perceptual
+      dimension sliders (1–10), and optional free-text comments.
+    </p>
+
+    <h3 style="margin-top:1.5rem;">Authenticity Detection Accuracy</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Trials</th><th>Correct</th><th>Accuracy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="highlight">Human</td><td class="num">84</td><td class="num">54</td><td class="num good">64.3%</td></tr>
+          <tr><td class="highlight">Mureka</td><td class="num">133</td><td class="num">76</td><td class="num">57.1%</td></tr>
+          <tr><td class="highlight">Suno</td><td class="num">133</td><td class="num">74</td><td class="num">55.6%</td></tr>
+          <tr><td class="highlight">Sonauto</td><td class="num">125</td><td class="num">69</td><td class="num">55.2%</td></tr>
+          <tr><td class="highlight">Udio</td><td class="num">116</td><td class="num">48</td><td class="num warn">41.4%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout gold">
+      <strong>Key finding — quality–authenticity halo effect:</strong>
+      Human songs score higher on all five quality dimensions, yet human-detection accuracy is only
+      64.3%. Higher perceived quality does not reliably predict a "real" verdict.
+      Udio's near-chance detection rate (<strong>41.4%</strong>) indicates perceptual near-parity
+      with human recordings on the production quality axis.
+    </div>
+
+    <h3 style="margin-top:2rem;">Perceptual Quality Ratings (1–10 scale, mean ± σ)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Aesthetic</th><th>Production</th><th>Emotional</th><th>Creativity</th><th>Playlist</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="highlight">Human</td><td class="num good">5.68±1.94</td><td class="num good">6.06±1.69</td><td class="num good">5.02±1.91</td><td class="num good">5.42±2.02</td><td class="num good">4.31±2.02</td></tr>
+          <tr><td class="highlight">Suno</td><td class="num">5.18±2.31</td><td class="num">5.34±2.34</td><td class="num">4.79±2.21</td><td class="num">4.70±2.18</td><td class="num">3.99±2.42</td></tr>
+          <tr><td class="highlight">Udio</td><td class="num">5.15±1.98</td><td class="num">5.21±2.10</td><td class="num">4.78±2.06</td><td class="num">4.83±2.10</td><td class="num">3.85±2.15</td></tr>
+          <tr><td class="highlight">Mureka</td><td class="num">5.02±2.22</td><td class="num">5.19±2.12</td><td class="num">4.32±2.13</td><td class="num">4.36±2.09</td><td class="num">3.45±2.20</td></tr>
+          <tr><td class="highlight">Sonauto</td><td class="num">4.94±2.38</td><td class="num">5.18±2.54</td><td class="num">4.56±2.30</td><td class="num">4.81±2.25</td><td class="num">3.69±2.37</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Citation ── -->
+<section id="citation">
+  <div class="container">
+    <div class="section-label">Citation</div>
+    <h2>Cite This Work</h2>
+    <p>If you use any artifact from the REDACTED-Tunes ecosystem, please cite:</p>
+
+    <div class="citation-block" id="cite1">
+      <button class="copy-btn" onclick="copyBib('cite1')">Copy</button>
+@dataset{redacted_tunes_2026,<br>
+&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp; = {{REDACTED}-Tunes: A Large-Scale Annotated Corpus and Perceptual Benchmark<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for AI-Generated Music},<br>
+&nbsp;&nbsp;author&nbsp;&nbsp;&nbsp; = {REDACTED},<br>
+&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {2026},<br>
+&nbsp;&nbsp;url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {https://anonymous-hf.up.railway.app/a/pib3syfuxp02/},<br>
+&nbsp;&nbsp;license&nbsp;&nbsp; = {Apache-2.0},<br>
+}
+    </div>
+
+    <div class="citation-block" id="cite2" style="margin-top:1rem;">
+      <button class="copy-btn" onclick="copyBib('cite2')">Copy</button>
+@dataset{redacted_tunes_benchmark_2026,<br>
+&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp; = {{REDACTED}-Tunes-Benchmark: A Perceptual Benchmark for AI-Generated Music},<br>
+&nbsp;&nbsp;author&nbsp;&nbsp;&nbsp; = {REDACTED},<br>
+&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {2026},<br>
+&nbsp;&nbsp;url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/},<br>
+&nbsp;&nbsp;license&nbsp;&nbsp; = {Apache-2.0},<br>
+}
+    </div>
+
+    <h3 style="margin-top:2rem;">Licenses</h3>
+    <div class="table-wrap" style="margin-top:.75rem;">
+      <table>
+        <thead><tr><th>Artifact</th><th>License</th></tr></thead>
+        <tbody>
+          <tr><td>REDACTED-Tunes Corpus</td><td>Apache 2.0</td></tr>
+          <tr><td>REDACTED-Music-Whisper</td><td>CC-BY-4.0</td></tr>
+          <tr><td>REDACTED-RPG</td><td>CC-BY-4.0</td></tr>
+          <tr><td>REDACTED-Tunes-Benchmark</td><td>Apache 2.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>Anonymous submission to the <strong>NeurIPS 2026 Datasets &amp; Evaluations Track</strong>.<br>
+  Author identities and institutional affiliations have been redacted in compliance with double-blind review guidelines.</p>
+</footer>
+
+<script>
+  function copyBib(id) {
+    const el = document.getElementById(id);
+    // Collect text content, strip button text
+    const lines = [];
+    el.childNodes.forEach(n => {
+      if (n.nodeType === Node.TEXT_NODE) lines.push(n.textContent);
+      else if (n.tagName === 'BR') lines.push('\n');
+      else if (n.tagName !== 'BUTTON') lines.push(n.textContent);
+    });
+    const text = lines.join('').replace(/\u00a0/g, ' ').trim();
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = el.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 1800);
+    });
+  }
+</script>
+
+</body>
+</html>
