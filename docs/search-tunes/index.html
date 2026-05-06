@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REDACTED-Tunes Search</title>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f1419;
+    color: #e7e9ea;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.header {
+    position: sticky; top: 0; z-index: 100;
+    background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+    border-bottom: 2px solid #2d4a7a;
+    padding: 16px 24px 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.header-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 12px;
+}
+.header-top h1 {
+    font-size: 22px; font-weight: 700; color: #fff;
+}
+.header-top h1 span { color: #64b5f6; }
+
+/* ── Mode Toggle (Simple / Advanced) ─────────────────────────── */
+.mode-toggle {
+    display: flex; background: #0f1419; border-radius: 20px; overflow: hidden;
+    border: 1px solid #37474f;
+}
+.mode-toggle button {
+    background: transparent; color: #78909c; border: none;
+    padding: 5px 16px; font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s;
+}
+.mode-toggle button.active {
+    background: #2196F3; color: white;
+}
+.mode-toggle button:hover:not(.active) {
+    color: #e0e0e0;
+}
+
+/* ── Search Bar ──────────────────────────────────────────────── */
+.search-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.search-input {
+    flex: 1; background: #1e2a3a; color: #e0e0e0;
+    border: 1px solid #37474f; border-radius: 8px;
+    padding: 10px 16px; font-size: 15px; outline: none;
+}
+.search-input:focus { border-color: #4fc3f7; }
+.search-input::placeholder { color: #607d8b; }
+.btn-search {
+    background: #2196F3; color: white; border: none;
+    border-radius: 8px; padding: 10px 24px;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-search:hover { background: #1976D2; }
+
+/* ── Simple Mode ─────────────────────────────────────────────── */
+.simple-header {
+    padding: 20px 24px 16px;
+}
+.simple-header .search-row {
+    margin-bottom: 14px;
+}
+.simple-header .search-input {
+    font-size: 17px; padding: 14px 20px; border-radius: 12px;
+}
+.simple-header .btn-search {
+    font-size: 17px; padding: 14px 28px; border-radius: 12px;
+}
+.simple-controls {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 10px;
+}
+.simple-controls .control-group {
+    display: flex; align-items: center; gap: 6px;
+}
+.simple-controls label {
+    font-size: 13px; color: #90a4ae; font-weight: 600; white-space: nowrap;
+}
+.simple-controls select {
+    background: #1e2a3a; color: #e0e0e0;
+    border: 1px solid #37474f; border-radius: 8px;
+    padding: 8px 12px; font-size: 13px; outline: none;
+}
+.simple-controls select:focus { border-color: #4fc3f7; }
+.simple-neg-toggle {
+    background: transparent; color: #78909c; border: 1px solid #37474f;
+    border-radius: 20px; padding: 4px 14px; font-size: 12px;
+    cursor: pointer; transition: all 0.2s;
+}
+.simple-neg-toggle:hover { color: #e0e0e0; border-color: #607d8b; }
+.simple-neg-toggle.active { color: #ef5350; border-color: #ef5350; }
+.simple-neg-row {
+    display: none; margin-bottom: 10px;
+}
+.simple-neg-row.active { display: flex; }
+.simple-neg-row .search-input {
+    font-size: 15px; padding: 10px 16px; border-color: #5d3030;
+    color: #ef9a9a;
+}
+.simple-neg-row .search-input::placeholder { color: #78565a; }
+.simple-neg-row .search-input:focus { border-color: #ef5350; }
+.simple-lang-section {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px;
+}
+.simple-lang-label { font-size: 12px; color: #607d8b; font-weight: 600; margin-right: 4px; }
+
+/* ── Controls (Advanced) ─────────────────────────────────────── */
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 8px; }
+.control-group { display: flex; align-items: center; gap: 5px; }
+.control-group label { font-size: 12px; color: #90a4ae; font-weight: 600; white-space: nowrap; }
+.control-group select, .control-group input[type="number"] {
+    background: #1e2a3a; color: #e0e0e0;
+    border: 1px solid #37474f; border-radius: 6px;
+    padding: 5px 8px; font-size: 12px; outline: none;
+}
+.control-group select:focus, .control-group input:focus { border-color: #4fc3f7; }
+.control-group input[type="range"] {
+    background: transparent; width: 80px; accent-color: #4fc3f7;
+}
+
+/* ── Help Icon ───────────────────────────────────────────────── */
+.help-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); border: 1px solid #455a64;
+    color: #78909c; font-size: 10px; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+    font-style: normal; line-height: 1;
+}
+.help-icon:hover {
+    background: rgba(33,150,243,0.2); border-color: #4fc3f7; color: #4fc3f7;
+}
+
+/* ── Help Popup Overlay ──────────────────────────────────────── */
+.help-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7); z-index: 1000;
+    align-items: center; justify-content: center; padding: 20px;
+}
+.help-overlay.active { display: flex; }
+.help-popup {
+    background: #1a2332; border: 1px solid #2d4a7a; border-radius: 14px;
+    max-width: 520px; width: 100%; max-height: 80vh; overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.help-popup-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px 12px; border-bottom: 1px solid #263238;
+}
+.help-popup-header h3 {
+    font-size: 16px; font-weight: 700; color: #4fc3f7;
+}
+.help-popup-close {
+    background: transparent; border: none; color: #607d8b;
+    font-size: 22px; cursor: pointer; padding: 0 4px; line-height: 1;
+}
+.help-popup-close:hover { color: #e0e0e0; }
+.help-popup-body {
+    padding: 16px 20px 20px; font-size: 13px; color: #b0bec5; line-height: 1.7;
+}
+.help-popup-body h4 {
+    font-size: 13px; font-weight: 700; color: #e0e0e0; margin: 12px 0 4px;
+}
+.help-popup-body h4:first-child { margin-top: 0; }
+.help-popup-body p { margin: 4px 0; }
+.help-popup-body ul { margin: 4px 0 8px 18px; }
+.help-popup-body li { margin: 2px 0; }
+.help-popup-body code {
+    background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 3px;
+    font-size: 12px; color: #80cbc4;
+}
+
+/* ── Filter Chips ────────────────────────────────────────────── */
+.filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px; }
+.filter-section { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-right: 12px; }
+.filter-section-label { font-size: 11px; color: #607d8b; font-weight: 600; margin-right: 2px; }
+.chip {
+    display: inline-flex; align-items: center; gap: 3px;
+    background: #1e2a3a; border: 1px solid #37474f;
+    border-radius: 14px; padding: 2px 10px; font-size: 11px; cursor: pointer;
+    transition: all 0.15s; user-select: none;
+}
+.chip:hover { border-color: #4fc3f7; }
+.chip.active { background: #1a3a5c; border-color: #4fc3f7; color: #4fc3f7; }
+.chip input[type="checkbox"] { display: none; }
+.aes-val { color: #4fc3f7; font-weight: 700; min-width: 24px; text-align: center; font-size: 11px; }
+
+/* ── Language Panel ──────────────────────────────────────────── */
+.lang-panel {
+    display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+    max-width: 100%; overflow: hidden;
+}
+.lang-chip {
+    display: inline-flex; align-items: center;
+    background: #1e2a3a; border: 1px solid #2a3a4a;
+    border-radius: 12px; padding: 1px 8px; font-size: 10px; cursor: pointer;
+    transition: all 0.15s; user-select: none; color: #90a4ae;
+}
+.lang-chip:hover { border-color: #4fc3f7; }
+.lang-chip.active { background: #1a3a5c; border-color: #4fc3f7; color: #4fc3f7; }
+.lang-chip .cnt { color: #546e7a; margin-left: 3px; }
+
+/* ── Stage 2 Panel ──────────────────────────────────────────── */
+.stage2-panel {
+    margin-top: 8px; padding: 10px 14px;
+    background: rgba(255,152,0,0.06); border: 1px solid #5d4037;
+    border-radius: 8px; display: none;
+}
+.stage2-panel.active { display: block; }
+.stage2-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.stage2-header .label { font-size: 12px; font-weight: 700; color: #ffb74d; }
+.stage2-row { display: flex; gap: 10px; margin-bottom: 6px; }
+.stage2-input {
+    flex: 1; background: #1e2a3a; color: #e0e0e0;
+    border: 1px solid #5d4037; border-radius: 8px;
+    padding: 8px 14px; font-size: 14px; outline: none;
+}
+.stage2-input:focus { border-color: #ffb74d; }
+.stage2-input::placeholder { color: #607d8b; }
+.stage2-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.stage2-controls label { color: #ffb74d; }
+.stage2-controls select, .stage2-controls input[type="number"] {
+    background: #1e2a3a; color: #e0e0e0;
+    border: 1px solid #5d4037; border-radius: 6px;
+    padding: 5px 8px; font-size: 12px; outline: none;
+}
+.stage2-controls select:focus, .stage2-controls input:focus { border-color: #ffb74d; }
+
+/* ── Toggle Button ──────────────────────────────────────────── */
+.toggle-btn {
+    background: transparent; color: #ffb74d; border: 1px solid #5d4037;
+    border-radius: 14px; padding: 2px 12px; font-size: 11px; cursor: pointer;
+    font-weight: 600; transition: all 0.15s;
+}
+.toggle-btn:hover { background: rgba(255,152,0,0.1); }
+.toggle-btn.active { background: rgba(255,152,0,0.15); border-color: #ffb74d; }
+
+/* ── Audio Upload Area ──────────────────────────────────────── */
+.upload-row {
+    display: none; gap: 10px; margin-bottom: 10px; align-items: center;
+}
+.upload-row.active { display: flex; }
+.upload-dropzone {
+    flex: 1; background: #1e2a3a; border: 2px dashed #37474f;
+    border-radius: 8px; padding: 12px 16px; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; gap: 10px;
+    min-height: 48px;
+}
+.upload-dropzone:hover, .upload-dropzone.dragover { border-color: #26c6da; background: #1a2e3a; }
+.upload-dropzone.has-file { border-color: #26c6da; border-style: solid; }
+.upload-dropzone .upload-icon { font-size: 20px; color: #546e7a; }
+.upload-dropzone .upload-text { font-size: 14px; color: #78909c; }
+.upload-dropzone .upload-filename { font-size: 14px; color: #26c6da; font-weight: 600; }
+.upload-dropzone input[type="file"] { display: none; }
+.upload-clear {
+    background: transparent; color: #ef5350; border: 1px solid #b71c1c;
+    border-radius: 6px; padding: 4px 10px; font-size: 11px; cursor: pointer;
+    font-weight: 600; display: none;
+}
+.upload-clear.visible { display: inline-block; }
+
+/* ── Music Similarity Reference ─────────────────────────────── */
+.sim-reference {
+    display: none; margin-bottom: 10px; padding: 8px 14px;
+    background: rgba(0,188,212,0.08); border: 1px solid #00838f;
+    border-radius: 8px; font-size: 13px; color: #80deea;
+    align-items: center; gap: 8px;
+}
+.sim-reference.active { display: flex; }
+.sim-reference .ref-label { font-weight: 600; color: #26c6da; }
+.sim-reference .ref-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sim-reference .ref-clear {
+    background: transparent; color: #ef5350; border: 1px solid #b71c1c;
+    border-radius: 6px; padding: 2px 8px; font-size: 10px; cursor: pointer;
+    font-weight: 600;
+}
+
+/* ── Find Similar Button ────────────────────────────────────── */
+.btn-find-similar {
+    background: rgba(0,188,212,0.1); color: #26c6da; border: 1px solid #00838f;
+    border-radius: 6px; padding: 3px 10px; font-size: 11px; cursor: pointer;
+    font-weight: 600; transition: all 0.15s; white-space: nowrap;
+}
+.btn-find-similar:hover { background: rgba(0,188,212,0.2); border-color: #26c6da; }
+
+/* ── Stats Bar ───────────────────────────────────────────────── */
+.stats-bar {
+    padding: 6px 24px; background: #141a22;
+    border-bottom: 1px solid #1e2a3a;
+    font-size: 12px; color: #607d8b;
+    display: flex; gap: 20px; flex-wrap: wrap; align-items: center;
+}
+.stats-bar .val { color: #4fc3f7; font-weight: 600; }
+.btn-download {
+    margin-left: auto;
+    background: transparent; color: #66bb6a; border: 1px solid #2e7d32;
+    border-radius: 6px; padding: 3px 12px; font-size: 11px;
+    font-weight: 600; cursor: pointer; transition: all 0.15s;
+    display: none;
+}
+.btn-download:hover { background: rgba(76,175,80,0.15); }
+
+/* ── Results ─────────────────────────────────────────────────── */
+.results-container { max-width: 1200px; margin: 0 auto; padding: 16px 24px; }
+.result-card {
+    background: linear-gradient(135deg, #1a2332 0%, #1e2a3a 100%);
+    border: 1px solid #263238; border-radius: 10px;
+    padding: 16px; margin-bottom: 12px;
+    transition: border-color 0.2s;
+}
+.result-card:hover { border-color: #37474f; }
+.card-top { display: flex; gap: 16px; align-items: flex-start; }
+.card-rank { font-size: 20px; font-weight: 700; color: #37474f; min-width: 32px; text-align: right; padding-top: 2px; }
+.card-main { flex: 1; min-width: 0; }
+.card-title {
+    font-size: 16px; font-weight: 700; color: #e7e9ea; margin-bottom: 4px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ── Badges ──────────────────────────────────────────────────── */
+.badge-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0; }
+.badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+.badge-suno { background: rgba(33,150,243,0.15); color: #90caf9; border: 1px solid #2196f3; }
+.badge-udio { background: rgba(156,39,176,0.15); color: #ce93d8; border: 1px solid #9c27b0; }
+.badge-mureka { background: rgba(76,175,80,0.15); color: #a5d6a7; border: 1px solid #4caf50; }
+.badge-riffusion { background: rgba(255,152,0,0.15); color: #ffcc80; border: 1px solid #ff9800; }
+.badge-sonauto { background: rgba(0,188,212,0.15); color: #80deea; border: 1px solid #00bcd4; }
+.badge-genre { background: rgba(255,255,255,0.05); color: #b0bec5; border: 1px solid #455a64; }
+.badge-mood { background: rgba(233,30,99,0.1); color: #f48fb1; border: 1px solid #e91e63; }
+.badge-lang { background: rgba(103,58,183,0.15); color: #b39ddb; border: 1px solid #7e57c2; }
+.badge-instrumental { background: rgba(0,150,136,0.15); color: #80cbc4; border: 1px solid #009688; }
+.badge-vocal { background: rgba(255,87,34,0.1); color: #ffab91; border: 1px solid #ff5722; }
+.badge-nsfw-warn { background: rgba(255,152,0,0.2); color: #ffcc80; border: 1px solid #ff9800; }
+.badge-nsfw-danger { background: rgba(244,67,54,0.2); color: #ef9a9a; border: 1px solid #f44336; }
+
+/* ── Metrics Row ─────────────────────────────────────────────── */
+.metrics-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0; font-size: 12px; color: #90a4ae; }
+.metric-item { display: flex; align-items: center; gap: 3px; }
+.metric-label { color: #607d8b; }
+.metric-val { font-weight: 700; }
+
+/* ── Aesthetics Bar ──────────────────────────────────────────── */
+.aesthetics-bar { height: 4px; border-radius: 2px; margin: 4px 0; background: #263238; position: relative; max-width: 100px; }
+.aesthetics-bar-fill { height: 100%; border-radius: 2px; position: absolute; left: 0; top: 0; }
+
+/* ── Caption (full display) ──────────────────────────────────── */
+.card-caption {
+    font-size: 12px; color: #90a4ae; margin: 8px 0;
+    line-height: 1.6; background: rgba(0,0,0,0.15);
+    padding: 10px 12px; border-radius: 6px; border-left: 3px solid #37474f;
+}
+
+/* ── Audio Player ────────────────────────────────────────────── */
+.card-audio { margin-top: 8px; display: flex; align-items: center; gap: 8px; }
+.card-audio audio { flex: 1; height: 32px; border-radius: 6px; }
+
+/* ── Score Display ───────────────────────────────────────────── */
+.card-score { text-align: right; min-width: 80px; }
+.card-score .score-val { font-size: 22px; font-weight: 800; color: #4fc3f7; }
+.card-score .score-label { font-size: 10px; color: #607d8b; }
+.card-scores-dual { text-align: right; min-width: 90px; }
+.card-scores-dual .s1 { font-size: 11px; color: #607d8b; }
+.card-scores-dual .s1 .v { color: #64b5f6; font-weight: 700; }
+.card-scores-dual .s2 { font-size: 16px; margin-top: 2px; }
+.card-scores-dual .s2 .v { color: #ffb74d; font-weight: 800; }
+.card-scores-dual .s2 .l { font-size: 10px; color: #8d6e63; }
+
+/* ── Tags display ────────────────────────────────────────────── */
+.tags-text { font-size: 11px; color: #78909c; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 600px; }
+
+/* ── Loading / Empty ─────────────────────────────────────────── */
+.loading { text-align: center; padding: 60px; color: #546e7a; font-size: 16px; }
+.loading .spinner {
+    display: inline-block; width: 30px; height: 30px;
+    border: 3px solid #263238; border-top-color: #4fc3f7;
+    border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty-state { text-align: center; padding: 80px 24px; color: #546e7a; }
+.empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state p { font-size: 14px; max-width: 400px; margin: 0 auto; }
+
+/* ── Mobile Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .header, .simple-header { padding: 10px 12px 8px; }
+    .header-top h1 { font-size: 18px; }
+    .simple-header .search-input { font-size: 15px; padding: 12px 14px; }
+    .simple-header .btn-search { font-size: 15px; padding: 12px 20px; }
+
+    .search-row { flex-wrap: wrap; gap: 6px; }
+    .search-input { font-size: 14px; padding: 10px 12px; min-width: 0; }
+    .btn-search { padding: 10px 16px; font-size: 14px; flex-shrink: 0; }
+
+    .controls { gap: 6px; }
+    .control-group { flex-wrap: wrap; }
+    .control-group label { font-size: 11px; }
+    .control-group select, .control-group input[type="number"] { font-size: 11px; padding: 4px 6px; }
+
+    .simple-controls { gap: 8px; }
+    .simple-controls label { font-size: 12px; }
+    .simple-controls select { font-size: 12px; padding: 6px 10px; }
+
+    .filters { gap: 4px; }
+    .filter-section { margin-right: 6px; gap: 3px; flex-wrap: wrap; }
+    .filter-section-label { font-size: 10px; width: 100%; }
+    .chip { font-size: 10px; padding: 2px 7px; }
+
+    .stage2-panel { padding: 8px 10px; }
+    .stage2-row { flex-wrap: wrap; }
+    .stage2-input { font-size: 13px; padding: 8px 10px; }
+    .stage2-controls { gap: 6px; }
+
+    .stats-bar { padding: 4px 12px; font-size: 11px; gap: 8px; flex-wrap: wrap; }
+
+    .results-container { padding: 8px 10px; }
+    .result-card { padding: 10px; margin-bottom: 8px; }
+
+    .card-top { flex-direction: column; gap: 8px; }
+    .card-rank { font-size: 14px; min-width: auto; text-align: left; padding-top: 0; }
+    .card-main { width: 100%; }
+    .card-title { font-size: 14px; white-space: normal; word-break: break-word; }
+
+    .card-score { text-align: left; min-width: auto; margin-top: 4px; }
+    .card-score .score-val { font-size: 18px; }
+    .card-scores-dual { text-align: left; min-width: auto; }
+
+    .badge-row { gap: 3px; }
+    .badge { font-size: 9px; padding: 1px 6px; }
+
+    .tags-text { max-width: 100%; white-space: normal; word-break: break-word; }
+
+    .card-caption { font-size: 11px; padding: 8px 10px; }
+
+    .metrics-row { gap: 8px; font-size: 11px; }
+
+    .card-audio { flex-wrap: wrap; }
+    .card-audio audio { width: 100%; height: 36px; }
+
+    .upload-row { flex-wrap: wrap; }
+    .upload-dropzone { min-height: 44px; padding: 10px 12px; }
+    .upload-dropzone .upload-text { font-size: 12px; }
+
+    .sim-reference { font-size: 12px; flex-wrap: wrap; padding: 6px 10px; }
+
+    .lang-panel { gap: 3px; }
+    .lang-chip { font-size: 9px; padding: 1px 6px; }
+
+    .btn-find-similar { font-size: 10px; padding: 3px 8px; }
+    .btn-download { font-size: 10px; padding: 2px 8px; }
+
+    #negative-row { flex-wrap: wrap; }
+    #negative-row .control-group { min-width: 80px !important; }
+
+    .help-popup { max-width: 95vw; }
+    .mode-toggle button { font-size: 11px; padding: 4px 12px; }
+}
+
+@media (max-width: 480px) {
+    .header, .simple-header { padding: 8px 8px 6px; }
+    .header-top h1 { font-size: 16px; }
+    .simple-header .search-input { font-size: 14px; padding: 10px 12px; }
+    .simple-header .btn-search { font-size: 14px; padding: 10px 16px; }
+    .controls { gap: 4px; }
+    .result-card { padding: 8px; }
+    .card-rank { font-size: 12px; }
+    .card-title { font-size: 13px; }
+    .results-container { padding: 6px 6px; }
+    .stats-bar { padding: 3px 8px; font-size: 10px; gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SIMPLE MODE
+     ════════════════════════════════════════════════════════════ -->
+<div class="header simple-header" id="simple-mode">
+    <div class="header-top">
+        <h1>REDACTED-Tunes <span>Search</span></h1>
+        <div class="mode-toggle">
+            <button class="active" onclick="setUIMode('simple')">Simple</button>
+            <button onclick="setUIMode('advanced')">Advanced</button>
+        </div>
+    </div>
+
+    <div class="search-row">
+        <input type="text" class="search-input" id="simple-query"
+               placeholder="Search 1.4M AI-generated music tracks... e.g. 'dreamy ambient synth pad'" autofocus>
+        <button class="btn-search" onclick="doSearch()">Search</button>
+    </div>
+
+    <div class="simple-neg-row" id="simple-neg-row">
+        <input type="text" class="search-input" id="simple-neg-query"
+               placeholder="Exclude results matching... e.g. 'vocals singing lyrics'">
+    </div>
+
+    <div class="simple-controls">
+        <div class="control-group">
+            <label>Rank by:</label>
+            <select id="simple-rank">
+                <option value="similarity" selected>Relevance</option>
+                <option value="aesthetics">Aesthetics Score</option>
+                <option value="likes">Most Liked</option>
+                <option value="plays">Most Played</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>Results:</label>
+            <select id="simple-topk">
+                <option value="20">20</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+            </select>
+        </div>
+        <button class="simple-neg-toggle" id="simple-neg-btn" onclick="toggleSimpleNeg()">+ Exclude terms</button>
+    </div>
+
+    <div class="simple-lang-section">
+        <span class="simple-lang-label">Language:</span>
+        <span class="chip active" onclick="setAllLangs(this)">All</span>
+        <div class="lang-panel" id="simple-lang-panel"></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     ADVANCED MODE
+     ════════════════════════════════════════════════════════════ -->
+<div class="header" id="advanced-mode" style="display:none">
+    <div class="header-top">
+        <h1>REDACTED-Tunes <span>Search</span></h1>
+        <div class="mode-toggle">
+            <button onclick="setUIMode('simple')">Simple</button>
+            <button class="active" onclick="setUIMode('advanced')">Advanced</button>
+        </div>
+    </div>
+
+    <!-- Text query row -->
+    <div class="search-row" id="query-row">
+        <input type="text" class="search-input" id="query" placeholder="Stage 1: Search music... e.g. 'dreamy ambient synth pad' or 'aggressive metal guitar solo'">
+        <button class="btn-search" id="btn-search-main" onclick="doSearch()">Search</button>
+    </div>
+
+    <!-- Audio upload row (shown in music_similarity mode) -->
+    <div class="upload-row" id="upload-row">
+        <div class="upload-dropzone" id="upload-dropzone" onclick="document.getElementById('audio-file-input').click()">
+            <span class="upload-icon">&#9835;</span>
+            <span class="upload-text" id="upload-text">Drop audio file here or click to browse (first 30s used)</span>
+            <span class="upload-filename" id="upload-filename" style="display:none"></span>
+            <input type="file" id="audio-file-input" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a,.mp4,.webm,.opus">
+        </div>
+        <button class="upload-clear" id="upload-clear" onclick="clearUpload()">Clear</button>
+        <button class="btn-search" onclick="doSearch()">Search</button>
+    </div>
+
+    <!-- Music similarity reference indicator -->
+    <div class="sim-reference" id="sim-reference">
+        <span class="ref-label">Similar to:</span>
+        <span class="ref-title" id="sim-ref-title"></span>
+        <button class="ref-clear" onclick="clearSimilarityRef()">Clear</button>
+    </div>
+
+    <!-- Audio preview player for uploaded file -->
+    <div class="sim-reference" id="upload-preview" style="display:none; background:rgba(0,150,136,0.08); border-color:#00695c;">
+        <span class="ref-label" style="color:#26a69a;">Uploaded:</span>
+        <span class="ref-title" id="upload-preview-name" style="color:#80cbc4;"></span>
+        <audio controls id="upload-audio-player" style="height:28px; max-width:300px; flex-shrink:0;"></audio>
+    </div>
+
+    <div class="search-row" id="negative-row" style="display:none">
+        <input type="text" class="search-input" id="negative_query" placeholder="Negative prompt: exclude results matching this... e.g. 'vocals singing lyrics'" style="border-color:#ef5350; color:#ef9a9a;">
+        <div class="control-group" style="min-width:100px">
+            <label style="color:#ef5350">Weight:</label>
+            <input type="range" id="neg_weight" min="0.1" max="1.0" step="0.1" value="0.7" style="accent-color:#ef5350;" oninput="document.getElementById('neg-val').textContent=this.value">
+            <span class="aes-val" id="neg-val" style="color:#ef5350">0.7</span>
+            <i class="help-icon" onclick="showHelp('negative')">?</i>
+        </div>
+    </div>
+
+    <!-- Row 1: Main controls -->
+    <div class="controls">
+        <div class="control-group">
+            <label>Mode:</label>
+            <select id="search_type" onchange="updateControls()">
+                <option value="vector" selected>Vector Similarity</option>
+                <option value="bm25">BM25 Text</option>
+                <option value="combined">Combined</option>
+                <option value="music_similarity">Music Similarity</option>
+            </select>
+            <i class="help-icon" onclick="showHelp('mode')">?</i>
+        </div>
+        <div class="control-group" id="vector-field-group">
+            <label>Vector:</label>
+            <select id="vector_field">
+                <option value="caption" selected>Whisper Caption</option>
+                <option value="tag">Tags</option>
+                <option value="lyric">Lyrics</option>
+                <option value="mood">Mood</option>
+                <option value="transcription">Transcription</option>
+            </select>
+            <i class="help-icon" onclick="showHelp('vector_field')">?</i>
+        </div>
+        <div class="control-group" id="bm25-field-group" style="display:none">
+            <label>BM25 Field:</label>
+            <select id="bm25_field">
+                <option value="caption" selected>Whisper Caption</option>
+                <option value="tags">Tags</option>
+                <option value="transcription">Transcription</option>
+                <option value="lyrics_hashed">Lyrics (hashed)</option>
+            </select>
+            <i class="help-icon" onclick="showHelp('bm25_field')">?</i>
+        </div>
+        <div class="control-group">
+            <label>Rank by:</label>
+            <select id="rank_by">
+                <option value="similarity" selected>Relevance</option>
+                <option value="music_similarity">Music Similarity</option>
+                <option value="aesthetics">Aesthetics Score</option>
+                <option value="plays">Play Count</option>
+                <option value="likes">Like Count</option>
+            </select>
+            <i class="help-icon" onclick="showHelp('rank_by')">?</i>
+        </div>
+        <div class="control-group">
+            <label>K:</label>
+            <select id="top_k" onchange="syncTopKInput(this)">
+                <option value="20">20</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="1000">1,000</option>
+                <option value="5000">5,000</option>
+                <option value="10000">10,000</option>
+                <option value="custom">Custom...</option>
+            </select>
+            <input type="number" id="top_k_custom" min="1" max="50000" value="50" style="width:65px; display:none">
+            <i class="help-icon" onclick="showHelp('top_k')">?</i>
+        </div>
+        <button class="toggle-btn" id="stage2-toggle" onclick="toggleStage2()">+ Stage 2</button>
+        <i class="help-icon" onclick="showHelp('stage2')">?</i>
+    </div>
+
+    <!-- Stage 2 Panel -->
+    <div class="stage2-panel" id="stage2-panel">
+        <div class="stage2-header">
+            <span class="label">Stage 2 Refinement</span>
+            <span style="font-size:11px; color:#8d6e63;">Re-filter Stage 1 results by a second query</span>
+            <i class="help-icon" onclick="showHelp('stage2_detail')">?</i>
+        </div>
+        <div class="stage2-row">
+            <input type="text" class="stage2-input" id="s2_query" placeholder="Stage 2 query... e.g. 'angry little dog' or 'hip-hop beat'">
+        </div>
+        <div class="stage2-controls">
+            <div class="control-group">
+                <label>Mode:</label>
+                <select id="s2_search_type" onchange="updateS2Controls()">
+                    <option value="vector" selected>Vector Similarity</option>
+                    <option value="bm25">BM25 Text</option>
+                </select>
+            </div>
+            <div class="control-group" id="s2-vector-field-group">
+                <label>Vector:</label>
+                <select id="s2_vector_field">
+                    <option value="caption" selected>Whisper Caption</option>
+                    <option value="tag">Tags</option>
+                    <option value="lyric">Lyrics</option>
+                    <option value="mood">Mood</option>
+                    <option value="transcription">Transcription</option>
+                </select>
+            </div>
+            <div class="control-group" id="s2-bm25-field-group" style="display:none">
+                <label>BM25 Field:</label>
+                <select id="s2_bm25_field">
+                    <option value="caption" selected>Whisper Caption</option>
+                    <option value="tags">Tags</option>
+                    <option value="transcription">Transcription</option>
+                    <option value="lyrics_hashed">Lyrics (hashed)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Stage 2 K:</label>
+                <select id="s2_top_k" onchange="syncS2TopKInput(this)">
+                    <option value="20">20</option>
+                    <option value="50" selected>50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="custom">Custom...</option>
+                </select>
+                <input type="number" id="s2_top_k_custom" min="1" max="50000" value="50" style="width:65px; display:none">
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Filters -->
+    <div class="filters">
+        <div class="filter-section">
+            <span class="filter-section-label">Vocals:</span>
+            <span class="chip active" onclick="setVocal(this, null)">All</span>
+            <span class="chip" onclick="setVocal(this, 'instrumental')">Instrumental</span>
+            <span class="chip" onclick="setVocal(this, 'vocals')">With Vocals</span>
+            <i class="help-icon" onclick="showHelp('vocals')">?</i>
+        </div>
+        <div class="filter-section">
+            <span class="filter-section-label">Min Duration:</span>
+            <div class="control-group">
+                <input type="number" id="min_duration" value="60" min="0" max="600" step="10" style="width:55px">
+                <label>sec</label>
+            </div>
+            <i class="help-icon" onclick="showHelp('duration')">?</i>
+        </div>
+        <div class="filter-section">
+            <span class="filter-section-label">Min Aesthetics:</span>
+            <div class="control-group">
+                <input type="range" id="min_aesthetics" min="0" max="5" step="0.1" value="0" oninput="document.getElementById('aes-val').textContent=this.value">
+                <span class="aes-val" id="aes-val">0</span>
+            </div>
+            <i class="help-icon" onclick="showHelp('aesthetics')">?</i>
+        </div>
+        <div class="filter-section">
+            <span class="filter-section-label">Subset:</span>
+            <span class="chip active" onclick="setSubset(this, null)">All</span>
+            <span class="chip" onclick="setSubset(this, 'suno')">Suno</span>
+            <span class="chip" onclick="setSubset(this, 'udio')">Udio</span>
+            <span class="chip" onclick="setSubset(this, 'mureka')">Mureka</span>
+            <i class="help-icon" onclick="showHelp('subset')">?</i>
+        </div>
+        <div class="filter-section">
+            <span class="filter-section-label">Safety:</span>
+            <span class="chip" onclick="setNsfw(this, null)">All</span>
+            <span class="chip active" onclick="setNsfw(this, 'sfw_only')">SFW Only</span>
+            <span class="chip" onclick="setNsfw(this, 'nsfw_only')">NSFW Only</span>
+            <i class="help-icon" onclick="showHelp('safety')">?</i>
+        </div>
+    </div>
+
+    <!-- Row 3: Language filters -->
+    <div class="filters">
+        <div class="filter-section">
+            <span class="filter-section-label">Languages:</span>
+            <span class="chip active" onclick="setAllLangs(this)">All</span>
+            <div class="lang-panel" id="lang-panel"></div>
+            <i class="help-icon" onclick="showHelp('languages')">?</i>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SHARED: Stats Bar & Results
+     ════════════════════════════════════════════════════════════ -->
+<div class="stats-bar" id="stats-bar">
+    <span>Total: <span class="val" id="stat-total">--</span></span>
+    <span>Results: <span class="val" id="stat-results">--</span></span>
+    <span>Filtered: <span class="val" id="stat-filtered">--</span></span>
+    <span id="stat-stage2-wrap" style="display:none">Stage2: <span class="val" id="stat-stage2">--</span></span>
+    <span id="stat-whisper-wrap" style="display:none">Whisper Index: <span class="val" id="stat-whisper">--</span></span>
+    <span id="stat-cache-wrap" style="display:none"><span class="val" id="stat-cache" style="color:#26a69a;">Cached</span></span>
+    <span>Time: <span class="val" id="stat-time">--</span></span>
+    <span>Embedding: <span class="val" id="stat-emb">--</span></span>
+    <button class="btn-download" id="btn-download" onclick="downloadResults()">Download JSON</button>
+</div>
+
+<div class="results-container" id="results">
+    <div class="empty-state">
+        <div class="icon">&#9835;</div>
+        <p>Search the REDACTED-Tunes dataset of 1.4M AI-generated music tracks from Suno, Mureka, and Udio. Type a description of the music you're looking for and hit Search. Switch to Advanced mode for more control over search parameters.</p>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     HELP POPUP OVERLAY
+     ════════════════════════════════════════════════════════════ -->
+<div class="help-overlay" id="help-overlay" onclick="if(event.target===this)closeHelp()">
+    <div class="help-popup">
+        <div class="help-popup-header">
+            <h3 id="help-title">Help</h3>
+            <button class="help-popup-close" onclick="closeHelp()">&times;</button>
+        </div>
+        <div class="help-popup-body" id="help-body"></div>
+    </div>
+</div>
+
+<script>
+// ── API Base ─────────────────────────────────────────────────────
+const API_BASE = 'https://tunes-search.duckdns.org';
+
+// ── State ───────────────────────────────────────────────────────
+let uiMode = 'simple';       // 'simple' | 'advanced'
+let selectedSubset = null; // null | specific subset name
+let selectedVocal = null;     // null | "instrumental" | "vocals"
+let selectedNsfw = 'sfw_only'; // null | "sfw_only" | "nsfw_only"
+let selectedLangs = null;     // null = all, or Set of codes
+let allLanguages = {};        // code -> count
+let isSearching = false;
+let lastResults = null;       // store for download
+let stage2Active = false;
+let whisperEmbCount = 0;
+let simpleNegActive = false;
+
+// Music similarity state
+let uploadedAudioFile = null;
+let similarityRowId = null;
+let similarityRefTitle = null;
+
+// Language code to display name
+const LANG_NAMES = {
+    en:'English', es:'Spanish', fr:'French', de:'German', pt:'Portuguese',
+    it:'Italian', nl:'Dutch', ru:'Russian', ja:'Japanese', ko:'Korean',
+    zh:'Chinese', ar:'Arabic', hi:'Hindi', tr:'Turkish', pl:'Polish',
+    sv:'Swedish', da:'Danish', no:'Norwegian', fi:'Finnish', cs:'Czech',
+    ro:'Romanian', hu:'Hungarian', el:'Greek', th:'Thai', vi:'Vietnamese',
+    id:'Indonesian', ms:'Malay', tl:'Tagalog', uk:'Ukrainian', bg:'Bulgarian',
+    hr:'Croatian', sk:'Slovak', sl:'Slovenian', lt:'Lithuanian', lv:'Latvian',
+    et:'Estonian', ca:'Catalan', gl:'Galician', eu:'Basque', cy:'Welsh',
+    af:'Afrikaans', sw:'Swahili', sq:'Albanian', mk:'Macedonian', sr:'Serbian',
+    unknown:'Unknown'
+};
+
+// ── Help Content ────────────────────────────────────────────────
+const HELP = {
+    mode: {
+        title: 'Search Mode',
+        body: `
+            <h4>Vector Similarity (recommended)</h4>
+            <p>Uses AI embeddings to find tracks by <em>meaning</em>, not just keywords. Your query is converted into a vector and compared against pre-computed embeddings of each track's metadata. This finds semantically similar results even if the exact words don't match.</p>
+            <p>Example: searching "happy summer vibes" will find tracks tagged as "upbeat", "cheerful", "sunny" etc.</p>
+
+            <h4>BM25 Text</h4>
+            <p>Traditional keyword-based text search (like a search engine). Matches exact words and scores by term frequency. Best when you know the exact tags or words you're looking for.</p>
+            <p>Example: searching "lo-fi hip hop" matches tracks that literally contain those words.</p>
+
+            <h4>Combined</h4>
+            <p>Runs both Vector and BM25 searches and merges the scores. Useful when you want both semantic understanding and exact keyword matching.</p>
+
+            <h4>Music Similarity</h4>
+            <p>Search by audio fingerprint. Upload an audio file or click "Find Similar" on any result to find tracks that sound alike. Uses Whisper encoder embeddings that capture the audio characteristics of each track.</p>
+        `
+    },
+    vector_field: {
+        title: 'Vector Search Field',
+        body: `
+            <p>Choose which text field's embeddings to search against. Each field captures different information about the track:</p>
+
+            <h4>Whisper Caption (recommended)</h4>
+            <p>AI-generated description of what the music <em>sounds</em> like (instruments, genre, mood, tempo, structure). Generated by the Music-Whisper model that listens to the actual audio. This is the most descriptive field and works best for natural language queries.</p>
+
+            <h4>Tags</h4>
+            <p>Genre and style tags from the source platform (e.g. "electronic, ambient, chill"). Good for genre-specific searches.</p>
+
+            <h4>Lyrics</h4>
+            <p>The lyrics text from the source metadata (not ASR). Searches against the original lyrics provided by the creator. Only available for ~1.2% of tracks.</p>
+
+            <h4>Mood</h4>
+            <p>Mood/emotion tags (e.g. "melancholic", "energetic", "peaceful"). Only available for Mureka tracks (~27% of dataset).</p>
+
+            <h4>Transcription</h4>
+            <p>Speech-to-text transcription from the Parakeet ASR model. Searches what was actually <em>sung or spoken</em> in the audio. Available for ~73% of tracks (vocal tracks only).</p>
+        `
+    },
+    bm25_field: {
+        title: 'BM25 Text Search Field',
+        body: `
+            <p>Choose which text field to run keyword search on:</p>
+
+            <h4>Whisper Caption</h4>
+            <p>Search the AI-generated music descriptions. Good for finding specific instrument mentions, tempo descriptions, etc.</p>
+
+            <h4>Tags</h4>
+            <p>Search the genre/style tags. Use commas or spaces between terms.</p>
+
+            <h4>Transcription</h4>
+            <p>Search the ASR transcription text. Find tracks by specific words that were sung.</p>
+
+            <h4>Lyrics (hashed)</h4>
+            <p>Privacy-preserving search of original lyrics. Tokens are HMAC-hashed, so you need to search with the exact same words. Partial matches may not work as well.</p>
+        `
+    },
+    rank_by: {
+        title: 'Ranking Method',
+        body: `
+            <p>After retrieving matching tracks, results are sorted by:</p>
+
+            <h4>Relevance</h4>
+            <p>The default. Sorts by search score (cosine similarity for vector search, BM25 score for text search). The most relevant results appear first.</p>
+
+            <h4>Music Similarity</h4>
+            <p>Re-ranks results by audio similarity using Whisper encoder embeddings. Useful to cluster sonically similar tracks together.</p>
+
+            <h4>Aesthetics Score</h4>
+            <p>Sorts by a composite quality score (0-5) computed from coherence, musicality, memorability, clarity, and naturalness. Higher scores indicate higher perceived quality.</p>
+
+            <h4>Play Count / Like Count</h4>
+            <p>Sort by popularity metrics from the source platform. Play count = total listens, Like count = upvotes/hearts.</p>
+        `
+    },
+    top_k: {
+        title: 'Number of Results (K)',
+        body: `
+            <p>How many results to retrieve from the search index. Higher values take longer but give more results to filter and browse.</p>
+            <ul>
+                <li><strong>20-50:</strong> Fast, good for quick exploration</li>
+                <li><strong>100-200:</strong> Thorough search, good balance</li>
+                <li><strong>500-1000:</strong> Deep search, useful with strict filters</li>
+                <li><strong>5000-10000:</strong> Exhaustive, use with filters to narrow down</li>
+            </ul>
+            <p>Note: The actual number of displayed results may be less than K after applying filters (subset, vocal, duration, etc.).</p>
+        `
+    },
+    stage2: {
+        title: 'Stage 2 Refinement',
+        body: `
+            <p>Stage 2 lets you apply a <em>second</em> search query to re-rank Stage 1 results. This is a powerful two-step filtering approach:</p>
+
+            <h4>How it works</h4>
+            <ul>
+                <li><strong>Stage 1:</strong> Your main query retrieves a broad set of candidates</li>
+                <li><strong>Stage 2:</strong> A second query re-scores those candidates, and only the top matches are returned</li>
+            </ul>
+
+            <h4>Example use cases</h4>
+            <ul>
+                <li>Stage 1: "electronic music" (by tags) &rarr; Stage 2: "dark atmospheric pads" (by caption)</li>
+                <li>Stage 1: "rock guitar" (by caption) &rarr; Stage 2: "love song" (by transcription)</li>
+            </ul>
+
+            <p>This combines different search strategies for precision that a single query can't achieve.</p>
+        `
+    },
+    stage2_detail: {
+        title: 'Stage 2 Configuration',
+        body: `
+            <p>Configure how the second stage works:</p>
+
+            <h4>Mode</h4>
+            <p>Choose Vector Similarity or BM25 for the second-stage query. You can mix modes (e.g. BM25 in Stage 1, Vector in Stage 2).</p>
+
+            <h4>Vector / BM25 Field</h4>
+            <p>Choose a different field for Stage 2. A common pattern is to search by tags in Stage 1 and refine by caption in Stage 2.</p>
+
+            <h4>Stage 2 K</h4>
+            <p>How many of the Stage 1 results to keep after re-ranking. A lower value gives more precision, a higher value gives more recall.</p>
+        `
+    },
+    negative: {
+        title: 'Negative Prompt',
+        body: `
+            <p>The negative prompt lets you <em>exclude</em> certain characteristics from your results.</p>
+
+            <h4>How it works</h4>
+            <p>Your negative query is embedded and its similarity is <em>subtracted</em> from each track's score. Tracks matching the negative prompt are pushed down in the rankings.</p>
+
+            <h4>Weight</h4>
+            <p>Controls how strongly the negative prompt affects scoring (0.1 = subtle, 1.0 = strong). Default 0.7 works well for most cases.</p>
+
+            <h4>Examples</h4>
+            <ul>
+                <li>Search "piano music", negative "vocals singing" &rarr; instrumental piano</li>
+                <li>Search "electronic dance", negative "slow ambient" &rarr; upbeat electronic only</li>
+            </ul>
+        `
+    },
+    vocals: {
+        title: 'Vocal Filter',
+        body: `
+            <p>Filter tracks by whether they contain vocals or are instrumental:</p>
+            <ul>
+                <li><strong>All:</strong> No filtering, show everything</li>
+                <li><strong>Instrumental:</strong> Only tracks with no detected vocals (no lyrics and no ASR transcription detected)</li>
+                <li><strong>With Vocals:</strong> Only tracks where vocals/singing were detected by the ASR model</li>
+            </ul>
+            <p>Detection is based on the Parakeet ASR transcription: if a transcription of 10+ characters was generated, the track is considered vocal.</p>
+        `
+    },
+    duration: {
+        title: 'Minimum Duration',
+        body: `
+            <p>Filter out tracks shorter than this duration (in seconds). Default is 60 seconds.</p>
+            <p>Many AI music platforms generate short clips (15-30 seconds). Setting a minimum duration helps find full-length tracks.</p>
+            <ul>
+                <li><strong>0:</strong> Show all tracks regardless of length</li>
+                <li><strong>60:</strong> At least 1 minute (filters out short clips)</li>
+                <li><strong>120:</strong> At least 2 minutes (full songs)</li>
+            </ul>
+        `
+    },
+    aesthetics: {
+        title: 'Minimum Aesthetics Score',
+        body: `
+            <p>Filter tracks by their aesthetics quality score (0-5 scale). The score is a composite of five dimensions computed by the Music-Whisper model:</p>
+            <ul>
+                <li><strong>Coherence:</strong> How well-structured and consistent the track is</li>
+                <li><strong>Musicality:</strong> Musical quality and composition</li>
+                <li><strong>Memorability:</strong> How catchy or distinctive</li>
+                <li><strong>Clarity:</strong> Audio clarity and production quality</li>
+                <li><strong>Naturalness:</strong> How natural/organic it sounds</li>
+            </ul>
+            <p>The average across all tracks is ~3.29. Setting the slider to 3.5+ will show only higher-quality tracks. Most tracks score between 2.0 and 4.5.</p>
+        `
+    },
+    subset: {
+        title: 'Source Platform (Subset)',
+        body: `
+            <p>Filter by which AI music platform generated the track:</p>
+            <ul>
+                <li><strong>Suno</strong> (1,037K tracks): Popular AI music generator with diverse styles</li>
+                <li><strong>Mureka</strong> (384K tracks): Second-largest subset, includes genre/mood metadata</li>
+                <li><strong>Udio</strong> (8.8K tracks): Quality-filtered subset with audio available in blanchon/udio_dataset</li>
+            </ul>
+            <p>Covers 3 AI music platforms: Suno, Mureka, and Udio.</p>
+        `
+    },
+    safety: {
+        title: 'NSFW Safety Filter',
+        body: `
+            <p>Filter tracks by their NSFW (Not Safe For Work) safety classification:</p>
+            <ul>
+                <li><strong>All:</strong> Show everything, including potentially offensive content</li>
+                <li><strong>SFW Only:</strong> Exclude tracks flagged as likely NSFW (recommended)</li>
+                <li><strong>NSFW Only:</strong> Show only flagged content (for research/analysis)</li>
+            </ul>
+            <h4>How classification works</h4>
+            <p>Each track's transcription is compared against reference prompts for three categories: gore/violence, sexual content, and hate speech. Cosine similarity scores above calibrated thresholds trigger NSFW flags.</p>
+            <p>About 1.65% of tracks (23,591) are flagged as NSFW. The classification is conservative: "very likely" + "likely" labels are both filtered in SFW mode.</p>
+        `
+    },
+    languages: {
+        title: 'Language Filter',
+        body: `
+            <p>Filter tracks by the detected language of their vocal content. Language is detected from the ASR transcription using the <code>langdetect</code> library.</p>
+            <ul>
+                <li><strong>All:</strong> No language filtering</li>
+                <li>Click individual language chips to select one or more languages</li>
+                <li>Instrumental tracks show as "Unknown" language</li>
+            </ul>
+            <p>The most common languages are English (~64% of vocal tracks), followed by Spanish, Portuguese, Indonesian, and Russian.</p>
+        `
+    }
+};
+
+// ── UI Mode Toggle ──────────────────────────────────────────────
+function setUIMode(mode) {
+    uiMode = mode;
+    document.getElementById('simple-mode').style.display = mode === 'simple' ? '' : 'none';
+    document.getElementById('advanced-mode').style.display = mode === 'advanced' ? '' : 'none';
+
+    // Update all mode toggle buttons
+    document.querySelectorAll('.mode-toggle button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === mode);
+    });
+
+    // Sync query text between modes
+    if (mode === 'advanced') {
+        document.getElementById('query').value = document.getElementById('simple-query').value;
+        document.getElementById('query').focus();
+        updateControls();
+    } else {
+        document.getElementById('simple-query').value = document.getElementById('query').value;
+        document.getElementById('simple-query').focus();
+    }
+}
+
+// ── Simple Mode Negative Prompt Toggle ──────────────────────────
+function toggleSimpleNeg() {
+    simpleNegActive = !simpleNegActive;
+    const row = document.getElementById('simple-neg-row');
+    const btn = document.getElementById('simple-neg-btn');
+    if (simpleNegActive) {
+        row.classList.add('active');
+        btn.classList.add('active');
+        btn.textContent = '- Exclude terms';
+        document.getElementById('simple-neg-query').focus();
+    } else {
+        row.classList.remove('active');
+        btn.classList.remove('active');
+        btn.textContent = '+ Exclude terms';
+        document.getElementById('simple-neg-query').value = '';
+    }
+}
+
+// ── Help Popup ──────────────────────────────────────────────────
+function showHelp(key) {
+    const h = HELP[key];
+    if (!h) return;
+    document.getElementById('help-title').textContent = h.title;
+    document.getElementById('help-body').innerHTML = h.body;
+    document.getElementById('help-overlay').classList.add('active');
+}
+function closeHelp() {
+    document.getElementById('help-overlay').classList.remove('active');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeHelp(); });
+
+// ── Stage 2 Toggle ──────────────────────────────────────────────
+function toggleStage2() {
+    stage2Active = !stage2Active;
+    const panel = document.getElementById('stage2-panel');
+    const btn = document.getElementById('stage2-toggle');
+    if (stage2Active) {
+        panel.classList.add('active');
+        btn.classList.add('active');
+        btn.textContent = '- Stage 2';
+    } else {
+        panel.classList.remove('active');
+        btn.classList.remove('active');
+        btn.textContent = '+ Stage 2';
+    }
+}
+
+function updateS2Controls() {
+    const mode = document.getElementById('s2_search_type').value;
+    document.getElementById('s2-vector-field-group').style.display = mode === 'vector' ? 'flex' : 'none';
+    document.getElementById('s2-bm25-field-group').style.display = mode === 'bm25' ? 'flex' : 'none';
+}
+
+// ── Custom K inputs ─────────────────────────────────────────────
+function syncTopKInput(sel) {
+    const custom = document.getElementById('top_k_custom');
+    if (sel.value === 'custom') {
+        custom.style.display = 'inline-block';
+        custom.focus();
+    } else {
+        custom.style.display = 'none';
+        custom.value = sel.value;
+    }
+}
+function syncS2TopKInput(sel) {
+    const custom = document.getElementById('s2_top_k_custom');
+    if (sel.value === 'custom') {
+        custom.style.display = 'inline-block';
+        custom.focus();
+    } else {
+        custom.style.display = 'none';
+        custom.value = sel.value;
+    }
+}
+function getTopK() {
+    if (uiMode === 'simple') return parseInt(document.getElementById('simple-topk').value);
+    const sel = document.getElementById('top_k');
+    if (sel.value === 'custom') return parseInt(document.getElementById('top_k_custom').value) || 50;
+    return parseInt(sel.value);
+}
+function getS2TopK() {
+    const sel = document.getElementById('s2_top_k');
+    if (sel.value === 'custom') return parseInt(document.getElementById('s2_top_k_custom').value) || 50;
+    return parseInt(sel.value);
+}
+
+// ── Controls visibility (Advanced) ──────────────────────────────
+function updateControls() {
+    const mode = document.getElementById('search_type').value;
+    const isMusicSim = mode === 'music_similarity';
+    const isVector = mode === 'vector' || mode === 'combined';
+
+    document.getElementById('query-row').style.display = isMusicSim ? 'none' : 'flex';
+    document.getElementById('upload-row').classList.toggle('active', isMusicSim);
+    document.getElementById('vector-field-group').style.display = (isVector && !isMusicSim) ? 'flex' : 'none';
+    document.getElementById('bm25-field-group').style.display =
+        (mode === 'bm25' || mode === 'combined') ? 'flex' : 'none';
+    document.getElementById('negative-row').style.display = (isVector && !isMusicSim) ? 'flex' : 'none';
+    document.getElementById('stage2-toggle').style.display = '';
+    updateSimReference();
+
+    if (isMusicSim) {
+        document.getElementById('rank_by').value = 'music_similarity';
+    } else if (document.getElementById('rank_by').value === 'music_similarity') {
+        document.getElementById('rank_by').value = 'similarity';
+    }
+}
+
+// ── Audio Upload ────────────────────────────────────────────────
+const dropzone = document.getElementById('upload-dropzone');
+const fileInput = document.getElementById('audio-file-input');
+
+fileInput.addEventListener('change', function() {
+    if (this.files.length > 0) setUploadFile(this.files[0]);
+});
+
+dropzone.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    dropzone.classList.add('dragover');
+});
+dropzone.addEventListener('dragleave', function() {
+    dropzone.classList.remove('dragover');
+});
+dropzone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files.length > 0) setUploadFile(e.dataTransfer.files[0]);
+});
+
+let uploadAudioObjectURL = null;
+
+function setUploadFile(file) {
+    uploadedAudioFile = file;
+    similarityRowId = null;
+    similarityRefTitle = null;
+    document.getElementById('upload-text').style.display = 'none';
+    document.getElementById('upload-filename').style.display = 'inline';
+    document.getElementById('upload-filename').textContent = file.name + ' (' + (file.size / 1024 / 1024).toFixed(1) + ' MB)';
+    document.getElementById('upload-clear').classList.add('visible');
+    dropzone.classList.add('has-file');
+
+    if (uploadAudioObjectURL) URL.revokeObjectURL(uploadAudioObjectURL);
+    uploadAudioObjectURL = URL.createObjectURL(file);
+    const player = document.getElementById('upload-audio-player');
+    player.src = uploadAudioObjectURL;
+    document.getElementById('upload-preview-name').textContent = file.name;
+    document.getElementById('upload-preview').style.display = 'flex';
+    updateSimReference();
+}
+
+function clearUpload() {
+    uploadedAudioFile = null;
+    fileInput.value = '';
+    document.getElementById('upload-text').style.display = 'inline';
+    document.getElementById('upload-filename').style.display = 'none';
+    document.getElementById('upload-clear').classList.remove('visible');
+    dropzone.classList.remove('has-file');
+
+    if (uploadAudioObjectURL) {
+        URL.revokeObjectURL(uploadAudioObjectURL);
+        uploadAudioObjectURL = null;
+    }
+    document.getElementById('upload-audio-player').src = '';
+    document.getElementById('upload-preview').style.display = 'none';
+    updateSimReference();
+}
+
+// ── Similarity Reference ────────────────────────────────────────
+function updateSimReference() {
+    const ref = document.getElementById('sim-reference');
+    const mode = document.getElementById('search_type').value;
+    if (mode === 'music_similarity' && similarityRowId && similarityRefTitle) {
+        ref.classList.add('active');
+        document.getElementById('sim-ref-title').textContent = similarityRefTitle;
+    } else {
+        ref.classList.remove('active');
+    }
+}
+
+function clearSimilarityRef() {
+    similarityRowId = null;
+    similarityRefTitle = null;
+    updateSimReference();
+}
+
+function findSimilar(rowId, title) {
+    // Switch to advanced + music similarity mode
+    if (uiMode === 'simple') setUIMode('advanced');
+    document.getElementById('search_type').value = 'music_similarity';
+    similarityRowId = rowId;
+    similarityRefTitle = title;
+    uploadedAudioFile = null;
+    fileInput.value = '';
+    document.getElementById('upload-text').style.display = 'inline';
+    document.getElementById('upload-filename').style.display = 'none';
+    document.getElementById('upload-clear').classList.remove('visible');
+    dropzone.classList.remove('has-file');
+    if (uploadAudioObjectURL) {
+        URL.revokeObjectURL(uploadAudioObjectURL);
+        uploadAudioObjectURL = null;
+    }
+    document.getElementById('upload-audio-player').src = '';
+    document.getElementById('upload-preview').style.display = 'none';
+    updateControls();
+    doSearch();
+}
+
+// ── Chip group helpers ──────────────────────────────────────────
+function setVocal(el, val) {
+    el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    selectedVocal = val;
+}
+
+function setSubset(el, val) {
+    el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    selectedSubset = val;
+
+    // When instrumental subset is selected, auto-set vocal filter to instrumental and disable toggle
+    const vocalSection = document.querySelector('.filter-section:has(.filter-section-label)');
+    const vocalChips = el.closest('.filters')?.querySelectorAll('.filter-section')[0]?.querySelectorAll('.chip');
+    if (val === 'instrumental_subset' && vocalChips) {
+        // Auto-select "Instrumental" vocal filter
+        vocalChips.forEach(c => c.classList.remove('active'));
+        vocalChips[1]?.classList.add('active'); // "Instrumental" chip
+        selectedVocal = 'instrumental';
+        vocalChips.forEach(c => c.style.opacity = '0.5');
+        vocalChips.forEach(c => c.style.pointerEvents = 'none');
+    } else if (vocalChips) {
+        vocalChips.forEach(c => c.style.opacity = '');
+        vocalChips.forEach(c => c.style.pointerEvents = '');
+    }
+}
+
+function setNsfw(el, val) {
+    el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    selectedNsfw = val;
+}
+
+function setAllLangs(el) {
+    selectedLangs = null;
+    el.classList.add('active');
+    document.querySelectorAll('.lang-chip').forEach(c => c.classList.remove('active'));
+}
+
+function toggleLang(el, code) {
+    // Deactivate "All" chip in same section
+    const allChip = el.closest('.filter-section, .simple-lang-section').querySelector('.chip');
+    allChip.classList.remove('active');
+
+    el.classList.toggle('active');
+    const active = document.querySelectorAll('.lang-chip.active');
+    if (active.length === 0) {
+        selectedLangs = null;
+        allChip.classList.add('active');
+    } else {
+        selectedLangs = new Set();
+        active.forEach(c => selectedLangs.add(c.dataset.lang));
+    }
+}
+
+// ── Download Results as JSON ────────────────────────────────────
+function downloadResults() {
+    if (!lastResults || !lastResults.results || lastResults.results.length === 0) return;
+    const blob = new Blob([JSON.stringify(lastResults.results, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'redacted-tunes-results.json';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// ── Search ──────────────────────────────────────────────────────
+async function doSearch() {
+    if (isSearching) return;
+
+    // In advanced mode, check for music similarity
+    if (uiMode === 'advanced') {
+        const mode = document.getElementById('search_type').value;
+        if (mode === 'music_similarity') return doMusicSimilaritySearch();
+    }
+
+    // Get query from the active mode
+    const query = uiMode === 'simple'
+        ? document.getElementById('simple-query').value.trim()
+        : document.getElementById('query').value.trim();
+    if (!query) return;
+
+    isSearching = true;
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '<div class="loading"><div class="spinner"></div><br>Searching...</div>';
+
+    // Build request body
+    let body;
+    if (uiMode === 'simple') {
+        const negQuery = simpleNegActive ? document.getElementById('simple-neg-query').value.trim() : '';
+        body = {
+            query: query,
+            negative_query: negQuery || null,
+            search_type: 'vector',
+            vector_field: 'caption',
+            bm25_field: 'caption',
+            rank_by: document.getElementById('simple-rank').value,
+            min_aesthetics: null,
+            min_similarity: null,
+            subset_filter: null,
+            vocal_filter: null,
+            min_duration: 60,
+            languages: selectedLangs ? Array.from(selectedLangs) : null,
+            negative_weight: 0.7,
+            nsfw_filter: 'sfw_only',
+            top_k: getTopK(),
+        };
+    } else {
+        const minAes = parseFloat(document.getElementById('min_aesthetics').value);
+        const minDur = parseFloat(document.getElementById('min_duration').value);
+        const negQuery = document.getElementById('negative_query').value.trim();
+        const negWeight = parseFloat(document.getElementById('neg_weight').value);
+
+        body = {
+            query: query,
+            negative_query: negQuery || null,
+            search_type: document.getElementById('search_type').value,
+            vector_field: document.getElementById('vector_field').value,
+            bm25_field: document.getElementById('bm25_field').value,
+            rank_by: document.getElementById('rank_by').value,
+            min_aesthetics: minAes > 0 ? minAes : null,
+            min_similarity: null,
+            subset_filter: selectedSubset,
+            vocal_filter: selectedVocal,
+            min_duration: minDur > 0 ? minDur : null,
+            languages: selectedLangs ? Array.from(selectedLangs) : null,
+            negative_weight: negWeight,
+            nsfw_filter: selectedNsfw,
+            top_k: getTopK(),
+        };
+
+        // Stage 2
+        if (stage2Active) {
+            const s2q = document.getElementById('s2_query').value.trim();
+            if (s2q) {
+                body.stage2_enabled = true;
+                body.stage2_query = s2q;
+                body.stage2_search_type = document.getElementById('s2_search_type').value;
+                body.stage2_vector_field = document.getElementById('s2_vector_field').value;
+                body.stage2_bm25_field = document.getElementById('s2_bm25_field').value;
+                body.stage2_top_k = getS2TopK();
+            }
+        }
+    }
+
+    try {
+        const resp = await fetch(API_BASE + '/api/search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+        });
+        const data = await resp.json();
+        lastResults = data;
+        renderResults(data);
+    } catch (err) {
+        resultsDiv.innerHTML = `<div class="empty-state"><p>Error: ${err.message}</p></div>`;
+    } finally {
+        isSearching = false;
+    }
+}
+
+async function doMusicSimilaritySearch() {
+    const resultsDiv = document.getElementById('results');
+
+    if (similarityRowId) {
+        isSearching = true;
+        resultsDiv.innerHTML = '<div class="loading"><div class="spinner"></div><br>Finding similar tracks...</div>';
+
+        const minAes = parseFloat(document.getElementById('min_aesthetics').value);
+        const minDur = parseFloat(document.getElementById('min_duration').value);
+
+        const body = {
+            row_id: similarityRowId,
+            top_k: getTopK(),
+            rank_by: document.getElementById('rank_by').value,
+            min_aesthetics: minAes > 0 ? minAes : null,
+            subset_filter: selectedSubset,
+            vocal_filter: selectedVocal,
+            min_duration: minDur > 0 ? minDur : null,
+            languages: selectedLangs ? Array.from(selectedLangs) : null,
+            nsfw_filter: selectedNsfw,
+        };
+
+        if (stage2Active) {
+            const s2q = document.getElementById('s2_query').value.trim();
+            if (s2q) {
+                body.stage2_enabled = true;
+                body.stage2_query = s2q;
+                body.stage2_search_type = document.getElementById('s2_search_type').value;
+                body.stage2_vector_field = document.getElementById('s2_vector_field').value;
+                body.stage2_bm25_field = document.getElementById('s2_bm25_field').value;
+                body.stage2_top_k = getS2TopK();
+            }
+        }
+
+        try {
+            const resp = await fetch(API_BASE + '/api/search_similar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+            const data = await resp.json();
+            if (data.error) {
+                resultsDiv.innerHTML = `<div class="empty-state"><p>Error: ${data.error}</p></div>`;
+            } else {
+                lastResults = data;
+                renderResults(data);
+            }
+        } catch (err) {
+            resultsDiv.innerHTML = `<div class="empty-state"><p>Error: ${err.message}</p></div>`;
+        } finally {
+            isSearching = false;
+        }
+
+    } else if (uploadedAudioFile) {
+        isSearching = true;
+        resultsDiv.innerHTML = '<div class="loading"><div class="spinner"></div><br>Processing audio & searching...</div>';
+
+        const minAes = parseFloat(document.getElementById('min_aesthetics').value);
+        const minDur = parseFloat(document.getElementById('min_duration').value);
+
+        const formData = new FormData();
+        formData.append('audio', uploadedAudioFile);
+        formData.append('top_k', getTopK());
+        formData.append('rank_by', document.getElementById('rank_by').value);
+        formData.append('subset_filter', selectedSubset || '');
+        formData.append('vocal_filter', selectedVocal || '');
+        formData.append('min_duration', minDur > 0 ? minDur : '');
+        formData.append('min_aesthetics', minAes > 0 ? minAes : '');
+        formData.append('languages', selectedLangs ? Array.from(selectedLangs).join(',') : '');
+        formData.append('nsfw_filter', selectedNsfw || '');
+
+        if (stage2Active) {
+            const s2q = document.getElementById('s2_query').value.trim();
+            if (s2q) {
+                formData.append('stage2_enabled', 'true');
+                formData.append('stage2_query', s2q);
+                formData.append('stage2_search_type', document.getElementById('s2_search_type').value);
+                formData.append('stage2_vector_field', document.getElementById('s2_vector_field').value);
+                formData.append('stage2_bm25_field', document.getElementById('s2_bm25_field').value);
+                formData.append('stage2_top_k', getS2TopK());
+            }
+        }
+
+        try {
+            const resp = await fetch(API_BASE + '/api/search_by_audio', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await resp.json();
+            if (data.error) {
+                resultsDiv.innerHTML = `<div class="empty-state"><p>Error: ${data.error}</p></div>`;
+            } else {
+                lastResults = data;
+                renderResults(data);
+            }
+        } catch (err) {
+            resultsDiv.innerHTML = `<div class="empty-state"><p>Error: ${err.message}</p></div>`;
+        } finally {
+            isSearching = false;
+        }
+
+    } else {
+        resultsDiv.innerHTML = '<div class="empty-state"><p>Upload an audio file or click "Find Similar" on a result to search by music similarity.</p></div>';
+    }
+}
+
+// ── Render Results ──────────────────────────────────────────────
+function renderResults(data) {
+    document.getElementById('stat-total').textContent = data.total_tracks?.toLocaleString() || '--';
+    document.getElementById('stat-results').textContent = data.results?.length || 0;
+    document.getElementById('stat-filtered').textContent = data.total_filtered?.toLocaleString() || '--';
+    document.getElementById('stat-time').textContent = data.search_time_ms ? data.search_time_ms.toFixed(0) + 'ms' : '--';
+    document.getElementById('stat-emb').textContent = data.query_embedding_time_ms ? data.query_embedding_time_ms.toFixed(0) + 'ms' : '--';
+
+    const s2wrap = document.getElementById('stat-stage2-wrap');
+    if (data.stage2) {
+        s2wrap.style.display = '';
+        document.getElementById('stat-stage2').textContent = data.stage2.matched + ' matched, ' + data.stage2.returned + ' returned';
+    } else {
+        s2wrap.style.display = 'none';
+    }
+
+    const wWrap = document.getElementById('stat-whisper-wrap');
+    if (data.search_type === 'music_similarity') {
+        wWrap.style.display = '';
+        document.getElementById('stat-whisper').textContent = (whisperEmbCount || 0).toLocaleString();
+    } else {
+        wWrap.style.display = 'none';
+    }
+
+    const cWrap = document.getElementById('stat-cache-wrap');
+    cWrap.style.display = data.cache_hit ? '' : 'none';
+
+    const dlBtn = document.getElementById('btn-download');
+    dlBtn.style.display = (data.results && data.results.length > 0) ? 'inline-block' : 'none';
+
+    const resultsDiv = document.getElementById('results');
+    if (!data.results || data.results.length === 0) {
+        resultsDiv.innerHTML = '<div class="empty-state"><p>No results found. Try a different query or broaden your filters.</p></div>';
+        return;
+    }
+
+    const hasStage2 = !!data.stage2;
+    const isMusicSim = data.search_type === 'music_similarity';
+    let html = '';
+    data.results.forEach((r, idx) => {
+        const subsetClass = 'badge-' + (r.subset || 'unknown');
+
+        let genreBadges = '';
+        (r.genre_tags || []).slice(0, 5).forEach(g => {
+            genreBadges += `<span class="badge badge-genre">${esc(g)}</span>`;
+        });
+
+        let moodBadges = '';
+        if (r.mood_text) {
+            r.mood_text.split(',').slice(0, 4).forEach(m => {
+                m = m.trim();
+                if (m) moodBadges += `<span class="badge badge-mood">${esc(m)}</span>`;
+            });
+        } else if (r.emotion_tags && r.emotion_tags.length) {
+            r.emotion_tags.slice(0, 4).forEach(e => {
+                moodBadges += `<span class="badge badge-mood">${esc(e)}</span>`;
+            });
+        }
+
+        const langCode = r.language || 'unknown';
+        const langName = LANG_NAMES[langCode] || langCode;
+        const langBadge = `<span class="badge badge-lang">${esc(langName)}</span>`;
+
+        const vocalBadge = r.is_instrumental
+            ? '<span class="badge badge-instrumental">Instrumental</span>'
+            : '<span class="badge badge-vocal">Vocals</span>';
+
+        let nsfwBadge = '';
+        if (r.nsfw_overall_label === 'very_likely_nsfw') {
+            const parts = [];
+            if (r.nsfw_gore_label !== 'likely_sfw') parts.push('Gore');
+            if (r.nsfw_sexual_label !== 'likely_sfw') parts.push('Sexual');
+            if (r.nsfw_hate_label !== 'likely_sfw') parts.push('Hate');
+            nsfwBadge = `<span class="badge badge-nsfw-danger" title="Gore:${r.nsfw_gore_sim||'?'} Sexual:${r.nsfw_sexual_sim||'?'} Hate:${r.nsfw_hate_sim||'?'}">NSFW: ${parts.join(', ')}</span>`;
+        } else if (r.nsfw_overall_label === 'likely_nsfw') {
+            const parts = [];
+            if (r.nsfw_gore_label !== 'likely_sfw') parts.push('Gore');
+            if (r.nsfw_sexual_label !== 'likely_sfw') parts.push('Sexual');
+            if (r.nsfw_hate_label !== 'likely_sfw') parts.push('Hate');
+            nsfwBadge = `<span class="badge badge-nsfw-warn" title="Gore:${r.nsfw_gore_sim||'?'} Sexual:${r.nsfw_sexual_sim||'?'} Hate:${r.nsfw_hate_sim||'?'}">Caution: ${parts.join(', ')}</span>`;
+        }
+
+        const aes = r.score_average || 0;
+        const aesPct = Math.min(100, (aes / 5) * 100);
+        const aesColor = aes >= 3.5 ? '#66bb6a' : aes >= 2.5 ? '#ffa726' : '#ef5350';
+
+        let scoreDisplay = '';
+        if (hasStage2 && r.stage2_score !== undefined) {
+            const s1v = r.stage1_score !== undefined ? (r.score_type === 'bm25' ? r.stage1_score.toFixed(2) : (r.stage1_score*100).toFixed(1)+'%') : '--';
+            const s2v = r.score_type === 'bm25' ? r.stage2_score.toFixed(2) : (r.stage2_score*100).toFixed(1)+'%';
+            const s2label = r.score_type === 'bm25' ? 'BM25' : 'Sim';
+            scoreDisplay = `<div class="card-scores-dual">
+                <div class="s1">S1: <span class="v">${s1v}</span></div>
+                <div class="s2"><span class="v">${s2v}</span> <span class="l">${s2label}</span></div>
+            </div>`;
+        } else if (r.score !== null && r.score !== undefined) {
+            let label = '', val = r.score;
+            switch (r.score_type) {
+                case 'cosine_similarity': label = isMusicSim ? 'Audio Sim' : 'Similarity'; val = (val * 100).toFixed(1) + '%'; break;
+                case 'bm25': label = 'BM25'; val = val.toFixed(2); break;
+                case 'aesthetics': label = 'Aesthetics'; val = val.toFixed(2); break;
+                case 'play_count': label = 'Plays'; val = Number(val).toLocaleString(); break;
+                case 'upvote_count': label = 'Likes'; val = Number(val).toLocaleString(); break;
+                default: label = r.score_type; val = val.toFixed(2);
+            }
+            scoreDisplay = `<div class="card-score"><div class="score-val">${val}</div><div class="score-label">${label}</div></div>`;
+        }
+
+        const dur = r.duration_seconds ? fmtDur(r.duration_seconds) : '';
+
+        const findSimBtn = r.has_whisper_emb
+            ? `<button class="btn-find-similar" onclick="event.stopPropagation(); findSimilar(${r.row_id}, '${escA(r.title || 'Untitled')}')">Find Similar</button>`
+            : '';
+
+        html += `
+        <div class="result-card">
+            <div class="card-top">
+                <div class="card-rank">${idx + 1}</div>
+                <div class="card-main">
+                    <div class="card-title">${esc(r.title || 'Untitled')}</div>
+                    <div class="badge-row">
+                        <span class="badge ${subsetClass}">${esc(r.subset)}</span>
+                        ${vocalBadge}
+                        ${langBadge}
+                        ${nsfwBadge}
+                        ${genreBadges}
+                        ${moodBadges}
+                    </div>
+                    <div class="tags-text">${esc(r.tags_text || '')}</div>
+                    ${r.music_whisper_caption ? `<div class="card-caption">${esc(r.music_whisper_caption)}</div>` : ''}
+                    <div class="metrics-row">
+                        ${aes > 0 ? `
+                        <div class="metric-item">
+                            <span class="metric-label">Aesthetics:</span>
+                            <span class="metric-val" style="color:${aesColor}">${aes.toFixed(2)}</span>
+                            <div class="aesthetics-bar"><div class="aesthetics-bar-fill" style="width:${aesPct}%;background:${aesColor}"></div></div>
+                        </div>` : ''}
+                        <div class="metric-item">
+                            <span class="metric-label">Plays:</span>
+                            <span class="metric-val" style="color:#42a5f5">${(r.play_count || 0).toLocaleString()}</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Likes:</span>
+                            <span class="metric-val" style="color:#ab47bc">${(r.upvote_count || 0).toLocaleString()}</span>
+                        </div>
+                        ${dur ? `<div class="metric-item"><span class="metric-label">Duration:</span><span class="metric-val">${dur}</span></div>` : ''}
+                    </div>
+                    <div class="card-audio">
+                        ${r.audio_url ? `<audio controls preload="none"><source src="${escA(r.audio_url)}"></audio>` : ''}
+                        ${findSimBtn}
+                    </div>
+                </div>
+                ${scoreDisplay}
+            </div>
+        </div>`;
+    });
+
+    resultsDiv.innerHTML = html;
+}
+
+// ── Utilities ───────────────────────────────────────────────────
+function esc(s) { return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+function escA(s) { return s ? s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;') : ''; }
+function fmtDur(sec) {
+    if (!sec || sec <= 0) return '';
+    return Math.floor(sec/60) + ':' + String(Math.floor(sec%60)).padStart(2,'0');
+}
+
+// ── Keyboard ────────────────────────────────────────────────────
+document.getElementById('simple-query').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+document.getElementById('simple-neg-query').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+document.getElementById('query').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+document.getElementById('negative_query').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+document.getElementById('s2_query').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+
+// ── Build Language Chips helper ─────────────────────────────────
+function buildLangChips(panel) {
+    panel.innerHTML = '';
+    const sorted = Object.entries(allLanguages)
+        .filter(([k]) => k !== 'unknown')
+        .sort((a,b) => b[1] - a[1])
+        .slice(0, 20);
+
+    sorted.forEach(([code, cnt]) => {
+        const name = LANG_NAMES[code] || code;
+        const el = document.createElement('span');
+        el.className = 'lang-chip';
+        el.dataset.lang = code;
+        el.innerHTML = `${esc(name)} <span class="cnt">${cnt >= 1000 ? (cnt/1000).toFixed(0)+'k' : cnt}</span>`;
+        el.onclick = function() { toggleLang(this, code); };
+        panel.appendChild(el);
+    });
+    if (allLanguages['unknown']) {
+        const el = document.createElement('span');
+        el.className = 'lang-chip';
+        el.dataset.lang = 'unknown';
+        el.innerHTML = `Unknown <span class="cnt">${allLanguages['unknown'] >= 1000 ? (allLanguages['unknown']/1000).toFixed(0)+'k' : allLanguages['unknown']}</span>`;
+        el.onclick = function() { toggleLang(this, 'unknown'); };
+        panel.appendChild(el);
+    }
+}
+
+// ── Init: load stats & language chips ───────────────────────────
+(async function() {
+    try {
+        const resp = await fetch(API_BASE + '/api/stats');
+        const stats = await resp.json();
+        document.getElementById('stat-total').textContent = stats.total_tracks?.toLocaleString() || '--';
+        whisperEmbCount = stats.whisper_embeddings || 0;
+
+        allLanguages = stats.languages || {};
+        // Build language chips in both panels
+        buildLangChips(document.getElementById('lang-panel'));
+        buildLangChips(document.getElementById('simple-lang-panel'));
+    } catch(e) { console.error('Stats load failed:', e); }
+
+    // Apply default control visibility for advanced mode
+    updateControls();
+})();
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# REDACTED-Tunes
+# REDACTED-Tunes Suite
 
 > **Anonymous submission — NeurIPS 2026 Datasets and Evaluations Track**
 
@@ -12,7 +12,7 @@
 
 ## Overview
 
-**REDACTED-Tunes** is a large-scale, richly annotated ecosystem for AI-generated music research, released as four interoperable artifacts:
+**REDACTED-Tunes Suite** is a large-scale, richly annotated ecosystem for AI-generated music research, released as four interoperable artifacts:
 
 | Artifact | Description | Size |
 |---|---|---|
