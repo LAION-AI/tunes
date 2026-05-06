@@ -199,9 +199,15 @@
     /* ── Artifact cards ── */
     .artifact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       margin-top: 2rem;
+    }
+    @media (max-width: 760px) {
+      .artifact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 440px) {
+      .artifact-grid { grid-template-columns: 1fr; }
     }
     .artifact-card {
       background: var(--bg2);
@@ -504,6 +510,13 @@
         <a href="https://anonymous-hf.up.railway.app/a/pib3syfuxp02/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
       </div>
       <div class="artifact-card">
+        <div class="artifact-icon">📊</div>
+        <div class="artifact-chip">Benchmark · 10,521 songs</div>
+        <h3>REDACTED-Tunes-Benchmark</h3>
+        <p>Perceptual evaluation dataset pairing 7 AI generators with human Apple Music previews. 591 annotation trials from 61 participants across 6 perceptual dimensions.</p>
+        <a href="https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+      </div>
+      <div class="artifact-card">
         <div class="artifact-icon">🧠</div>
         <div class="artifact-chip">Model · 922 MB</div>
         <h3>REDACTED-Music-Whisper</h3>
@@ -516,13 +529,6 @@
         <h3>REDACTED-RPG</h3>
         <p>Instrumental subset annotated by Gemini 3 Flash Preview with gameplay situations across 18 RPG genres. Includes per-genre FAISS indices and a purple-themed search UI.</p>
         <a href="https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
-      </div>
-      <div class="artifact-card">
-        <div class="artifact-icon">📊</div>
-        <div class="artifact-chip">Benchmark · 10,521 songs</div>
-        <h3>REDACTED-Tunes-Benchmark</h3>
-        <p>Perceptual evaluation dataset pairing 7 AI generators with human Apple Music previews. 591 annotation trials from 61 participants across 6 perceptual dimensions.</p>
-        <a href="https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
       </div>
     </div>
   </div>
@@ -862,9 +868,9 @@ python rpg_server.py --port 7862 --no-whisper
         <thead><tr><th>Artifact</th><th>License</th></tr></thead>
         <tbody>
           <tr><td>REDACTED-Tunes Corpus</td><td>Apache 2.0</td></tr>
+          <tr><td>REDACTED-Tunes-Benchmark</td><td>Apache 2.0</td></tr>
           <tr><td>REDACTED-Music-Whisper</td><td>CC-BY-4.0</td></tr>
           <tr><td>REDACTED-RPG</td><td>CC-BY-4.0</td></tr>
-          <tr><td>REDACTED-Tunes-Benchmark</td><td>Apache 2.0</td></tr>
         </tbody>
       </table>
     </div>
