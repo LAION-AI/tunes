@@ -1,0 +1,33 @@
+\paragraph{Out-of-distribution feature test set.}
+We constructed a separate out-of-distribution (OOD) test split to evaluate whether
+the feature-based detector remains reliable under shifts that are not represented
+by the standard train/validation/test splits. The split contains 168 manually
+downloaded audio samples and combines two complementary sources of shift:
+human-side metadata rarity and generator-side source shift.
+
+The human portion contains 50 held-out songs labeled as human music. These tracks
+were selected because their metadata values are rare or absent relative to the
+790 human tracks in the non-OOD splits (training, validation, and test), and are
+marked with \texttt{ood_reason = human_metadata_rarity}. This subset covers 13
+languages, with English as the largest group (30/50) and several lower-frequency
+languages represented by one or two examples; Traditional Chinese
+(\texttt{zh-Hant}) appears only in the OOD human subset. The genre distribution
+also deliberately includes rare or OOD-specific metadata strings, such as
+Rap-Rock, Funk Rock, P-Pop, DIY Punk, Electro-Hop, New Jack Swing, Emo Rap,
+Trap-Rock, Mandopop, C-Pop, Witch House, Desi Hip-Hop, Choral Music, and Aussie
+Grime. The rarity statistics were computed by exact string matching against the
+metadata fields in the current split files.
+
+The AI-generated portion contains 118 manually downloaded tracks from generators
+that were not used for training or validation of the feature models: 51 Lyria3
+tracks, 51 Riffusion tracks, and 16 SilverKnightAI tracks. This part of the OOD
+split therefore tests whether detectors trained on the available AI-generation
+distribution generalize to new or held-out model families, rather than only to
+new samples from already-seen sources.
+
+Overall, the OOD split is intended as a stress test rather than a random sample
+from the deployment distribution. The human tracks probe robustness to long-tail
+metadata and musical-style coverage, while the AI tracks probe robustness to
+previously unseen generators. This design makes the OOD evaluation stricter than
+the standard held-out test split and helps separate in-distribution accuracy from
+cross-source generalization.

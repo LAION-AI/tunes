@@ -1,0 +1,13 @@
+run_id,model,family,auc,auc_ci_low,auc_ci_high,eer,tpr_at_1pct_fpr,tpr_at_01pct_fpr,delta_auc_vs_proposed,delong_p,wilcoxon_p,verdict
+muq_head_aug-none_seed0,MuQ head,foundation,0.991,0.978,0.999,0.0723728813559322,0.788135593220339,0.788135593220339,-0.012,0.1948,0.0001,not better
+multiview_aug-combined_safe_seed,Multiview ensemble,proposed,0.979,0.954,0.996,0.082,0.662,0.662,0.0,,,proposed
+moss_nano_head_aug-none_seed0,MOSS Nano head,foundation,0.975,0.95,0.993,0.1008474576271186,0.7033898305084746,0.7033898305084746,0.004,0.7834,0.4839,tied
+mert_head_aug-none_seed0,MERT head,foundation,0.959,0.925,0.985,0.1050847457627118,0.5423728813559322,0.5423728813559322,0.019,0.2808,0.0,tied
+lcnn_aug-none_seed0,LCNN,cnn,0.935,0.872,0.983,0.119322033898305,0.0254237288135593,0.0254237288135593,0.045,0.0729,0.0017,tied
+clap_head_aug-none_seed0,CLAP head,foundation,0.918,0.862,0.966,0.156271186440678,0.0932203389830508,0.0932203389830508,0.061,0.0141,0.0,better
+specttra_gamma_aug-none_seed0,SpecTTTra gamma,sonics,0.855,0.784,0.918,0.2244067796610169,0.0254237288135593,0.0254237288135593,0.126,0.0,0.0002,better
+specttra_alpha_aug-none_seed0,SpecTTTra alpha,sonics,0.792,0.71,0.864,0.2840677966101695,0.0084745762711864,0.0084745762711864,0.188,0.0,0.0013,better
+efficientvit_aug-none_seed0,EfficientViT-B1,vision,0.786,0.711,0.855,0.2840677966101695,0.1271186440677966,0.1271186440677966,0.193,0.0,0.0,better
+specttra_beta_aug-none_seed0,SpecTTTra beta,sonics,0.782,0.7,0.854,0.2655932203389831,0.1186440677966101,0.1186440677966101,0.199,0.0,0.0,better
+vit_aug-none_seed0,ViT-S/16,vision,0.689,0.605,0.775,0.3622033898305085,0.0,0.0,0.291,0.0,0.0,better
+convnext_aug-none_seed0,ConvNeXt-Tiny,vision,0.663,0.583,0.745,0.3798305084745763,0.0254237288135593,0.0254237288135593,0.316,0.0,0.0001,better

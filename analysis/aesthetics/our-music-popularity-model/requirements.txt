@@ -1,0 +1,6 @@
+librosa
+torch
+transformers
+huggingface_hub
+tqdm
+numpy

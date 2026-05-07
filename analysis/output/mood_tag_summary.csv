@@ -1,0 +1,8 @@
+group,n,nonempty_mood_annotations,nonempty_share,mean_mood_tags,median_mood_tags,mannwhitney_u,mannwhitney_p,comparison
+AI songs,507,354.0,0.6982248520710059,1.4733727810650887,1.0,,,
+real songs,84,49.0,0.5833333333333334,1.119047619047619,1.0,,,
+judged AI,289,198.0,0.6851211072664359,1.328719723183391,1.0,,,
+judged real,225,150.0,0.6666666666666666,1.448888888888889,1.0,,,
+judged uncertain,77,55.0,0.7142857142857143,1.7012987012987013,1.0,,,
+Ground truth: AI songs vs real songs,591,,,0.35432516201746966,0.0,23972.0,0.056032476264931026,AI songs minus real songs
+Perceived: judged AI vs judged real,514,,,-0.12016916570549796,0.0,32783.0,0.8670862904584101,judged AI minus judged real

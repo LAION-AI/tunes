@@ -1,0 +1,1391 @@
+================================================================================
+NEURIPS ANALYSIS: PERCEPTUAL EVALUATION OF AI-GENERATED MUSIC
+Generated: 2026-05-06 21:40:14
+Annotations: 591 (AI: 507, real: 84 | full-snippet: 403, 30s-snippet: 188) | Participants: 91
+================================================================================
+
+================================================================================
+1. DESCRIPTIVE STATISTICS
+================================================================================
+
+  Total annotations: 591
+  Unique participants (in annotations): 61
+  Unique songs: 572
+  Unique sessions: 69
+  Registered participants: 91
+  Active participants (>=1 annotation): 61
+  Median annotations per active participant: 5
+  Mean annotations per active participant: 9.7
+
+  --- Ground-Truth Balance (real vs AI) ---
+    ai-generated: 507 (85.8%)
+    real: 84 (14.2%)
+
+  --- Song Source Distribution ---
+    suno (AI): 133 (22.5%)
+    mureka (AI): 133 (22.5%)
+    sonauto (AI): 125 (21.2%)
+    udio (AI): 116 (19.6%)
+    human (real): 84 (14.2%)
+
+  --- Snippet Condition Distribution ---
+    full-length (v1): 403 (68.2%)
+    30-second (v2): 188 (31.8%)
+
+  --- Authenticity Assessment Distribution ---
+    ai-generated: 289 (48.9%)
+    real: 225 (38.1%)
+    uncertain: 77 (13.0%)
+
+  --- Rating Summary Statistics ---
+                      count      mean       std  median  min   max      skew  kurtosis
+aesthetic_quality     591.0  5.159898  2.199191     5.0  1.0  10.0 -0.063918 -0.354381
+playlist_likelihood   591.0  3.820812  2.290879     3.8  1.0  10.0  0.391714 -0.717842
+musical_creativity    591.0  4.772589  2.127343     5.0  1.0  10.0  0.111899 -0.199231
+production_quality    591.0  5.349239  2.223174     5.0  1.0  10.0 -0.123054 -0.504517
+emotional_engagement  591.0  4.665990  2.138464     5.0  1.0  10.0  0.027257 -0.334584
+
+  --- Annotation Duration (seconds) ---
+    Mean: 129.3s, Median: 80.8s, Std: 224.8s, Min: 6.9s, Max: 2732.7s
+
+  --- Participant Demographics ---
+  Musical Engagement:
+    enthusiast: 29 (31.9%)
+    casual: 29 (31.9%)
+    musician: 22 (24.2%)
+    professional: 11 (12.1%)
+
+  AI Music Experience:
+    Tried once or twice: 26 (28.6%)
+    Use occasionally: 25 (27.5%)
+    Professional experience with AI music: 15 (16.5%)
+    Use regularly: 11 (12.1%)
+    Heard about it but never tried: 8 (8.8%)
+    Never used AI music tools: 6 (6.6%)
+
+  Formal Training (years): Mean=3.6, Median=0, Max=30
+
+================================================================================
+2. SIGNAL DETECTION THEORY — AI DETECTION ACCURACY
+================================================================================
+
+  Ground truth: 'human' songs are real; 'suno/udio/sonauto/mureka' are AI.
+  Signal = AI trial, Noise = real (human) trial.
+  Hit = 'ai-generated' on an AI trial. False Alarm = 'ai-generated' on a real trial.
+  Uncertain responses are excluded from d' but reported separately.
+
+  Total trials: 591  (AI: 507, real: 84)
+
+  --- Overall Signal Detection ---
+    Hits (AI -> 'ai'):          267  (HR=0.610)
+    Misses (AI -> 'real'):      171
+    False alarms (real -> 'ai'): 22  (FAR=0.289)
+    Correct rejections:         54
+    Accuracy (non-uncertain):   62.5%
+    d' = 0.825     (0 = chance, higher = better discrimination)
+    c (criterion) = 0.135  (negative = bias toward 'AI', positive = bias toward 'real')
+    Uncertain rate overall:     13.0%
+
+  --- Confusion Matrix (rows: ground truth, cols: response) ---
+authenticity_assessment  real  ai-generated  uncertain
+ground_truth                                          
+real                       54            22          8
+ai-generated              171           267         69
+
+  Row-normalized (conditional probabilities):
+authenticity_assessment   real  ai-generated  uncertain
+ground_truth                                           
+real                     0.643         0.262      0.095
+ai-generated             0.337         0.527      0.136
+
+  --- Response Distribution by Source ---
+    human (real, n=84): CR=64.3% | FA=26.2% | uncertain=9.5%
+    suno (AI,   n=133): HR=55.6% | Miss=32.3% | uncertain=12.0%
+    udio (AI,   n=116): HR=41.4% | Miss=43.1% | uncertain=15.5%
+    sonauto (AI,   n=125): HR=55.2% | Miss=31.2% | uncertain=13.6%
+    mureka (AI,   n=133): HR=57.1% | Miss=29.3% | uncertain=13.5%
+
+  Chi-squared test (source x assessment): χ²=37.11, df=8, p=1.0986e-05, Cramér's V=0.177
+
+  --- Per-Participant d' and Criterion ---
+    Participants with both signal+noise trials: 10
+    d':        mean=0.904, median=0.783, std=0.926
+    criterion: mean=0.218, median=0.221, std=0.424
+    accuracy:  mean=68.8%, median=58.5%
+    One-sample t-test d' vs 0 (chance): t=3.086, p=1.3015e-02
+    One-sample t-test criterion vs 0:    t=1.624, p=1.3882e-01
+
+  --- Accuracy by Musical Engagement ---
+                                    n  accuracy  hit_rate_on_ai  fa_rate_on_real  uncertain_rate
+participant_musical_engagement                                                                  
+casual                          198.0     0.534           0.448            0.231           0.121
+enthusiast                      219.0     0.638           0.531            0.360           0.155
+musician                        157.0     0.700           0.605            0.212           0.108
+professional                     17.0     0.800           0.706              NaN           0.118
+
+  --- Accuracy by AI Experience ---
+                                           n  accuracy  hit_rate_on_ai  fa_rate_on_real
+participant_ai_music_experience                                                        
+Heard about it but never tried          36.0     0.724           0.516            0.000
+Never used AI music tools               29.0     0.593           0.552              NaN
+Professional experience with AI music   70.0     0.655           0.474            0.077
+Tried once or twice                    141.0     0.569           0.462            0.364
+Use occasionally                       228.0     0.626           0.574            0.400
+Use regularly                           87.0     0.654           0.556            0.067
+
+  --- Accuracy by Formal Training ---
+                    n  accuracy  hit_rate_on_ai  fa_rate_on_real
+training_group                                                  
+None            338.0     0.639           0.522            0.049
+1-3 years       134.0     0.521           0.490            0.567
+4-7 years        31.0     0.826           0.613              NaN
+8+ years         88.0     0.667           0.560            0.231
+
+  --- Bootstrap 95% CIs on Aggregate SDT Metrics (N=2000 resamples) ---
+    d_prime             : mean=0.836  95% CI [0.505, 1.175]
+    accuracy            : mean=0.625  95% CI [0.582, 0.667]
+    hit_rate            : mean=0.611  95% CI [0.564, 0.657]
+    false_alarm_rate    : mean=0.289  95% CI [0.188, 0.397]
+
+================================================================================
+3. RATING ANALYSIS ACROSS SOURCES (HUMAN + AI)
+================================================================================
+
+  --- Mean Ratings by Source (all five, human first) ---
+             aesthetic_quality  playlist_likelihood  musical_creativity  production_quality  emotional_engagement
+song_source                                                                                                      
+human                    5.683                4.307               5.417               6.060                 5.019
+suno                     5.182                3.986               4.700               5.341                 4.791
+udio                     5.147                3.846               4.826               5.213                 4.777
+sonauto                  4.944                3.686               4.810               5.179                 4.562
+mureka                   5.021                3.453               4.357               5.188                 4.320
+
+  --- Median Ratings by Source ---
+             aesthetic_quality  playlist_likelihood  musical_creativity  production_quality  emotional_engagement
+song_source                                                                                                      
+human                      5.4                 5.00                5.35                5.85                   5.0
+suno                       5.0                 4.00                5.00                5.30                   5.0
+udio                       5.0                 3.85                5.00                5.00                   5.0
+sonauto                    5.0                 3.20                5.00                5.00                   5.0
+mureka                     5.0                 3.30                4.30                5.00                   4.7
+
+  --- Real (human) vs AI-generated: Mann-Whitney U ---
+    Aesthetic Quality: real=5.68 (n=84) vs AI=5.07 (n=507), U=24338, p=3.5133e-02, r=-0.143, d=0.279
+    Playlist Likelihood: real=4.31 (n=84) vs AI=3.74 (n=507), U=24726, p=1.7085e-02, r=-0.161, d=0.248
+    Musical Creativity: real=5.42 (n=84) vs AI=4.67 (n=507), U=25690, p=2.3296e-03, r=-0.206, d=0.355
+    Production Quality: real=6.06 (n=84) vs AI=5.23 (n=507), U=25380, p=4.6902e-03, r=-0.192, d=0.375
+    Emotional Engagement: real=5.02 (n=84) vs AI=4.61 (n=507), U=23468, p=1.3196e-01, r=-0.102, d=0.193
+
+  --- Kruskal-Wallis Across All Five Sources ---
+    Aesthetic Quality: H=4.975, p=2.8991e-01, η²=0.0017
+    Playlist Likelihood: H=9.167, p=5.7058e-02, η²=0.0088
+    Musical Creativity: H=13.840, p=7.8222e-03, η²=0.0168
+    Production Quality: H=9.077, p=5.9195e-02, η²=0.0087
+    Emotional Engagement: H=7.067, p=1.3238e-01, η²=0.0052
+
+  --- Kruskal-Wallis Across AI Sources Only ---
+    Aesthetic Quality: H=0.569, p=9.0351e-01, η²=-0.0048
+    Playlist Likelihood: H=3.401, p=3.3384e-01, η²=0.0008
+    Musical Creativity: H=4.479, p=2.1417e-01, η²=0.0029
+    Production Quality: H=0.970, p=8.0843e-01, η²=-0.0040
+    Emotional Engagement: H=4.712, p=1.9418e-01, η²=0.0034
+
+  --- Post-hoc Pairwise Mann-Whitney U Across All Sources (Bonferroni-corrected) ---
+
+    Aesthetic Quality:
+      human vs suno: U=6262, p_adj=1.0000, r=-0.121 [ns]
+      human vs udio: U=5544, p_adj=0.9489, r=-0.138 [ns]
+      human vs sonauto: U=6104, p_adj=0.4551, r=-0.163 [ns]
+      human vs mureka: U=6430, p_adj=0.6022, r=-0.151 [ns]
+      suno vs udio: U=7754, p_adj=1.0000, r=-0.005 [ns]
+      suno vs sonauto: U=8710, p_adj=1.0000, r=-0.048 [ns]
+      suno vs mureka: U=9100, p_adj=1.0000, r=-0.029 [ns]
+      udio vs sonauto: U=7559, p_adj=1.0000, r=-0.043 [ns]
+      udio vs mureka: U=7900, p_adj=1.0000, r=-0.024 [ns]
+      sonauto vs mureka: U=8138, p_adj=1.0000, r=0.021 [ns]
+
+    Playlist Likelihood:
+      human vs suno: U=6106, p_adj=1.0000, r=-0.093 [ns]
+      human vs udio: U=5567, p_adj=0.8348, r=-0.143 [ns]
+      human vs sonauto: U=6179, p_adj=0.2921, r=-0.177 [ns]
+      human vs mureka: U=6874, p_adj=0.0390, r=-0.231 [*]
+      suno vs udio: U=7939, p_adj=1.0000, r=-0.029 [ns]
+      suno vs sonauto: U=8886, p_adj=1.0000, r=-0.069 [ns]
+      suno vs mureka: U=9920, p_adj=0.8351, r=-0.122 [ns]
+      udio vs sonauto: U=7564, p_adj=1.0000, r=-0.043 [ns]
+      udio vs mureka: U=8437, p_adj=1.0000, r=-0.094 [ns]
+      sonauto vs mureka: U=8770, p_adj=1.0000, r=-0.055 [ns]
+
+    Musical Creativity:
+      human vs suno: U=6625, p_adj=0.2045, r=-0.186 [ns]
+      human vs udio: U=5648, p_adj=0.5373, r=-0.159 [ns]
+      human vs sonauto: U=6144, p_adj=0.3614, r=-0.170 [ns]
+      human vs mureka: U=7273, p_adj=0.0017, r=-0.302 [**]
+      suno vs udio: U=7447, p_adj=1.0000, r=0.035 [ns]
+      suno vs sonauto: U=8177, p_adj=1.0000, r=0.016 [ns]
+      suno vs mureka: U=9745, p_adj=1.0000, r=-0.102 [ns]
+      udio vs sonauto: U=7354, p_adj=1.0000, r=-0.014 [ns]
+      udio vs mureka: U=8784, p_adj=0.5834, r=-0.139 [ns]
+      sonauto vs mureka: U=9325, p_adj=0.8990, r=-0.122 [ns]
+
+    Production Quality:
+      human vs suno: U=6330, p_adj=0.9709, r=-0.133 [ns]
+      human vs udio: U=5862, p_adj=0.1375, r=-0.203 [ns]
+      human vs sonauto: U=6359, p_adj=0.0935, r=-0.211 [ns]
+      human vs mureka: U=6829, p_adj=0.0554, r=-0.223 [ns]
+      suno vs udio: U=8028, p_adj=1.0000, r=-0.041 [ns]
+      suno vs sonauto: U=8791, p_adj=1.0000, r=-0.058 [ns]
+      suno vs mureka: U=9396, p_adj=1.0000, r=-0.062 [ns]
+      udio vs sonauto: U=7420, p_adj=1.0000, r=-0.023 [ns]
+      udio vs mureka: U=7864, p_adj=1.0000, r=-0.019 [ns]
+      sonauto vs mureka: U=8238, p_adj=1.0000, r=0.009 [ns]
+
+    Emotional Engagement:
+      human vs suno: U=5730, p_adj=1.0000, r=-0.026 [ns]
+      human vs udio: U=5218, p_adj=1.0000, r=-0.071 [ns]
+      human vs sonauto: U=5932, p_adj=1.0000, r=-0.130 [ns]
+      human vs mureka: U=6588, p_adj=0.2515, r=-0.179 [ns]
+      suno vs udio: U=7877, p_adj=1.0000, r=-0.021 [ns]
+      suno vs sonauto: U=8992, p_adj=1.0000, r=-0.082 [ns]
+      suno vs mureka: U=10050, p_adj=0.5360, r=-0.136 [ns]
+      udio vs sonauto: U=7736, p_adj=1.0000, r=-0.067 [ns]
+      udio vs mureka: U=8665, p_adj=0.9290, r=-0.123 [ns]
+      sonauto vs mureka: U=8750, p_adj=1.0000, r=-0.053 [ns]
+
+  --- Ratings by Authenticity Assessment (perceived) ---
+                         aesthetic_quality  playlist_likelihood  musical_creativity  production_quality  emotional_engagement
+authenticity_assessment                                                                                                      
+real                                 6.303                4.649               5.789               6.583                 5.719
+ai-generated                         4.360                3.141               4.021               4.401                 3.887
+uncertain                            4.821                3.952               4.623               5.304                 4.514
+
+  --- Do songs rated higher get classified as 'real' more often? ---
+    Aesthetic Quality: 'real' mean=6.30 vs 'ai' mean=4.36, U=49108, p=2.1823e-23
+    Playlist Likelihood: 'real' mean=4.65 vs 'ai' mean=3.14, U=44638, p=2.6522e-13
+    Musical Creativity: 'real' mean=5.79 vs 'ai' mean=4.02, U=47698, p=7.0642e-20
+    Production Quality: 'real' mean=6.58 vs 'ai' mean=4.40, U=50766, p=5.5937e-28
+    Emotional Engagement: 'real' mean=5.72 vs 'ai' mean=3.89, U=48566, p=4.5820e-22
+
+================================================================================
+4. MIXED-EFFECTS MODELS
+================================================================================
+
+  Modeling ratings with fixed effects for song_source and random
+  intercepts for participant_id (accounting for repeated measures).
+
+
+  --- Aesthetic Quality ---
+  Dependent variable: aesthetic_quality
+  N observations: 591
+  N groups: 6
+  Log-Likelihood: -1232.85
+  Converged: True
+                                                           Coef  Std.Err        z   P>|z|
+C(song_source, Treatment(reference='human'))[T.mureka]  -0.3320   0.2894  -1.1473  0.2513
+C(song_source, Treatment(reference='human'))[T.sonauto] -0.3188   0.2966  -1.0747  0.2825
+C(song_source, Treatment(reference='human'))[T.suno]    -0.0551   0.2893  -0.1903  0.8491
+C(song_source, Treatment(reference='human'))[T.udio]    -0.2708   0.2974  -0.9104  0.3626
+Group Var                                                   NaN      NaN   3.7549  0.0002
+Intercept                                                5.2050   0.3029  17.1848  0.0000
+  Random effect variance (participant): 1.5797
+  ICC (Intraclass Correlation): 0.3252
+
+  --- Playlist Likelihood ---
+  Dependent variable: playlist_likelihood
+  N observations: 591
+  N groups: 6
+  Log-Likelihood: -1198.83
+  Converged: True
+                                                           Coef  Std.Err        z   P>|z|
+C(song_source, Treatment(reference='human'))[T.mureka]  -0.4556   0.2708  -1.6825  0.0925
+C(song_source, Treatment(reference='human'))[T.sonauto] -0.1362   0.2776  -0.4906  0.6237
+C(song_source, Treatment(reference='human'))[T.suno]     0.2065   0.2703   0.7639  0.4449
+C(song_source, Treatment(reference='human'))[T.udio]    -0.0416   0.2784  -0.1494  0.8812
+Group Var                                                   NaN      NaN   4.1818  0.0000
+Intercept                                                3.4503   0.3093  11.1562  0.0000
+  Random effect variance (participant): 2.1874
+  ICC (Intraclass Correlation): 0.4371
+
+  --- Musical Creativity ---
+  Dependent variable: musical_creativity
+  N observations: 591
+  N groups: 6
+  Log-Likelihood: -1204.26
+  Converged: True
+                                                           Coef  Std.Err        z   P>|z|
+C(song_source, Treatment(reference='human'))[T.mureka]  -0.7268   0.2756  -2.6372  0.0084
+C(song_source, Treatment(reference='human'))[T.sonauto] -0.2229   0.2823  -0.7896  0.4298
+C(song_source, Treatment(reference='human'))[T.suno]    -0.3249   0.2752  -1.1807  0.2377
+C(song_source, Treatment(reference='human'))[T.udio]    -0.3053   0.2832  -1.0781  0.2810
+Group Var                                                   NaN      NaN   3.7138  0.0002
+Intercept                                                4.8052   0.2905  16.5395  0.0000
+  Random effect variance (participant): 1.4749
+  ICC (Intraclass Correlation): 0.3321
+
+  --- Production Quality ---
+  Dependent variable: production_quality
+  N observations: 591
+  N groups: 6
+  Log-Likelihood: -1240.00
+  Converged: True
+                                                           Coef  Std.Err        z   P>|z|
+C(song_source, Treatment(reference='human'))[T.mureka]  -0.6341   0.2927  -2.1664  0.0303
+C(song_source, Treatment(reference='human'))[T.sonauto] -0.5469   0.3000  -1.8230  0.0683
+C(song_source, Treatment(reference='human'))[T.suno]    -0.3389   0.2925  -1.1586  0.2466
+C(song_source, Treatment(reference='human'))[T.udio]    -0.6123   0.3009  -2.0350  0.0418
+Group Var                                                   NaN      NaN   3.7187  0.0002
+Intercept                                                5.5645   0.3086  18.0323  0.0000
+  Random effect variance (participant): 1.6745
+  ICC (Intraclass Correlation): 0.3333
+
+  --- Emotional Engagement ---
+  Dependent variable: emotional_engagement
+  N observations: 591
+  N groups: 6
+  Log-Likelihood: -1197.90
+  Converged: True
+                                                           Coef  Std.Err        z   P>|z|
+C(song_source, Treatment(reference='human'))[T.mureka]  -0.2489   0.2722  -0.9145  0.3605
+C(song_source, Treatment(reference='human'))[T.sonauto]  0.0397   0.2788   0.1424  0.8867
+C(song_source, Treatment(reference='human'))[T.suno]     0.3130   0.2718   1.1514  0.2496
+C(song_source, Treatment(reference='human'))[T.udio]     0.1219   0.2796   0.4361  0.6628
+Group Var                                                   NaN      NaN   3.9090  0.0001
+Intercept                                                4.4503   0.2912  15.2812  0.0000
+  Random effect variance (participant): 1.5959
+  ICC (Intraclass Correlation): 0.3565
+
+================================================================================
+5. LOGISTIC REGRESSION — PREDICTORS OF 'SAID AI' AND CORRECT DETECTION
+================================================================================
+
+  --- Model A: P(response = 'ai-generated') on all non-uncertain trials ---
+  Personalized covariates added: age (z), age_missing, taste_breadth (z),
+  listening device (ref=Headphones (on-ear)), environment (ref=Quiet room),
+  favourite-genre match (ref=unknown).
+
+  N observations: 514
+  Pseudo R²: 0.1537
+  Log-Likelihood: -298.12
+  AIC: 640.24
+
+                                                                                              Coef       Std.Err       z   P>|z|  Odds Ratio
+Intercept                                                                                  -4.0442  2.064300e+00 -1.9592  0.0501      0.0175
+C(song_source, Treatment(reference='human'))[T.mureka]                                     -0.0209  5.920090e+06 -0.0000  1.0000      0.9793
+C(song_source, Treatment(reference='human'))[T.sonauto]                                     0.7602  5.920090e+06  0.0000  1.0000      2.1387
+C(song_source, Treatment(reference='human'))[T.suno]                                        0.7603  5.920090e+06  0.0000  1.0000      2.1389
+C(song_source, Treatment(reference='human'))[T.udio]                                       -0.0524  5.920090e+06 -0.0000  1.0000      0.9490
+C(snippet_condition, Treatment(reference='original'))[T.30s]                               -0.4070  3.215000e-01 -1.2660  0.2055      0.6656
+C(participant_age_missing)[T.1]                                                             0.1089  3.454000e-01  0.3153  0.7526      1.1151
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Earbuds/In-ear]         0.0756  3.854000e-01  0.1962  0.8445      1.0785
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.External speakers]      0.0289  4.806000e-01  0.0602  0.9520      1.0294
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Headphones (over-ear)] -0.0249  3.437000e-01 -0.0724  0.9423      0.9754
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Laptop/phone speakers]  0.5980  4.751000e-01  1.2587  0.2082      1.8185
+C(participant_environment, Treatment('Quiet room'))[T.Office/workplace]                    -0.4945  4.158000e-01 -1.1892  0.2344      0.6099
+C(participant_environment, Treatment('Quiet room'))[T.On the street/outdoors]              -2.9350  6.854000e-01 -4.2819  0.0000      0.0531
+C(participant_environment, Treatment('Quiet room'))[T.Public transportation]                1.2514  6.261000e-01  1.9987  0.0456      3.4953
+C(fav_genre_match_label, Treatment('unknown'))[T.match]                                     1.1265  7.803000e-01  1.4436  0.1488      3.0849
+C(fav_genre_match_label, Treatment('unknown'))[T.no-match]                                  0.7971  7.910000e-01  1.0077  0.3136      2.2191
+is_ai_song_int                                                                              1.4473  5.920090e+06  0.0000  1.0000      4.2515
+ai_exp_num                                                                                  0.3533  1.211000e-01  2.9168  0.0035      1.4237
+engagement_num                                                                              0.4757  1.712000e-01  2.7781  0.0055      1.6091
+has_training                                                                               -0.4364  3.208000e-01 -1.3606  0.1736      0.6463
+log_duration                                                                                0.1544  1.532000e-01  1.0077  0.3136      1.1670
+age_z                                                                                      -0.4082  1.586000e-01 -2.5743  0.0100      0.6648
+taste_breadth_z                                                                             0.6165  1.523000e-01  4.0488  0.0001      1.8524
+
+
+  --- Model B: P(correct) on non-uncertain trials ---
+
+  N observations: 514
+  Pseudo R²: 0.1027
+  Log-Likelihood: -305.22
+  AIC: 648.45
+
+                                                                                              Coef  Std.Err       z   P>|z|  Odds Ratio
+Intercept                                                                                  -1.8683   1.7626 -1.0600  0.2891      0.1544
+C(snippet_condition, Treatment(reference='original'))[T.30s]                               -0.2604   0.3112 -0.8367  0.4028      0.7707
+C(participant_age_missing)[T.1]                                                             0.1960   0.3366  0.5825  0.5602      1.2166
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Earbuds/In-ear]         0.4532   0.3854  1.1757  0.2397      1.5733
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.External speakers]      0.0755   0.4855  0.1555  0.8764      1.0784
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Headphones (over-ear)] -0.2125   0.3316 -0.6407  0.5217      0.8086
+C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Laptop/phone speakers] -0.2472   0.4616 -0.5356  0.5923      0.7810
+C(participant_environment, Treatment('Quiet room'))[T.Office/workplace]                    -0.4241   0.4034 -1.0513  0.2931      0.6544
+C(participant_environment, Treatment('Quiet room'))[T.On the street/outdoors]              -1.4282   0.6493 -2.1995  0.0278      0.2397
+C(participant_environment, Treatment('Quiet room'))[T.Public transportation]                0.9044   0.6031  1.4997  0.1337      2.4705
+C(fav_genre_match_label, Treatment('unknown'))[T.match]                                     1.0572   0.3337  3.1676  0.0015      2.8783
+C(fav_genre_match_label, Treatment('unknown'))[T.no-match]                                 -0.1323   0.3104 -0.4262  0.6700      0.8761
+is_ai_song_int                                                                             -0.8022   0.4098 -1.9576  0.0503      0.4484
+ai_exp_num                                                                                  0.3139   0.1205  2.6058  0.0092      1.3688
+engagement_num                                                                              0.7862   0.1819  4.3232  0.0000      2.1951
+has_training                                                                               -1.2180   0.3317 -3.6716  0.0002      0.2958
+log_duration                                                                                0.2051   0.1495  1.3722  0.1700      1.2277
+age_z                                                                                      -0.2865   0.1530 -1.8722  0.0612      0.7509
+taste_breadth_z                                                                             0.2823   0.1395  2.0234  0.0430      1.3262
+
+================================================================================
+6. INTER-RATER RELIABILITY
+================================================================================
+
+  Songs with >=2 annotations: 19
+  Aesthetic Quality: Krippendorff's α = 0.0029
+  Playlist Likelihood: Krippendorff's α = 0.1410
+  Musical Creativity: Krippendorff's α = -0.1612
+  Production Quality: Krippendorff's α = -0.1901
+  Emotional Engagement: Krippendorff's α = -0.1002
+  Authenticity Assessment: Krippendorff's α = -0.0936 (ordinal)
+
+  --- Pairwise Agreement on Doubly-Rated Songs ---
+  (Only 19 songs rated by 2 raters — ICC requires balanced design)
+  Aesthetic Quality: mean |diff|=2.56, r=-0.020 (p=0.9343, n=19 pairs)
+  Playlist Likelihood: mean |diff|=2.54, r=0.143 (p=0.5584, n=19 pairs)
+  Musical Creativity: mean |diff|=3.22, r=-0.168 (p=0.4907, n=19 pairs)
+  Production Quality: mean |diff|=2.91, r=-0.155 (p=0.5254, n=19 pairs)
+  Emotional Engagement: mean |diff|=3.46, r=-0.125 (p=0.6115, n=19 pairs)
+
+================================================================================
+7. PCA OF RATING DIMENSIONS
+================================================================================
+
+  N samples: 591
+
+  --- Explained Variance ---
+    PC1: 72.5% (cumulative: 72.5%)
+    PC2: 9.7% (cumulative: 82.2%)
+    PC3: 7.4% (cumulative: 89.6%)
+    PC4: 5.4% (cumulative: 95.1%)
+    PC5: 4.9% (cumulative: 100.0%)
+
+  --- Component Loadings ---
+                         PC1     PC2     PC3     PC4     PC5
+Aesthetic Quality     0.4688  0.1986 -0.0949 -0.1000  0.8496
+Playlist Likelihood   0.4317 -0.5511 -0.6335 -0.2540 -0.2100
+Musical Creativity    0.4399 -0.3249  0.7572 -0.3357 -0.1217
+Production Quality    0.4286  0.7398 -0.1081 -0.2355 -0.4492
+Emotional Engagement  0.4655 -0.0632  0.0671  0.8703 -0.1321
+
+  --- Correlation Matrix of Ratings ---
+                      Aesthetic Quality  Playlist Likelihood  Musical Creativity  Production Quality  Emotional Engagement
+Aesthetic Quality                 1.000                0.666               0.673               0.716                 0.731
+Playlist Likelihood               0.666                1.000               0.626               0.539                 0.676
+Musical Creativity                0.673                0.626               1.000               0.572                 0.696
+Production Quality                0.716                0.539               0.572               1.000                 0.657
+Emotional Engagement              0.731                0.676               0.696               0.657                 1.000
+
+================================================================================
+8. ANNOTATION DURATION ANALYSIS
+================================================================================
+
+  --- Duration by Source ---
+               mean  median     std
+song_source                        
+human         70.46   44.20  104.69
+mureka       159.52   91.95  339.66
+sonauto      120.18   85.22  123.20
+suno         118.97   86.40  105.15
+udio         159.17   86.21  292.02
+
+  --- Duration by Authenticity Assessment ---
+                           mean  median     std
+authenticity_assessment                        
+ai-generated             138.31   93.35  241.00
+real                     100.45   62.42  132.00
+uncertain                180.15   95.98  340.02
+
+  Kruskal-Wallis (duration ~ assessment): H=27.992, p=8.3505e-07
+  Spearman correlation (duration vs Aesthetic Quality): ρ=-0.041, p=3.1521e-01
+  Spearman correlation (duration vs Playlist Likelihood): ρ=-0.147, p=3.2797e-04
+  Spearman correlation (duration vs Musical Creativity): ρ=-0.106, p=9.6869e-03
+  Spearman correlation (duration vs Production Quality): ρ=-0.155, p=1.5278e-04
+  Spearman correlation (duration vs Emotional Engagement): ρ=-0.114, p=5.6267e-03
+
+================================================================================
+9. AI ASPECTS IDENTIFIED BY PARTICIPANTS
+================================================================================
+
+  --- Aspects cited on TRUE POSITIVES (AI songs correctly flagged, n=267) ---
+  Total aspect mentions: 717, unique: 61
+    Singing voice: 173 (64.8%)
+    Overall composition: 112 (41.9%)
+    Instrument sounds: 97 (36.3%)
+    Lyrics: 97 (36.3%)
+    Rhythm: 77 (28.8%)
+    Harmony: 55 (20.6%)
+    Everything: 51 (19.1%)
+    general artifactiness: 2 (0.7%)
+    The lyrics don't make sense (the world goes to hell? the rats hold their little mouths in the real house?!): 1 (0.4%)
+    The lyrics remind me of the awkward constructions of typical AI models: 1 (0.4%)
+    The artifacts in the harmonic content reminds me of audio diffusion models, and the music is boring as hell.: 1 (0.4%)
+    Sounds like there are glitches in the music; language sounds like Spanish but like made up words (note: I can't speak Spanish): 1 (0.4%)
+    I'd expect the singer to kick in somewhere, this not happening makes it sound like AI.: 1 (0.4%)
+    Quite chaotic rap that makes it suspicious.: 1 (0.4%)
+    not much variation: 1 (0.4%)
+
+  --- Aspects cited on FALSE POSITIVES (real songs called AI, n=22) ---
+  Total aspect mentions: 39, unique: 8
+    Instrument sounds: 10 (45.5%)
+    Overall composition: 9 (40.9%)
+    Singing voice: 6 (27.3%)
+    Lyrics: 5 (22.7%)
+    Rhythm: 5 (22.7%)
+    Harmony: 2 (9.1%)
+    Sounds a little chaotic and like a 90s songs.: 1 (4.5%)
+    Complete chaos.: 1 (4.5%)
+
+  --- AI Aspects by Source (only true positives) ---
+    suno (n=74): Singing voice (51), Instrument sounds (30), Overall composition (28), Lyrics (27), Rhythm (20)
+    udio (n=48): Singing voice (31), Lyrics (20), Instrument sounds (19), Overall composition (19), Rhythm (16)
+    sonauto (n=69): Singing voice (33), Overall composition (28), Lyrics (20), Instrument sounds (20), Everything (15)
+    mureka (n=76): Singing voice (58), Overall composition (37), Lyrics (30), Instrument sounds (28), Rhythm (26)
+
+================================================================================
+10. EFFECT SIZE SUMMARY (Cohen's d for source comparisons)
+================================================================================
+
+  Cohen's d for each rating dimension between sources (all pairs including human):
+
+    Aesthetic Quality:
+      human vs suno: d=0.231 (small)
+      human vs udio: d=0.273 (small)
+      human vs sonauto: d=0.334 (small)
+      human vs mureka: d=0.313 (small)
+      suno vs udio: d=0.016 (negligible)
+      suno vs sonauto: d=0.102 (negligible)
+      suno vs mureka: d=0.071 (negligible)
+      udio vs sonauto: d=0.093 (negligible)
+      udio vs mureka: d=0.060 (negligible)
+      sonauto vs mureka: d=-0.033 (negligible)
+
+    Playlist Likelihood:
+      human vs suno: d=0.141 (negligible)
+      human vs udio: d=0.211 (small)
+      human vs sonauto: d=0.278 (small)
+      human vs mureka: d=0.401 (small)
+      suno vs udio: d=0.059 (negligible)
+      suno vs sonauto: d=0.125 (negligible)
+      suno vs mureka: d=0.231 (small)
+      udio vs sonauto: d=0.068 (negligible)
+      udio vs mureka: d=0.175 (negligible)
+      sonauto vs mureka: d=0.103 (negligible)
+
+    Musical Creativity:
+      human vs suno: d=0.338 (small)
+      human vs udio: d=0.298 (small)
+      human vs sonauto: d=0.281 (small)
+      human vs mureka: d=0.514 (medium)
+      suno vs udio: d=-0.061 (negligible)
+      suno vs sonauto: d=-0.049 (negligible)
+      suno vs mureka: d=0.161 (negligible)
+      udio vs sonauto: d=0.008 (negligible)
+      udio vs mureka: d=0.231 (small)
+      sonauto vs mureka: d=0.209 (small)
+
+    Production Quality:
+      human vs suno: d=0.340 (small)
+      human vs udio: d=0.436 (small)
+      human vs sonauto: d=0.393 (small)
+      human vs mureka: d=0.444 (small)
+      suno vs udio: d=0.057 (negligible)
+      suno vs sonauto: d=0.066 (negligible)
+      suno vs mureka: d=0.068 (negligible)
+      udio vs sonauto: d=0.014 (negligible)
+      udio vs mureka: d=0.012 (negligible)
+      sonauto vs mureka: d=-0.004 (negligible)
+
+    Emotional Engagement:
+      human vs suno: d=0.109 (negligible)
+      human vs udio: d=0.123 (negligible)
+      human vs sonauto: d=0.212 (small)
+      human vs mureka: d=0.342 (small)
+      suno vs udio: d=0.007 (negligible)
+      suno vs sonauto: d=0.102 (negligible)
+      suno vs mureka: d=0.218 (small)
+      udio vs sonauto: d=0.099 (negligible)
+      udio vs mureka: d=0.220 (small)
+      sonauto vs mureka: d=0.109 (negligible)
+
+================================================================================
+11. PER-SONG DETECTION RATE ANALYSIS
+================================================================================
+
+  Songs evaluated: 500 (AI: 427, real: 73)
+
+  --- AI Song Detection Rates (fraction of annotators labelling song 'AI') ---
+    Mean detection rate: 0.609
+    Median:              1.000
+    Std dev:             0.485
+    Distribution of per-song detection rates:
+      0–20%: 164 songs (38.4%)
+      20–40%: 0 songs (0.0%)
+      40–60%: 6 songs (1.4%)
+      60–80%: 0 songs (0.0%)
+      80–100%: 257 songs (60.2%)
+
+  --- Real Song False-Alarm Rates (fraction of annotators labelling song 'AI') ---
+    Mean FA rate: 0.288
+    Median:       0.000
+    Std dev:      0.448
+
+  --- Per-Platform Mean Detection Rate (AI songs only) ---
+         mean_detection_rate    std  n_songs
+source                                      
+unknown                0.609  0.485      427
+
+  --- Hardest AI Songs to Detect (lowest ai_response_rate) ---
+                                     song_id  source  n_annotations  ai_response_rate
+sonauto_2a00fc35-82bd-4716-b327-4f4b6367cbb5 unknown              1               0.0
+   udio_4552e798-871f-4e13-b3cb-f234ce0ed23b unknown              1               0.0
+   suno_afef6b8b-05d1-445e-b9e9-44b6ed684420 unknown              1               0.0
+ mureka_f6e269b4-9476-41b8-be71-38d33e17714e unknown              1               0.0
+sonauto_d3ca2b09-1ff7-458f-b9a4-dd1c4375683f unknown              1               0.0
+
+  --- Easiest AI Songs to Detect (highest ai_response_rate) ---
+                                    song_id  source  n_annotations  ai_response_rate
+mureka_011931d3-43ee-4a30-962f-06dd770c9cf3 unknown              1               1.0
+  suno_1120719b-a905-4e13-80ba-93e13a196df9 unknown              1               1.0
+  suno_2e44d2d8-acae-41c3-9a9e-f469478186b8 unknown              1               1.0
+  suno_23bc6b66-a154-4694-865b-feb00796bcfd unknown              1               1.0
+  suno_2205950f-3e78-4253-8e57-864117f1d6f0 unknown              1               1.0
+
+================================================================================
+12. TRIAL ORDER / FATIGUE ANALYSIS
+================================================================================
+
+  Participants with ≥4 non-uncertain trials: 29
+  Mean within-participant Spearman ρ (trial order vs. accuracy): -0.077
+  One-sample t-test (Fisher-z, H₀: ρ=0): t=-1.226, p=2.3027e-01
+  No significant learning or fatigue effect (p≥0.05).
+
+  --- Mean Accuracy by Trial-Index Quintile (all participants pooled) ---
+                accuracy  n_annotations
+trial_quintile                         
+Q1                 0.718            142
+Q2                 0.621             87
+Q3                 0.619             84
+Q4                 0.561            107
+Q5                 0.564             94
+
+================================================================================
+13. SNIPPET CONDITION: FULL-LENGTH (v1) vs 30-SECOND (v2)
+================================================================================
+
+  v1 annotations were collected against the full song snippet; all new
+  annotations in v2 used a 30-second snippet. Every v1 annotation is reused
+  in v2 (same annotation_id) and is labelled 'original' here; annotations new
+  to v2 are labelled '30s'. Note: the v1 set contains AI platforms only; the
+  30-second set adds real (human) songs, so human comparisons are omitted.
+
+    original: 403 annotations
+    30s: 188 annotations
+
+  --- Ratings by snippet condition (AI songs only, to compare like-for-like) ---
+    Aesthetic Quality: original=4.92 (n=403) vs 30s=5.67 (n=104), U=16717, p=1.4198e-03, d=-0.340
+    Playlist Likelihood: original=3.52 (n=403) vs 30s=4.59 (n=104), U=15174, p=1.2171e-05, d=-0.467
+    Musical Creativity: original=4.48 (n=403) vs 30s=5.37 (n=104), U=15589, p=5.2596e-05, d=-0.425
+    Production Quality: original=5.09 (n=403) vs 30s=5.78 (n=104), U=17306, p=6.0297e-03, d=-0.305
+    Emotional Engagement: original=4.42 (n=403) vs 30s=5.33 (n=104), U=15744, p=8.6212e-05, d=-0.422
+
+  --- AI Detection on AI songs by snippet condition ---
+    original: n=403, HR=55.6%, miss=31.5%, uncertain=12.9%
+    30s: n=104, HR=41.3%, miss=42.3%, uncertain=16.3%
+    Chi-squared (snippet x hit/miss on AI): χ²=5.478, df=1, p=1.9252e-02
+
+  --- Annotation duration by snippet condition ---
+    original: n=403, median=97.7s, mean=146.8s, P25=62.3s, P75=164.8s
+    30s: n=188, median=44.8s, mean=92.0s, P25=31.6s, P75=74.7s
+
+================================================================================
+14. MODEL-VS-HUMAN BENCHMARK
+================================================================================
+
+  Binary thinking grouping: 'non-thinking' = {off, false, none, minimal, low}; 'thinking' = {on, true, enabled, medium, high}.
+  The per-run table below keeps the original thinking intensities for reference;
+  figures 14-16 aggregate runs with the same (base_model, binary_thinking) label.
+
+  Compared 12 model runs against human annotations on 572 unique songs.
+  Songs missing in all model runs: 1 (e.g., unavailable URL case).
+
+  --- Human Baseline (all human annotations) ---
+    Accuracy (non-uncertain): 62.5% | Hit rate on AI: 61.0% | FA rate on real: 28.9% | Uncertain: 13.0% | d'=0.825 | c=0.135
+
+  --- Model Detection Performance ---
+                               model  n_trials  coverage_pct  accuracy_non_uncertain  hit_rate_on_ai  false_alarm_rate_on_real  uncertain_rate  d_prime  criterion  missing_songs
+           Gemini 3.1 Pro (thinking)       571        99.825                   0.858           0.971                     0.815           0.014    0.999     -1.381              1
+       Gemini 3.1 Pro (non-thinking)       571        99.825                   0.845           0.955                     0.835           0.009    0.725     -1.321              1
+Gemini 3.1 Flash Lite (non-thinking)       571        99.825                   0.825           0.959                     0.988           0.000   -0.360     -1.911              1
+    Gemini 3.1 Flash Lite (thinking)       571        99.825                   0.795           0.902                     0.861           0.007    0.223     -1.175              1
+       Gemma 4 E2B IT (non-thinking)       571        99.825                   0.778           0.849                     0.654           0.000    0.637     -0.710              1
+           Gemma 4 E2B IT (thinking)       571        99.825                   0.657           0.697                     0.592           0.030    0.284     -0.372              1
+       Gemma 4 E4B IT (non-thinking)       571        99.825                   0.356           0.276                     0.160           0.000    0.381      0.785              1
+           Gemma 4 E4B IT (thinking)       571        99.825                   0.338           0.246                     0.114           0.030    0.497      0.933              1
+        MOSS Audio 4B (non-thinking)       571        99.825                   0.267           0.168                     0.150           0.035    0.058      0.989              1
+        MOSS Audio 8B (non-thinking)       571        99.825                   0.210           0.094                     0.089           0.023    0.006      1.315              1
+            MOSS Audio 4B (thinking)       571        99.825                   0.196           0.080                     0.111           0.009   -0.201      1.296              1
+            MOSS Audio 8B (thinking)       571        99.825                   0.152           0.012                     0.000           0.000    0.287      2.363              1
+
+  --- Model Position Relative to Human Participant Distribution ---
+    Gemini 3.1 Pro (thinking): accuracy > 54.1% of humans, d' > 72.1% of humans
+    Gemini 3.1 Pro (non-thinking): accuracy > 50.8% of humans, d' > 62.3% of humans
+    Gemini 3.1 Flash Lite (non-thinking): accuracy > 50.8% of humans, d' > 14.8% of humans
+    Gemini 3.1 Flash Lite (thinking): accuracy > 47.5% of humans, d' > 32.8% of humans
+    Gemma 4 E2B IT (non-thinking): accuracy > 47.5% of humans, d' > 44.3% of humans
+    Gemma 4 E2B IT (thinking): accuracy > 39.3% of humans, d' > 34.4% of humans
+    Gemma 4 E4B IT (non-thinking): accuracy > 14.8% of humans, d' > 37.7% of humans
+    Gemma 4 E4B IT (thinking): accuracy > 14.8% of humans, d' > 42.6% of humans
+    MOSS Audio 4B (non-thinking): accuracy > 11.5% of humans, d' > 27.9% of humans
+    MOSS Audio 8B (non-thinking): accuracy > 6.6% of humans, d' > 27.9% of humans
+    MOSS Audio 4B (thinking): accuracy > 4.9% of humans, d' > 21.3% of humans
+    MOSS Audio 8B (thinking): accuracy > 4.9% of humans, d' > 34.4% of humans
+
+  --- Model-Human Rating Alignment (song-level means) ---
+                                      n_song_overlap  mean_spearman_rho  mean_mae
+model                                                                            
+MOSS Audio 4B (non-thinking)                     571              0.012     3.258
+MOSS Audio 4B (thinking)                         571              0.034     3.349
+MOSS Audio 8B (non-thinking)                     571             -0.016     2.754
+MOSS Audio 8B (thinking)                         571              0.001     3.118
+Gemini 3.1 Flash Lite (thinking)                 571              0.076     2.237
+Gemini 3.1 Flash Lite (non-thinking)             571              0.071     2.236
+Gemini 3.1 Pro (thinking)                        571              0.077     2.059
+Gemini 3.1 Pro (non-thinking)                    571              0.106     1.980
+Gemma 4 E2B IT (non-thinking)                    571             -0.007     2.108
+Gemma 4 E2B IT (thinking)                        571              0.048     2.912
+Gemma 4 E4B IT (non-thinking)                    571              0.020     2.374
+Gemma 4 E4B IT (thinking)                        571              0.071     2.831
+
+  --- Aesthetic Quality: Models vs Humans ---
+  (Model means are one judgment/song; human mean aggregates all annotators per song.)
+                               model  model_aesthetic_mean  human_aesthetic_mean  delta_model_minus_human  n_song_overlap  song_level_spearman_rho  song_level_mae
+            MOSS Audio 8B (thinking)                 7.896                  5.16                    2.736             571                      NaN           2.967
+            MOSS Audio 4B (thinking)                 7.829                  5.16                    2.669             571                      NaN           2.930
+           Gemma 4 E2B IT (thinking)                 7.426                  5.16                    2.266             571                    0.073           2.657
+        MOSS Audio 8B (non-thinking)                 7.372                  5.16                    2.212             571                      NaN           2.745
+        MOSS Audio 4B (non-thinking)                 7.244                  5.16                    2.084             571                      NaN           2.706
+           Gemma 4 E4B IT (thinking)                 7.188                  5.16                    2.028             571                      NaN           2.501
+       Gemma 4 E4B IT (non-thinking)                 6.737                  5.16                    1.577             571                    0.012           2.247
+       Gemma 4 E2B IT (non-thinking)                 6.335                  5.16                    1.175             571                    0.010           1.978
+       Gemini 3.1 Pro (non-thinking)                 4.780                  5.16                   -0.380             571                      NaN           1.924
+           Gemini 3.1 Pro (thinking)                 4.700                  5.16                   -0.460             571                      NaN           1.952
+    Gemini 3.1 Flash Lite (thinking)                 4.334                  5.16                   -0.826             571                      NaN           2.140
+Gemini 3.1 Flash Lite (non-thinking)                 3.772                  5.16                   -1.388             571                    0.113           2.234
+
+  --- Statistical Tests: Model Accuracy vs Human Baseline ---
+  Two-proportion z-test (model accuracy vs human aggregate; Bonferroni-corrected α=0.05/n_models)
+  Human baseline: 321/514 = 0.625
+    Gemini 3.1 Pro (thinking)                         : acc=0.858 (n=571), z=8.83, p=1.0132e-18 ***
+    Gemini 3.1 Pro (non-thinking)                     : acc=0.845 (n=571), z=8.25, p=1.5514e-16 ***
+    Gemini 3.1 Flash Lite (non-thinking)              : acc=0.825 (n=571), z=7.42, p=1.1540e-13 ***
+    Gemini 3.1 Flash Lite (thinking)                  : acc=0.795 (n=571), z=6.22, p=4.8758e-10 ***
+    Gemma 4 E2B IT (non-thinking)                     : acc=0.778 (n=571), z=5.52, p=3.3757e-08 ***
+    Gemma 4 E2B IT (thinking)                         : acc=0.657 (n=571), z=1.12, p=2.6459e-01 ns
+    Gemma 4 E4B IT (non-thinking)                     : acc=0.356 (n=571), z=-8.85, p=8.4819e-19 ***
+    Gemma 4 E4B IT (thinking)                         : acc=0.338 (n=571), z=-9.45, p=3.2991e-21 ***
+    MOSS Audio 4B (non-thinking)                      : acc=0.267 (n=571), z=-11.86, p=1.8251e-32 ***
+    MOSS Audio 8B (non-thinking)                      : acc=0.210 (n=571), z=-13.89, p=7.0616e-44 ***
+    MOSS Audio 4B (thinking)                          : acc=0.196 (n=571), z=-14.39, p=6.1562e-47 ***
+    MOSS Audio 8B (thinking)                          : acc=0.152 (n=571), z=-16.03, p=7.7217e-58 ***
+  (Bonferroni threshold: α=0.0042; *** p<α, * p<0.05, ns p≥0.05)
+
+================================================================================
+15. HALO EFFECT BY EVALUATOR (AESTHETIC RATING)
+================================================================================
+  Evaluator                                      n_AI     judged AI mean [95% CI]  n_real     judged real mean [95% CI]      Δ real-AI [95% CI]
+  ---------------------------------------------------------------------------------------------------------------------------------------------
+  Humans                                          289           4.36 [4.12, 4.59]     225             6.30 [6.04, 6.55]    +1.94 [+1.61, +2.29]
+  MOSS Audio 4B (thinking)                         47           6.02 [5.57, 6.43]     514             8.00 [7.95, 8.04]    +1.97 [+1.56, +2.41]
+  Gemini 3.1 Flash Lite (non-thinking)            550           3.70 [3.63, 3.78]      21             5.67 [5.10, 6.19]    +1.97 [+1.39, +2.49]
+  Gemini 3.1 Pro (non-thinking)                   531           4.66 [4.56, 4.76]      35             6.60 [6.09, 7.11]    +1.94 [+1.44, +2.40]
+  Gemini 3.1 Pro (thinking)                       534           4.60 [4.50, 4.70]      29             6.48 [5.79, 7.14]    +1.88 [+1.22, +2.52]
+  Gemini 3.1 Flash Lite (thinking)                508           4.15 [4.04, 4.26]      59             5.90 [5.44, 6.32]    +1.75 [+1.32, +2.21]
+  Gemma 4 E4B IT (non-thinking)                   148           5.82 [5.70, 5.93]     423             7.06 [7.00, 7.12]    +1.24 [+1.11, +1.37]
+  MOSS Audio 8B (non-thinking)                     51           6.59 [6.20, 6.98]     502             7.49 [7.40, 7.58]    +0.91 [+0.54, +1.30]
+  Gemma 4 E4B IT (thinking)                       126           6.53 [6.37, 6.70]     428             7.38 [7.31, 7.45]    +0.85 [+0.67, +1.03]
+  MOSS Audio 4B (non-thinking)                     91           6.62 [6.31, 6.90]     453             7.40 [7.28, 7.52]    +0.78 [+0.48, +1.12]
+  MOSS Audio 8B (thinking)                          6           7.33 [6.67, 7.83]     562             7.90 [7.84, 7.96]    +0.57 [+0.04, +1.21]
+  Gemma 4 E2B IT (thinking)                       378           7.47 [7.38, 7.55]     176             7.53 [7.44, 7.62]    +0.07 [-0.06, +0.19]
+  Gemma 4 E2B IT (non-thinking)                   469           6.35 [6.29, 6.40]     102             6.28 [6.16, 6.41]    -0.06 [-0.21, +0.08]
+
+  (LaTeX fragment written to output/halo_table.tex)
+
+================================================================================
+16. GROUND-TRUTH AESTHETIC RATING BY EVALUATOR
+================================================================================
+  Evaluator                                      n_AI     AI-song mean [95% CI]  n_real     real-song mean [95% CI]      Δ real-AI [95% CI]
+  -----------------------------------------------------------------------------------------------------------------------------------------
+  Humans                                          507         5.07 [4.88, 5.26]      84           5.68 [5.27, 6.11]    +0.61 [+0.14, +1.07]
+  Gemini 3.1 Pro (thinking)                       483         4.62 [4.51, 4.73]      81           5.16 [4.86, 5.47]    +0.54 [+0.21, +0.85]
+  Gemini 3.1 Pro (non-thinking)                   488         4.74 [4.63, 4.85]      79           5.04 [4.77, 5.30]    +0.30 [+0.01, +0.60]
+  MOSS Audio 4B (non-thinking)                    479         7.21 [7.08, 7.34]      79           7.44 [7.14, 7.72]    +0.23 [-0.09, +0.54]
+  Gemma 4 E4B IT (thinking)                       475         7.16 [7.08, 7.23]      79           7.38 [7.19, 7.54]    +0.22 [+0.04, +0.40]
+  Gemma 4 E4B IT (non-thinking)                   490         6.72 [6.65, 6.80]      81           6.84 [6.65, 7.01]    +0.12 [-0.09, +0.33]
+  MOSS Audio 8B (non-thinking)                    485         7.36 [7.25, 7.47]      80           7.45 [7.22, 7.67]    +0.09 [-0.17, +0.34]
+  MOSS Audio 8B (thinking)                        487         7.91 [7.84, 7.98]      81           7.80 [7.59, 8.00]    -0.11 [-0.35, +0.10]
+  Gemma 4 E2B IT (non-thinking)                   490         6.36 [6.30, 6.41]      81           6.20 [6.05, 6.33]    -0.16 [-0.31, -0.00]
+  Gemma 4 E2B IT (thinking)                       490         7.45 [7.37, 7.53]      81           7.26 [7.06, 7.44]    -0.19 [-0.40, +0.02]
+  MOSS Audio 4B (thinking)                        482         7.86 [7.78, 7.93]      80           7.65 [7.38, 7.89]    -0.21 [-0.50, +0.05]
+  Gemini 3.1 Flash Lite (thinking)                488         4.37 [4.24, 4.50]      81           4.12 [3.85, 4.43]    -0.25 [-0.58, +0.08]
+  Gemini 3.1 Flash Lite (non-thinking)            490         3.84 [3.76, 3.94]      81           3.35 [3.22, 3.47]    -0.50 [-0.65, -0.34]
+
+  (LaTeX fragment written to output/gt_rating_table.tex)
+
+================================================================================
+17. AESTHETIC PREDICTORS: CROSSED MIXED-EFFECTS MODEL
+================================================================================
+
+  Linear mixed-effects model on aesthetic_quality (1-10) with
+  crossed random intercepts for participant and song (REML).
+  Genre is collapsed to broad families (first matching token in
+  song_genres). Continuous predictor (log annotation duration) is
+  z-scored for interpretable coefficients.
+  Pseudo-R^2 follows Nakagawa & Schielzeth (2013).
+
+  N = 591 annotations | 61 participants | 572 songs | 7 genre families (genre reference: Pop)
+  Reference levels: source=human, judged=real, snippet=original, engagement=casual, genre=Pop, device=Headphones (on-ear), environment=Quiet room, fav-genre=unknown, familiarity=never
+  Genre distribution: Other=396, Pop=45, Reggae/Latin=33, Rock/Metal=32, Hip-Hop/Rap=32, Electronic=27, R&B/Soul=26
+
+  --- Fixed Effects ---
+  Term                                                              beta      SE                  95% CI           p
+  ------------------------------------------------------------------------------------------------------------------
+  Intercept                                                       +4.285   0.537          [+3.23, +5.34]   1.497e-15 ***
+  Source = mureka                                                 +0.209   0.332          [-0.44, +0.86]      0.5295 
+  Source = sonauto                                                +0.125   0.696          [-1.24, +1.49]      0.8571 
+  Source = suno                                                   +0.388   0.688          [-0.96, +1.74]      0.5729 
+  Source = udio                                                   +0.053   0.692          [-1.30, +1.41]      0.9391 
+  Judged = ai-generated                                           -1.708   0.182          [-2.06, -1.35]   5.455e-21 ***
+  Judged = uncertain                                              -1.232   0.257          [-1.74, -0.73]   1.605e-06 ***
+  Genre = Electronic                                              -0.279   0.442          [-1.14, +0.59]      0.5285 
+  Genre = Hip-Hop/Rap                                             -0.567   0.417          [-1.38, +0.25]      0.1737 
+  Genre = Other                                                   +0.117   0.456          [-0.78, +1.01]       0.797 
+  Genre = R&B/Soul                                                +0.006   0.447          [-0.87, +0.88]      0.9887 
+  Genre = Reggae/Latin                                            -0.708   0.439          [-1.57, +0.15]      0.1068 
+  Genre = Rock/Metal                                              -0.634   0.434          [-1.48, +0.22]      0.1438 
+  Snippet = 30s                                                   +0.042   0.261          [-0.47, +0.55]      0.8737 
+  Engagement = enthusiast                                         -1.712   0.322          [-2.34, -1.08]   1.013e-07 ***
+  Engagement = musician                                           -0.284   0.256          [-0.78, +0.22]      0.2666 
+  Engagement = professional                                       -2.485   0.530          [-3.52, -1.45]   2.782e-06 ***
+  AI-exp. = never used ai music tools                             +1.534   0.482          [+0.59, +2.48]    0.001459 **
+  AI-exp. = professional experience with ai music                 +1.911   0.453          [+1.02, +2.80]   2.417e-05 ***
+  AI-exp. = tried once or twice                                   +1.183   0.324          [+0.55, +1.82]   0.0002676 ***
+  AI-exp. = use occasionally                                      +1.688   0.344          [+1.01, +2.36]   9.115e-07 ***
+  AI-exp. = use regularly                                         +1.613   0.441          [+0.75, +2.48]   0.0002536 ***
+  AgeMissing = 1                                                  -0.690   0.293          [-1.26, -0.11]     0.01868 *
+  Device = Earbuds/In-ear                                         +1.773   0.356          [+1.08, +2.47]   6.136e-07 ***
+  Device = External speakers                                      +0.574   0.379          [-0.17, +1.32]      0.1295 
+  Device = Headphones (over-ear)                                  +0.819   0.280          [+0.27, +1.37]    0.003425 **
+  Device = Laptop/phone speakers                                  +1.077   0.424          [+0.25, +1.91]     0.01111 *
+  Environment = Office/workplace                                  -0.413   0.355          [-1.11, +0.28]      0.2453 
+  Environment = On the street/outdoors                            +2.361   0.574          [+1.24, +3.49]    3.94e-05 ***
+  Environment = Public transportation                             +0.642   0.455          [-0.25, +1.53]      0.1582 
+  FavGenre = match                                                +0.409   0.679          [-0.92, +1.74]      0.5468 
+  FavGenre = no-match                                             +0.585   0.713          [-0.81, +1.98]      0.4121 
+  Familiarity = familiar                                          +1.276   0.269          [+0.75, +1.80]   2.059e-06 ***
+  Familiarity = uncertain                                         +0.017   0.314          [-0.60, +0.63]      0.9563 
+  log_duration_z                                                  +0.334   0.100          [+0.14, +0.53]   0.0008843 ***
+  Age (z)                                                         +0.047   0.118          [-0.18, +0.28]       0.689 
+  TasteBreadth (z)                                                -0.079   0.102          [-0.28, +0.12]      0.4411 
+
+  --- Variance Components ---
+  sigma^2 (residual)    = 1.656
+  tau^2 (participant)   = 0.000 (boundary; absorbed by participant covariates)
+  tau^2 (song)          = 1.656
+  Marginal R^2 (fixed only)        = 0.342
+  Conditional R^2 (fixed + random) = 0.671
+  Log-likelihood (REML)            = -1190.020
+  Significant positive predictors (higher aesthetics):
+    + Environment = On the street/outdoors: beta=+2.361, p=3.94e-05
+    + AI-exp. = professional experience with ai music: beta=+1.911, p=2.417e-05
+    + Device = Earbuds/In-ear: beta=+1.773, p=6.136e-07
+    + AI-exp. = use occasionally: beta=+1.688, p=9.115e-07
+    + AI-exp. = use regularly: beta=+1.613, p=0.0002536
+    + AI-exp. = never used ai music tools: beta=+1.534, p=0.001459
+    + Familiarity = familiar: beta=+1.276, p=2.059e-06
+    + AI-exp. = tried once or twice: beta=+1.183, p=0.0002676
+    + Device = Laptop/phone speakers: beta=+1.077, p=0.01111
+    + Device = Headphones (over-ear): beta=+0.819, p=0.003425
+    + log_duration_z: beta=+0.334, p=0.0008843
+  Significant negative predictors (lower aesthetics):
+    - Engagement = professional: beta=-2.485, p=2.782e-06
+    - Engagement = enthusiast: beta=-1.712, p=1.013e-07
+    - Judged = ai-generated: beta=-1.708, p=5.455e-21
+    - Judged = uncertain: beta=-1.232, p=1.605e-06
+    - AgeMissing = 1: beta=-0.690, p=0.01868
+
+  (LaTeX fragment written to output/aesthetic_lmm_table.tex)
+
+================================================================================
+17b. DETECTION PREDICTORS: LOGISTIC REGRESSION (parallel to aesthetic LMM)
+================================================================================
+
+  Logistic regression on is_correct (1 = correct AI/real call) on
+  non-uncertain trials. Cluster-robust SE (clustered by participant)
+  to account for repeated measures. Predictors mirror the aesthetic
+  LMM exactly, swapping judged-authenticity for ground-truth (since
+  judged authenticity defines the outcome here).
+
+  N = 514 non-uncertain annotations | 61 participants | 500 songs
+  Reference levels: source=human, snippet=original, engagement=casual, genre=Pop, device=Headphones (on-ear), environment=Quiet room, fav-genre=unknown, familiarity=never
+
+  --- Fixed effects (logistic; cluster-robust SE) ---
+  N obs = 514, log-lik = -298.18, pseudo-R^2 = 0.123, AIC = 666.37
+  Term                                                              beta      OR               95% OR CI           p
+  ------------------------------------------------------------------------------------------------------------------
+  Intercept                                                       -0.643    0.53            [0.06, 4.64]      0.5628 
+  Source = mureka                                                 -0.843    0.43            [0.11, 1.74]      0.2362 
+  Source = sonauto                                                -0.019    0.98            [0.14, 6.72]      0.9846 
+  Source = suno                                                   +0.048    1.05            [0.17, 6.39]      0.9581 
+  Source = udio                                                   -0.701    0.50            [0.09, 2.69]      0.4165 
+  Genre = Electronic                                              -0.812    0.44            [0.17, 1.16]     0.09704 
+  Genre = Hip-Hop/Rap                                             -0.250    0.78            [0.25, 2.41]      0.6642 
+  Genre = Other                                                   +1.100    3.01           [0.28, 31.89]      0.3612 
+  Genre = R&B/Soul                                                -0.445    0.64            [0.18, 2.23]      0.4848 
+  Genre = Reggae/Latin                                            -0.621    0.54            [0.22, 1.32]       0.174 
+  Genre = Rock/Metal                                              -0.392    0.68            [0.26, 1.74]      0.4152 
+  Snippet = 30s                                                   -0.527    0.59            [0.29, 1.19]      0.1385 
+  Engagement = enthusiast                                         +1.190    3.29           [0.78, 13.82]      0.1042 
+  Engagement = musician                                           +1.090    2.97            [1.13, 7.80]     0.02678 *
+  Engagement = professional                                       +0.262    1.30           [0.12, 14.41]      0.8309 
+  AI-exp. = never used ai music tools                             -1.036    0.35            [0.08, 1.63]       0.183 
+  AI-exp. = professional experience with ai music                 +0.596    1.82           [0.26, 12.89]       0.551 
+  AI-exp. = tried once or twice                                   -0.665    0.51            [0.14, 1.86]      0.3107 
+  AI-exp. = use occasionally                                      -0.224    0.80            [0.20, 3.17]      0.7504 
+  AI-exp. = use regularly                                         +0.539    1.72           [0.27, 10.89]      0.5673 
+  AgeMissing = 1                                                  +0.463    1.59            [0.56, 4.51]      0.3849 
+  Device = Earbuds/In-ear                                         -0.006    0.99            [0.27, 3.68]       0.993 
+  Device = External speakers                                      +0.112    1.12            [0.31, 4.04]      0.8638 
+  Device = Headphones (over-ear)                                  -0.172    0.84            [0.26, 2.78]      0.7778 
+  Device = Laptop/phone speakers                                  -0.737    0.48            [0.10, 2.26]      0.3528 
+  Environment = Office/workplace                                  -1.129    0.32            [0.09, 1.14]      0.0795 
+  Environment = On the street/outdoors                            -0.843    0.43            [0.06, 2.90]       0.387 
+  Environment = Public transportation                             +0.448    1.57            [0.45, 5.40]       0.478 
+  FavGenre = match                                                +2.914   18.44          [3.15, 107.91]    0.001226 **
+  FavGenre = no-match                                             +1.973    7.20           [1.05, 49.35]     0.04456 *
+  Familiarity = familiar                                          -0.753    0.47            [0.22, 1.02]     0.05593 
+  Familiarity = uncertain                                         -0.951    0.39            [0.12, 1.27]      0.1164 
+  log\_duration\_z                                                +0.227    1.26            [0.90, 1.75]       0.182 
+  Age (z)                                                         +0.046    1.05            [0.69, 1.59]       0.829 
+  TasteBreadth (z)                                                +0.108    1.11            [0.80, 1.55]      0.5248 
+
+  Tjur's coefficient of discrimination = 0.151
+
+  (LaTeX fragment written to output/detection_lmm_table.tex)
+
+================================================================================
+18. PERSONALIZED PERCEPTION: AGE, TASTE & LISTENING CONDITIONS
+================================================================================
+
+  Each annotation is tagged with the rater's age, favourite music
+  genres, listening device and ambient environment. The same
+  song can be heard by raters who do or do not list its genre as a
+  favourite, on different devices, in different rooms. We treat
+  these as first-class predictors of detection accuracy and
+  aesthetic ratings, turning the dataset into a *personalised*
+  perceptual benchmark.
+
+  --- Accuracy & aesthetics by age bucket ---
+                n  accuracy  aesthetic_mean  hit_rate_AI  fa_rate_real
+age_bucket                                                            
+<=24        130.0     0.631           5.478        0.590          0.36
+25-34       181.0     0.533           4.933        0.410          0.28
+35-44        75.0     0.689           5.621        0.554          0.10
+45+          23.0     0.526           5.091        0.435           NaN
+
+  --- By favourite-genre match (song genre vs rater favourites) ---
+                           n  accuracy  aesthetic_mean  hit_rate_AI  fa_rate_real
+fav_genre_match_label                                                            
+match                   92.0     0.798           5.125        0.750         0.188
+no-match               114.0     0.598           5.423        0.419         0.308
+unknown                385.0     0.589           5.090        0.509           NaN
+
+  --- By listening device ---
+                                  n  accuracy  aesthetic_mean  hit_rate_AI  fa_rate_real
+participant_listening_device                                                            
+Earbuds/In-ear                102.0     0.705           5.238        0.520          0.00
+External speakers              86.0     0.653           4.955        0.561          0.25
+Headphones (on-ear)           170.0     0.537           5.079        0.447          0.20
+Headphones (over-ear)         147.0     0.715           4.802        0.642          0.40
+Laptop/phone speakers          86.0     0.537           6.043        0.429          0.30
+
+  --- By listening environment ---
+                             n  accuracy  aesthetic_mean  hit_rate_AI  fa_rate_real
+participant_environment                                                            
+Office/workplace          53.0     0.511           5.151        0.434           NaN
+On the street/outdoors    50.0     0.532           7.012        0.343         0.067
+Public transportation     30.0     0.577           4.930        0.500           NaN
+Quiet room               458.0     0.652           4.974        0.558         0.304
+
+  --- By taste breadth (number of favourite genres) ---
+                   n  accuracy  aesthetic_mean  hit_rate_AI  fa_rate_real
+breadth_q                                                                
+(-0.001, 3.0]  152.0     0.550           5.438        0.403         0.121
+(3.0, 4.0]     152.0     0.654           4.563        0.570         0.000
+(4.0, 6.0]     174.0     0.609           5.812        0.500         0.300
+(6.0, 15.0]    113.0     0.707           4.585        0.656         0.450
+
+  --- By song familiarity (per-trial self-report) ---
+                       n  accuracy  aesthetic_mean  hit_rate_AI  fa_rate_real
+familiarity_level                                                            
+familiar            57.0     0.519           6.454        0.440         0.286
+never              495.0     0.650           4.997        0.553         0.270
+uncertain           39.0     0.452           5.338        0.333         0.000
+
+  --- Robustness: detection metrics restricted to familiarity = 'never' (uncontaminated perceptual condition) ---
+    n_trials=495, n_non_uncertain=431, accuracy=65.0%, hit_rate=0.640, far=0.299, d'=0.878, c=0.081, uncertain_rate=12.9%
+
+  --- Logistic regression on correctness (personalized terms only shown) ---
+  N=514, pseudo-R^2=0.081, log-lik=-312.52, AIC=661.05
+    C(participant_age_missing)[T.1]: beta=+0.229, OR=1.257, 95% CI [0.66, 2.41], p=0.4911
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Earbuds/In-ear]: beta=+0.235, OR=1.265, 95% CI [0.60, 2.66], p=0.5353
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.External speakers]: beta=+0.058, OR=1.060, 95% CI [0.43, 2.62], p=0.8994
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Headphones (over-ear)]: beta=+0.142, OR=1.152, 95% CI [0.62, 2.13], p=0.6526
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Laptop/phone speakers]: beta=-0.343, OR=0.709, 95% CI [0.29, 1.72], p=0.446
+    C(participant_environment, Treatment('Quiet room'))[T.Office/workplace]: beta=-0.854, OR=0.426, 95% CI [0.20, 0.91], p=0.02658
+    C(participant_environment, Treatment('Quiet room'))[T.On the street/outdoors]: beta=-0.212, OR=0.809, 95% CI [0.28, 2.36], p=0.6979
+    C(participant_environment, Treatment('Quiet room'))[T.Public transportation]: beta=+0.349, OR=1.418, 95% CI [0.48, 4.22], p=0.5304
+    C(fav_genre_match_label, Treatment('unknown'))[T.match]: beta=+0.987, OR=2.684, 95% CI [1.41, 5.11], p=0.002634
+    C(fav_genre_match_label, Treatment('unknown'))[T.no-match]: beta=-0.188, OR=0.829, 95% CI [0.45, 1.52], p=0.5448
+    age_z: beta=-0.019, OR=0.982, 95% CI [0.76, 1.26], p=0.8858
+    taste_breadth_z: beta=+0.133, OR=1.142, 95% CI [0.90, 1.45], p=0.2779
+
+  --- LMM on aesthetic quality (personalized terms only shown) ---
+  N=591, participants=61, songs=572, log-lik=-1233.91
+    C(participant_age_missing)[T.1]: beta=-0.121, 95% CI [-0.63, +0.39], p=0.6439
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Earbuds/In-ear]: beta=+0.682, 95% CI [+0.09, +1.27], p=0.02366
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.External speakers]: beta=+0.240, 95% CI [-0.49, +0.97], p=0.5172
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Headphones (over-ear)]: beta=+0.212, 95% CI [-0.28, +0.71], p=0.3991
+    C(participant_listening_device, Treatment('Headphones (on-ear)'))[T.Laptop/phone speakers]: beta=-0.185, 95% CI [-0.89, +0.52], p=0.6096
+    C(participant_environment, Treatment('Quiet room'))[T.Office/workplace]: beta=-0.117, 95% CI [-0.73, +0.50], p=0.7091
+    C(participant_environment, Treatment('Quiet room'))[T.On the street/outdoors]: beta=+2.441, 95% CI [+1.56, +3.32], p=6.186e-08
+    C(participant_environment, Treatment('Quiet room'))[T.Public transportation]: beta=-0.137, 95% CI [-1.00, +0.72], p=0.7553
+    C(fav_genre_match_label, Treatment('unknown'))[T.match]: beta=+0.358, 95% CI [-0.49, +1.20], p=0.4075
+    C(fav_genre_match_label, Treatment('unknown'))[T.no-match]: beta=+0.365, 95% CI [-0.48, +1.21], p=0.3994
+    age_z: beta=+0.255, 95% CI [+0.05, +0.46], p=0.01593
+    taste_breadth_z: beta=-0.191, 95% CI [-0.38, +0.00], p=0.05268
+
+  (LaTeX fragment written to output/personalization_table.tex)
+  (LaTeX fragment written to output/accuracy_by_group_table.tex)
+
+================================================================================
+19. AUDIOBOX-AESTHETICS COMPARISON
+================================================================================
+
+  Loaded audiobox scores for 571 songs (v1 full snippets: 390; v2-v1 cropped 29s: 181).
+  Mapping audiobox -> our dimensions: CE->aesthetic_quality, CU->playlist_likelihood, PC->musical_creativity, PQ->production_quality. Both scales are 1-10.
+
+  --- Global means by source (audiobox vs humans) ---
+         n_audiobox  n_human  CE_aes  CE_human  CU_aes  CU_human  PC_aes  PC_human  PQ_aes  PQ_human
+source                                                                                              
+human            81       84    7.11      5.68    7.51      4.31    6.68      5.42    7.81      6.06
+suno            126      133    7.33      5.18    7.75      3.99    6.41      4.70    8.04      5.34
+udio            113      116    6.87      5.15    7.28      3.85    6.01      4.83    7.42      5.21
+sonauto         122      125    7.24      4.94    7.55      3.69    6.34      4.81    7.91      5.18
+mureka          129      133    7.42      5.02    7.79      3.45    6.37      4.36    8.23      5.19
+
+  --- Song-level alignment with human song means ---
+audiobox_axis            axis_label           human_dim  n_songs  spearman_rho  pearson_r   mae  mean_diff_aes_minus_human  p_spearman
+           CE     Content Enjoyment   aesthetic_quality      571         0.157      0.169 2.414                      2.038       0.000
+           CU    Content Usefulness playlist_likelihood      571         0.007      0.051 3.876                      3.770       0.872
+           PC Production Complexity  musical_creativity      571         0.132      0.115 2.166                      1.579       0.002
+           PQ    Production Quality  production_quality      571         0.091      0.141 2.780                      2.559       0.029
+
+  --- Per-source song-level Spearman rho ---
+                    axis  human  n_human   suno  n_suno  udio  n_udio  sonauto  n_sonauto  mureka  n_mureka
+  CE (aesthetic_quality)  0.126       81  0.152     126 0.179     113    0.272        122   0.098       129
+CU (playlist_likelihood)  0.174       81 -0.015     126 0.111     113    0.002        122   0.061       129
+ PC (musical_creativity)  0.039       81  0.063     126 0.028     113    0.174        122   0.188       129
+ PQ (production_quality) -0.017       81  0.159     126 0.219     113    0.134        122   0.051       129
+
+  --- Cross-evaluator alignment with humans (per audiobox axis) ---
+  rho_X = song-level Spearman between evaluator's estimate of X and human song means on the mapped dimension.
+                           evaluator     kind  rho_CE  rho_CU  rho_PC  rho_PQ  mae_CE  mae_CU  mae_PC  mae_PQ
+                 Audiobox-Aesthetics audiobox   0.157   0.007   0.132   0.091   2.414   3.876   2.166   2.780
+                              Humans    human   1.000   1.000   1.000   1.000   0.000   0.000   0.000   0.000
+Gemini 3.1 Flash Lite (non-thinking)    model   0.113   0.083  -0.011   0.067   2.234   2.012   2.064   2.352
+    Gemini 3.1 Flash Lite (thinking)    model   0.111   0.100  -0.015   0.044   2.140   2.139   2.106   2.280
+       Gemini 3.1 Pro (non-thinking)    model   0.141   0.099   0.029   0.098   1.924   2.210   1.906   1.971
+           Gemini 3.1 Pro (thinking)    model   0.125   0.082   0.038   0.089   1.952   2.191   1.917   2.013
+       Gemma 4 E2B IT (non-thinking)    model   0.010  -0.028  -0.037  -0.019   1.978   2.890   2.155   1.981
+           Gemma 4 E2B IT (thinking)    model   0.073   0.034  -0.004   0.041   2.657   3.778   2.964   2.539
+       Gemma 4 E4B IT (non-thinking)    model   0.012   0.055   0.072  -0.022   2.247   3.186   2.412   2.223
+           Gemma 4 E4B IT (thinking)    model   0.054   0.037   0.076   0.064   2.501   3.565   2.735   2.381
+        MOSS Audio 4B (non-thinking)    model   0.006   0.075   0.095   0.041   2.706   3.699   2.876   2.585
+            MOSS Audio 4B (thinking)    model   0.081  -0.002   0.004   0.077   2.930   4.154   3.292   2.776
+        MOSS Audio 8B (non-thinking)    model  -0.011   0.003  -0.018  -0.077   2.745   3.830   2.990   2.684
+            MOSS Audio 8B (thinking)    model   0.011   0.043   0.007   0.004   2.967   4.183   3.320   2.852
+
+  (LaTeX fragment written to output/audiobox_table.tex)
+
+  --- Take-aways ---
+  Best-aligned axis: CE (Content Enjoyment) <-> aesthetic_quality: rho=0.157, MAE=2.41, Δ(aes-human)=+2.04
+  Weakest-aligned axis: CU (Content Usefulness) <-> playlist_likelihood: rho=0.007, MAE=3.88, Δ(aes-human)=+3.77
+  (Per-song scores: output/audiobox_song_scores.csv)
+
+================================================================================
+20. SONGEVAL + AUDIO AESTHETICS COMPARISON
+================================================================================
+
+  Loaded SongEval scores for 571 songs (v1 full snippets: 390; v2-v1 cropped 29s: 181).
+  Mapping SongEval -> our dimensions: Musicality->aesthetic_quality, Coherence->production_quality, Memorability->playlist_likelihood, Clarity->musical_creativity, Naturalness->emotional_engagement. Both scales are 1-10.
+
+  --- Global means by source (SongEval vs humans) ---
+         n_songeval  n_human  Musicality_se  Musicality_human  Coherence_se  Coherence_human  Memorability_se  Memorability_human  Clarity_se  Clarity_human  Naturalness_se  Naturalness_human
+source                                                                                                                                                                                         
+human            81       84           3.58              5.68          3.80             6.06             3.68                4.31        3.57           5.42            3.52               5.02
+suno            126      133           3.84              5.18          4.07             5.34             3.93                3.99        3.83           4.70            3.73               4.79
+udio            113      116           3.31              5.15          3.55             5.21             3.39                3.85        3.28           4.83            3.21               4.78
+sonauto         122      125           3.43              4.94          3.67             5.18             3.51                3.69        3.40           4.81            3.33               4.56
+mureka          129      133           3.60              5.02          3.79             5.19             3.59                3.45        3.57           4.36            3.46               4.32
+
+  --- Song-level alignment with human song means ---
+songeval_axis                              axis_label            human_dim  n_songs  spearman_rho  pearson_r   mae  mean_diff_songeval_minus_human  p_spearman
+   Musicality                      Overall Musicality    aesthetic_quality      571         0.139      0.157 2.249                          -1.613       0.001
+    Coherence                       Overall Coherence   production_quality      571         0.104      0.135 2.231                          -1.560       0.013
+ Memorability                            Memorability  playlist_likelihood      571         0.113      0.118 1.928                          -0.200       0.007
+      Clarity               Clarity of Song Structure   musical_creativity      571         0.031      0.062 2.028                          -1.232       0.455
+  Naturalness Naturalness of Vocal Breathing/Phrasing emotional_engagement      571         0.122      0.132 2.018                          -1.214       0.003
+
+  --- Per-source song-level Spearman rho ---
+                              axis  human  n_human   suno  n_suno   udio  n_udio  sonauto  n_sonauto  mureka  n_mureka
+    Musicality (aesthetic_quality)  0.194       81  0.082     126 -0.035     113    0.383        122   0.070       129
+    Coherence (production_quality)  0.175       81 -0.002     126 -0.024     113    0.296        122   0.047       129
+Memorability (playlist_likelihood) -0.010       81  0.038     126  0.078     113    0.253        122   0.101       129
+      Clarity (musical_creativity)  0.114       81 -0.018     126 -0.013     113    0.178        122  -0.088       129
+Naturalness (emotional_engagement) -0.027       81  0.074     126  0.022     113    0.345        122   0.049       129
+
+  --- Direct SongEval vs Audiobox-Aesthetics on matched dimensions ---
+  Pairs are matched only when both front-ends map to the same human rating dimension; SongEval Naturalness has no Audiobox analogue.
+          human_dim songeval_axis audiobox_axis  n_songs  rho_songeval_vs_human  rho_audiobox_vs_human  rho_songeval_vs_audiobox  pearson_songeval_vs_audiobox  mae_songeval_vs_audiobox  mean_diff_songeval_minus_audiobox  p_songeval_vs_audiobox
+  aesthetic_quality    Musicality            CE      571                  0.139                  0.157                     0.520                         0.603                     3.651                             -3.651                     0.0
+ production_quality     Coherence            PQ      571                  0.104                  0.091                     0.435                         0.490                     4.119                             -4.119                     0.0
+playlist_likelihood  Memorability            CU      571                  0.113                  0.007                     0.327                         0.422                     3.970                             -3.970                     0.0
+ musical_creativity       Clarity            PC      571                  0.031                  0.132                     0.351                         0.485                     2.813                             -2.811                     0.0
+
+  --- Our Music-Aesthetics model vs human song means ---
+  Loaded scores for 571 songs (v1 full snippets: 390; v2-v1 cropped 29s: 181). Raw 1-5 outputs are endpoint-rescaled to 1-10 for this comparison.
+              axis mapped_songeval_axis            human_dim  n_songs  spearman_rho  pearson_r   mae  mean_diff_our_minus_human  p_spearman
+Overall_Aesthetics           Musicality    aesthetic_quality      571         0.088      0.100 2.235                      0.848       0.035
+         Coherence            Coherence   production_quality      571         0.073      0.093 2.261                      1.079       0.082
+      Memorability         Memorability  playlist_likelihood      571         0.075      0.083 3.038                      2.351       0.073
+           Clarity              Clarity   musical_creativity      571         0.029      0.058 2.271                      1.016       0.488
+       Naturalness          Naturalness emotional_engagement      571         0.099      0.107 2.215                      1.067       0.018
+
+  --- Our model vs SongEval/Audiobox front-ends ---
+           human_dim               axis mapped_songeval_axis audiobox_axis  n_songs  rho_our_vs_human  rho_songeval_vs_human  rho_audiobox_vs_human  rho_our_vs_songeval  mae_our_vs_songeval  rho_our_vs_audiobox  mae_our_vs_audiobox
+   aesthetic_quality Overall_Aesthetics           Musicality            CE      571             0.088                  0.139                  0.157                0.687                2.478                0.450                1.577
+  production_quality          Coherence            Coherence            PQ      571             0.073                  0.104                  0.091                0.692                2.640                0.388                1.672
+ playlist_likelihood       Memorability         Memorability            CU      571             0.075                  0.113                  0.007                0.690                2.588                0.368                1.848
+  musical_creativity            Clarity              Clarity            PC      571             0.029                  0.031                  0.132                0.684                2.279                0.297                1.403
+emotional_engagement        Naturalness          Naturalness           NaN      571             0.099                  0.122                    NaN                0.691                2.286                  NaN                  NaN
+
+  --- Cross-evaluator alignment with humans (per SongEval axis) ---
+                           evaluator                 kind  rho_Musicality  rho_Coherence  rho_Memorability  rho_Clarity  rho_Naturalness  mae_Musicality  mae_Coherence  mae_Memorability  mae_Clarity  mae_Naturalness
+                            SongEval             songeval           0.139          0.104             0.113        0.031            0.122           2.249          2.231             1.928        2.028            2.018
+                              Humans                human           1.000          1.000             1.000        1.000            1.000           0.000          0.000             0.000        0.000            0.000
+                 Audiobox-Aesthetics             audiobox           0.157          0.091             0.007        0.132              NaN           2.414          2.780             3.876        2.166              NaN
+                Our Music-Aesthetics our_music_aesthetics           0.088          0.073             0.075        0.029            0.099           2.235          2.261             3.038        2.271            2.215
+Gemini 3.1 Flash Lite (non-thinking)                model           0.113          0.033             0.079        0.021            0.108           2.234          2.156             2.146        2.231            2.412
+    Gemini 3.1 Flash Lite (thinking)                model           0.111          0.068             0.097        0.012            0.090           2.140          2.174             2.244        2.198            2.428
+       Gemini 3.1 Pro (non-thinking)                model           0.141          0.099             0.099        0.066            0.123           1.924          2.054             2.037        1.928            1.958
+           Gemini 3.1 Pro (thinking)                model           0.125          0.051             0.073        0.083            0.051           1.952          2.248             2.113        1.970            2.012
+       Gemma 4 E2B IT (non-thinking)                model           0.010         -0.003             0.011       -0.083            0.030           1.978          2.314             2.302        1.809            2.135
+           Gemma 4 E2B IT (thinking)                model           0.073          0.028             0.035        0.046            0.060           2.657          2.769             3.771        2.114            3.250
+       Gemma 4 E4B IT (non-thinking)                model           0.012         -0.040             0.069        0.002            0.056           2.247          2.345             3.042        2.072            2.165
+           Gemma 4 E4B IT (thinking)                model           0.054          0.024             0.040        0.132            0.106           2.501          2.864             3.877        2.071            2.841
+        MOSS Audio 4B (non-thinking)                model           0.006          0.027             0.017        0.033           -0.024           2.706          3.049             3.943        3.231            3.362
+            MOSS Audio 4B (thinking)                model           0.081          0.053            -0.001        0.027            0.010           2.930          3.129             4.386        2.676            3.623
+        MOSS Audio 8B (non-thinking)                model          -0.011         -0.071             0.012       -0.018            0.006           2.745          2.612             3.173        2.615            2.626
+            MOSS Audio 8B (thinking)                model           0.011         -0.008             0.007        0.019           -0.023           2.967          2.851             3.903        2.719            3.148
+
+  (LaTeX fragment written to output/songeval_table.tex)
+  (SongEval/Audiobox paired comparison: output/audio_aesthetics_frontend_comparison.csv; output/audio_aesthetics_frontend_table.tex)
+  (Per-song scores: output/songeval_song_scores.csv)
+
+================================================================================
+21. OUR MUSIC-POPULARITY MODEL COMPARISON
+================================================================================
+
+  Loaded popularity predictions for 571 songs (v1 full snippets: 390; v2-v1 cropped 29s: 181).
+  Predictions are log1p(count) targets; estimated counts are expm1(log1p). The human benchmark has no real platform play/upvote labels, so this section tests whether predicted popularity behaves like human/aesthetic preference signals.
+
+  --- Predicted popularity by source ---
+ source   n  mean_log1p_plays  median_est_plays  mean_log1p_upvotes  median_est_upvotes
+  human  81             4.728             143.2               3.167                29.5
+   suno 126             4.353             107.1               2.911                20.9
+   udio 113             3.671              79.5               2.321                13.7
+sonauto 122             3.603              81.5               2.328                14.1
+ mureka 129             1.963               3.2               1.143                 1.0
+
+  --- Popularity predictions vs human rating means ---
+ popularity_target            human_dim  n_songs  spearman_rho  pearson_r  p_spearman  p_pearson
+  log1p_play_count    aesthetic_quality      571         0.008      0.021       0.857      0.624
+  log1p_play_count  playlist_likelihood      571         0.030      0.036       0.476      0.393
+  log1p_play_count   musical_creativity      571         0.044      0.046       0.296      0.273
+  log1p_play_count   production_quality      571         0.032      0.023       0.445      0.586
+  log1p_play_count emotional_engagement      571         0.033      0.039       0.427      0.348
+log1p_upvote_count    aesthetic_quality      571         0.008      0.010       0.853      0.821
+log1p_upvote_count  playlist_likelihood      571         0.030      0.040       0.467      0.343
+log1p_upvote_count   musical_creativity      571         0.043      0.033       0.309      0.428
+log1p_upvote_count   production_quality      571         0.032      0.029       0.447      0.492
+log1p_upvote_count emotional_engagement      571         0.034      0.034       0.415      0.421
+
+  --- Popularity predictions vs audio aesthetics front-ends ---
+            frontend  popularity_target         axis  n_songs  spearman_rho  pearson_r  p_spearman  p_pearson
+ Audiobox-Aesthetics   log1p_play_count           CE      571        -0.187     -0.177       0.000      0.000
+ Audiobox-Aesthetics   log1p_play_count           CU      571        -0.085     -0.046       0.042      0.272
+ Audiobox-Aesthetics   log1p_play_count           PC      571         0.137      0.106       0.001      0.011
+ Audiobox-Aesthetics   log1p_play_count           PQ      571        -0.265     -0.194       0.000      0.000
+ Audiobox-Aesthetics log1p_upvote_count           CE      571        -0.184     -0.170       0.000      0.000
+ Audiobox-Aesthetics log1p_upvote_count           CU      571        -0.081     -0.040       0.054      0.342
+ Audiobox-Aesthetics log1p_upvote_count           PC      571         0.136      0.126       0.001      0.003
+ Audiobox-Aesthetics log1p_upvote_count           PQ      571        -0.261     -0.177       0.000      0.000
+            SongEval   log1p_play_count   Musicality      571         0.088      0.019       0.035      0.654
+            SongEval   log1p_play_count    Coherence      571         0.159      0.080       0.000      0.055
+            SongEval   log1p_play_count Memorability      571         0.161      0.086       0.000      0.039
+            SongEval   log1p_play_count      Clarity      571         0.110      0.031       0.009      0.464
+            SongEval   log1p_play_count  Naturalness      571         0.161      0.085       0.000      0.042
+            SongEval log1p_upvote_count   Musicality      571         0.093      0.050       0.026      0.230
+            SongEval log1p_upvote_count    Coherence      571         0.163      0.110       0.000      0.009
+            SongEval log1p_upvote_count Memorability      571         0.164      0.113       0.000      0.007
+            SongEval log1p_upvote_count      Clarity      571         0.114      0.066       0.006      0.113
+            SongEval log1p_upvote_count  Naturalness      571         0.165      0.116       0.000      0.005
+Our Music-Aesthetics   log1p_play_count   Musicality      571         0.205      0.163       0.000      0.000
+Our Music-Aesthetics   log1p_play_count    Coherence      571         0.211      0.175       0.000      0.000
+Our Music-Aesthetics   log1p_play_count Memorability      571         0.240      0.209       0.000      0.000
+Our Music-Aesthetics   log1p_play_count      Clarity      571         0.225      0.194       0.000      0.000
+Our Music-Aesthetics   log1p_play_count  Naturalness      571         0.209      0.170       0.000      0.000
+Our Music-Aesthetics log1p_upvote_count   Musicality      571         0.209      0.187       0.000      0.000
+Our Music-Aesthetics log1p_upvote_count    Coherence      571         0.215      0.196       0.000      0.000
+Our Music-Aesthetics log1p_upvote_count Memorability      571         0.244      0.229       0.000      0.000
+Our Music-Aesthetics log1p_upvote_count      Clarity      571         0.229      0.215       0.000      0.000
+Our Music-Aesthetics log1p_upvote_count  Naturalness      571         0.213      0.194       0.000      0.000
+
+  Mean absolute Spearman rho by front-end:
+            frontend  popularity_target  mean_abs_spearman
+Our Music-Aesthetics   log1p_play_count              0.218
+ Audiobox-Aesthetics   log1p_play_count              0.169
+            SongEval   log1p_play_count              0.136
+Our Music-Aesthetics log1p_upvote_count              0.222
+ Audiobox-Aesthetics log1p_upvote_count              0.165
+            SongEval log1p_upvote_count              0.140
+
+  --- Take-aways ---
+  Strongest human-rating association: log1p_play_count vs musical_creativity, rho=0.044 (p=0.296).
+  (Per-song popularity predictions: output/our_music_popularity_song_scores.csv)
+
+================================================================================
+22. FEATURE-BASED AI-MUSIC DETECTION ANALYSIS
+================================================================================
+
+  --- OOD detector head-to-head ---
+             model     family   auc  auc_ci_low  auc_ci_high   eer  tpr_at_1pct_fpr  delta_auc_vs_proposed    verdict
+          MuQ head foundation 0.991       0.978        0.999 0.072            0.788                 -0.012 not better
+Multiview ensemble   proposed 0.979       0.954        0.996 0.082            0.662                  0.000   proposed
+    MOSS Nano head foundation 0.975       0.950        0.993 0.101            0.703                  0.004       tied
+         MERT head foundation 0.959       0.925        0.985 0.105            0.542                  0.019       tied
+              LCNN        cnn 0.935       0.872        0.983 0.119            0.025                  0.045       tied
+         CLAP head foundation 0.918       0.862        0.966 0.156            0.093                  0.061     better
+   SpecTTTra gamma     sonics 0.855       0.784        0.918 0.224            0.025                  0.126     better
+   SpecTTTra alpha     sonics 0.792       0.710        0.864 0.284            0.008                  0.188     better
+   EfficientViT-B1     vision 0.786       0.711        0.855 0.284            0.127                  0.193     better
+    SpecTTTra beta     sonics 0.782       0.700        0.854 0.266            0.119                  0.199     better
+          ViT-S/16     vision 0.689       0.605        0.775 0.362            0.000                  0.291     better
+     ConvNeXt-Tiny     vision 0.663       0.583        0.745 0.380            0.025                  0.316     better
+
+  --- Invariant probe ranking ---
+ rank       probe  ood_auc  ood_tpr_at_1pct_fpr  val_auc
+  1.0 bicoherence    0.957                0.347    0.816
+  2.0    denoiser    0.782                0.339    0.699
+  3.0   mel_stats    0.779                0.178    0.858
+  4.0      stereo    0.752                0.136    0.691
+  5.0     rolloff    0.719                0.000    0.636
+  6.0  chroma_ssm    0.674                0.203    0.649
+  7.0       phase    0.409                0.000    0.799
+
+  --- Augmentation ablation ---
+             regime  val_auc  ood_auc  ood_tpr_at_1pct_fpr  gap_val_minus_ood          verdict
+               none    0.842    0.975                0.678             -0.133 preserves signal
+            specaug    0.837    0.980                0.831             -0.143 preserves signal
+              mixup    0.827    0.970                0.542             -0.143 preserves signal
+              codec    0.842    0.975                0.678             -0.133 preserves signal
+              noise    0.845    0.972                0.678             -0.127 preserves signal
+        pitch_shift    0.839    0.980                0.831             -0.141 preserves signal
+           loudness    0.812    0.948                0.008             -0.136  destroys signal
+             reverb    0.832    0.969                0.695             -0.137  destroys signal
+      combined_safe    0.829    0.961                0.585             -0.131  destroys signal
+combined_aggressive    0.827    0.954                0.703             -0.127  destroys signal
+
+  --- Take-aways ---
+  Best standalone invariant: bicoherence (OOD AUC=0.957, TPR@1%FPR=0.347).
+  Best OOD detector: MuQ head (AUC=0.991); multiview ensemble reaches AUC=0.979 with TPR@1%FPR=0.662.
+  Loudness augmentation is the clearest failure mode: OOD TPR@1%FPR=0.008 despite OOD AUC=0.948.
+  (Feature-analysis outputs: output/feature_detection_table.tex, output/feature_detection_baselines.csv, output/feature_invariant_ranking.csv, output/feature_augmentation_ablation.csv)
+
+================================================================================
+23. MOOD-TAG ANALYSIS
+================================================================================
+
+  Mood tags are treated as multi-label binary annotations at the trial level. The main analysis uses the 9 canonical prompt tags; they account for 64.6% of all mood-tag selections (543/841). Sparse free-text tags are excluded from Figure 22 to keep the comparison estimable and readable.
+
+  --- Mood-tag completeness and tag-count intensity ---
+                               group   n  nonempty_mood_annotations  nonempty_share  mean_mood_tags  median_mood_tags  mannwhitney_u  mannwhitney_p                  comparison
+                            AI songs 507                      354.0          0.6982          1.4734               1.0            NaN            NaN                         NaN
+                          real songs  84                       49.0          0.5833          1.1190               1.0            NaN            NaN                         NaN
+                           judged AI 289                      198.0          0.6851          1.3287               1.0            NaN            NaN                         NaN
+                         judged real 225                      150.0          0.6667          1.4489               1.0            NaN            NaN                         NaN
+                    judged uncertain  77                       55.0          0.7143          1.7013               1.0            NaN            NaN                         NaN
+Ground truth: AI songs vs real songs 591                        NaN             NaN          0.3543               0.0        23972.0         0.0560   AI songs minus real songs
+ Perceived: judged AI vs judged real 514                        NaN             NaN         -0.1202               0.0        32783.0         0.8671 judged AI minus judged real
+
+  --- Canonical mood prevalence differences ---
+                           contrast          mood_tag  n_a  n_b  prevalence_a  prevalence_b    diff  diff_ci_low  diff_ci_high  p_fisher  q_fdr
+Ground truth: AI songs - real songs            Wonder  507   84        0.0592        0.0833 -0.0242      -0.0867        0.0384    0.4626 0.6939
+Ground truth: AI songs - real songs     Transcendence  507   84        0.0572        0.0714 -0.0142      -0.0729        0.0444    0.6168 0.6939
+Ground truth: AI songs - real songs        Tenderness  507   84        0.0572        0.0952 -0.0380      -0.1040        0.0279    0.2194 0.6582
+Ground truth: AI songs - real songs         Nostalgia  507   84        0.1460        0.1190  0.0269      -0.0489        0.1027    0.6141 0.6939
+Ground truth: AI songs - real songs      Peacefulness  507   84        0.1183        0.0952  0.0231      -0.0457        0.0919    0.7116 0.7116
+Ground truth: AI songs - real songs             Power  507   84        0.1775        0.2143 -0.0368      -0.1306        0.0571    0.4460 0.6939
+Ground truth: AI songs - real songs Joyful activation  507   84        0.1361        0.2024 -0.0663      -0.1572        0.0247    0.1314 0.5911
+Ground truth: AI songs - real songs           Tension  507   84        0.0868        0.1429 -0.0561      -0.1348        0.0227    0.1093 0.5911
+Ground truth: AI songs - real songs           Sadness  507   84        0.0592        0.0238  0.0354      -0.0032        0.0739    0.2943 0.6621
+ Perceived: judged AI - judged real            Wonder  289  225        0.0657        0.0667 -0.0009      -0.0443        0.0424    1.0000 1.0000
+ Perceived: judged AI - judged real     Transcendence  289  225        0.0554        0.0667 -0.0113      -0.0532        0.0306    0.7094 0.9121
+ Perceived: judged AI - judged real        Tenderness  289  225        0.0554        0.0800 -0.0246      -0.0688        0.0195    0.2867 0.8199
+ Perceived: judged AI - judged real         Nostalgia  289  225        0.1315        0.1644 -0.0330      -0.0951        0.0292    0.3151 0.8199
+ Perceived: judged AI - judged real      Peacefulness  289  225        0.1003        0.1378 -0.0374      -0.0942        0.0194    0.2135 0.8199
+ Perceived: judged AI - judged real             Power  289  225        0.1834        0.1867 -0.0033      -0.0710        0.0644    1.0000 1.0000
+ Perceived: judged AI - judged real Joyful activation  289  225        0.1384        0.1556 -0.0171      -0.0790        0.0447    0.6156 0.9121
+ Perceived: judged AI - judged real           Tension  289  225        0.0830        0.1067 -0.0236      -0.0750        0.0278    0.3644 0.8199
+ Perceived: judged AI - judged real           Sadness  289  225        0.0588        0.0444  0.0144      -0.0238        0.0526    0.5524 0.9121
+
+  --- Take-aways ---
+  Ground truth: AI songs - real songs: largest canonical shift is Joyful activation (-6.6 pp; 95% CI [-15.7, +2.5] pp; FDR q=0.591).
+    No canonical mood tag survives FDR correction at q<0.05.
+  Perceived: judged AI - judged real: largest canonical shift is Peacefulness (-3.7 pp; 95% CI [-9.4, +1.9] pp; FDR q=0.820).
+    No canonical mood tag survives FDR correction at q<0.05.
+  (Mood-tag outputs: output/mood_tag_table.tex, output/mood_tag_prevalence_comparison.csv, output/mood_tag_summary.csv)
+
+================================================================================
+24. MODEL-HUMAN MOOD-TAG ANALYSIS
+================================================================================
+
+  Model mood tags are compared against the human trial-level canonical mood-tag profile (n=591; mean tags/trial=1.42; non-empty share=68.2%). For each model run, the table reports both per-song overlap with human mood tags (Dice coefficient on shared songs) and marginal prevalence distance across the nine canonical mood tags. The Dice score is the primary model-ranking metric because it detects song-level mismatches that a marginal prevalence comparison would miss.
+
+  --- Model mood-distribution distance from humans ---
+                               model            base_model thinking_alias  n_model  n_human  n_song_overlap  n_song_overlap_nonempty  mean_song_dice  mean_song_jaccard  micro_f1_song_tag  mean_abs_diff_pp  median_abs_diff_pp  max_abs_diff_pp  mean_model_tags_per_trial  mean_human_tags_per_trial  tag_count_delta  nonempty_share_model  nonempty_share_human  js_distance_canonical_distribution
+           Gemini 3.1 Pro (thinking)        Gemini 3.1 Pro       thinking      571      591             571                      563           0.231              0.183              0.306            13.580               9.472           33.607                      2.417                   1.423012            0.994                 0.989              0.681895                               0.202
+       Gemini 3.1 Pro (non-thinking)        Gemini 3.1 Pro   non-thinking      571      591             571                      558           0.219              0.174              0.294            12.588               8.421           30.104                      2.277                   1.423012            0.854                 0.996              0.681895                               0.196
+    Gemini 3.1 Flash Lite (thinking) Gemini 3.1 Flash Lite       thinking      571      591             571                      561           0.177              0.135              0.238            13.152               2.292           59.701                      2.084                   1.423012            0.661                 0.993              0.681895                               0.317
+           Gemma 4 E4B IT (thinking)        Gemma 4 E4B IT       thinking      571      591             571                      525           0.167              0.127              0.226             9.075               9.617           14.859                      2.860                   1.423012            1.437                 0.968              0.681895                               0.116
+Gemini 3.1 Flash Lite (non-thinking) Gemini 3.1 Flash Lite   non-thinking      571      591             571                      564           0.167              0.132              0.229            13.899               7.196           51.996                      1.715                   1.423012            0.292                 1.000              0.681895                               0.361
+       Gemma 4 E4B IT (non-thinking)        Gemma 4 E4B IT   non-thinking      571      591             571                      527           0.160              0.126              0.224             8.089               8.916           14.055                      2.205                   1.423012            0.782                 0.991              0.681895                               0.145
+           Gemma 4 E2B IT (thinking)        Gemma 4 E2B IT       thinking      571      591             571                      550           0.160              0.119              0.218            14.251              13.693           26.664                      3.215                   1.423012            1.792                 0.998              0.681895                               0.156
+       Gemma 4 E2B IT (non-thinking)        Gemma 4 E2B IT   non-thinking      571      591             571                      566           0.155              0.113              0.210            13.564               8.771           37.873                      2.231                   1.423012            0.808                 1.000              0.681895                               0.200
+            MOSS Audio 8B (thinking)         MOSS Audio 8B       thinking      571      591             571                      545           0.095              0.065              0.136            21.761              14.230           70.797                      2.378                   1.423012            0.955                 0.946              0.681895                               0.400
+            MOSS Audio 4B (thinking)         MOSS Audio 4B       thinking      571      591             571                      566           0.086              0.061              0.124            28.922              17.924           79.379                      2.793                   1.423012            1.370                 0.989              0.681895                               0.489
+        MOSS Audio 8B (non-thinking)         MOSS Audio 8B   non-thinking      571      591             571                      514           0.078              0.054              0.121            20.477              13.020           56.086                      2.368                   1.423012            0.945                 0.869              0.681895                               0.401
+        MOSS Audio 4B (non-thinking)         MOSS Audio 4B   non-thinking      571      591             571                      517           0.072              0.050              0.116            18.547               9.693           49.957                      2.462                   1.423012            1.039                 0.785              0.681895                               0.333
+
+  --- Take-aways ---
+  Best per-song mood overlap: Gemini 3.1 Pro (thinking) (mean Dice=0.231; median |prevalence delta|=9.5 pp; mean |prevalence delta|=13.6 pp).
+  Weakest per-song mood overlap: MOSS Audio 4B (non-thinking) (mean Dice=0.072; median |prevalence delta|=9.7 pp; mean |prevalence delta|=18.5 pp).
+  Closest robust marginal prevalence profile: Gemini 3.1 Flash Lite (thinking) (median |delta|=2.3 pp; mean |delta|=13.2 pp).
+  Largest FDR-significant model-tag shifts: MOSS Audio 4B (thinking) / Wonder: +79.4 pp (q=5.79e-185); MOSS Audio 8B (thinking) / Tenderness: +70.8 pp (q=1.12e-147); MOSS Audio 4B (thinking) / Transcendence: +60.1 pp (q=1.72e-111); Gemini 3.1 Flash Lite (thinking) / Tension: +59.7 pp (q=1.47e-103); MOSS Audio 8B (non-thinking) / Tenderness: +56.1 pp (q=7.07e-99); Gemini 3.1 Flash Lite (non-thinking) / Tension: +52.0 pp (q=1.05e-81); MOSS Audio 4B (thinking) / Tenderness: +51.2 pp (q=2.53e-85); MOSS Audio 4B (non-thinking) / Wonder: +50.0 pp (q=3.81e-82).
+  (Model-human mood outputs: output/model_human_mood_tag_table.tex, output/model_human_mood_tag_comparison.csv, output/model_human_mood_tag_summary.csv)
