@@ -1,0 +1,38 @@
+Figure 18 legend and mapping rationale
+======================================
+
+Metric:
+  Each bar is a song-level Spearman correlation between one model score and the human song-level mean for the panel's questionnaire dimension.
+  Bars are sorted within each panel so the highest correlation with humans appears at the top.
+  Translucent bands show approximate 95% confidence intervals for Spearman rho, using Fisher's z transform.
+
+Color legend:
+  Purple: external custom audio aesthetics models (Audiobox-Aesthetics and SongEval).
+  Cyan: our music-aesthetics model.
+  Green: our music-popularity model, shown as preference proxies rather than direct aesthetics scores.
+  Orange: LLM judge configuration without extended thinking.
+  Red: LLM judge configuration with extended thinking.
+  Bold y-axis labels mark our models.
+
+Audiobox-Aesthetics axes:
+  CE: Content Enjoyment
+  CU: Content Usefulness
+  PC: Production Complexity
+  PQ: Production Quality
+
+Why mappings are needed:
+  The systems do not share a common output schema. Humans rated five questionnaire dimensions on a 1-10 scale; Audiobox emits four 1-10 audio-quality axes; SongEval and our music-aesthetics model emit five music-aesthetics axes; the popularity model emits log1p play/upvote counts; the LLM judges emit the same five questionnaire dimensions as the human study.
+  Therefore Figure 18 uses nearest-concept mappings, and the CSV preserves the exact score_label used for every bar.
+
+Mappings used:
+  Human aesthetic_quality <- Audiobox CE (Content Enjoyment); SongEval Musicality; Our Music-Aesthetics Overall_Aesthetics; Our Music-Popularity log1p play/upvote counts; LLM aesthetic_quality.
+  Human production_quality <- Audiobox PQ (Production Quality); SongEval Coherence; Our Music-Aesthetics Coherence; Our Music-Popularity log1p play/upvote counts; LLM production_quality.
+  Human playlist_likelihood <- Audiobox CU (Content Usefulness); SongEval Memorability; Our Music-Aesthetics Memorability; Our Music-Popularity log1p play/upvote counts; LLM playlist_likelihood.
+  Human musical_creativity <- Audiobox PC (Production Complexity); SongEval Clarity; Our Music-Aesthetics Clarity; Our Music-Popularity log1p play/upvote counts; LLM musical_creativity.
+  Human emotional_engagement <- SongEval Naturalness; Our Music-Aesthetics Naturalness; Our Music-Popularity log1p play/upvote counts; LLM emotional_engagement. Audiobox has no corresponding axis for this panel.
+
+LLM handling:
+  LLM judge outputs are compared dimension-by-dimension against the matching human questionnaire dimension. No cross-dimension mapping is applied for LLMs.
+
+Popularity handling:
+  Our Music-Popularity is not an aesthetics model. It is included to test whether audio-only predicted popularity behaves like human preference/quality ratings. Its play/upvote bars should be interpreted as preference-proxy correlations, not as direct quality-score accuracy.

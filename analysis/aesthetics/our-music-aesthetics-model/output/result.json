@@ -1,0 +1,4570 @@
+{
+    "human_007cbc4a-88c0-4eb9-a7a9-ddfddad1dbee": {
+        "Coherence": 3.7173,
+        "Musicality": 3.5085,
+        "Memorability": 3.7635,
+        "Clarity": 3.4882,
+        "Naturalness": 3.4259,
+        "Overall_Aesthetics": 3.5807
+    },
+    "human_00fb7271-5d7f-4859-82e9-ac0e4078ae81": {
+        "Coherence": 4.3266,
+        "Musicality": 4.3744,
+        "Memorability": 4.4501,
+        "Clarity": 4.0932,
+        "Naturalness": 4.0747,
+        "Overall_Aesthetics": 4.2638
+    },
+    "human_02065dc1-0568-4426-ac43-31d4ce441c66": {
+        "Coherence": 3.5424,
+        "Musicality": 3.3099,
+        "Memorability": 3.5025,
+        "Clarity": 3.3384,
+        "Naturalness": 3.2455,
+        "Overall_Aesthetics": 3.3877
+    },
+    "human_021021dd-f295-47b7-8a43-64e2790a0ecd": {
+        "Coherence": 3.2746,
+        "Musicality": 3.0031,
+        "Memorability": 3.1718,
+        "Clarity": 3.003,
+        "Naturalness": 2.9691,
+        "Overall_Aesthetics": 3.0843
+    },
+    "human_040396a9-e04a-4beb-913c-21a3096f53d6": {
+        "Coherence": 4.0285,
+        "Musicality": 3.951,
+        "Memorability": 4.1203,
+        "Clarity": 3.7963,
+        "Naturalness": 3.7403,
+        "Overall_Aesthetics": 3.9273
+    },
+    "human_06d0ce9d-641a-447e-a683-f8153f469237": {
+        "Coherence": 3.4428,
+        "Musicality": 3.2041,
+        "Memorability": 3.3745,
+        "Clarity": 3.2172,
+        "Naturalness": 3.1329,
+        "Overall_Aesthetics": 3.2743
+    },
+    "human_0cb36322-0dbd-491e-811e-dcab5bb3173a": {
+        "Coherence": 2.5854,
+        "Musicality": 2.2655,
+        "Memorability": 2.3654,
+        "Clarity": 2.2801,
+        "Naturalness": 2.2502,
+        "Overall_Aesthetics": 2.3493
+    },
+    "human_0e3fb9f3-fae5-4e51-b4ae-f1bb311f6122": {
+        "Coherence": 3.4267,
+        "Musicality": 3.191,
+        "Memorability": 3.3894,
+        "Clarity": 3.2134,
+        "Naturalness": 3.1253,
+        "Overall_Aesthetics": 3.2692
+    },
+    "human_13744bdf-1138-4f10-ae20-9d11d6e53554": {
+        "Coherence": 2.9637,
+        "Musicality": 2.6459,
+        "Memorability": 2.8399,
+        "Clarity": 2.7088,
+        "Naturalness": 2.6501,
+        "Overall_Aesthetics": 2.7617
+    },
+    "human_15b57a8c-a4e3-4eaa-8536-74094317a9de": {
+        "Coherence": 3.3047,
+        "Musicality": 3.0478,
+        "Memorability": 3.1704,
+        "Clarity": 3.0145,
+        "Naturalness": 2.9751,
+        "Overall_Aesthetics": 3.1025
+    },
+    "human_177f9f64-5ebc-441f-ace9-82d9b098053f": {
+        "Coherence": 2.8667,
+        "Musicality": 2.5539,
+        "Memorability": 2.6981,
+        "Clarity": 2.6199,
+        "Naturalness": 2.562,
+        "Overall_Aesthetics": 2.6601
+    },
+    "human_1d5ef881-caa6-4cb1-aa55-ad7eaacb1549": {
+        "Coherence": 3.5145,
+        "Musicality": 3.2996,
+        "Memorability": 3.4491,
+        "Clarity": 3.2849,
+        "Naturalness": 3.2272,
+        "Overall_Aesthetics": 3.3551
+    },
+    "human_1dcd39f9-5456-46b5-ac48-9c797fe2fb53": {
+        "Coherence": 3.0991,
+        "Musicality": 2.8305,
+        "Memorability": 3.0675,
+        "Clarity": 2.9037,
+        "Naturalness": 2.8174,
+        "Overall_Aesthetics": 2.9436
+    },
+    "human_2376855e-3533-4774-8b96-4a7f3cb08567": {
+        "Coherence": 3.3628,
+        "Musicality": 3.1028,
+        "Memorability": 3.3421,
+        "Clarity": 3.1625,
+        "Naturalness": 3.0652,
+        "Overall_Aesthetics": 3.2071
+    },
+    "human_255881a6-b563-42ea-8478-3ab3ce55a055": {
+        "Coherence": 2.5458,
+        "Musicality": 2.2152,
+        "Memorability": 2.3247,
+        "Clarity": 2.2381,
+        "Naturalness": 2.217,
+        "Overall_Aesthetics": 2.3082
+    },
+    "human_25600f24-d16d-43cf-b2d9-cc0678d87197": {
+        "Coherence": 2.4168,
+        "Musicality": 2.0832,
+        "Memorability": 2.141,
+        "Clarity": 2.0649,
+        "Naturalness": 2.0735,
+        "Overall_Aesthetics": 2.1559
+    },
+    "human_27c331f1-9801-4ff0-b5aa-ae749a877dd4": {
+        "Coherence": 2.8316,
+        "Musicality": 2.5186,
+        "Memorability": 2.6946,
+        "Clarity": 2.5896,
+        "Naturalness": 2.5025,
+        "Overall_Aesthetics": 2.6274
+    },
+    "human_28ba34ed-9eed-44fe-a726-d25f5c32f637": {
+        "Coherence": 3.8925,
+        "Musicality": 3.7486,
+        "Memorability": 3.9727,
+        "Clarity": 3.6818,
+        "Naturalness": 3.6116,
+        "Overall_Aesthetics": 3.7814
+    },
+    "human_28fe4b23-12f5-4ca6-b05e-cb9d872be745": {
+        "Coherence": 3.3916,
+        "Musicality": 3.1242,
+        "Memorability": 3.3523,
+        "Clarity": 3.173,
+        "Naturalness": 3.0924,
+        "Overall_Aesthetics": 3.2267
+    },
+    "human_2beee6c6-873e-4cc1-8d19-5521d4a2160e": {
+        "Coherence": 3.9891,
+        "Musicality": 3.9112,
+        "Memorability": 4.0113,
+        "Clarity": 3.7318,
+        "Naturalness": 3.6765,
+        "Overall_Aesthetics": 3.864
+    },
+    "human_2c3fc810-1b23-40b7-90f3-517d87255ed2": {
+        "Coherence": 2.6029,
+        "Musicality": 2.2663,
+        "Memorability": 2.3695,
+        "Clarity": 2.2965,
+        "Naturalness": 2.2596,
+        "Overall_Aesthetics": 2.359
+    },
+    "human_317d951a-c151-48b1-b8a5-da9799f5698b": {
+        "Coherence": 2.8184,
+        "Musicality": 2.5015,
+        "Memorability": 2.5814,
+        "Clarity": 2.5302,
+        "Naturalness": 2.5004,
+        "Overall_Aesthetics": 2.5864
+    },
+    "human_334f993e-046e-45a1-8d90-7abab87b36cb": {
+        "Coherence": 4.0061,
+        "Musicality": 3.9181,
+        "Memorability": 4.1083,
+        "Clarity": 3.7759,
+        "Naturalness": 3.7312,
+        "Overall_Aesthetics": 3.9079
+    },
+    "human_371238de-b9a8-4fec-b65e-12f46a855894": {
+        "Coherence": 3.5231,
+        "Musicality": 3.2953,
+        "Memorability": 3.4463,
+        "Clarity": 3.2626,
+        "Naturalness": 3.1997,
+        "Overall_Aesthetics": 3.3454
+    },
+    "human_37ad6d27-186f-4afe-bd3f-932c145bc3bc": {
+        "Coherence": 4.0908,
+        "Musicality": 4.0483,
+        "Memorability": 4.112,
+        "Clarity": 3.8172,
+        "Naturalness": 3.7856,
+        "Overall_Aesthetics": 3.9708
+    },
+    "human_3cb2ea04-4381-4bf5-9c29-dbedc7e47ab5": {
+        "Coherence": 3.2225,
+        "Musicality": 2.9595,
+        "Memorability": 3.19,
+        "Clarity": 3.0156,
+        "Naturalness": 2.9287,
+        "Overall_Aesthetics": 3.0633
+    },
+    "human_4721246e-489b-4193-9635-908be6d0c80f": {
+        "Coherence": 2.796,
+        "Musicality": 2.4733,
+        "Memorability": 2.6617,
+        "Clarity": 2.5302,
+        "Naturalness": 2.46,
+        "Overall_Aesthetics": 2.5842
+    },
+    "human_4770f9df-c1ab-4baf-b63a-2702afefae4f": {
+        "Coherence": 4.4493,
+        "Musicality": 4.4869,
+        "Memorability": 4.5514,
+        "Clarity": 4.2202,
+        "Naturalness": 4.2084,
+        "Overall_Aesthetics": 4.3832
+    },
+    "human_489f3fea-5451-4343-95d9-8560b30999e3": {
+        "Coherence": 2.494,
+        "Musicality": 2.1658,
+        "Memorability": 2.2196,
+        "Clarity": 2.1066,
+        "Naturalness": 2.1308,
+        "Overall_Aesthetics": 2.2234
+    },
+    "human_4bc03749-658d-4f7e-98c2-19104873069f": {
+        "Coherence": 2.8151,
+        "Musicality": 2.4843,
+        "Memorability": 2.5606,
+        "Clarity": 2.5396,
+        "Naturalness": 2.5082,
+        "Overall_Aesthetics": 2.5816
+    },
+    "human_4c494e30-28d8-4eae-83a6-ceffa6c29c0c": {
+        "Coherence": 2.9388,
+        "Musicality": 2.6261,
+        "Memorability": 2.6528,
+        "Clarity": 2.6326,
+        "Naturalness": 2.6229,
+        "Overall_Aesthetics": 2.6946
+    },
+    "human_4df22174-d034-4e67-bd5e-755756d0aaec": {
+        "Coherence": 3.0908,
+        "Musicality": 2.8052,
+        "Memorability": 2.9371,
+        "Clarity": 2.8255,
+        "Naturalness": 2.777,
+        "Overall_Aesthetics": 2.8871
+    },
+    "human_4e141530-9bad-4d21-a008-3a53720bf251": {
+        "Coherence": 3.2281,
+        "Musicality": 2.9316,
+        "Memorability": 3.1745,
+        "Clarity": 3.0246,
+        "Naturalness": 2.9346,
+        "Overall_Aesthetics": 3.0587
+    },
+    "human_522c0cd0-969d-495e-a33d-a73c88ef39ff": {
+        "Coherence": 3.3747,
+        "Musicality": 3.1377,
+        "Memorability": 3.3443,
+        "Clarity": 3.1371,
+        "Naturalness": 3.044,
+        "Overall_Aesthetics": 3.2076
+    },
+    "human_5e7d4630-65a2-4db9-9d16-64dcc71f962b": {
+        "Coherence": 2.9121,
+        "Musicality": 2.5886,
+        "Memorability": 2.6422,
+        "Clarity": 2.6298,
+        "Naturalness": 2.5886,
+        "Overall_Aesthetics": 2.6723
+    },
+    "human_5ff7ba40-03db-4000-9776-684424a6fb64": {
+        "Coherence": 2.8338,
+        "Musicality": 2.5219,
+        "Memorability": 2.6328,
+        "Clarity": 2.5657,
+        "Naturalness": 2.5266,
+        "Overall_Aesthetics": 2.6162
+    },
+    "human_615515e0-4940-47b8-a4b6-ae362cdd8a86": {
+        "Coherence": 3.5236,
+        "Musicality": 3.2798,
+        "Memorability": 3.4811,
+        "Clarity": 3.3143,
+        "Naturalness": 3.2353,
+        "Overall_Aesthetics": 3.3668
+    },
+    "human_635d5daa-133b-45ec-9ca8-bb95073be487": {
+        "Coherence": 2.8824,
+        "Musicality": 2.5689,
+        "Memorability": 2.6537,
+        "Clarity": 2.5922,
+        "Naturalness": 2.5658,
+        "Overall_Aesthetics": 2.6526
+    },
+    "human_6b6fda83-98df-4a08-860a-07f896a626e0": {
+        "Coherence": 4.1369,
+        "Musicality": 4.1048,
+        "Memorability": 4.2021,
+        "Clarity": 3.8698,
+        "Naturalness": 3.8361,
+        "Overall_Aesthetics": 4.0299
+    },
+    "human_6ca6b4d7-282e-4c62-a5db-396b48f7e2eb": {
+        "Coherence": 2.878,
+        "Musicality": 2.5678,
+        "Memorability": 2.5691,
+        "Clarity": 2.5418,
+        "Naturalness": 2.5452,
+        "Overall_Aesthetics": 2.6204
+    },
+    "human_7062d45b-66ed-4ebe-93ae-6c6a5d9aac6b": {
+        "Coherence": 3.286,
+        "Musicality": 3.0231,
+        "Memorability": 3.1311,
+        "Clarity": 3.0272,
+        "Naturalness": 2.9735,
+        "Overall_Aesthetics": 3.0882
+    },
+    "human_788c3307-73f6-498b-ada2-0041edd77732": {
+        "Coherence": 2.921,
+        "Musicality": 2.6138,
+        "Memorability": 2.7124,
+        "Clarity": 2.6568,
+        "Naturalness": 2.6115,
+        "Overall_Aesthetics": 2.7031
+    },
+    "human_7c2c45a3-578f-4f52-b602-1854153c65c7": {
+        "Coherence": 3.4287,
+        "Musicality": 3.175,
+        "Memorability": 3.3423,
+        "Clarity": 3.1913,
+        "Naturalness": 3.1228,
+        "Overall_Aesthetics": 3.252
+    },
+    "human_80558d4a-ed62-4434-9fee-49785b54d065": {
+        "Coherence": 4.4171,
+        "Musicality": 4.464,
+        "Memorability": 4.5099,
+        "Clarity": 4.1808,
+        "Naturalness": 4.1593,
+        "Overall_Aesthetics": 4.3462
+    },
+    "human_84154ccd-d487-4061-999b-8026feabff40": {
+        "Coherence": 3.6782,
+        "Musicality": 3.4805,
+        "Memorability": 3.7428,
+        "Clarity": 3.4771,
+        "Naturalness": 3.388,
+        "Overall_Aesthetics": 3.5533
+    },
+    "human_892ce9c9-b005-4835-85d3-61e09ab7de2c": {
+        "Coherence": 2.5725,
+        "Musicality": 2.2529,
+        "Memorability": 2.3018,
+        "Clarity": 2.2262,
+        "Naturalness": 2.2198,
+        "Overall_Aesthetics": 2.3146
+    },
+    "human_8ab8d6d3-df73-4152-98ad-a7ae81e1ef55": {
+        "Coherence": 2.5217,
+        "Musicality": 2.201,
+        "Memorability": 2.2522,
+        "Clarity": 2.199,
+        "Naturalness": 2.1823,
+        "Overall_Aesthetics": 2.2712
+    },
+    "human_8bf8b018-78c6-46f6-b7ff-a59466f84bfc": {
+        "Coherence": 3.0992,
+        "Musicality": 2.7956,
+        "Memorability": 2.9302,
+        "Clarity": 2.8591,
+        "Naturalness": 2.804,
+        "Overall_Aesthetics": 2.8976
+    },
+    "human_8f6b81a3-279d-4b00-8444-67119ef9ff32": {
+        "Coherence": 2.3985,
+        "Musicality": 2.1038,
+        "Memorability": 2.0928,
+        "Clarity": 2.0434,
+        "Naturalness": 2.0854,
+        "Overall_Aesthetics": 2.1448
+    },
+    "human_8f9818f2-654f-44f5-8502-4041b704ef77": {
+        "Coherence": 2.4633,
+        "Musicality": 2.1294,
+        "Memorability": 2.1748,
+        "Clarity": 2.0902,
+        "Naturalness": 2.1056,
+        "Overall_Aesthetics": 2.1927
+    },
+    "human_90c4927c-d2cb-4f47-ad94-28e9b2b3a543": {
+        "Coherence": 2.8011,
+        "Musicality": 2.4763,
+        "Memorability": 2.6468,
+        "Clarity": 2.5374,
+        "Naturalness": 2.4728,
+        "Overall_Aesthetics": 2.5869
+    },
+    "human_90cbe516-ec49-45b0-bd3d-6dad05125c0a": {
+        "Coherence": 3.1564,
+        "Musicality": 2.8958,
+        "Memorability": 3.0591,
+        "Clarity": 2.9069,
+        "Naturalness": 2.8537,
+        "Overall_Aesthetics": 2.9744
+    },
+    "human_95426f15-137d-43f0-80b8-fc651a1ac6e7": {
+        "Coherence": 3.3917,
+        "Musicality": 3.1559,
+        "Memorability": 3.3752,
+        "Clarity": 3.1847,
+        "Naturalness": 3.0911,
+        "Overall_Aesthetics": 3.2397
+    },
+    "human_95ae9da4-1275-4d22-bcaf-b18c4493490d": {
+        "Coherence": 3.5635,
+        "Musicality": 3.3547,
+        "Memorability": 3.4981,
+        "Clarity": 3.311,
+        "Naturalness": 3.2387,
+        "Overall_Aesthetics": 3.3932
+    },
+    "human_98061082-4ed2-486d-87b6-5dc32811a24e": {
+        "Coherence": 2.3523,
+        "Musicality": 2.0301,
+        "Memorability": 2.0277,
+        "Clarity": 1.975,
+        "Naturalness": 2.0107,
+        "Overall_Aesthetics": 2.0792
+    },
+    "human_9cd30fe5-ac26-4beb-88c7-943783835a83": {
+        "Coherence": 3.6121,
+        "Musicality": 3.4167,
+        "Memorability": 3.5885,
+        "Clarity": 3.3633,
+        "Naturalness": 3.2704,
+        "Overall_Aesthetics": 3.4502
+    },
+    "human_9ce3044e-f70f-4c08-a10c-e0a29478f4ff": {
+        "Coherence": 2.5409,
+        "Musicality": 2.2418,
+        "Memorability": 2.3213,
+        "Clarity": 2.2028,
+        "Naturalness": 2.2009,
+        "Overall_Aesthetics": 2.3015
+    },
+    "human_ab5c4aed-3e60-4ba0-830d-1df6a364a6e5": {
+        "Coherence": 3.8796,
+        "Musicality": 3.7281,
+        "Memorability": 3.8554,
+        "Clarity": 3.5787,
+        "Naturalness": 3.5159,
+        "Overall_Aesthetics": 3.7115
+    },
+    "human_bba4d2d7-5d2b-4e63-9e6a-966903244dfa": {
+        "Coherence": 2.8448,
+        "Musicality": 2.4906,
+        "Memorability": 2.6624,
+        "Clarity": 2.5639,
+        "Naturalness": 2.4985,
+        "Overall_Aesthetics": 2.612
+    },
+    "human_bca5d802-0c89-4096-99ef-ed82dffd980e": {
+        "Coherence": 4.3292,
+        "Musicality": 4.3545,
+        "Memorability": 4.4183,
+        "Clarity": 4.0496,
+        "Naturalness": 4.0488,
+        "Overall_Aesthetics": 4.2401
+    },
+    "human_bd3efc09-34f4-4aa0-940e-7c5fe31c2671": {
+        "Coherence": 3.2282,
+        "Musicality": 2.9379,
+        "Memorability": 3.2179,
+        "Clarity": 3.0273,
+        "Naturalness": 2.9293,
+        "Overall_Aesthetics": 3.0681
+    },
+    "human_c2ccee89-89f7-4a68-857c-0edb6cdf1e13": {
+        "Coherence": 2.6364,
+        "Musicality": 2.3006,
+        "Memorability": 2.3211,
+        "Clarity": 2.3246,
+        "Naturalness": 2.3222,
+        "Overall_Aesthetics": 2.381
+    },
+    "human_c375bcde-6044-461c-ba7a-0e50424f6abf": {
+        "Coherence": 2.9525,
+        "Musicality": 2.6335,
+        "Memorability": 2.8443,
+        "Clarity": 2.7316,
+        "Naturalness": 2.6261,
+        "Overall_Aesthetics": 2.7576
+    },
+    "human_c7baf4e9-bfa6-4056-bdb0-9f326eb5185c": {
+        "Coherence": 3.944,
+        "Musicality": 3.8228,
+        "Memorability": 3.9729,
+        "Clarity": 3.6896,
+        "Naturalness": 3.6213,
+        "Overall_Aesthetics": 3.8101
+    },
+    "human_cb70c2f3-0cdd-430f-a3cc-aeb00349b6df": {
+        "Coherence": 2.9038,
+        "Musicality": 2.5771,
+        "Memorability": 2.7734,
+        "Clarity": 2.6543,
+        "Naturalness": 2.5758,
+        "Overall_Aesthetics": 2.6969
+    },
+    "human_cfde9e15-c18d-4036-b28c-8e333f191f7f": {
+        "Coherence": 3.1691,
+        "Musicality": 2.8604,
+        "Memorability": 3.0709,
+        "Clarity": 2.9197,
+        "Naturalness": 2.8409,
+        "Overall_Aesthetics": 2.9722
+    },
+    "human_d08e1e82-a291-4d07-981d-f2b81ddc6bea": {
+        "Coherence": 3.3648,
+        "Musicality": 3.1121,
+        "Memorability": 3.3444,
+        "Clarity": 3.144,
+        "Naturalness": 3.0634,
+        "Overall_Aesthetics": 3.2057
+    },
+    "human_d2553232-8a46-40ff-917c-4ac2ee9958b6": {
+        "Coherence": 3.2173,
+        "Musicality": 2.9492,
+        "Memorability": 3.1022,
+        "Clarity": 2.9953,
+        "Naturalness": 2.9188,
+        "Overall_Aesthetics": 3.0366
+    },
+    "human_d2ec7199-62cb-4d3f-b78d-4f795a7106f6": {
+        "Coherence": 3.3951,
+        "Musicality": 3.1404,
+        "Memorability": 3.2799,
+        "Clarity": 3.1446,
+        "Naturalness": 3.0723,
+        "Overall_Aesthetics": 3.2065
+    },
+    "human_d72a7061-eaf1-42d7-a254-bcb4fb0afb98": {
+        "Coherence": 3.5914,
+        "Musicality": 3.3937,
+        "Memorability": 3.5961,
+        "Clarity": 3.3764,
+        "Naturalness": 3.275,
+        "Overall_Aesthetics": 3.4465
+    },
+    "human_d8043ae3-7631-4f56-9f8d-b903ae3b6a7e": {
+        "Coherence": 4.0725,
+        "Musicality": 4.0289,
+        "Memorability": 4.1223,
+        "Clarity": 3.8158,
+        "Naturalness": 3.7729,
+        "Overall_Aesthetics": 3.9625
+    },
+    "human_d8623a59-38de-4a3e-97c8-e387ff3655c7": {
+        "Coherence": 2.7351,
+        "Musicality": 2.4117,
+        "Memorability": 2.397,
+        "Clarity": 2.4175,
+        "Naturalness": 2.4153,
+        "Overall_Aesthetics": 2.4753
+    },
+    "human_db5da3d4-2ea1-4ee5-9ef2-180589cf3680": {
+        "Coherence": 3.2652,
+        "Musicality": 3.0179,
+        "Memorability": 3.1882,
+        "Clarity": 3.0448,
+        "Naturalness": 2.9697,
+        "Overall_Aesthetics": 3.0972
+    },
+    "human_def7cfd0-5d63-44cf-a853-3be18c12965d": {
+        "Coherence": 3.119,
+        "Musicality": 2.8166,
+        "Memorability": 3.0734,
+        "Clarity": 2.9188,
+        "Naturalness": 2.8175,
+        "Overall_Aesthetics": 2.9491
+    },
+    "human_e7cfdd36-cfb8-406f-b67a-6b47cacdea25": {
+        "Coherence": 3.5143,
+        "Musicality": 3.2659,
+        "Memorability": 3.4723,
+        "Clarity": 3.276,
+        "Naturalness": 3.1861,
+        "Overall_Aesthetics": 3.3429
+    },
+    "human_ec620af8-1b23-4e6a-ba27-15457aedfe18": {
+        "Coherence": 2.9204,
+        "Musicality": 2.5959,
+        "Memorability": 2.7496,
+        "Clarity": 2.6764,
+        "Naturalness": 2.615,
+        "Overall_Aesthetics": 2.7115
+    },
+    "human_edc015a4-b877-4cf3-a00d-a6e29d80e033": {
+        "Coherence": 3.9316,
+        "Musicality": 3.824,
+        "Memorability": 3.8929,
+        "Clarity": 3.663,
+        "Naturalness": 3.6176,
+        "Overall_Aesthetics": 3.7858
+    },
+    "human_ef08850d-3101-48a0-867d-d4279c9c1f49": {
+        "Coherence": 2.8724,
+        "Musicality": 2.5513,
+        "Memorability": 2.6081,
+        "Clarity": 2.5956,
+        "Naturalness": 2.5695,
+        "Overall_Aesthetics": 2.6394
+    },
+    "human_f1dbbe7d-b043-4eda-becc-ff96acbc05dd": {
+        "Coherence": 4.1081,
+        "Musicality": 4.1008,
+        "Memorability": 4.2094,
+        "Clarity": 3.8902,
+        "Naturalness": 3.8784,
+        "Overall_Aesthetics": 4.0374
+    },
+    "human_f941e0fc-90cc-4458-a07e-0a67a5a20bdd": {
+        "Coherence": 3.7868,
+        "Musicality": 3.6119,
+        "Memorability": 3.8071,
+        "Clarity": 3.5271,
+        "Naturalness": 3.46,
+        "Overall_Aesthetics": 3.6386
+    },
+    "human_fb3b8647-4f26-43c0-ac6a-b9c978378d05": {
+        "Coherence": 3.5767,
+        "Musicality": 3.3599,
+        "Memorability": 3.6172,
+        "Clarity": 3.3682,
+        "Naturalness": 3.2885,
+        "Overall_Aesthetics": 3.4421
+    },
+    "mureka_011931d3-43ee-4a30-962f-06dd770c9cf3": {
+        "Coherence": 4.1625,
+        "Musicality": 4.1277,
+        "Memorability": 4.1349,
+        "Clarity": 3.834,
+        "Naturalness": 3.8347,
+        "Overall_Aesthetics": 4.0188
+    },
+    "mureka_0253b74f-816d-435d-893a-32f72b90301e": {
+        "Coherence": 3.8272,
+        "Musicality": 3.6745,
+        "Memorability": 3.756,
+        "Clarity": 3.5423,
+        "Naturalness": 3.4739,
+        "Overall_Aesthetics": 3.6548
+    },
+    "mureka_02bd1fb3-4288-4388-bf87-956edd671861": {
+        "Coherence": 2.308,
+        "Musicality": 2.0067,
+        "Memorability": 1.9158,
+        "Clarity": 1.9507,
+        "Naturalness": 2.0389,
+        "Overall_Aesthetics": 2.044
+    },
+    "mureka_081ff3ef-5076-44da-ad83-f74f1b61346f": {
+        "Coherence": 2.0121,
+        "Musicality": 1.7051,
+        "Memorability": 1.6904,
+        "Clarity": 1.583,
+        "Naturalness": 1.69,
+        "Overall_Aesthetics": 1.7361
+    },
+    "mureka_08637a85-5238-4c99-8535-d7b2a32f220b": {
+        "Coherence": 3.0513,
+        "Musicality": 2.7546,
+        "Memorability": 2.922,
+        "Clarity": 2.8453,
+        "Naturalness": 2.7837,
+        "Overall_Aesthetics": 2.8714
+    },
+    "mureka_0878c76b-d97e-4964-8277-83c7e6bc1748": {
+        "Coherence": 3.1479,
+        "Musicality": 2.8645,
+        "Memorability": 3.0868,
+        "Clarity": 2.9045,
+        "Naturalness": 2.8469,
+        "Overall_Aesthetics": 2.9701
+    },
+    "mureka_09792c76-4d82-4590-be79-2b0e57115b07": {
+        "Coherence": 4.2276,
+        "Musicality": 4.2471,
+        "Memorability": 4.3106,
+        "Clarity": 3.9749,
+        "Naturalness": 3.9586,
+        "Overall_Aesthetics": 4.1438
+    },
+    "mureka_0993e67b-4009-414e-b9e7-ad8c4132a197": {
+        "Coherence": 3.7956,
+        "Musicality": 3.7698,
+        "Memorability": 3.6389,
+        "Clarity": 3.5746,
+        "Naturalness": 3.5604,
+        "Overall_Aesthetics": 3.6679
+    },
+    "mureka_09e4733b-9c86-4d99-851f-9461c5cad736": {
+        "Coherence": 3.8088,
+        "Musicality": 3.6464,
+        "Memorability": 3.7365,
+        "Clarity": 3.4757,
+        "Naturalness": 3.4383,
+        "Overall_Aesthetics": 3.6211
+    },
+    "mureka_0f385b15-e85b-4779-a045-bfd8dc3a1da2": {
+        "Coherence": 4.4782,
+        "Musicality": 4.5042,
+        "Memorability": 4.4887,
+        "Clarity": 4.1912,
+        "Naturalness": 4.187,
+        "Overall_Aesthetics": 4.3699
+    },
+    "mureka_100804ff-401e-45af-9367-942e63ca3cb8": {
+        "Coherence": 3.8704,
+        "Musicality": 3.7448,
+        "Memorability": 3.6967,
+        "Clarity": 3.5452,
+        "Naturalness": 3.5069,
+        "Overall_Aesthetics": 3.6728
+    },
+    "mureka_1058071e-4d1b-46e0-b16e-0d7d9c4c77cc": {
+        "Coherence": 4.2386,
+        "Musicality": 4.2547,
+        "Memorability": 4.2803,
+        "Clarity": 3.9387,
+        "Naturalness": 3.9406,
+        "Overall_Aesthetics": 4.1306
+    },
+    "mureka_12cf28b8-a705-4072-82ea-38fc7557c6d8": {
+        "Coherence": 2.6961,
+        "Musicality": 2.3439,
+        "Memorability": 2.4365,
+        "Clarity": 2.3788,
+        "Naturalness": 2.3404,
+        "Overall_Aesthetics": 2.4391
+    },
+    "mureka_13695635-aeae-442f-8eb8-83433608c04a": {
+        "Coherence": 4.3428,
+        "Musicality": 4.3707,
+        "Memorability": 4.3528,
+        "Clarity": 4.0516,
+        "Naturalness": 4.0483,
+        "Overall_Aesthetics": 4.2332
+    },
+    "mureka_155f4528-7625-411d-a960-ee30364acfff": {
+        "Coherence": 4.3526,
+        "Musicality": 4.3839,
+        "Memorability": 4.2984,
+        "Clarity": 4.0642,
+        "Naturalness": 4.0572,
+        "Overall_Aesthetics": 4.2313
+    },
+    "mureka_161c86d1-2864-40d4-a5a1-824b1f39a789": {
+        "Coherence": 2.3561,
+        "Musicality": 2.0285,
+        "Memorability": 1.9965,
+        "Clarity": 2.0171,
+        "Naturalness": 2.0789,
+        "Overall_Aesthetics": 2.0954
+    },
+    "mureka_172139e1-5a07-440e-9b16-09a0306acc97": {
+        "Coherence": 2.8805,
+        "Musicality": 2.6167,
+        "Memorability": 2.5567,
+        "Clarity": 2.5481,
+        "Naturalness": 2.5879,
+        "Overall_Aesthetics": 2.638
+    },
+    "mureka_1a31f072-27fb-47e9-a619-00b6a3058893": {
+        "Coherence": 4.2254,
+        "Musicality": 4.2216,
+        "Memorability": 4.1964,
+        "Clarity": 3.9232,
+        "Naturalness": 3.8999,
+        "Overall_Aesthetics": 4.0933
+    },
+    "mureka_1aa29cdf-8b19-4251-bcf2-0610b7b75c8e": {
+        "Coherence": 3.157,
+        "Musicality": 3.0249,
+        "Memorability": 2.8565,
+        "Clarity": 2.9151,
+        "Naturalness": 2.9629,
+        "Overall_Aesthetics": 2.9833
+    },
+    "mureka_1ade7656-2764-4cf6-9b0d-b018d5f7462e": {
+        "Coherence": 4.3158,
+        "Musicality": 4.3552,
+        "Memorability": 4.2772,
+        "Clarity": 4.0322,
+        "Naturalness": 4.001,
+        "Overall_Aesthetics": 4.1963
+    },
+    "mureka_1c16ecc0-7be0-4a6d-af32-ade161547321": {
+        "Coherence": 4.1507,
+        "Musicality": 4.1458,
+        "Memorability": 4.2023,
+        "Clarity": 3.8743,
+        "Naturalness": 3.8514,
+        "Overall_Aesthetics": 4.0449
+    },
+    "mureka_1cb1202e-27dd-4d3d-895f-6e5aa6092c5b": {
+        "Coherence": 3.5768,
+        "Musicality": 3.3677,
+        "Memorability": 3.5342,
+        "Clarity": 3.305,
+        "Naturalness": 3.2292,
+        "Overall_Aesthetics": 3.4026
+    },
+    "mureka_1d47330a-8e67-4dc3-9ae1-135ef8e32157": {
+        "Coherence": 3.8837,
+        "Musicality": 3.7462,
+        "Memorability": 3.7945,
+        "Clarity": 3.5597,
+        "Naturalness": 3.5354,
+        "Overall_Aesthetics": 3.7039
+    },
+    "mureka_20964d85-cd25-4e10-a5c7-85c2191ffc6b": {
+        "Coherence": 4.3842,
+        "Musicality": 4.4086,
+        "Memorability": 4.4751,
+        "Clarity": 4.1142,
+        "Naturalness": 4.107,
+        "Overall_Aesthetics": 4.2978
+    },
+    "mureka_21f4f7ce-6d67-4ea6-917c-2a5bfe1a2a1d": {
+        "Coherence": 2.976,
+        "Musicality": 2.7014,
+        "Memorability": 2.897,
+        "Clarity": 2.7646,
+        "Naturalness": 2.6725,
+        "Overall_Aesthetics": 2.8023
+    },
+    "mureka_234cc2da-32be-447f-bad6-a9570229673c": {
+        "Coherence": 3.3036,
+        "Musicality": 3.0556,
+        "Memorability": 3.2405,
+        "Clarity": 3.0674,
+        "Naturalness": 2.9975,
+        "Overall_Aesthetics": 3.1329
+    },
+    "mureka_242d7279-fa7f-4d40-8cbe-8cdf9752e1ee": {
+        "Coherence": 3.6089,
+        "Musicality": 3.4021,
+        "Memorability": 3.5135,
+        "Clarity": 3.3114,
+        "Naturalness": 3.2724,
+        "Overall_Aesthetics": 3.4217
+    },
+    "mureka_24af80e7-cb4b-4f7f-b5ae-09f0c6936945": {
+        "Coherence": 2.1226,
+        "Musicality": 1.86,
+        "Memorability": 1.7239,
+        "Clarity": 1.7283,
+        "Naturalness": 1.8811,
+        "Overall_Aesthetics": 1.8632
+    },
+    "mureka_28c07242-00cc-40dc-85df-b3e70a515587": {
+        "Coherence": 4.2043,
+        "Musicality": 4.1933,
+        "Memorability": 4.1955,
+        "Clarity": 3.886,
+        "Naturalness": 3.8887,
+        "Overall_Aesthetics": 4.0736
+    },
+    "mureka_29b4c122-0a62-4cd8-a2f0-81662ed3183f": {
+        "Coherence": 2.3529,
+        "Musicality": 2.0724,
+        "Memorability": 1.9477,
+        "Clarity": 1.9769,
+        "Naturalness": 2.0923,
+        "Overall_Aesthetics": 2.0884
+    },
+    "mureka_2d7a7c31-126b-4f70-babe-a74d30ea2f5a": {
+        "Coherence": 3.0248,
+        "Musicality": 2.7331,
+        "Memorability": 2.7358,
+        "Clarity": 2.6901,
+        "Naturalness": 2.6851,
+        "Overall_Aesthetics": 2.7738
+    },
+    "mureka_2dce6773-8c62-4117-9ed8-63e60a8f1494": {
+        "Coherence": 3.6523,
+        "Musicality": 3.4306,
+        "Memorability": 3.5824,
+        "Clarity": 3.382,
+        "Naturalness": 3.304,
+        "Overall_Aesthetics": 3.4703
+    },
+    "mureka_2e2f8465-05db-4cc0-b472-1ec8f4c26a98": {
+        "Coherence": 2.2474,
+        "Musicality": 1.9703,
+        "Memorability": 1.8468,
+        "Clarity": 1.8697,
+        "Naturalness": 1.989,
+        "Overall_Aesthetics": 1.9846
+    },
+    "mureka_2f1a01fc-b35c-4456-b8af-148e5f679202": {
+        "Coherence": 4.5351,
+        "Musicality": 4.5825,
+        "Memorability": 4.5587,
+        "Clarity": 4.2884,
+        "Naturalness": 4.2669,
+        "Overall_Aesthetics": 4.4463
+    },
+    "mureka_3017a3cb-dbfe-4d5e-b7d7-2ef709b8ca27": {
+        "Coherence": 2.6088,
+        "Musicality": 2.31,
+        "Memorability": 2.2565,
+        "Clarity": 2.2654,
+        "Naturalness": 2.3234,
+        "Overall_Aesthetics": 2.3528
+    },
+    "mureka_321d19f3-e172-459a-97b4-a496f37a8e7e": {
+        "Coherence": 3.5922,
+        "Musicality": 3.2721,
+        "Memorability": 3.586,
+        "Clarity": 3.3585,
+        "Naturalness": 3.2435,
+        "Overall_Aesthetics": 3.4105
+    },
+    "mureka_33040448-7603-4551-9e38-964876250f83": {
+        "Coherence": 4.3119,
+        "Musicality": 4.3309,
+        "Memorability": 4.3143,
+        "Clarity": 4.0155,
+        "Naturalness": 4.0035,
+        "Overall_Aesthetics": 4.1952
+    },
+    "mureka_394366e8-cb8a-4f9e-8755-99ee61574d01": {
+        "Coherence": 2.2739,
+        "Musicality": 1.9873,
+        "Memorability": 1.8674,
+        "Clarity": 1.8819,
+        "Naturalness": 2.0042,
+        "Overall_Aesthetics": 2.0029
+    },
+    "mureka_41e9eafc-7829-4570-b658-a86d16313786": {
+        "Coherence": 2.894,
+        "Musicality": 2.5849,
+        "Memorability": 2.5878,
+        "Clarity": 2.5782,
+        "Naturalness": 2.5694,
+        "Overall_Aesthetics": 2.6429
+    },
+    "mureka_4242badd-a503-40d0-873a-3eb40184fccd": {
+        "Coherence": 3.388,
+        "Musicality": 3.0739,
+        "Memorability": 3.379,
+        "Clarity": 3.1706,
+        "Naturalness": 3.0459,
+        "Overall_Aesthetics": 3.2115
+    },
+    "mureka_42a85bc2-b64c-48eb-b55c-fea207ce52c3": {
+        "Coherence": 2.3274,
+        "Musicality": 2.0498,
+        "Memorability": 1.9431,
+        "Clarity": 1.9528,
+        "Naturalness": 2.0694,
+        "Overall_Aesthetics": 2.0685
+    },
+    "mureka_46205943-cbf6-41ee-a9a4-7d570632073a": {
+        "Coherence": 2.4759,
+        "Musicality": 2.1534,
+        "Memorability": 2.1076,
+        "Clarity": 2.1245,
+        "Naturalness": 2.185,
+        "Overall_Aesthetics": 2.2093
+    },
+    "mureka_4986b546-6329-4114-82a0-99ddfd12a4f7": {
+        "Coherence": 2.7663,
+        "Musicality": 2.4659,
+        "Memorability": 2.4551,
+        "Clarity": 2.4465,
+        "Naturalness": 2.4542,
+        "Overall_Aesthetics": 2.5176
+    },
+    "mureka_4c025957-1070-4c85-95be-141c106f3ef2": {
+        "Coherence": 3.1553,
+        "Musicality": 2.9897,
+        "Memorability": 2.9045,
+        "Clarity": 2.9119,
+        "Naturalness": 2.9239,
+        "Overall_Aesthetics": 2.9771
+    },
+    "mureka_53631038-5393-4808-8c83-737310dc22b0": {
+        "Coherence": 3.5401,
+        "Musicality": 3.3112,
+        "Memorability": 3.4979,
+        "Clarity": 3.2953,
+        "Naturalness": 3.1902,
+        "Overall_Aesthetics": 3.3669
+    },
+    "mureka_5ca16b1f-ed6a-4721-9f68-f93282bb2e4e": {
+        "Coherence": 3.5017,
+        "Musicality": 3.2818,
+        "Memorability": 3.4112,
+        "Clarity": 3.2474,
+        "Naturalness": 3.1554,
+        "Overall_Aesthetics": 3.3195
+    },
+    "mureka_5ed9317a-531e-4e73-b695-f94326340ca0": {
+        "Coherence": 3.7221,
+        "Musicality": 3.525,
+        "Memorability": 3.6105,
+        "Clarity": 3.4248,
+        "Naturalness": 3.3951,
+        "Overall_Aesthetics": 3.5355
+    },
+    "mureka_5fe946c6-f621-45a0-8d93-cfc6f11047c2": {
+        "Coherence": 3.7373,
+        "Musicality": 3.6267,
+        "Memorability": 3.6357,
+        "Clarity": 3.5408,
+        "Naturalness": 3.5284,
+        "Overall_Aesthetics": 3.6138
+    },
+    "mureka_623af694-8ce2-40e9-86af-fb0bf1703a0b": {
+        "Coherence": 4.0482,
+        "Musicality": 3.9502,
+        "Memorability": 4.0706,
+        "Clarity": 3.7589,
+        "Naturalness": 3.7131,
+        "Overall_Aesthetics": 3.9082
+    },
+    "mureka_6650ddef-3133-4393-8418-3d42e70151e2": {
+        "Coherence": 2.5522,
+        "Musicality": 2.2593,
+        "Memorability": 2.1674,
+        "Clarity": 2.2463,
+        "Naturalness": 2.3146,
+        "Overall_Aesthetics": 2.308
+    },
+    "mureka_6a494070-6b09-43b3-8b7e-9b4ed6209396": {
+        "Coherence": 4.2134,
+        "Musicality": 4.2201,
+        "Memorability": 4.1857,
+        "Clarity": 3.9654,
+        "Naturalness": 3.9136,
+        "Overall_Aesthetics": 4.0996
+    },
+    "mureka_6a94afdf-ed8e-45b8-96fc-68b2329e3737": {
+        "Coherence": 2.4176,
+        "Musicality": 2.1193,
+        "Memorability": 2.0244,
+        "Clarity": 2.0421,
+        "Naturalness": 2.1412,
+        "Overall_Aesthetics": 2.1489
+    },
+    "mureka_6b40ee82-dcd0-4caa-9f26-49f96ed12d8c": {
+        "Coherence": 4.474,
+        "Musicality": 4.5146,
+        "Memorability": 4.4899,
+        "Clarity": 4.2112,
+        "Naturalness": 4.1909,
+        "Overall_Aesthetics": 4.3761
+    },
+    "mureka_6b441d23-108a-48da-9a8b-5c9eb1996a41": {
+        "Coherence": 2.2757,
+        "Musicality": 1.991,
+        "Memorability": 1.8624,
+        "Clarity": 1.9031,
+        "Naturalness": 2.0236,
+        "Overall_Aesthetics": 2.0112
+    },
+    "mureka_6dc9f487-12d5-47c4-911d-a95aa4c095b9": {
+        "Coherence": 2.2684,
+        "Musicality": 1.9966,
+        "Memorability": 1.8756,
+        "Clarity": 1.8927,
+        "Naturalness": 2.0107,
+        "Overall_Aesthetics": 2.0088
+    },
+    "mureka_6f01e974-2e63-43b9-8a48-aebdcc72cb49": {
+        "Coherence": 2.4549,
+        "Musicality": 2.1634,
+        "Memorability": 2.0659,
+        "Clarity": 2.086,
+        "Naturalness": 2.1948,
+        "Overall_Aesthetics": 2.193
+    },
+    "mureka_6f0346a5-47fc-4577-8532-dfe015cd61e0": {
+        "Coherence": 3.0982,
+        "Musicality": 2.8076,
+        "Memorability": 2.8427,
+        "Clarity": 2.7963,
+        "Naturalness": 2.7806,
+        "Overall_Aesthetics": 2.8651
+    },
+    "mureka_70762933-6c26-47f8-acd8-8b65b633b0a6": {
+        "Coherence": 3.7508,
+        "Musicality": 3.5809,
+        "Memorability": 3.5869,
+        "Clarity": 3.4381,
+        "Naturalness": 3.4104,
+        "Overall_Aesthetics": 3.5534
+    },
+    "mureka_73a50b2f-758f-4778-9b2c-80f3f243a775": {
+        "Coherence": 4.4346,
+        "Musicality": 4.4639,
+        "Memorability": 4.4516,
+        "Clarity": 4.1494,
+        "Naturalness": 4.1483,
+        "Overall_Aesthetics": 4.3296
+    },
+    "mureka_748c9862-7ec1-4761-bcce-e90588b3cc3b": {
+        "Coherence": 2.4506,
+        "Musicality": 2.1282,
+        "Memorability": 2.1254,
+        "Clarity": 2.1154,
+        "Naturalness": 2.1466,
+        "Overall_Aesthetics": 2.1932
+    },
+    "mureka_75dca759-2241-4dad-af49-84065c0c06b7": {
+        "Coherence": 3.7317,
+        "Musicality": 3.5255,
+        "Memorability": 3.6539,
+        "Clarity": 3.429,
+        "Naturalness": 3.3482,
+        "Overall_Aesthetics": 3.5377
+    },
+    "mureka_7827881f-f0ec-4847-b038-bb5026442581": {
+        "Coherence": 2.4151,
+        "Musicality": 2.0932,
+        "Memorability": 2.0997,
+        "Clarity": 2.0692,
+        "Naturalness": 2.1122,
+        "Overall_Aesthetics": 2.1579
+    },
+    "mureka_79ed94d1-4b6f-4d71-9681-705e45b9df5a": {
+        "Coherence": 2.7305,
+        "Musicality": 2.394,
+        "Memorability": 2.4152,
+        "Clarity": 2.3983,
+        "Naturalness": 2.4016,
+        "Overall_Aesthetics": 2.4679
+    },
+    "mureka_79fedb8b-1a54-43d9-a518-86003ec851fe": {
+        "Coherence": 3.8552,
+        "Musicality": 3.6921,
+        "Memorability": 3.8711,
+        "Clarity": 3.5895,
+        "Naturalness": 3.5461,
+        "Overall_Aesthetics": 3.7108
+    },
+    "mureka_7d829ab7-ff63-4155-a689-1e59f663dc43": {
+        "Coherence": 4.0808,
+        "Musicality": 4.0432,
+        "Memorability": 4.1808,
+        "Clarity": 3.8074,
+        "Naturalness": 3.7866,
+        "Overall_Aesthetics": 3.9798
+    },
+    "mureka_80f79cd6-2318-44e3-ae04-df6ef09ed420": {
+        "Coherence": 3.8606,
+        "Musicality": 3.7913,
+        "Memorability": 3.8647,
+        "Clarity": 3.7039,
+        "Naturalness": 3.658,
+        "Overall_Aesthetics": 3.7757
+    },
+    "mureka_8440088a-999b-4121-a329-b045ff368374": {
+        "Coherence": 4.6043,
+        "Musicality": 4.6554,
+        "Memorability": 4.6953,
+        "Clarity": 4.3963,
+        "Naturalness": 4.378,
+        "Overall_Aesthetics": 4.5459
+    },
+    "mureka_8797a0b0-b528-48a0-a2ac-4f806b4da302": {
+        "Coherence": 4.2938,
+        "Musicality": 4.3084,
+        "Memorability": 4.2994,
+        "Clarity": 3.9953,
+        "Naturalness": 3.9876,
+        "Overall_Aesthetics": 4.1769
+    },
+    "mureka_879dfd8b-1793-4d3a-810c-b8ec3c513f9c": {
+        "Coherence": 3.3225,
+        "Musicality": 3.0882,
+        "Memorability": 3.2417,
+        "Clarity": 3.0801,
+        "Naturalness": 3.0001,
+        "Overall_Aesthetics": 3.1465
+    },
+    "mureka_8888b0fc-7d66-427c-9398-4248f903e338": {
+        "Coherence": 2.1767,
+        "Musicality": 1.9009,
+        "Memorability": 1.7999,
+        "Clarity": 1.7787,
+        "Naturalness": 1.9063,
+        "Overall_Aesthetics": 1.9125
+    },
+    "mureka_8a272ace-f148-48fb-ad2f-39453f97c79b": {
+        "Coherence": 3.2498,
+        "Musicality": 2.9702,
+        "Memorability": 3.0729,
+        "Clarity": 2.939,
+        "Naturalness": 2.9238,
+        "Overall_Aesthetics": 3.0311
+    },
+    "mureka_8aa7efde-28bb-462b-aef1-f1455e9c089c": {
+        "Coherence": 3.306,
+        "Musicality": 3.0461,
+        "Memorability": 3.0821,
+        "Clarity": 2.988,
+        "Naturalness": 2.9547,
+        "Overall_Aesthetics": 3.0754
+    },
+    "mureka_8fabcd86-a113-4231-a705-c2d249866363": {
+        "Coherence": 3.5506,
+        "Musicality": 3.3359,
+        "Memorability": 3.3657,
+        "Clarity": 3.2159,
+        "Naturalness": 3.1825,
+        "Overall_Aesthetics": 3.3301
+    },
+    "mureka_92ddfc86-a9a9-4ba6-b4cb-682dfa14466a": {
+        "Coherence": 2.7392,
+        "Musicality": 2.423,
+        "Memorability": 2.5566,
+        "Clarity": 2.4798,
+        "Naturalness": 2.4219,
+        "Overall_Aesthetics": 2.5241
+    },
+    "mureka_936e42f2-891e-4b5d-8ae2-1eb930d11fdc": {
+        "Coherence": 2.8935,
+        "Musicality": 2.6134,
+        "Memorability": 2.7929,
+        "Clarity": 2.668,
+        "Naturalness": 2.5771,
+        "Overall_Aesthetics": 2.709
+    },
+    "mureka_94f85b99-1923-40b8-aefa-f2700c2625ee": {
+        "Coherence": 3.5847,
+        "Musicality": 3.3877,
+        "Memorability": 3.4946,
+        "Clarity": 3.2947,
+        "Naturalness": 3.2461,
+        "Overall_Aesthetics": 3.4016
+    },
+    "mureka_985f4324-9d27-4e58-94fc-a4719b1abe9b": {
+        "Coherence": 2.4995,
+        "Musicality": 2.1726,
+        "Memorability": 2.1605,
+        "Clarity": 2.157,
+        "Naturalness": 2.1791,
+        "Overall_Aesthetics": 2.2337
+    },
+    "mureka_98707792-f7b0-4848-9483-258e7a128601": {
+        "Coherence": 4.4374,
+        "Musicality": 4.4771,
+        "Memorability": 4.5824,
+        "Clarity": 4.2159,
+        "Naturalness": 4.209,
+        "Overall_Aesthetics": 4.3844
+    },
+    "mureka_99bfbacc-3c3b-4da4-8bae-4958b26fd33b": {
+        "Coherence": 3.9297,
+        "Musicality": 3.8208,
+        "Memorability": 3.9455,
+        "Clarity": 3.6551,
+        "Naturalness": 3.6077,
+        "Overall_Aesthetics": 3.7918
+    },
+    "mureka_9a114a9a-45ed-44e0-91c6-e543975577e7": {
+        "Coherence": 4.419,
+        "Musicality": 4.4546,
+        "Memorability": 4.5052,
+        "Clarity": 4.1532,
+        "Naturalness": 4.1525,
+        "Overall_Aesthetics": 4.3369
+    },
+    "mureka_9d3f7bbf-100d-4777-a1b6-6db51a62116d": {
+        "Coherence": 2.8728,
+        "Musicality": 2.5589,
+        "Memorability": 2.5833,
+        "Clarity": 2.5825,
+        "Naturalness": 2.5702,
+        "Overall_Aesthetics": 2.6335
+    },
+    "mureka_9de97702-21cf-4d5e-8752-d2129665ec6d": {
+        "Coherence": 2.8138,
+        "Musicality": 2.513,
+        "Memorability": 2.5093,
+        "Clarity": 2.4741,
+        "Naturalness": 2.5007,
+        "Overall_Aesthetics": 2.5622
+    },
+    "mureka_9e260dac-0ac6-4d7b-871f-7a27a65e13f1": {
+        "Coherence": 2.5754,
+        "Musicality": 2.2442,
+        "Memorability": 2.2717,
+        "Clarity": 2.2133,
+        "Naturalness": 2.2458,
+        "Overall_Aesthetics": 2.3101
+    },
+    "mureka_9fd021b7-6f06-432f-a286-bec8a894e730": {
+        "Coherence": 4.1504,
+        "Musicality": 4.1131,
+        "Memorability": 4.194,
+        "Clarity": 3.8396,
+        "Naturalness": 3.8348,
+        "Overall_Aesthetics": 4.0264
+    },
+    "mureka_a6bb8d46-9c42-46cc-9a2a-0ab1b6d328dd": {
+        "Coherence": 4.5932,
+        "Musicality": 4.6351,
+        "Memorability": 4.6717,
+        "Clarity": 4.3608,
+        "Naturalness": 4.3475,
+        "Overall_Aesthetics": 4.5217
+    },
+    "mureka_a707ecba-9b59-4c5d-833d-27a8acb0ad26": {
+        "Coherence": 3.5681,
+        "Musicality": 3.5612,
+        "Memorability": 3.327,
+        "Clarity": 3.3552,
+        "Naturalness": 3.381,
+        "Overall_Aesthetics": 3.4385
+    },
+    "mureka_aa25baad-3365-4483-a80c-1becfbada63f": {
+        "Coherence": 4.0935,
+        "Musicality": 4.0857,
+        "Memorability": 4.1282,
+        "Clarity": 3.8585,
+        "Naturalness": 3.8077,
+        "Overall_Aesthetics": 3.9947
+    },
+    "mureka_ab839409-d1dd-4df8-9e37-8b50391cd941": {
+        "Coherence": 3.6738,
+        "Musicality": 3.4811,
+        "Memorability": 3.5714,
+        "Clarity": 3.3648,
+        "Naturalness": 3.3468,
+        "Overall_Aesthetics": 3.4876
+    },
+    "mureka_b17eb731-7a85-41e0-bdf8-1cb403c0789b": {
+        "Coherence": 2.2113,
+        "Musicality": 1.9355,
+        "Memorability": 1.809,
+        "Clarity": 1.8189,
+        "Naturalness": 1.9504,
+        "Overall_Aesthetics": 1.945
+    },
+    "mureka_b47792d0-c176-430c-8db6-90d1387e4222": {
+        "Coherence": 4.384,
+        "Musicality": 4.4314,
+        "Memorability": 4.4403,
+        "Clarity": 4.1133,
+        "Naturalness": 4.0895,
+        "Overall_Aesthetics": 4.2917
+    },
+    "mureka_b4de0e74-7b2f-484d-8e5c-be9670f75526": {
+        "Coherence": 4.3658,
+        "Musicality": 4.4085,
+        "Memorability": 4.4434,
+        "Clarity": 4.0717,
+        "Naturalness": 4.0694,
+        "Overall_Aesthetics": 4.2718
+    },
+    "mureka_b88e55e0-26ce-4f5b-bab7-8418e547b998": {
+        "Coherence": 2.1643,
+        "Musicality": 1.9002,
+        "Memorability": 1.795,
+        "Clarity": 1.7759,
+        "Naturalness": 1.9171,
+        "Overall_Aesthetics": 1.9105
+    },
+    "mureka_bc283c80-485e-4cd8-ad57-d25e9521d86e": {
+        "Coherence": 4.4343,
+        "Musicality": 4.4697,
+        "Memorability": 4.4809,
+        "Clarity": 4.1547,
+        "Naturalness": 4.1425,
+        "Overall_Aesthetics": 4.3364
+    },
+    "mureka_bcf7149f-4f79-4282-9e48-1689eb44fecd": {
+        "Coherence": 2.3823,
+        "Musicality": 2.1053,
+        "Memorability": 1.9949,
+        "Clarity": 2.0226,
+        "Naturalness": 2.1326,
+        "Overall_Aesthetics": 2.1275
+    },
+    "mureka_bd2b8515-9ada-4591-a54a-6d49d5b4b69a": {
+        "Coherence": 3.8637,
+        "Musicality": 3.7127,
+        "Memorability": 3.7468,
+        "Clarity": 3.5285,
+        "Naturalness": 3.5093,
+        "Overall_Aesthetics": 3.6722
+    },
+    "mureka_befc0fb7-d8fc-4e91-9e11-91f2c142233b": {
+        "Coherence": 2.3841,
+        "Musicality": 2.0991,
+        "Memorability": 1.9843,
+        "Clarity": 2.0075,
+        "Naturalness": 2.1218,
+        "Overall_Aesthetics": 2.1194
+    },
+    "mureka_bf3d7391-37f1-4f24-bc07-af95fb81794c": {
+        "Coherence": 2.2157,
+        "Musicality": 1.9335,
+        "Memorability": 1.7887,
+        "Clarity": 1.8107,
+        "Naturalness": 1.9522,
+        "Overall_Aesthetics": 1.9402
+    },
+    "mureka_bf9c0561-bc78-4a96-b6e2-226ed59cb81e": {
+        "Coherence": 3.9281,
+        "Musicality": 3.9327,
+        "Memorability": 3.8411,
+        "Clarity": 3.7689,
+        "Naturalness": 3.7556,
+        "Overall_Aesthetics": 3.8453
+    },
+    "mureka_c00ccb00-8482-4e79-9c54-fefd5f406b9e": {
+        "Coherence": 4.108,
+        "Musicality": 4.0648,
+        "Memorability": 4.0744,
+        "Clarity": 3.8153,
+        "Naturalness": 3.7793,
+        "Overall_Aesthetics": 3.9684
+    },
+    "mureka_c14d75de-1864-473c-92a4-2e4d69700e8c": {
+        "Coherence": 2.1711,
+        "Musicality": 1.9083,
+        "Memorability": 1.7717,
+        "Clarity": 1.7784,
+        "Naturalness": 1.9155,
+        "Overall_Aesthetics": 1.909
+    },
+    "mureka_c1635935-1264-4383-bd21-c099945d30d0": {
+        "Coherence": 2.1433,
+        "Musicality": 1.879,
+        "Memorability": 1.7201,
+        "Clarity": 1.7477,
+        "Naturalness": 1.9078,
+        "Overall_Aesthetics": 1.8796
+    },
+    "mureka_c2e1be58-d476-4c4d-bfbd-cf7df16c54f3": {
+        "Coherence": 2.8172,
+        "Musicality": 2.5478,
+        "Memorability": 2.4773,
+        "Clarity": 2.4773,
+        "Naturalness": 2.5224,
+        "Overall_Aesthetics": 2.5684
+    },
+    "mureka_c822e016-752d-483e-beb1-440e87792e3e": {
+        "Coherence": 3.9914,
+        "Musicality": 3.9006,
+        "Memorability": 3.9451,
+        "Clarity": 3.6935,
+        "Naturalness": 3.6428,
+        "Overall_Aesthetics": 3.8347
+    },
+    "mureka_ca450fbe-be99-4364-9440-b3382837f70f": {
+        "Coherence": 4.4229,
+        "Musicality": 4.4583,
+        "Memorability": 4.454,
+        "Clarity": 4.1297,
+        "Naturalness": 4.1117,
+        "Overall_Aesthetics": 4.3153
+    },
+    "mureka_cceae30c-7c21-4e25-a992-3e6223ad6109": {
+        "Coherence": 4.4273,
+        "Musicality": 4.4691,
+        "Memorability": 4.4986,
+        "Clarity": 4.1613,
+        "Naturalness": 4.1509,
+        "Overall_Aesthetics": 4.3414
+    },
+    "mureka_cecd789f-64e9-4a26-818c-b1e571ad1e93": {
+        "Coherence": 4.0601,
+        "Musicality": 3.9957,
+        "Memorability": 3.9808,
+        "Clarity": 3.7631,
+        "Naturalness": 3.7244,
+        "Overall_Aesthetics": 3.9048
+    },
+    "mureka_cf1f2a84-06d1-4733-957c-57e183ac5c3b": {
+        "Coherence": 3.5417,
+        "Musicality": 3.3266,
+        "Memorability": 3.4405,
+        "Clarity": 3.2709,
+        "Naturalness": 3.1986,
+        "Overall_Aesthetics": 3.3557
+    },
+    "mureka_cf9d3b4b-2307-4839-99bd-ac1a317a254d": {
+        "Coherence": 2.5906,
+        "Musicality": 2.3218,
+        "Memorability": 2.2359,
+        "Clarity": 2.2724,
+        "Naturalness": 2.337,
+        "Overall_Aesthetics": 2.3515
+    },
+    "mureka_d2587a6e-a6ae-4a4d-b526-730a33dfef19": {
+        "Coherence": 2.508,
+        "Musicality": 2.2445,
+        "Memorability": 2.1281,
+        "Clarity": 2.1793,
+        "Naturalness": 2.2608,
+        "Overall_Aesthetics": 2.2641
+    },
+    "mureka_d3401063-f652-45e0-889a-29ea8937ebff": {
+        "Coherence": 4.297,
+        "Musicality": 4.348,
+        "Memorability": 4.2594,
+        "Clarity": 4.0544,
+        "Naturalness": 4.0482,
+        "Overall_Aesthetics": 4.2014
+    },
+    "mureka_d6ac69be-e141-4876-9247-320ae07a5ecf": {
+        "Coherence": 2.4371,
+        "Musicality": 2.1433,
+        "Memorability": 2.0378,
+        "Clarity": 2.0569,
+        "Naturalness": 2.1709,
+        "Overall_Aesthetics": 2.1692
+    },
+    "mureka_d95add86-f048-4708-8a39-6f5867a0daf1": {
+        "Coherence": 4.5909,
+        "Musicality": 4.6224,
+        "Memorability": 4.6654,
+        "Clarity": 4.3464,
+        "Naturalness": 4.3352,
+        "Overall_Aesthetics": 4.5121
+    },
+    "mureka_dacdadb7-80a5-4dea-b857-400d6c9b43b8": {
+        "Coherence": 3.6689,
+        "Musicality": 3.4635,
+        "Memorability": 3.6952,
+        "Clarity": 3.4645,
+        "Naturalness": 3.3295,
+        "Overall_Aesthetics": 3.5243
+    },
+    "mureka_ddd2c4aa-34c9-4d03-8460-6a27055e7419": {
+        "Coherence": 3.4046,
+        "Musicality": 3.1716,
+        "Memorability": 3.2094,
+        "Clarity": 3.0698,
+        "Naturalness": 3.0398,
+        "Overall_Aesthetics": 3.179
+    },
+    "mureka_debfd967-9c75-48fa-8f9c-6f1e8946b715": {
+        "Coherence": 3.4501,
+        "Musicality": 3.1936,
+        "Memorability": 3.4087,
+        "Clarity": 3.2183,
+        "Naturalness": 3.1223,
+        "Overall_Aesthetics": 3.2786
+    },
+    "mureka_e0c357aa-384e-4c3c-b9c7-376f4947210e": {
+        "Coherence": 2.2423,
+        "Musicality": 1.9649,
+        "Memorability": 1.8365,
+        "Clarity": 1.8608,
+        "Naturalness": 1.9851,
+        "Overall_Aesthetics": 1.9779
+    },
+    "mureka_e23e59ed-5337-456f-97c8-d05ef0fff384": {
+        "Coherence": 3.9791,
+        "Musicality": 3.8783,
+        "Memorability": 4.0567,
+        "Clarity": 3.6999,
+        "Naturalness": 3.6627,
+        "Overall_Aesthetics": 3.8553
+    },
+    "mureka_e422a58f-7f2c-4033-b3f6-0ed348e54963": {
+        "Coherence": 4.0771,
+        "Musicality": 4.1054,
+        "Memorability": 3.9932,
+        "Clarity": 3.8551,
+        "Naturalness": 3.8462,
+        "Overall_Aesthetics": 3.9754
+    },
+    "mureka_e80dabe4-08ef-4613-882b-bef2ce915a73": {
+        "Coherence": 4.4163,
+        "Musicality": 4.4277,
+        "Memorability": 4.4599,
+        "Clarity": 4.1092,
+        "Naturalness": 4.1271,
+        "Overall_Aesthetics": 4.308
+    },
+    "mureka_e8be8c51-e56f-4d3b-9923-58019bbe1cb6": {
+        "Coherence": 2.5829,
+        "Musicality": 2.3075,
+        "Memorability": 2.2039,
+        "Clarity": 2.2288,
+        "Naturalness": 2.3112,
+        "Overall_Aesthetics": 2.3269
+    },
+    "mureka_e8e60a33-1fc0-496e-a391-bbd7c34b9f4a": {
+        "Coherence": 2.9392,
+        "Musicality": 2.6364,
+        "Memorability": 2.6718,
+        "Clarity": 2.6393,
+        "Naturalness": 2.6078,
+        "Overall_Aesthetics": 2.6989
+    },
+    "mureka_eae0e298-5403-41f7-a78b-22b93d849443": {
+        "Coherence": 4.453,
+        "Musicality": 4.4765,
+        "Memorability": 4.4735,
+        "Clarity": 4.1639,
+        "Naturalness": 4.1528,
+        "Overall_Aesthetics": 4.3439
+    },
+    "mureka_f25a67be-6876-4917-b9d2-12906971beaf": {
+        "Coherence": 4.3511,
+        "Musicality": 4.3913,
+        "Memorability": 4.3395,
+        "Clarity": 4.0634,
+        "Naturalness": 4.0537,
+        "Overall_Aesthetics": 4.2398
+    },
+    "mureka_f648f785-f889-4e0c-86c4-de2d0d7746a7": {
+        "Coherence": 2.8322,
+        "Musicality": 2.579,
+        "Memorability": 2.4612,
+        "Clarity": 2.534,
+        "Naturalness": 2.5781,
+        "Overall_Aesthetics": 2.5969
+    },
+    "mureka_f6e269b4-9476-41b8-be71-38d33e17714e": {
+        "Coherence": 2.4389,
+        "Musicality": 2.1458,
+        "Memorability": 2.046,
+        "Clarity": 2.0717,
+        "Naturalness": 2.1756,
+        "Overall_Aesthetics": 2.1756
+    },
+    "mureka_f9ef4e54-1fbd-4c90-9070-d5ba8cf7a80f": {
+        "Coherence": 3.9168,
+        "Musicality": 3.7387,
+        "Memorability": 3.9347,
+        "Clarity": 3.6514,
+        "Naturalness": 3.5811,
+        "Overall_Aesthetics": 3.7645
+    },
+    "mureka_fbee04eb-9d21-4629-b33d-8325c91be468": {
+        "Coherence": 2.2101,
+        "Musicality": 1.9295,
+        "Memorability": 1.8188,
+        "Clarity": 1.8147,
+        "Naturalness": 1.9339,
+        "Overall_Aesthetics": 1.9414
+    },
+    "mureka_fcfe979b-27d2-4bb9-be17-63b129d078d6": {
+        "Coherence": 4.4069,
+        "Musicality": 4.4442,
+        "Memorability": 4.413,
+        "Clarity": 4.1176,
+        "Naturalness": 4.1174,
+        "Overall_Aesthetics": 4.2998
+    },
+    "mureka_fd4abec8-1438-419b-8a47-f0d754fca68f": {
+        "Coherence": 2.6839,
+        "Musicality": 2.3819,
+        "Memorability": 2.3758,
+        "Clarity": 2.3481,
+        "Naturalness": 2.379,
+        "Overall_Aesthetics": 2.4337
+    },
+    "sonauto_056d7bf2-4d55-4f0b-88fa-80be765fb727": {
+        "Coherence": 3.9001,
+        "Musicality": 3.7891,
+        "Memorability": 3.8574,
+        "Clarity": 3.6118,
+        "Naturalness": 3.5671,
+        "Overall_Aesthetics": 3.7451
+    },
+    "sonauto_09e4c296-4d80-4b05-b951-940c016ea490": {
+        "Coherence": 3.9056,
+        "Musicality": 3.7908,
+        "Memorability": 3.7933,
+        "Clarity": 3.5911,
+        "Naturalness": 3.564,
+        "Overall_Aesthetics": 3.729
+    },
+    "sonauto_0b350d05-ee3b-4985-9640-9431d49899dc": {
+        "Coherence": 4.3133,
+        "Musicality": 4.3601,
+        "Memorability": 4.3952,
+        "Clarity": 4.0568,
+        "Naturalness": 4.0294,
+        "Overall_Aesthetics": 4.231
+    },
+    "sonauto_0b42c2be-6c5b-4b43-8139-0281cdc7ca02": {
+        "Coherence": 2.2974,
+        "Musicality": 1.9837,
+        "Memorability": 1.9122,
+        "Clarity": 1.9436,
+        "Naturalness": 2.0429,
+        "Overall_Aesthetics": 2.036
+    },
+    "sonauto_0c8da60d-46bb-4a7b-a4c7-fde859096d5d": {
+        "Coherence": 3.8952,
+        "Musicality": 3.7717,
+        "Memorability": 3.8739,
+        "Clarity": 3.6109,
+        "Naturalness": 3.5618,
+        "Overall_Aesthetics": 3.7427
+    },
+    "sonauto_115dad4b-ed5e-482c-b8de-af059f20eee1": {
+        "Coherence": 3.0508,
+        "Musicality": 2.7502,
+        "Memorability": 2.9439,
+        "Clarity": 2.7882,
+        "Naturalness": 2.7429,
+        "Overall_Aesthetics": 2.8552
+    },
+    "sonauto_134c4e98-3162-42cb-aa2c-3324c13cd4bd": {
+        "Coherence": 4.292,
+        "Musicality": 4.3011,
+        "Memorability": 4.2806,
+        "Clarity": 3.9671,
+        "Naturalness": 3.9599,
+        "Overall_Aesthetics": 4.1601
+    },
+    "sonauto_1470c7a9-3bb4-46db-9fe7-715e7585ee9b": {
+        "Coherence": 3.6843,
+        "Musicality": 3.4939,
+        "Memorability": 3.6952,
+        "Clarity": 3.4505,
+        "Naturalness": 3.3793,
+        "Overall_Aesthetics": 3.5406
+    },
+    "sonauto_14bc746e-e508-4c1b-840f-bfe475e28bda": {
+        "Coherence": 4.1079,
+        "Musicality": 4.0744,
+        "Memorability": 4.1464,
+        "Clarity": 3.8077,
+        "Naturalness": 3.7828,
+        "Overall_Aesthetics": 3.9838
+    },
+    "sonauto_1624df44-475b-44a6-8a43-d17d93b058a2": {
+        "Coherence": 2.9505,
+        "Musicality": 2.6203,
+        "Memorability": 2.8424,
+        "Clarity": 2.6981,
+        "Naturalness": 2.6097,
+        "Overall_Aesthetics": 2.7442
+    },
+    "sonauto_1ac618a0-078d-4b5f-8fc1-4e5817a0cef9": {
+        "Coherence": 3.6901,
+        "Musicality": 3.5081,
+        "Memorability": 3.6679,
+        "Clarity": 3.435,
+        "Naturalness": 3.3506,
+        "Overall_Aesthetics": 3.5303
+    },
+    "sonauto_1b34ba0f-d9e1-461d-9dd8-cd6d6b433966": {
+        "Coherence": 2.9369,
+        "Musicality": 2.645,
+        "Memorability": 2.8508,
+        "Clarity": 2.7207,
+        "Naturalness": 2.6503,
+        "Overall_Aesthetics": 2.7607
+    },
+    "sonauto_1c04fdd3-bd6b-4b97-87f6-e38a07831802": {
+        "Coherence": 3.4693,
+        "Musicality": 3.244,
+        "Memorability": 3.4571,
+        "Clarity": 3.2506,
+        "Naturalness": 3.1578,
+        "Overall_Aesthetics": 3.3158
+    },
+    "sonauto_2017d07e-221b-4241-b6a6-6632081b152b": {
+        "Coherence": 2.7859,
+        "Musicality": 2.4572,
+        "Memorability": 2.628,
+        "Clarity": 2.5098,
+        "Naturalness": 2.4619,
+        "Overall_Aesthetics": 2.5686
+    },
+    "sonauto_215c24cb-3124-4ea7-b056-dd0db349c857": {
+        "Coherence": 4.2229,
+        "Musicality": 4.2099,
+        "Memorability": 4.2507,
+        "Clarity": 3.8959,
+        "Naturalness": 3.897,
+        "Overall_Aesthetics": 4.0953
+    },
+    "sonauto_27b74f1d-8930-423d-a5c8-302ac55b8fdd": {
+        "Coherence": 3.9919,
+        "Musicality": 3.9149,
+        "Memorability": 3.961,
+        "Clarity": 3.7232,
+        "Naturalness": 3.6868,
+        "Overall_Aesthetics": 3.8556
+    },
+    "sonauto_27fcbf36-f573-40f9-b9a4-02c33f7fdcc6": {
+        "Coherence": 3.637,
+        "Musicality": 3.4423,
+        "Memorability": 3.5203,
+        "Clarity": 3.317,
+        "Naturalness": 3.288,
+        "Overall_Aesthetics": 3.4409
+    },
+    "sonauto_2927cf9e-4d34-4434-b13d-3667afec7d84": {
+        "Coherence": 4.2614,
+        "Musicality": 4.2891,
+        "Memorability": 4.381,
+        "Clarity": 4.0185,
+        "Naturalness": 3.9907,
+        "Overall_Aesthetics": 4.1881
+    },
+    "sonauto_29ebe67a-6b80-4b7f-b611-a4e905817919": {
+        "Coherence": 4.5209,
+        "Musicality": 4.5578,
+        "Memorability": 4.5912,
+        "Clarity": 4.2453,
+        "Naturalness": 4.2407,
+        "Overall_Aesthetics": 4.4312
+    },
+    "sonauto_2a00fc35-82bd-4716-b327-4f4b6367cbb5": {
+        "Coherence": 4.5112,
+        "Musicality": 4.554,
+        "Memorability": 4.5795,
+        "Clarity": 4.2706,
+        "Naturalness": 4.2583,
+        "Overall_Aesthetics": 4.4347
+    },
+    "sonauto_2b9805ad-faa3-4e01-8338-234fa454619b": {
+        "Coherence": 3.1445,
+        "Musicality": 2.8798,
+        "Memorability": 2.8947,
+        "Clarity": 2.8363,
+        "Naturalness": 2.8,
+        "Overall_Aesthetics": 2.9111
+    },
+    "sonauto_2bd89fb2-74f2-441d-8543-ba2d9ea52f5d": {
+        "Coherence": 3.3218,
+        "Musicality": 3.08,
+        "Memorability": 3.3023,
+        "Clarity": 3.093,
+        "Naturalness": 3.0043,
+        "Overall_Aesthetics": 3.1603
+    },
+    "sonauto_2d7482f3-cf56-4e7c-8adf-9fce8b3dc8af": {
+        "Coherence": 4.5146,
+        "Musicality": 4.5478,
+        "Memorability": 4.5814,
+        "Clarity": 4.2341,
+        "Naturalness": 4.2291,
+        "Overall_Aesthetics": 4.4214
+    },
+    "sonauto_2f6ce595-163e-4e75-a8ae-ac3024f476c8": {
+        "Coherence": 1.9253,
+        "Musicality": 1.6864,
+        "Memorability": 1.5693,
+        "Clarity": 1.535,
+        "Naturalness": 1.7267,
+        "Overall_Aesthetics": 1.6885
+    },
+    "sonauto_3432adb8-b3f5-450f-a79e-a7ac8e5c5387": {
+        "Coherence": 4.116,
+        "Musicality": 4.0754,
+        "Memorability": 4.1422,
+        "Clarity": 3.8339,
+        "Naturalness": 3.8007,
+        "Overall_Aesthetics": 3.9936
+    },
+    "sonauto_37834863-5026-4708-b15c-90c130acde98": {
+        "Coherence": 4.2541,
+        "Musicality": 4.2579,
+        "Memorability": 4.3184,
+        "Clarity": 3.9373,
+        "Naturalness": 3.9334,
+        "Overall_Aesthetics": 4.1402
+    },
+    "sonauto_380b5300-36f7-47d0-995a-ad28134d7dcc": {
+        "Coherence": 3.1455,
+        "Musicality": 2.8542,
+        "Memorability": 2.9798,
+        "Clarity": 2.8584,
+        "Naturalness": 2.8114,
+        "Overall_Aesthetics": 2.9299
+    },
+    "sonauto_382f815b-7771-4591-811b-fb1f70a9f726": {
+        "Coherence": 2.8707,
+        "Musicality": 2.5612,
+        "Memorability": 2.6455,
+        "Clarity": 2.5535,
+        "Naturalness": 2.5418,
+        "Overall_Aesthetics": 2.6345
+    },
+    "sonauto_3bb2f0fe-734f-48c2-8417-8e77db08d5d5": {
+        "Coherence": 4.3831,
+        "Musicality": 4.4059,
+        "Memorability": 4.4464,
+        "Clarity": 4.0846,
+        "Naturalness": 4.086,
+        "Overall_Aesthetics": 4.2812
+    },
+    "sonauto_3cbc67fc-f9ac-4acf-b7a6-25888292b0c3": {
+        "Coherence": 2.5842,
+        "Musicality": 2.2723,
+        "Memorability": 2.224,
+        "Clarity": 2.276,
+        "Naturalness": 2.2996,
+        "Overall_Aesthetics": 2.3312
+    },
+    "sonauto_3d0ed3cc-0d41-4577-b131-59dffa9b3de8": {
+        "Coherence": 2.7766,
+        "Musicality": 2.4494,
+        "Memorability": 2.6279,
+        "Clarity": 2.5062,
+        "Naturalness": 2.4398,
+        "Overall_Aesthetics": 2.56
+    },
+    "sonauto_3d178ce8-aec1-4462-a004-0dcce8efc669": {
+        "Coherence": 2.2204,
+        "Musicality": 1.9411,
+        "Memorability": 1.8228,
+        "Clarity": 1.8225,
+        "Naturalness": 1.9494,
+        "Overall_Aesthetics": 1.9512
+    },
+    "sonauto_407e337b-9ec8-42c1-9e1c-f0781f47a24b": {
+        "Coherence": 1.7358,
+        "Musicality": 1.5568,
+        "Memorability": 1.4932,
+        "Clarity": 1.4109,
+        "Naturalness": 1.5191,
+        "Overall_Aesthetics": 1.5432
+    },
+    "sonauto_4543de1b-e942-4664-ad23-b3914c0c0890": {
+        "Coherence": 4.1868,
+        "Musicality": 4.1684,
+        "Memorability": 4.1837,
+        "Clarity": 3.8628,
+        "Naturalness": 3.8698,
+        "Overall_Aesthetics": 4.0543
+    },
+    "sonauto_45e3f1d3-7283-4e76-ac18-9c2e494582c4": {
+        "Coherence": 3.387,
+        "Musicality": 3.1335,
+        "Memorability": 3.3537,
+        "Clarity": 3.1781,
+        "Naturalness": 3.0973,
+        "Overall_Aesthetics": 3.2299
+    },
+    "sonauto_48fcf099-68bc-45cd-81f4-ea6eabf98ac0": {
+        "Coherence": 3.7157,
+        "Musicality": 3.5159,
+        "Memorability": 3.6217,
+        "Clarity": 3.4025,
+        "Naturalness": 3.3801,
+        "Overall_Aesthetics": 3.5272
+    },
+    "sonauto_4b48d89d-c256-4506-97ce-70f037db4177": {
+        "Coherence": 3.3073,
+        "Musicality": 3.0699,
+        "Memorability": 3.1321,
+        "Clarity": 3.0086,
+        "Naturalness": 2.9641,
+        "Overall_Aesthetics": 3.0964
+    },
+    "sonauto_4cfa339a-4243-425e-8a31-2db0a93c9a95": {
+        "Coherence": 2.5632,
+        "Musicality": 2.2893,
+        "Memorability": 2.1955,
+        "Clarity": 2.2167,
+        "Naturalness": 2.3054,
+        "Overall_Aesthetics": 2.314
+    },
+    "sonauto_4d20e479-b1e1-44b5-b4e8-8df50d24f824": {
+        "Coherence": 4.3915,
+        "Musicality": 4.4212,
+        "Memorability": 4.4565,
+        "Clarity": 4.1112,
+        "Naturalness": 4.1251,
+        "Overall_Aesthetics": 4.3011
+    },
+    "sonauto_4de04b55-b004-40b0-b05c-df6c07ee0814": {
+        "Coherence": 3.0257,
+        "Musicality": 2.7314,
+        "Memorability": 2.824,
+        "Clarity": 2.7555,
+        "Naturalness": 2.7071,
+        "Overall_Aesthetics": 2.8087
+    },
+    "sonauto_50c28f25-d83e-4bdb-b3ac-15571f947338": {
+        "Coherence": 3.307,
+        "Musicality": 3.0579,
+        "Memorability": 3.1976,
+        "Clarity": 3.0003,
+        "Naturalness": 2.9842,
+        "Overall_Aesthetics": 3.1094
+    },
+    "sonauto_51579dcb-caf6-49e4-bfbd-d5f4c82759a8": {
+        "Coherence": 4.234,
+        "Musicality": 4.2239,
+        "Memorability": 4.2062,
+        "Clarity": 3.9294,
+        "Naturalness": 3.9165,
+        "Overall_Aesthetics": 4.102
+    },
+    "sonauto_515f503d-142a-49aa-84b4-22ef528dfbad": {
+        "Coherence": 4.1094,
+        "Musicality": 4.0762,
+        "Memorability": 4.0831,
+        "Clarity": 3.8267,
+        "Naturalness": 3.7836,
+        "Overall_Aesthetics": 3.9758
+    },
+    "sonauto_5478a20a-5e10-4d16-b9cd-ad439de63286": {
+        "Coherence": 4.4259,
+        "Musicality": 4.4725,
+        "Memorability": 4.494,
+        "Clarity": 4.1613,
+        "Naturalness": 4.1642,
+        "Overall_Aesthetics": 4.3436
+    },
+    "sonauto_59d3a8a8-b3f0-4a95-ac63-ee8898bcefcb": {
+        "Coherence": 2.8298,
+        "Musicality": 2.5196,
+        "Memorability": 2.6618,
+        "Clarity": 2.5691,
+        "Naturalness": 2.5189,
+        "Overall_Aesthetics": 2.6198
+    },
+    "sonauto_5b91be18-182e-4f46-87ac-ef4fac308e58": {
+        "Coherence": 4.4911,
+        "Musicality": 4.5199,
+        "Memorability": 4.5053,
+        "Clarity": 4.2062,
+        "Naturalness": 4.197,
+        "Overall_Aesthetics": 4.3839
+    },
+    "sonauto_5c8af0ed-fcf2-4561-9167-5961fa88980e": {
+        "Coherence": 2.8202,
+        "Musicality": 2.4884,
+        "Memorability": 2.6642,
+        "Clarity": 2.5597,
+        "Naturalness": 2.4862,
+        "Overall_Aesthetics": 2.6037
+    },
+    "sonauto_627c3f01-8cd5-40eb-8421-a8215fdccb40": {
+        "Coherence": 3.419,
+        "Musicality": 3.1811,
+        "Memorability": 3.3476,
+        "Clarity": 3.1369,
+        "Naturalness": 3.0684,
+        "Overall_Aesthetics": 3.2306
+    },
+    "sonauto_651dd80b-cbcc-4165-b50d-7d0cd1e414d9": {
+        "Coherence": 4.1754,
+        "Musicality": 4.1463,
+        "Memorability": 4.1793,
+        "Clarity": 3.8616,
+        "Naturalness": 3.8528,
+        "Overall_Aesthetics": 4.0431
+    },
+    "sonauto_682e3c45-ea23-42f1-8763-f2a6417f3362": {
+        "Coherence": 4.3627,
+        "Musicality": 4.4006,
+        "Memorability": 4.4017,
+        "Clarity": 4.0703,
+        "Naturalness": 4.0583,
+        "Overall_Aesthetics": 4.2587
+    },
+    "sonauto_69db8efa-820f-4d70-9de3-083e6d976e17": {
+        "Coherence": 2.9444,
+        "Musicality": 2.6435,
+        "Memorability": 2.8516,
+        "Clarity": 2.7231,
+        "Naturalness": 2.6196,
+        "Overall_Aesthetics": 2.7564
+    },
+    "sonauto_6ac94616-c49d-4990-a225-349767218f53": {
+        "Coherence": 2.6914,
+        "Musicality": 2.3553,
+        "Memorability": 2.4716,
+        "Clarity": 2.3964,
+        "Naturalness": 2.3515,
+        "Overall_Aesthetics": 2.4532
+    },
+    "sonauto_6b2e00f7-cd9b-4ed4-bfb4-04d89cf1fe7f": {
+        "Coherence": 4.2643,
+        "Musicality": 4.2497,
+        "Memorability": 4.2672,
+        "Clarity": 3.9104,
+        "Naturalness": 3.9273,
+        "Overall_Aesthetics": 4.1238
+    },
+    "sonauto_6cc00238-e6b3-42ab-af0c-5c7b4184fe23": {
+        "Coherence": 1.5628,
+        "Musicality": 1.478,
+        "Memorability": 1.3996,
+        "Clarity": 1.3443,
+        "Naturalness": 1.447,
+        "Overall_Aesthetics": 1.4463
+    },
+    "sonauto_6e018c4b-97c1-484d-9acd-4f3acdd5a8a1": {
+        "Coherence": 3.6699,
+        "Musicality": 3.4321,
+        "Memorability": 3.5967,
+        "Clarity": 3.3807,
+        "Naturalness": 3.3001,
+        "Overall_Aesthetics": 3.4759
+    },
+    "sonauto_71281fa5-8db8-450c-a4a7-b35209f3992e": {
+        "Coherence": 2.7382,
+        "Musicality": 2.4229,
+        "Memorability": 2.5566,
+        "Clarity": 2.435,
+        "Naturalness": 2.4047,
+        "Overall_Aesthetics": 2.5115
+    },
+    "sonauto_723957e4-b220-4c55-a833-a4842aa00f62": {
+        "Coherence": 3.0226,
+        "Musicality": 2.7186,
+        "Memorability": 2.8876,
+        "Clarity": 2.7404,
+        "Naturalness": 2.7003,
+        "Overall_Aesthetics": 2.8139
+    },
+    "sonauto_740c7d51-7e69-48bb-b35b-48a3101407e1": {
+        "Coherence": 4.4784,
+        "Musicality": 4.5136,
+        "Memorability": 4.5947,
+        "Clarity": 4.2445,
+        "Naturalness": 4.2305,
+        "Overall_Aesthetics": 4.4123
+    },
+    "sonauto_74be7dc6-eaad-4522-b8b4-14ca1512b1b6": {
+        "Coherence": 2.4078,
+        "Musicality": 2.1289,
+        "Memorability": 2.0135,
+        "Clarity": 2.0723,
+        "Naturalness": 2.1735,
+        "Overall_Aesthetics": 2.1592
+    },
+    "sonauto_78c2ded1-4a9b-4d67-80f3-de80fd568140": {
+        "Coherence": 2.6086,
+        "Musicality": 2.2764,
+        "Memorability": 2.3777,
+        "Clarity": 2.3104,
+        "Naturalness": 2.2764,
+        "Overall_Aesthetics": 2.3699
+    },
+    "sonauto_7c82ffd9-f571-42f1-a394-04b961a198bd": {
+        "Coherence": 4.2965,
+        "Musicality": 4.328,
+        "Memorability": 4.3818,
+        "Clarity": 4.0156,
+        "Naturalness": 4.0076,
+        "Overall_Aesthetics": 4.2059
+    },
+    "sonauto_7ce13423-29b4-4376-8981-98dd231ad456": {
+        "Coherence": 2.6001,
+        "Musicality": 2.2716,
+        "Memorability": 2.3873,
+        "Clarity": 2.2936,
+        "Naturalness": 2.2651,
+        "Overall_Aesthetics": 2.3635
+    },
+    "sonauto_7d839a28-379c-4784-8e86-254df13478c2": {
+        "Coherence": 2.5637,
+        "Musicality": 2.2607,
+        "Memorability": 2.1879,
+        "Clarity": 2.2113,
+        "Naturalness": 2.2858,
+        "Overall_Aesthetics": 2.3019
+    },
+    "sonauto_7ed3cafa-5c36-41c5-90d5-9034d4f6be33": {
+        "Coherence": 3.8983,
+        "Musicality": 3.7578,
+        "Memorability": 3.8925,
+        "Clarity": 3.6252,
+        "Naturalness": 3.5519,
+        "Overall_Aesthetics": 3.7451
+    },
+    "sonauto_829f7fbd-0066-4900-a484-681037bfc92c": {
+        "Coherence": 2.9206,
+        "Musicality": 2.596,
+        "Memorability": 2.7926,
+        "Clarity": 2.6668,
+        "Naturalness": 2.5797,
+        "Overall_Aesthetics": 2.7111
+    },
+    "sonauto_82bb5c66-99c6-4f5c-9026-c879e4e53d71": {
+        "Coherence": 3.9534,
+        "Musicality": 3.8429,
+        "Memorability": 3.9788,
+        "Clarity": 3.6799,
+        "Naturalness": 3.6249,
+        "Overall_Aesthetics": 3.816
+    },
+    "sonauto_82ff4632-7349-406d-9bf3-1d3b1e0fa113": {
+        "Coherence": 3.6378,
+        "Musicality": 3.4628,
+        "Memorability": 3.6621,
+        "Clarity": 3.3974,
+        "Naturalness": 3.32,
+        "Overall_Aesthetics": 3.496
+    },
+    "sonauto_84133bca-1f84-4acc-ab64-a72b9d16ab5a": {
+        "Coherence": 3.8505,
+        "Musicality": 3.6958,
+        "Memorability": 3.8125,
+        "Clarity": 3.5423,
+        "Naturalness": 3.4986,
+        "Overall_Aesthetics": 3.6799
+    },
+    "sonauto_8517da19-db16-4d23-9801-4d2063a35604": {
+        "Coherence": 3.1372,
+        "Musicality": 2.8641,
+        "Memorability": 3.0574,
+        "Clarity": 2.8833,
+        "Naturalness": 2.8164,
+        "Overall_Aesthetics": 2.9517
+    },
+    "sonauto_87d15498-1c99-4e44-a608-f98e8e6d0d4e": {
+        "Coherence": 2.8784,
+        "Musicality": 2.5407,
+        "Memorability": 2.7432,
+        "Clarity": 2.6145,
+        "Naturalness": 2.5385,
+        "Overall_Aesthetics": 2.6631
+    },
+    "sonauto_8c6d4dfc-b0ad-40e8-9b8a-8fc8b5812c4e": {
+        "Coherence": 2.9666,
+        "Musicality": 2.6336,
+        "Memorability": 2.8125,
+        "Clarity": 2.6787,
+        "Naturalness": 2.6159,
+        "Overall_Aesthetics": 2.7415
+    },
+    "sonauto_8c9f764e-64cc-4785-85fd-cdabe17894ff": {
+        "Coherence": 3.9693,
+        "Musicality": 3.8434,
+        "Memorability": 4.0078,
+        "Clarity": 3.6988,
+        "Naturalness": 3.6744,
+        "Overall_Aesthetics": 3.8387
+    },
+    "sonauto_8e2ea1bd-bc8b-4e42-9bcf-5d1e5499ffd5": {
+        "Coherence": 2.6496,
+        "Musicality": 2.3168,
+        "Memorability": 2.4513,
+        "Clarity": 2.3398,
+        "Naturalness": 2.3124,
+        "Overall_Aesthetics": 2.414
+    },
+    "sonauto_9df3032f-d9ce-4795-bdeb-ede2fcff5d9a": {
+        "Coherence": 3.9638,
+        "Musicality": 3.8626,
+        "Memorability": 3.9777,
+        "Clarity": 3.6955,
+        "Naturalness": 3.6349,
+        "Overall_Aesthetics": 3.8269
+    },
+    "sonauto_a2d1a203-2e7c-4fdc-af10-cc2ff08b46cc": {
+        "Coherence": 3.4714,
+        "Musicality": 3.1984,
+        "Memorability": 3.401,
+        "Clarity": 3.1964,
+        "Naturalness": 3.1208,
+        "Overall_Aesthetics": 3.2776
+    },
+    "sonauto_a371b42b-efbd-42ac-a0bf-fcfe4a29f1a8": {
+        "Coherence": 4.6124,
+        "Musicality": 4.6603,
+        "Memorability": 4.6706,
+        "Clarity": 4.3824,
+        "Naturalness": 4.3648,
+        "Overall_Aesthetics": 4.5381
+    },
+    "sonauto_a4442166-d41c-42c7-ad0a-28ce7ea2d42e": {
+        "Coherence": 2.2897,
+        "Musicality": 2.0144,
+        "Memorability": 1.9112,
+        "Clarity": 1.9463,
+        "Naturalness": 2.0457,
+        "Overall_Aesthetics": 2.0415
+    },
+    "sonauto_a464f1ca-a8e3-434f-bd0b-0cb86c175dd0": {
+        "Coherence": 3.7147,
+        "Musicality": 3.5338,
+        "Memorability": 3.7058,
+        "Clarity": 3.4602,
+        "Naturalness": 3.3814,
+        "Overall_Aesthetics": 3.5592
+    },
+    "sonauto_a63ac5c0-2898-453e-a7fe-a0a118c75441": {
+        "Coherence": 4.3411,
+        "Musicality": 4.3724,
+        "Memorability": 4.3424,
+        "Clarity": 4.0369,
+        "Naturalness": 4.0309,
+        "Overall_Aesthetics": 4.2247
+    },
+    "sonauto_af7f34b8-aa88-4cbe-ac52-9d13882e03ac": {
+        "Coherence": 3.8193,
+        "Musicality": 3.6663,
+        "Memorability": 3.8369,
+        "Clarity": 3.5555,
+        "Naturalness": 3.5232,
+        "Overall_Aesthetics": 3.6802
+    },
+    "sonauto_b0a386de-802a-4082-9e0b-a20ad939e278": {
+        "Coherence": 2.6433,
+        "Musicality": 2.3133,
+        "Memorability": 2.3065,
+        "Clarity": 2.3188,
+        "Naturalness": 2.3379,
+        "Overall_Aesthetics": 2.384
+    },
+    "sonauto_b5feb841-a17d-4630-a4ab-6b7930deab0a": {
+        "Coherence": 4.2381,
+        "Musicality": 4.2467,
+        "Memorability": 4.2991,
+        "Clarity": 3.9502,
+        "Naturalness": 3.9282,
+        "Overall_Aesthetics": 4.1325
+    },
+    "sonauto_b6f219e6-e290-4e72-aa96-e330e833c85c": {
+        "Coherence": 2.4034,
+        "Musicality": 2.1239,
+        "Memorability": 2.0616,
+        "Clarity": 2.0732,
+        "Naturalness": 2.144,
+        "Overall_Aesthetics": 2.1612
+    },
+    "sonauto_b7b97635-4be7-4eb1-b35f-36fe674a180d": {
+        "Coherence": 4.1089,
+        "Musicality": 4.0774,
+        "Memorability": 4.1434,
+        "Clarity": 3.8162,
+        "Naturalness": 3.7929,
+        "Overall_Aesthetics": 3.9878
+    },
+    "sonauto_bbf04618-f9ee-4ace-88c0-bee03c36a2f2": {
+        "Coherence": 3.9657,
+        "Musicality": 3.8584,
+        "Memorability": 3.9012,
+        "Clarity": 3.6518,
+        "Naturalness": 3.6312,
+        "Overall_Aesthetics": 3.8017
+    },
+    "sonauto_bd0d0326-138a-415d-b564-37322e3132c6": {
+        "Coherence": 2.7704,
+        "Musicality": 2.4485,
+        "Memorability": 2.5878,
+        "Clarity": 2.4597,
+        "Naturalness": 2.4294,
+        "Overall_Aesthetics": 2.5392
+    },
+    "sonauto_c211e32c-a1b4-4017-acdf-32a32fb62ae4": {
+        "Coherence": 3.9958,
+        "Musicality": 3.8838,
+        "Memorability": 3.9851,
+        "Clarity": 3.7193,
+        "Naturalness": 3.6545,
+        "Overall_Aesthetics": 3.8477
+    },
+    "sonauto_c5c93d94-8709-4153-a8cb-ed8fdec8f55b": {
+        "Coherence": 2.9082,
+        "Musicality": 2.5742,
+        "Memorability": 2.7932,
+        "Clarity": 2.6631,
+        "Naturalness": 2.5734,
+        "Overall_Aesthetics": 2.7024
+    },
+    "sonauto_c85c22f1-c044-44d3-a16d-a1af1b52e905": {
+        "Coherence": 4.4945,
+        "Musicality": 4.5385,
+        "Memorability": 4.5685,
+        "Clarity": 4.2489,
+        "Naturalness": 4.243,
+        "Overall_Aesthetics": 4.4187
+    },
+    "sonauto_c9b2250a-b431-470d-9cb4-bec5eb0f9e2d": {
+        "Coherence": 3.2797,
+        "Musicality": 3.0404,
+        "Memorability": 3.095,
+        "Clarity": 3.0391,
+        "Naturalness": 3.0104,
+        "Overall_Aesthetics": 3.0929
+    },
+    "sonauto_cb96b176-6fdf-4edd-8261-f72a678520a3": {
+        "Coherence": 4.3629,
+        "Musicality": 4.41,
+        "Memorability": 4.4381,
+        "Clarity": 4.1094,
+        "Naturalness": 4.0896,
+        "Overall_Aesthetics": 4.282
+    },
+    "sonauto_cc27a6b9-dc71-4d56-9b8f-983a18ac06bc": {
+        "Coherence": 3.4175,
+        "Musicality": 3.1785,
+        "Memorability": 3.3543,
+        "Clarity": 3.2006,
+        "Naturalness": 3.1096,
+        "Overall_Aesthetics": 3.2521
+    },
+    "sonauto_ce199ea6-a2b8-4ff0-9d4f-9aa43eed644d": {
+        "Coherence": 3.9722,
+        "Musicality": 3.8533,
+        "Memorability": 3.9079,
+        "Clarity": 3.649,
+        "Naturalness": 3.6061,
+        "Overall_Aesthetics": 3.7977
+    },
+    "sonauto_ce59f7ba-67e2-4592-a6f9-c5f9d5ac4d7e": {
+        "Coherence": 4.2672,
+        "Musicality": 4.2772,
+        "Memorability": 4.3054,
+        "Clarity": 3.9849,
+        "Naturalness": 3.9494,
+        "Overall_Aesthetics": 4.1568
+    },
+    "sonauto_ce741575-07bb-41ee-97b5-e0ae0a22af7f": {
+        "Coherence": 4.1027,
+        "Musicality": 4.0358,
+        "Memorability": 4.1907,
+        "Clarity": 3.8369,
+        "Naturalness": 3.7935,
+        "Overall_Aesthetics": 3.9919
+    },
+    "sonauto_ceff306a-55e2-42ee-9068-b0d2ce1d8ccc": {
+        "Coherence": 2.1339,
+        "Musicality": 1.8595,
+        "Memorability": 1.7415,
+        "Clarity": 1.7377,
+        "Naturalness": 1.8725,
+        "Overall_Aesthetics": 1.869
+    },
+    "sonauto_cf04c05e-dc8f-47d1-a5cf-11f425f39f3f": {
+        "Coherence": 3.2875,
+        "Musicality": 2.9619,
+        "Memorability": 3.2651,
+        "Clarity": 3.0696,
+        "Naturalness": 2.95,
+        "Overall_Aesthetics": 3.1068
+    },
+    "sonauto_d3ca2b09-1ff7-458f-b9a4-dd1c4375683f": {
+        "Coherence": 4.2285,
+        "Musicality": 4.2457,
+        "Memorability": 4.3545,
+        "Clarity": 3.9725,
+        "Naturalness": 3.9643,
+        "Overall_Aesthetics": 4.1531
+    },
+    "sonauto_d6339f0b-283b-45c6-bee5-15ecc55cc045": {
+        "Coherence": 2.421,
+        "Musicality": 2.0837,
+        "Memorability": 2.1447,
+        "Clarity": 2.062,
+        "Naturalness": 2.0726,
+        "Overall_Aesthetics": 2.1568
+    },
+    "sonauto_d72669c6-def2-4abc-8b5f-ef9397448975": {
+        "Coherence": 3.1109,
+        "Musicality": 2.8295,
+        "Memorability": 2.9085,
+        "Clarity": 2.8263,
+        "Naturalness": 2.7806,
+        "Overall_Aesthetics": 2.8912
+    },
+    "sonauto_d91842cb-da59-4302-a4b5-829039451ae7": {
+        "Coherence": 2.5827,
+        "Musicality": 2.3121,
+        "Memorability": 2.2163,
+        "Clarity": 2.2381,
+        "Naturalness": 2.3088,
+        "Overall_Aesthetics": 2.3316
+    },
+    "sonauto_d926d923-f2de-4f52-9271-f41735c92dd9": {
+        "Coherence": 3.0256,
+        "Musicality": 2.7092,
+        "Memorability": 2.9125,
+        "Clarity": 2.7723,
+        "Naturalness": 2.7126,
+        "Overall_Aesthetics": 2.8264
+    },
+    "sonauto_d9979f8c-f512-4406-ac3a-78e79622d71d": {
+        "Coherence": 3.9946,
+        "Musicality": 3.8946,
+        "Memorability": 3.9427,
+        "Clarity": 3.6803,
+        "Naturalness": 3.6443,
+        "Overall_Aesthetics": 3.8313
+    },
+    "sonauto_dcef8efb-aa49-4001-a1ca-09bb051acdeb": {
+        "Coherence": 3.9687,
+        "Musicality": 3.8636,
+        "Memorability": 3.9341,
+        "Clarity": 3.6526,
+        "Naturalness": 3.631,
+        "Overall_Aesthetics": 3.81
+    },
+    "sonauto_de475fe7-059a-4544-8a63-8fe7250eae73": {
+        "Coherence": 2.1999,
+        "Musicality": 1.9133,
+        "Memorability": 1.8122,
+        "Clarity": 1.8178,
+        "Naturalness": 1.9542,
+        "Overall_Aesthetics": 1.9395
+    },
+    "sonauto_e167ec83-38e7-4838-aad2-a8347e6c9c5d": {
+        "Coherence": 3.5426,
+        "Musicality": 3.3373,
+        "Memorability": 3.55,
+        "Clarity": 3.3002,
+        "Naturalness": 3.2156,
+        "Overall_Aesthetics": 3.3891
+    },
+    "sonauto_e3fda1d2-54f7-4c68-8b57-3a71f1f9473a": {
+        "Coherence": 4.4096,
+        "Musicality": 4.4502,
+        "Memorability": 4.4357,
+        "Clarity": 4.1312,
+        "Naturalness": 4.1254,
+        "Overall_Aesthetics": 4.3104
+    },
+    "sonauto_e708fa92-dc8f-4789-9f1b-bdf1062ad2d1": {
+        "Coherence": 2.4691,
+        "Musicality": 2.1454,
+        "Memorability": 2.203,
+        "Clarity": 2.1269,
+        "Naturalness": 2.1247,
+        "Overall_Aesthetics": 2.2138
+    },
+    "sonauto_ee74a7ae-7419-4434-8947-e12f3abece2b": {
+        "Coherence": 3.1861,
+        "Musicality": 2.924,
+        "Memorability": 3.1184,
+        "Clarity": 2.9366,
+        "Naturalness": 2.8808,
+        "Overall_Aesthetics": 3.0092
+    },
+    "sonauto_f06cc0b5-2dc0-4772-a708-3eba1ff0a4f5": {
+        "Coherence": 2.7825,
+        "Musicality": 2.4386,
+        "Memorability": 2.5838,
+        "Clarity": 2.501,
+        "Naturalness": 2.44,
+        "Overall_Aesthetics": 2.5492
+    },
+    "sonauto_f107894d-dd3e-4896-a1d7-2cff1e10ecee": {
+        "Coherence": 4.0182,
+        "Musicality": 3.9321,
+        "Memorability": 3.963,
+        "Clarity": 3.7191,
+        "Naturalness": 3.672,
+        "Overall_Aesthetics": 3.8609
+    },
+    "sonauto_f29e853f-3e2f-44e8-9c32-bc2c5e2cceeb": {
+        "Coherence": 3.8735,
+        "Musicality": 3.7002,
+        "Memorability": 3.7765,
+        "Clarity": 3.5182,
+        "Naturalness": 3.5032,
+        "Overall_Aesthetics": 3.6743
+    },
+    "sonauto_f34c09cf-8646-41c7-95a7-39664f9b8c51": {
+        "Coherence": 2.0675,
+        "Musicality": 1.7407,
+        "Memorability": 1.7268,
+        "Clarity": 1.6339,
+        "Naturalness": 1.7249,
+        "Overall_Aesthetics": 1.7788
+    },
+    "sonauto_f3676465-7d32-4e44-8a71-c9e29835cebd": {
+        "Coherence": 4.0448,
+        "Musicality": 3.9712,
+        "Memorability": 4.0472,
+        "Clarity": 3.7491,
+        "Naturalness": 3.7032,
+        "Overall_Aesthetics": 3.9031
+    },
+    "sonauto_f5b31fde-9947-4828-88bf-05e058820744": {
+        "Coherence": 4.0205,
+        "Musicality": 3.9569,
+        "Memorability": 4.0733,
+        "Clarity": 3.787,
+        "Naturalness": 3.7168,
+        "Overall_Aesthetics": 3.9109
+    },
+    "sonauto_f68607c9-827e-4614-a540-6ff224c54eba": {
+        "Coherence": 3.3791,
+        "Musicality": 3.1354,
+        "Memorability": 3.2031,
+        "Clarity": 3.071,
+        "Naturalness": 3.0577,
+        "Overall_Aesthetics": 3.1693
+    },
+    "sonauto_f858fbb8-0beb-495e-98e2-3593e24227d7": {
+        "Coherence": 4.4372,
+        "Musicality": 4.4665,
+        "Memorability": 4.5399,
+        "Clarity": 4.1732,
+        "Naturalness": 4.1569,
+        "Overall_Aesthetics": 4.3547
+    },
+    "sonauto_f873d7d4-46d2-4c30-acab-edbafafb7ec2": {
+        "Coherence": 3.4347,
+        "Musicality": 3.1895,
+        "Memorability": 3.4278,
+        "Clarity": 3.2325,
+        "Naturalness": 3.1344,
+        "Overall_Aesthetics": 3.2838
+    },
+    "sonauto_f918360c-6fda-462c-afdc-8b943f01817f": {
+        "Coherence": 2.7768,
+        "Musicality": 2.4446,
+        "Memorability": 2.5044,
+        "Clarity": 2.4767,
+        "Naturalness": 2.4561,
+        "Overall_Aesthetics": 2.5317
+    },
+    "sonauto_fc0955da-48db-4e14-ab82-f78c82ee70b0": {
+        "Coherence": 3.2361,
+        "Musicality": 2.9927,
+        "Memorability": 2.9986,
+        "Clarity": 2.9244,
+        "Naturalness": 2.8991,
+        "Overall_Aesthetics": 3.0102
+    },
+    "sonauto_fc2bc575-ca9b-45ec-9bc8-59798eae47fb": {
+        "Coherence": 3.9016,
+        "Musicality": 3.7466,
+        "Memorability": 3.9277,
+        "Clarity": 3.6237,
+        "Naturalness": 3.5591,
+        "Overall_Aesthetics": 3.7517
+    },
+    "sonauto_ff552783-86ef-428f-b8b6-383f2395b78b": {
+        "Coherence": 3.8532,
+        "Musicality": 3.7114,
+        "Memorability": 3.925,
+        "Clarity": 3.6462,
+        "Naturalness": 3.5696,
+        "Overall_Aesthetics": 3.7411
+    },
+    "suno_00e212c1-87ad-4508-a27c-8065a166f04d": {
+        "Coherence": 4.3771,
+        "Musicality": 4.415,
+        "Memorability": 4.3534,
+        "Clarity": 4.0931,
+        "Naturalness": 4.0716,
+        "Overall_Aesthetics": 4.262
+    },
+    "suno_02677d21-bd40-4ddb-98ec-910dbb06bd5d": {
+        "Coherence": 2.6315,
+        "Musicality": 2.3054,
+        "Memorability": 2.3863,
+        "Clarity": 2.276,
+        "Naturalness": 2.2776,
+        "Overall_Aesthetics": 2.3754
+    },
+    "suno_03276154-8999-4791-a938-6437b9190000": {
+        "Coherence": 3.7917,
+        "Musicality": 3.668,
+        "Memorability": 3.7606,
+        "Clarity": 3.5794,
+        "Naturalness": 3.5439,
+        "Overall_Aesthetics": 3.6687
+    },
+    "suno_03b8bc93-111e-47a5-b28f-1b9d46bd388a": {
+        "Coherence": 3.1988,
+        "Musicality": 2.9034,
+        "Memorability": 3.0061,
+        "Clarity": 2.915,
+        "Naturalness": 2.8783,
+        "Overall_Aesthetics": 2.9803
+    },
+    "suno_0532c2a3-9316-4d66-82fc-eef983e2ecae": {
+        "Coherence": 4.1069,
+        "Musicality": 4.083,
+        "Memorability": 4.2237,
+        "Clarity": 3.8713,
+        "Naturalness": 3.8367,
+        "Overall_Aesthetics": 4.0243
+    },
+    "suno_06a126f5-b9f1-4e2d-a6e9-954144cc12a7": {
+        "Coherence": 2.8301,
+        "Musicality": 2.5214,
+        "Memorability": 2.693,
+        "Clarity": 2.5894,
+        "Naturalness": 2.5137,
+        "Overall_Aesthetics": 2.6295
+    },
+    "suno_08a2a0f0-863c-4f05-8094-794c52df942c": {
+        "Coherence": 3.8121,
+        "Musicality": 3.6613,
+        "Memorability": 3.845,
+        "Clarity": 3.6052,
+        "Naturalness": 3.5276,
+        "Overall_Aesthetics": 3.6902
+    },
+    "suno_09267201-4a96-431d-9260-0c6ee891339d": {
+        "Coherence": 3.2862,
+        "Musicality": 3.0144,
+        "Memorability": 3.1435,
+        "Clarity": 3.0185,
+        "Naturalness": 2.9834,
+        "Overall_Aesthetics": 3.0892
+    },
+    "suno_096b791e-61d1-48db-95c0-dce63b4b74c7": {
+        "Coherence": 2.9341,
+        "Musicality": 2.6138,
+        "Memorability": 2.6681,
+        "Clarity": 2.6588,
+        "Naturalness": 2.6266,
+        "Overall_Aesthetics": 2.7003
+    },
+    "suno_09ce2fdb-5252-41e7-b7d2-f489a7fa1089": {
+        "Coherence": 2.5336,
+        "Musicality": 2.2173,
+        "Memorability": 2.1823,
+        "Clarity": 2.2077,
+        "Naturalness": 2.2438,
+        "Overall_Aesthetics": 2.2769
+    },
+    "suno_0ddb04e3-dbf2-402f-9044-ddb0db98cc67": {
+        "Coherence": 3.4653,
+        "Musicality": 3.2559,
+        "Memorability": 3.4452,
+        "Clarity": 3.2161,
+        "Naturalness": 3.1503,
+        "Overall_Aesthetics": 3.3066
+    },
+    "suno_10689fdc-12af-49ba-a581-692e50e7ff17": {
+        "Coherence": 2.7132,
+        "Musicality": 2.3851,
+        "Memorability": 2.5372,
+        "Clarity": 2.4454,
+        "Naturalness": 2.391,
+        "Overall_Aesthetics": 2.4944
+    },
+    "suno_1120719b-a905-4e13-80ba-93e13a196df9": {
+        "Coherence": 4.2999,
+        "Musicality": 4.3441,
+        "Memorability": 4.4134,
+        "Clarity": 4.0601,
+        "Naturalness": 4.037,
+        "Overall_Aesthetics": 4.2309
+    },
+    "suno_13ac0aa5-07ab-40a5-b610-21ddb1524d83": {
+        "Coherence": 4.5381,
+        "Musicality": 4.5735,
+        "Memorability": 4.6084,
+        "Clarity": 4.2879,
+        "Naturalness": 4.272,
+        "Overall_Aesthetics": 4.456
+    },
+    "suno_148551e8-fcf0-4736-8c21-7f956665c065": {
+        "Coherence": 4.4507,
+        "Musicality": 4.4638,
+        "Memorability": 4.498,
+        "Clarity": 4.1431,
+        "Naturalness": 4.1721,
+        "Overall_Aesthetics": 4.3455
+    },
+    "suno_1783c864-18fb-440f-bc51-15701a19e4b5": {
+        "Coherence": 2.5972,
+        "Musicality": 2.2748,
+        "Memorability": 2.3761,
+        "Clarity": 2.2796,
+        "Naturalness": 2.2533,
+        "Overall_Aesthetics": 2.3562
+    },
+    "suno_1786c0bd-d8e5-4713-801d-706f5e1ef153": {
+        "Coherence": 4.4114,
+        "Musicality": 4.462,
+        "Memorability": 4.5041,
+        "Clarity": 4.1578,
+        "Naturalness": 4.1488,
+        "Overall_Aesthetics": 4.3368
+    },
+    "suno_1a042042-b5d5-43e3-8b50-965d1ec0e303": {
+        "Coherence": 3.855,
+        "Musicality": 3.7335,
+        "Memorability": 3.7637,
+        "Clarity": 3.53,
+        "Naturalness": 3.5151,
+        "Overall_Aesthetics": 3.6795
+    },
+    "suno_1b30d18b-9bc6-4d28-86f2-8eb2ae9d4534": {
+        "Coherence": 4.3674,
+        "Musicality": 4.4045,
+        "Memorability": 4.4102,
+        "Clarity": 4.0995,
+        "Naturalness": 4.0981,
+        "Overall_Aesthetics": 4.2759
+    },
+    "suno_21fe854c-2c26-4a94-96f5-a26daf4301bf": {
+        "Coherence": 4.5362,
+        "Musicality": 4.5798,
+        "Memorability": 4.5762,
+        "Clarity": 4.3021,
+        "Naturalness": 4.2917,
+        "Overall_Aesthetics": 4.4572
+    },
+    "suno_2205950f-3e78-4253-8e57-864117f1d6f0": {
+        "Coherence": 3.2733,
+        "Musicality": 2.9918,
+        "Memorability": 3.1862,
+        "Clarity": 3.0472,
+        "Naturalness": 2.9933,
+        "Overall_Aesthetics": 3.0984
+    },
+    "suno_23bc6b66-a154-4694-865b-feb00796bcfd": {
+        "Coherence": 3.3846,
+        "Musicality": 3.0665,
+        "Memorability": 3.3823,
+        "Clarity": 3.1752,
+        "Naturalness": 3.0499,
+        "Overall_Aesthetics": 3.2117
+    },
+    "suno_25188f55-b8a5-4815-95f9-76732c8d207d": {
+        "Coherence": 3.4049,
+        "Musicality": 3.1343,
+        "Memorability": 3.3825,
+        "Clarity": 3.1857,
+        "Naturalness": 3.1043,
+        "Overall_Aesthetics": 3.2423
+    },
+    "suno_2655b474-ea9c-4f25-a99b-2659b1b18a25": {
+        "Coherence": 3.5217,
+        "Musicality": 3.3008,
+        "Memorability": 3.4605,
+        "Clarity": 3.2531,
+        "Naturalness": 3.1797,
+        "Overall_Aesthetics": 3.3432
+    },
+    "suno_29d8aab5-8893-4ba3-bcfb-2c3b4c0dc389": {
+        "Coherence": 2.4767,
+        "Musicality": 2.1759,
+        "Memorability": 2.1123,
+        "Clarity": 2.13,
+        "Naturalness": 2.2025,
+        "Overall_Aesthetics": 2.2195
+    },
+    "suno_2e44d2d8-acae-41c3-9a9e-f469478186b8": {
+        "Coherence": 4.0937,
+        "Musicality": 4.0668,
+        "Memorability": 4.0638,
+        "Clarity": 3.8192,
+        "Naturalness": 3.7998,
+        "Overall_Aesthetics": 3.9687
+    },
+    "suno_334f061e-ffe3-4aad-a2ce-09ff1ac217eb": {
+        "Coherence": 3.8207,
+        "Musicality": 3.6677,
+        "Memorability": 3.8521,
+        "Clarity": 3.5507,
+        "Naturalness": 3.4849,
+        "Overall_Aesthetics": 3.6752
+    },
+    "suno_3a85c7e8-e001-4319-ac0c-93b95c69bc88": {
+        "Coherence": 3.8863,
+        "Musicality": 3.8518,
+        "Memorability": 3.8205,
+        "Clarity": 3.6931,
+        "Naturalness": 3.6818,
+        "Overall_Aesthetics": 3.7867
+    },
+    "suno_3c246145-5ed8-4f0d-995b-711e554229d7": {
+        "Coherence": 3.468,
+        "Musicality": 3.2347,
+        "Memorability": 3.4497,
+        "Clarity": 3.258,
+        "Naturalness": 3.1781,
+        "Overall_Aesthetics": 3.3177
+    },
+    "suno_3df981a9-e176-4927-9695-3c04c5c41b95": {
+        "Coherence": 3.2071,
+        "Musicality": 2.9397,
+        "Memorability": 3.0224,
+        "Clarity": 2.9222,
+        "Naturalness": 2.8866,
+        "Overall_Aesthetics": 2.9956
+    },
+    "suno_401be958-76c4-454f-a048-68579bc38c5f": {
+        "Coherence": 3.1408,
+        "Musicality": 2.8581,
+        "Memorability": 2.9365,
+        "Clarity": 2.8293,
+        "Naturalness": 2.8019,
+        "Overall_Aesthetics": 2.9133
+    },
+    "suno_4391593d-0e1d-4698-8835-2b00188e6a69": {
+        "Coherence": 3.0679,
+        "Musicality": 2.7548,
+        "Memorability": 2.9875,
+        "Clarity": 2.8312,
+        "Naturalness": 2.7331,
+        "Overall_Aesthetics": 2.8749
+    },
+    "suno_43a5a24c-e26e-4843-b7ae-6ad7b695a610": {
+        "Coherence": 4.3234,
+        "Musicality": 4.3493,
+        "Memorability": 4.3947,
+        "Clarity": 4.0393,
+        "Naturalness": 4.0416,
+        "Overall_Aesthetics": 4.2297
+    },
+    "suno_468d9eb4-a4f5-4777-950a-7f30e55b9154": {
+        "Coherence": 3.1894,
+        "Musicality": 2.9161,
+        "Memorability": 3.032,
+        "Clarity": 2.9072,
+        "Naturalness": 2.8766,
+        "Overall_Aesthetics": 2.9843
+    },
+    "suno_4a0c77ef-00f4-4637-bc2c-36a1c4ecc97b": {
+        "Coherence": 3.3396,
+        "Musicality": 3.0314,
+        "Memorability": 3.3414,
+        "Clarity": 3.1438,
+        "Naturalness": 3.03,
+        "Overall_Aesthetics": 3.1772
+    },
+    "suno_5029d7e1-5cdf-4868-965c-fd2318815867": {
+        "Coherence": 4.5366,
+        "Musicality": 4.6075,
+        "Memorability": 4.5779,
+        "Clarity": 4.3867,
+        "Naturalness": 4.3513,
+        "Overall_Aesthetics": 4.492
+    },
+    "suno_524dd0c0-c4e3-4c94-9968-aaa7c93c6fbc": {
+        "Coherence": 2.9827,
+        "Musicality": 2.6812,
+        "Memorability": 2.7793,
+        "Clarity": 2.6861,
+        "Naturalness": 2.6607,
+        "Overall_Aesthetics": 2.758
+    },
+    "suno_5341eaf9-1c75-4f10-9181-f8d80ffb5aca": {
+        "Coherence": 4.2923,
+        "Musicality": 4.3348,
+        "Memorability": 4.4164,
+        "Clarity": 4.0548,
+        "Naturalness": 4.04,
+        "Overall_Aesthetics": 4.2277
+    },
+    "suno_545e9df0-5543-41c8-8209-6a86a97518cf": {
+        "Coherence": 4.0838,
+        "Musicality": 4.0004,
+        "Memorability": 4.0423,
+        "Clarity": 3.7566,
+        "Naturalness": 3.7252,
+        "Overall_Aesthetics": 3.9217
+    },
+    "suno_5acff6d2-ec21-4a67-ae15-37ce8192c27f": {
+        "Coherence": 4.1033,
+        "Musicality": 4.0128,
+        "Memorability": 4.1463,
+        "Clarity": 3.8289,
+        "Naturalness": 3.7742,
+        "Overall_Aesthetics": 3.9731
+    },
+    "suno_6004fce0-0115-4fa7-b0c5-6ba50117d053": {
+        "Coherence": 2.4008,
+        "Musicality": 2.0562,
+        "Memorability": 2.1153,
+        "Clarity": 2.044,
+        "Naturalness": 2.0544,
+        "Overall_Aesthetics": 2.1341
+    },
+    "suno_61af6c62-22c8-4acc-9ff5-5d50d675cad6": {
+        "Coherence": 2.4465,
+        "Musicality": 2.1192,
+        "Memorability": 2.1934,
+        "Clarity": 2.1236,
+        "Naturalness": 2.1095,
+        "Overall_Aesthetics": 2.1984
+    },
+    "suno_63ea6eda-f68d-49e8-9170-d1e943b55752": {
+        "Coherence": 2.6975,
+        "Musicality": 2.3933,
+        "Memorability": 2.3534,
+        "Clarity": 2.3792,
+        "Naturalness": 2.4115,
+        "Overall_Aesthetics": 2.447
+    },
+    "suno_662546f8-9623-4623-be8f-10b287985ec4": {
+        "Coherence": 3.9267,
+        "Musicality": 3.9506,
+        "Memorability": 3.8462,
+        "Clarity": 3.7679,
+        "Naturalness": 3.7626,
+        "Overall_Aesthetics": 3.8508
+    },
+    "suno_6870ffad-e286-4dd5-9548-d7db37043105": {
+        "Coherence": 4.5267,
+        "Musicality": 4.5708,
+        "Memorability": 4.6015,
+        "Clarity": 4.2997,
+        "Naturalness": 4.2823,
+        "Overall_Aesthetics": 4.4562
+    },
+    "suno_687d7b5b-9f6e-41d5-8b22-fe8cb3ed0f56": {
+        "Coherence": 4.5026,
+        "Musicality": 4.5637,
+        "Memorability": 4.5549,
+        "Clarity": 4.3622,
+        "Naturalness": 4.338,
+        "Overall_Aesthetics": 4.4643
+    },
+    "suno_68c45d52-e2c9-43c6-896e-58ac2d8beae5": {
+        "Coherence": 2.8131,
+        "Musicality": 2.4912,
+        "Memorability": 2.5391,
+        "Clarity": 2.5162,
+        "Naturalness": 2.5044,
+        "Overall_Aesthetics": 2.5728
+    },
+    "suno_6b46ad43-da7d-4f65-8cfb-8352458f4e45": {
+        "Coherence": 3.2965,
+        "Musicality": 3.0124,
+        "Memorability": 3.2101,
+        "Clarity": 3.0818,
+        "Naturalness": 2.9726,
+        "Overall_Aesthetics": 3.1147
+    },
+    "suno_6d06e057-15a4-4897-81eb-b160cb1ab063": {
+        "Coherence": 3.3613,
+        "Musicality": 3.1029,
+        "Memorability": 3.2416,
+        "Clarity": 3.0531,
+        "Naturalness": 3.0084,
+        "Overall_Aesthetics": 3.1535
+    },
+    "suno_6d31c679-06cf-498d-b34b-0d2f57b305da": {
+        "Coherence": 4.2649,
+        "Musicality": 4.3004,
+        "Memorability": 4.3761,
+        "Clarity": 4.0261,
+        "Naturalness": 4.0062,
+        "Overall_Aesthetics": 4.1947
+    },
+    "suno_6da3d88e-8eb4-4d63-a8a4-7dd51ddaa8b7": {
+        "Coherence": 2.7364,
+        "Musicality": 2.4148,
+        "Memorability": 2.5208,
+        "Clarity": 2.429,
+        "Naturalness": 2.4113,
+        "Overall_Aesthetics": 2.5025
+    },
+    "suno_70dec259-aa01-4880-8fae-76bbd4c8df8c": {
+        "Coherence": 4.5491,
+        "Musicality": 4.5667,
+        "Memorability": 4.6385,
+        "Clarity": 4.2982,
+        "Naturalness": 4.2975,
+        "Overall_Aesthetics": 4.47
+    },
+    "suno_721b7d16-3f33-41fe-8eee-dfc4a41cade5": {
+        "Coherence": 3.7575,
+        "Musicality": 3.5655,
+        "Memorability": 3.7968,
+        "Clarity": 3.5381,
+        "Naturalness": 3.4574,
+        "Overall_Aesthetics": 3.6231
+    },
+    "suno_729598f9-d69f-4053-8e98-cebac9ee29e0": {
+        "Coherence": 3.8257,
+        "Musicality": 3.6647,
+        "Memorability": 3.7489,
+        "Clarity": 3.5477,
+        "Naturalness": 3.495,
+        "Overall_Aesthetics": 3.6564
+    },
+    "suno_73431ae3-14ca-4330-b850-66afde76fb67": {
+        "Coherence": 3.1232,
+        "Musicality": 2.8296,
+        "Memorability": 2.8843,
+        "Clarity": 2.8241,
+        "Naturalness": 2.814,
+        "Overall_Aesthetics": 2.895
+    },
+    "suno_7374ad30-05a8-401a-9863-f2d928516e58": {
+        "Coherence": 2.6076,
+        "Musicality": 2.2925,
+        "Memorability": 2.3317,
+        "Clarity": 2.2848,
+        "Naturalness": 2.2868,
+        "Overall_Aesthetics": 2.3607
+    },
+    "suno_757a8be0-2d5d-435a-b4fb-2728fb17b459": {
+        "Coherence": 3.684,
+        "Musicality": 3.4854,
+        "Memorability": 3.6606,
+        "Clarity": 3.4199,
+        "Naturalness": 3.3619,
+        "Overall_Aesthetics": 3.5224
+    },
+    "suno_78d5db29-5691-4241-820e-3cff9706310f": {
+        "Coherence": 3.9828,
+        "Musicality": 3.8773,
+        "Memorability": 3.9738,
+        "Clarity": 3.6841,
+        "Naturalness": 3.632,
+        "Overall_Aesthetics": 3.83
+    },
+    "suno_79471cb6-907f-488a-affd-a984c18f3028": {
+        "Coherence": 2.2209,
+        "Musicality": 1.8751,
+        "Memorability": 1.8878,
+        "Clarity": 1.8262,
+        "Naturalness": 1.8531,
+        "Overall_Aesthetics": 1.9326
+    },
+    "suno_7a44611a-bf54-4937-8156-b340ae931def": {
+        "Coherence": 4.381,
+        "Musicality": 4.3973,
+        "Memorability": 4.4369,
+        "Clarity": 4.091,
+        "Naturalness": 4.0969,
+        "Overall_Aesthetics": 4.2806
+    },
+    "suno_7c06f924-6c63-4900-9cfb-7590442cda47": {
+        "Coherence": 2.6049,
+        "Musicality": 2.3561,
+        "Memorability": 2.2112,
+        "Clarity": 2.2926,
+        "Naturalness": 2.3818,
+        "Overall_Aesthetics": 2.3693
+    },
+    "suno_7c6d68ba-2c0b-4c70-8ba0-7c27885157dc": {
+        "Coherence": 4.5742,
+        "Musicality": 4.6175,
+        "Memorability": 4.6964,
+        "Clarity": 4.3673,
+        "Naturalness": 4.3484,
+        "Overall_Aesthetics": 4.5208
+    },
+    "suno_80afd5e9-a7ac-446c-a9b2-ed5e492335f7": {
+        "Coherence": 4.0405,
+        "Musicality": 3.9785,
+        "Memorability": 4.0148,
+        "Clarity": 3.7637,
+        "Naturalness": 3.7214,
+        "Overall_Aesthetics": 3.9038
+    },
+    "suno_813d6c02-3123-4731-9913-58dc6d2d3da6": {
+        "Coherence": 4.2232,
+        "Musicality": 4.2323,
+        "Memorability": 4.3197,
+        "Clarity": 3.9795,
+        "Naturalness": 3.9378,
+        "Overall_Aesthetics": 4.1385
+    },
+    "suno_82815282-fe11-4294-8479-7f85d3749818": {
+        "Coherence": 3.3082,
+        "Musicality": 3.0601,
+        "Memorability": 3.2427,
+        "Clarity": 3.0371,
+        "Naturalness": 2.9972,
+        "Overall_Aesthetics": 3.1291
+    },
+    "suno_82c4091e-c092-48d4-b279-c4a01db5e8a4": {
+        "Coherence": 3.2104,
+        "Musicality": 2.9516,
+        "Memorability": 3.1196,
+        "Clarity": 2.9508,
+        "Naturalness": 2.9004,
+        "Overall_Aesthetics": 3.0266
+    },
+    "suno_849ae9bf-c3cb-4627-91d6-108483036035": {
+        "Coherence": 3.9201,
+        "Musicality": 3.7977,
+        "Memorability": 3.9747,
+        "Clarity": 3.7089,
+        "Naturalness": 3.6181,
+        "Overall_Aesthetics": 3.8039
+    },
+    "suno_87b138c5-137c-4031-9a1c-be950f88e892": {
+        "Coherence": 2.9557,
+        "Musicality": 2.6383,
+        "Memorability": 2.8629,
+        "Clarity": 2.7087,
+        "Naturalness": 2.6151,
+        "Overall_Aesthetics": 2.7561
+    },
+    "suno_8aa1c55b-5014-42e1-9079-098c07f64bb5": {
+        "Coherence": 4.579,
+        "Musicality": 4.6014,
+        "Memorability": 4.6499,
+        "Clarity": 4.3203,
+        "Naturalness": 4.3159,
+        "Overall_Aesthetics": 4.4933
+    },
+    "suno_8d138555-9bbd-4f78-b079-123d5952e29e": {
+        "Coherence": 2.8101,
+        "Musicality": 2.4795,
+        "Memorability": 2.5186,
+        "Clarity": 2.4838,
+        "Naturalness": 2.4758,
+        "Overall_Aesthetics": 2.5536
+    },
+    "suno_8dc2c1f3-213d-4503-84e2-65216085cc9a": {
+        "Coherence": 2.5869,
+        "Musicality": 2.2561,
+        "Memorability": 2.3417,
+        "Clarity": 2.2779,
+        "Naturalness": 2.2473,
+        "Overall_Aesthetics": 2.342
+    },
+    "suno_8f0c098f-321c-4f47-a4a6-21e4116d6483": {
+        "Coherence": 2.7023,
+        "Musicality": 2.372,
+        "Memorability": 2.3847,
+        "Clarity": 2.4054,
+        "Naturalness": 2.3956,
+        "Overall_Aesthetics": 2.452
+    },
+    "suno_8fc96b04-9dcf-4d55-b0c2-d464607dd21e": {
+        "Coherence": 3.7821,
+        "Musicality": 3.6098,
+        "Memorability": 3.6578,
+        "Clarity": 3.4757,
+        "Naturalness": 3.4629,
+        "Overall_Aesthetics": 3.5977
+    },
+    "suno_90777b2e-4475-4b52-a26b-e10efb6fcc00": {
+        "Coherence": 2.695,
+        "Musicality": 2.3658,
+        "Memorability": 2.4965,
+        "Clarity": 2.4024,
+        "Naturalness": 2.35,
+        "Overall_Aesthetics": 2.4619
+    },
+    "suno_90f7405a-956e-4eae-a581-a96da8d988c3": {
+        "Coherence": 4.3285,
+        "Musicality": 4.3593,
+        "Memorability": 4.3921,
+        "Clarity": 4.0419,
+        "Naturalness": 4.0568,
+        "Overall_Aesthetics": 4.2357
+    },
+    "suno_9571e55d-1660-4f47-b5a1-a48f4a19ea5f": {
+        "Coherence": 4.5202,
+        "Musicality": 4.5719,
+        "Memorability": 4.6113,
+        "Clarity": 4.2793,
+        "Naturalness": 4.269,
+        "Overall_Aesthetics": 4.4503
+    },
+    "suno_96a5c913-7990-49f5-88bf-10bfc0498bc1": {
+        "Coherence": 4.064,
+        "Musicality": 3.993,
+        "Memorability": 4.0499,
+        "Clarity": 3.7549,
+        "Naturalness": 3.7315,
+        "Overall_Aesthetics": 3.9187
+    },
+    "suno_96cc037f-d8b6-4789-b1f7-7bc5042a7164": {
+        "Coherence": 2.5104,
+        "Musicality": 2.2022,
+        "Memorability": 2.1537,
+        "Clarity": 2.1652,
+        "Naturalness": 2.2206,
+        "Overall_Aesthetics": 2.2504
+    },
+    "suno_9a7fd58e-132c-4ac5-9a25-f40d7f6f8c9f": {
+        "Coherence": 4.0888,
+        "Musicality": 4.0387,
+        "Memorability": 4.145,
+        "Clarity": 3.8251,
+        "Naturalness": 3.7767,
+        "Overall_Aesthetics": 3.9749
+    },
+    "suno_9cd7f8cc-d9e5-4d10-b1a0-3b5fad2418c5": {
+        "Coherence": 3.9871,
+        "Musicality": 3.909,
+        "Memorability": 3.8784,
+        "Clarity": 3.6773,
+        "Naturalness": 3.6432,
+        "Overall_Aesthetics": 3.819
+    },
+    "suno_9fe9a266-6cef-46ca-bbdd-48fa9db7c7ca": {
+        "Coherence": 3.1864,
+        "Musicality": 2.8892,
+        "Memorability": 3.1471,
+        "Clarity": 2.9744,
+        "Naturalness": 2.8591,
+        "Overall_Aesthetics": 3.0112
+    },
+    "suno_a07fbd94-16a5-4c07-bfe2-53cbb7651873": {
+        "Coherence": 2.836,
+        "Musicality": 2.5223,
+        "Memorability": 2.6927,
+        "Clarity": 2.5843,
+        "Naturalness": 2.5118,
+        "Overall_Aesthetics": 2.6294
+    },
+    "suno_a16c8ece-e811-43ed-8699-23a3fea3a108": {
+        "Coherence": 3.1711,
+        "Musicality": 2.8484,
+        "Memorability": 3.1123,
+        "Clarity": 2.9415,
+        "Naturalness": 2.8613,
+        "Overall_Aesthetics": 2.9869
+    },
+    "suno_a1cf5295-ef60-497e-b526-8eec16975e8c": {
+        "Coherence": 4.575,
+        "Musicality": 4.6255,
+        "Memorability": 4.6976,
+        "Clarity": 4.3612,
+        "Naturalness": 4.3589,
+        "Overall_Aesthetics": 4.5236
+    },
+    "suno_a6ba0d7e-bc99-4331-a8a3-c0f41138a7c6": {
+        "Coherence": 4.4308,
+        "Musicality": 4.463,
+        "Memorability": 4.5267,
+        "Clarity": 4.1602,
+        "Naturalness": 4.1567,
+        "Overall_Aesthetics": 4.3475
+    },
+    "suno_a6d1f000-e46c-4f22-84d5-0142a91bcf81": {
+        "Coherence": 4.5581,
+        "Musicality": 4.5874,
+        "Memorability": 4.6754,
+        "Clarity": 4.3451,
+        "Naturalness": 4.3117,
+        "Overall_Aesthetics": 4.4955
+    },
+    "suno_a89f9227-0d00-4f51-8e5b-366545549825": {
+        "Coherence": 4.454,
+        "Musicality": 4.4915,
+        "Memorability": 4.5869,
+        "Clarity": 4.231,
+        "Naturalness": 4.21,
+        "Overall_Aesthetics": 4.3947
+    },
+    "suno_afef6b8b-05d1-445e-b9e9-44b6ed684420": {
+        "Coherence": 4.11,
+        "Musicality": 4.0648,
+        "Memorability": 4.1409,
+        "Clarity": 3.8596,
+        "Naturalness": 3.8093,
+        "Overall_Aesthetics": 3.9969
+    },
+    "suno_aff9db3a-c032-4d21-8501-a6bf095a3401": {
+        "Coherence": 4.108,
+        "Musicality": 4.0648,
+        "Memorability": 4.1106,
+        "Clarity": 3.8245,
+        "Naturalness": 3.7844,
+        "Overall_Aesthetics": 3.9785
+    },
+    "suno_b0fb9dc7-6fd2-4e98-a67d-ca6f2dd523a9": {
+        "Coherence": 2.6553,
+        "Musicality": 2.3161,
+        "Memorability": 2.3242,
+        "Clarity": 2.3327,
+        "Naturalness": 2.3436,
+        "Overall_Aesthetics": 2.3944
+    },
+    "suno_b1166bfa-00cb-4be1-bb0d-0eeb6f409d32": {
+        "Coherence": 3.2425,
+        "Musicality": 2.9237,
+        "Memorability": 3.2274,
+        "Clarity": 3.0311,
+        "Naturalness": 2.9085,
+        "Overall_Aesthetics": 3.0666
+    },
+    "suno_b23f3e57-bf94-49ce-90a0-a5af15ac53df": {
+        "Coherence": 2.7817,
+        "Musicality": 2.4545,
+        "Memorability": 2.6262,
+        "Clarity": 2.5026,
+        "Naturalness": 2.4535,
+        "Overall_Aesthetics": 2.5637
+    },
+    "suno_b38585fa-74e7-4a1d-b2db-3487f086cf46": {
+        "Coherence": 4.5066,
+        "Musicality": 4.5447,
+        "Memorability": 4.5938,
+        "Clarity": 4.2402,
+        "Naturalness": 4.226,
+        "Overall_Aesthetics": 4.4223
+    },
+    "suno_b3e5cfe2-d1d8-454f-958b-c69c86e1f751": {
+        "Coherence": 3.5082,
+        "Musicality": 3.2846,
+        "Memorability": 3.461,
+        "Clarity": 3.2541,
+        "Naturalness": 3.1808,
+        "Overall_Aesthetics": 3.3377
+    },
+    "suno_b42be74c-ea65-46f2-a8cf-8e7cc2fd8d13": {
+        "Coherence": 4.5931,
+        "Musicality": 4.6219,
+        "Memorability": 4.6962,
+        "Clarity": 4.3669,
+        "Naturalness": 4.3514,
+        "Overall_Aesthetics": 4.5259
+    },
+    "suno_b72eea2e-32a1-4d7e-b5d6-5ddd1e6d11c3": {
+        "Coherence": 4.1025,
+        "Musicality": 4.0777,
+        "Memorability": 4.1617,
+        "Clarity": 3.8604,
+        "Naturalness": 3.8116,
+        "Overall_Aesthetics": 4.0028
+    },
+    "suno_b7d343b2-bf17-4378-bd58-b8c5e2904d2c": {
+        "Coherence": 4.4638,
+        "Musicality": 4.4874,
+        "Memorability": 4.5756,
+        "Clarity": 4.2222,
+        "Naturalness": 4.208,
+        "Overall_Aesthetics": 4.3914
+    },
+    "suno_bdb4c675-dd79-4359-a819-65de4b35d834": {
+        "Coherence": 2.5501,
+        "Musicality": 2.239,
+        "Memorability": 2.1832,
+        "Clarity": 2.2527,
+        "Naturalness": 2.2785,
+        "Overall_Aesthetics": 2.3007
+    },
+    "suno_be665c0b-38f1-42e7-82c2-b786702ca2da": {
+        "Coherence": 4.0849,
+        "Musicality": 4.0738,
+        "Memorability": 4.1978,
+        "Clarity": 3.9082,
+        "Naturalness": 3.8678,
+        "Overall_Aesthetics": 4.0265
+    },
+    "suno_c0f361e2-19ce-4c41-ab07-a2491e2594b8": {
+        "Coherence": 4.3092,
+        "Musicality": 4.35,
+        "Memorability": 4.3829,
+        "Clarity": 4.0546,
+        "Naturalness": 4.0296,
+        "Overall_Aesthetics": 4.2253
+    },
+    "suno_c635c57c-2886-4df8-bcca-1516ad9cee9a": {
+        "Coherence": 3.3681,
+        "Musicality": 3.1187,
+        "Memorability": 3.1325,
+        "Clarity": 3.0509,
+        "Naturalness": 3.0373,
+        "Overall_Aesthetics": 3.1415
+    },
+    "suno_c7f9d400-9d34-422d-95fd-dd1c94d91947": {
+        "Coherence": 4.6177,
+        "Musicality": 4.6542,
+        "Memorability": 4.7163,
+        "Clarity": 4.4001,
+        "Naturalness": 4.3824,
+        "Overall_Aesthetics": 4.5541
+    },
+    "suno_c802a04e-2422-4718-8801-4748175ad171": {
+        "Coherence": 4.4941,
+        "Musicality": 4.5444,
+        "Memorability": 4.6608,
+        "Clarity": 4.3154,
+        "Naturalness": 4.2982,
+        "Overall_Aesthetics": 4.4626
+    },
+    "suno_cc2b8b85-f8ed-40a4-9689-4d2f5f770682": {
+        "Coherence": 4.3153,
+        "Musicality": 4.34,
+        "Memorability": 4.5034,
+        "Clarity": 4.1535,
+        "Naturalness": 4.1027,
+        "Overall_Aesthetics": 4.283
+    },
+    "suno_cfe692a1-a07e-4247-9cc3-114c8a8fac1e": {
+        "Coherence": 4.5485,
+        "Musicality": 4.5952,
+        "Memorability": 4.6152,
+        "Clarity": 4.2949,
+        "Naturalness": 4.2858,
+        "Overall_Aesthetics": 4.4679
+    },
+    "suno_d4991bdd-0218-4b5a-913f-2f2d5e705a73": {
+        "Coherence": 3.7179,
+        "Musicality": 3.5248,
+        "Memorability": 3.6425,
+        "Clarity": 3.4148,
+        "Naturalness": 3.3643,
+        "Overall_Aesthetics": 3.5329
+    },
+    "suno_dba1d9a0-5040-4e87-bc9f-bf3f68e8ad3d": {
+        "Coherence": 3.8631,
+        "Musicality": 3.8062,
+        "Memorability": 3.7856,
+        "Clarity": 3.6744,
+        "Naturalness": 3.6405,
+        "Overall_Aesthetics": 3.754
+    },
+    "suno_dd1f01fc-6748-44ff-a195-71dff8c33f5d": {
+        "Coherence": 3.0161,
+        "Musicality": 2.7041,
+        "Memorability": 2.9414,
+        "Clarity": 2.7852,
+        "Naturalness": 2.678,
+        "Overall_Aesthetics": 2.825
+    },
+    "suno_dda4a854-0af9-455f-8500-12c847d347e0": {
+        "Coherence": 4.1811,
+        "Musicality": 4.1634,
+        "Memorability": 4.2503,
+        "Clarity": 3.8757,
+        "Naturalness": 3.872,
+        "Overall_Aesthetics": 4.0685
+    },
+    "suno_dee935f3-edec-4821-b706-c07a7c34d1fd": {
+        "Coherence": 3.3263,
+        "Musicality": 3.0513,
+        "Memorability": 3.2992,
+        "Clarity": 3.1363,
+        "Naturalness": 3.0089,
+        "Overall_Aesthetics": 3.1644
+    },
+    "suno_deff818a-219b-4857-8438-f03e625db42d": {
+        "Coherence": 4.2377,
+        "Musicality": 4.2611,
+        "Memorability": 4.3789,
+        "Clarity": 3.9963,
+        "Naturalness": 3.9963,
+        "Overall_Aesthetics": 4.1741
+    },
+    "suno_e19acbfb-ad8d-4feb-836f-d6eece629f27": {
+        "Coherence": 3.5806,
+        "Musicality": 3.3667,
+        "Memorability": 3.4445,
+        "Clarity": 3.2676,
+        "Naturalness": 3.2185,
+        "Overall_Aesthetics": 3.3756
+    },
+    "suno_e39870ac-dab2-4990-a8a7-0a93032991db": {
+        "Coherence": 3.5786,
+        "Musicality": 3.3727,
+        "Memorability": 3.5153,
+        "Clarity": 3.3484,
+        "Naturalness": 3.2832,
+        "Overall_Aesthetics": 3.4196
+    },
+    "suno_e7d0cd41-4eba-4ef2-8c2c-72b46b77c7a8": {
+        "Coherence": 4.421,
+        "Musicality": 4.4652,
+        "Memorability": 4.45,
+        "Clarity": 4.17,
+        "Naturalness": 4.1404,
+        "Overall_Aesthetics": 4.3293
+    },
+    "suno_e88a8569-b010-4ea5-9561-4a2b4e9acba5": {
+        "Coherence": 4.2277,
+        "Musicality": 4.2204,
+        "Memorability": 4.2502,
+        "Clarity": 3.9057,
+        "Naturalness": 3.8998,
+        "Overall_Aesthetics": 4.1008
+    },
+    "suno_ec05f523-edc2-483d-b1f1-1d927ae825e2": {
+        "Coherence": 4.546,
+        "Musicality": 4.5796,
+        "Memorability": 4.6322,
+        "Clarity": 4.2955,
+        "Naturalness": 4.2804,
+        "Overall_Aesthetics": 4.4667
+    },
+    "suno_ed82665f-00c0-405c-93b2-0479d48b8bb4": {
+        "Coherence": 4.3597,
+        "Musicality": 4.3867,
+        "Memorability": 4.3683,
+        "Clarity": 4.0541,
+        "Naturalness": 4.0521,
+        "Overall_Aesthetics": 4.2442
+    },
+    "suno_eefa1a6c-3891-41e4-93c3-29b6f56a05c4": {
+        "Coherence": 4.0402,
+        "Musicality": 3.956,
+        "Memorability": 4.1398,
+        "Clarity": 3.8117,
+        "Naturalness": 3.738,
+        "Overall_Aesthetics": 3.9371
+    },
+    "suno_f04d87c3-6d38-4884-b654-1df3d9affbcb": {
+        "Coherence": 4.1785,
+        "Musicality": 4.1628,
+        "Memorability": 4.1911,
+        "Clarity": 3.9278,
+        "Naturalness": 3.8781,
+        "Overall_Aesthetics": 4.0677
+    },
+    "suno_f401c415-3eda-456c-b552-c45eb85764a0": {
+        "Coherence": 4.216,
+        "Musicality": 4.232,
+        "Memorability": 4.287,
+        "Clarity": 3.9465,
+        "Naturalness": 3.9199,
+        "Overall_Aesthetics": 4.1203
+    },
+    "suno_f5005bf1-3d75-4462-96d3-1a91e84d38fc": {
+        "Coherence": 3.494,
+        "Musicality": 3.2546,
+        "Memorability": 3.5156,
+        "Clarity": 3.288,
+        "Naturalness": 3.1802,
+        "Overall_Aesthetics": 3.3465
+    },
+    "suno_f6190882-7cb8-4328-a561-abedb44e9454": {
+        "Coherence": 4.3534,
+        "Musicality": 4.4332,
+        "Memorability": 4.3409,
+        "Clarity": 4.1904,
+        "Naturalness": 4.1631,
+        "Overall_Aesthetics": 4.2962
+    },
+    "suno_f783fbab-689e-4f83-bf38-b486e66439f1": {
+        "Coherence": 4.3284,
+        "Musicality": 4.3656,
+        "Memorability": 4.2987,
+        "Clarity": 4.0635,
+        "Naturalness": 4.0388,
+        "Overall_Aesthetics": 4.219
+    },
+    "suno_f78dedbb-55a2-41e9-84bb-4abe0e4c36f7": {
+        "Coherence": 3.3261,
+        "Musicality": 3.0739,
+        "Memorability": 3.0932,
+        "Clarity": 3.0095,
+        "Naturalness": 2.987,
+        "Overall_Aesthetics": 3.0979
+    },
+    "suno_f7aad093-50f0-499c-b549-7da8d43e1618": {
+        "Coherence": 4.304,
+        "Musicality": 4.3069,
+        "Memorability": 4.5052,
+        "Clarity": 4.1682,
+        "Naturalness": 4.1161,
+        "Overall_Aesthetics": 4.2801
+    },
+    "suno_f7f1bbcf-b66c-4cf2-9cca-ba0c98c3cbf3": {
+        "Coherence": 2.7463,
+        "Musicality": 2.4208,
+        "Memorability": 2.4808,
+        "Clarity": 2.4544,
+        "Naturalness": 2.4396,
+        "Overall_Aesthetics": 2.5084
+    },
+    "udio_019b8021-f17e-484f-9958-dfa632108228": {
+        "Coherence": 2.3114,
+        "Musicality": 2.01,
+        "Memorability": 1.9348,
+        "Clarity": 1.9177,
+        "Naturalness": 2.0271,
+        "Overall_Aesthetics": 2.0402
+    },
+    "udio_056e26de-6dd6-40a9-9c1a-67b143814689": {
+        "Coherence": 4.1658,
+        "Musicality": 4.1711,
+        "Memorability": 4.2606,
+        "Clarity": 3.8897,
+        "Naturalness": 3.8855,
+        "Overall_Aesthetics": 4.0745
+    },
+    "udio_069d64ee-15e8-4475-893a-af714e706003": {
+        "Coherence": 2.1783,
+        "Musicality": 1.9124,
+        "Memorability": 1.7855,
+        "Clarity": 1.7933,
+        "Naturalness": 1.9357,
+        "Overall_Aesthetics": 1.921
+    },
+    "udio_06ff2580-e14f-4ac9-8fad-84d67721319a": {
+        "Coherence": 2.8422,
+        "Musicality": 2.5129,
+        "Memorability": 2.5512,
+        "Clarity": 2.5003,
+        "Naturalness": 2.5012,
+        "Overall_Aesthetics": 2.5816
+    },
+    "udio_086ed947-af5e-4c9c-a521-ef8708976075": {
+        "Coherence": 2.1909,
+        "Musicality": 1.8649,
+        "Memorability": 1.8279,
+        "Clarity": 1.7796,
+        "Naturalness": 1.8307,
+        "Overall_Aesthetics": 1.8988
+    },
+    "udio_0ee2a5b2-8514-43be-8959-e18f683dd651": {
+        "Coherence": 4.6225,
+        "Musicality": 4.643,
+        "Memorability": 4.7004,
+        "Clarity": 4.3795,
+        "Naturalness": 4.3744,
+        "Overall_Aesthetics": 4.544
+    },
+    "udio_10478c8c-c163-4756-899e-c17680cba376": {
+        "Coherence": 3.2059,
+        "Musicality": 2.9122,
+        "Memorability": 3.1327,
+        "Clarity": 2.9749,
+        "Naturalness": 2.8994,
+        "Overall_Aesthetics": 3.025
+    },
+    "udio_18afe5cd-39ec-42dc-a5c9-660cc6b5c5ec": {
+        "Coherence": 3.6813,
+        "Musicality": 3.4044,
+        "Memorability": 3.6199,
+        "Clarity": 3.4251,
+        "Naturalness": 3.3739,
+        "Overall_Aesthetics": 3.5009
+    },
+    "udio_1ce43bf9-76fd-4cb3-8786-47ef08e71fbf": {
+        "Coherence": 3.8442,
+        "Musicality": 3.689,
+        "Memorability": 3.8819,
+        "Clarity": 3.6167,
+        "Naturalness": 3.5407,
+        "Overall_Aesthetics": 3.7145
+    },
+    "udio_1ea6ca8d-a9f1-41c9-a095-fd8beb3f0264": {
+        "Coherence": 3.1312,
+        "Musicality": 2.8319,
+        "Memorability": 3.04,
+        "Clarity": 2.8693,
+        "Naturalness": 2.8287,
+        "Overall_Aesthetics": 2.9402
+    },
+    "udio_1ec2c35b-9343-41c7-9883-1d75a815e8b9": {
+        "Coherence": 3.8765,
+        "Musicality": 3.7437,
+        "Memorability": 3.7476,
+        "Clarity": 3.5226,
+        "Naturalness": 3.5115,
+        "Overall_Aesthetics": 3.6804
+    },
+    "udio_20250599-67b0-47a4-a1f1-ef0438f68b25": {
+        "Coherence": 2.4898,
+        "Musicality": 2.1572,
+        "Memorability": 2.1367,
+        "Clarity": 2.1075,
+        "Naturalness": 2.1825,
+        "Overall_Aesthetics": 2.2147
+    },
+    "udio_2105c6b1-0bdf-4cf2-a75f-740377fe9da6": {
+        "Coherence": 1.6261,
+        "Musicality": 1.5324,
+        "Memorability": 1.4401,
+        "Clarity": 1.4251,
+        "Naturalness": 1.4984,
+        "Overall_Aesthetics": 1.5044
+    },
+    "udio_229c71e1-b28f-479a-8b80-9b22de4938fe": {
+        "Coherence": 3.4341,
+        "Musicality": 3.1925,
+        "Memorability": 3.3448,
+        "Clarity": 3.1807,
+        "Naturalness": 3.1417,
+        "Overall_Aesthetics": 3.2588
+    },
+    "udio_23595cb9-a405-4851-9671-5da24f80a180": {
+        "Coherence": 2.8359,
+        "Musicality": 2.5223,
+        "Memorability": 2.6152,
+        "Clarity": 2.5221,
+        "Naturalness": 2.5193,
+        "Overall_Aesthetics": 2.603
+    },
+    "udio_26927d64-ff28-413c-9c3b-3be7850fb7f0": {
+        "Coherence": 3.9887,
+        "Musicality": 3.8635,
+        "Memorability": 3.9597,
+        "Clarity": 3.6585,
+        "Naturalness": 3.6311,
+        "Overall_Aesthetics": 3.8203
+    },
+    "udio_26cdffc4-2e48-4ea2-81e2-bbe4acf482aa": {
+        "Coherence": 4.1166,
+        "Musicality": 4.0973,
+        "Memorability": 4.2121,
+        "Clarity": 3.8306,
+        "Naturalness": 3.8165,
+        "Overall_Aesthetics": 4.0146
+    },
+    "udio_28ac17da-caa3-435c-85c5-eff264f8634f": {
+        "Coherence": 2.0302,
+        "Musicality": 1.7377,
+        "Memorability": 1.6896,
+        "Clarity": 1.63,
+        "Naturalness": 1.713,
+        "Overall_Aesthetics": 1.7601
+    },
+    "udio_2909db13-4799-4e4f-a6ef-05fc1d501a5f": {
+        "Coherence": 2.9813,
+        "Musicality": 2.6407,
+        "Memorability": 2.8809,
+        "Clarity": 2.7185,
+        "Naturalness": 2.6281,
+        "Overall_Aesthetics": 2.7699
+    },
+    "udio_2bce55d3-de00-4e59-846f-03885bbb3417": {
+        "Coherence": 2.803,
+        "Musicality": 2.4851,
+        "Memorability": 2.4879,
+        "Clarity": 2.4885,
+        "Naturalness": 2.4949,
+        "Overall_Aesthetics": 2.5519
+    },
+    "udio_2ec29c6e-2e06-4e2d-b517-711c8655849e": {
+        "Coherence": 3.4266,
+        "Musicality": 3.2023,
+        "Memorability": 3.2902,
+        "Clarity": 3.1017,
+        "Naturalness": 3.0756,
+        "Overall_Aesthetics": 3.2193
+    },
+    "udio_2f50cbca-c822-4e4f-ac9c-6f90183c6061": {
+        "Coherence": 3.5738,
+        "Musicality": 3.3671,
+        "Memorability": 3.5551,
+        "Clarity": 3.3228,
+        "Naturalness": 3.2283,
+        "Overall_Aesthetics": 3.4094
+    },
+    "udio_2fe883f6-1e62-45c6-b166-332cb4082c40": {
+        "Coherence": 2.4701,
+        "Musicality": 2.1554,
+        "Memorability": 2.1327,
+        "Clarity": 2.1359,
+        "Naturalness": 2.183,
+        "Overall_Aesthetics": 2.2154
+    },
+    "udio_30979dbe-33d4-417e-8d7b-706a7a6244b0": {
+        "Coherence": 1.8323,
+        "Musicality": 1.6419,
+        "Memorability": 1.5614,
+        "Clarity": 1.5206,
+        "Naturalness": 1.5975,
+        "Overall_Aesthetics": 1.6307
+    },
+    "udio_33614351-c2c4-4609-b13a-77970cd2ba58": {
+        "Coherence": 3.376,
+        "Musicality": 3.1194,
+        "Memorability": 3.2425,
+        "Clarity": 3.0667,
+        "Naturalness": 3.032,
+        "Overall_Aesthetics": 3.1673
+    },
+    "udio_35a671e8-379f-4975-ae86-853d820742e8": {
+        "Coherence": 3.0451,
+        "Musicality": 2.758,
+        "Memorability": 2.8342,
+        "Clarity": 2.7422,
+        "Naturalness": 2.716,
+        "Overall_Aesthetics": 2.8191
+    },
+    "udio_38d9d8ef-79b9-49f9-8166-24b43bb686b1": {
+        "Coherence": 3.5004,
+        "Musicality": 3.2795,
+        "Memorability": 3.4004,
+        "Clarity": 3.1953,
+        "Naturalness": 3.1497,
+        "Overall_Aesthetics": 3.3051
+    },
+    "udio_3d16a769-6245-4175-950a-5c49c8a63e9e": {
+        "Coherence": 3.0689,
+        "Musicality": 2.7721,
+        "Memorability": 2.8333,
+        "Clarity": 2.7198,
+        "Naturalness": 2.7231,
+        "Overall_Aesthetics": 2.8234
+    },
+    "udio_3d4335dd-7cbd-41a3-a001-e1ef6e252e57": {
+        "Coherence": 3.1034,
+        "Musicality": 2.7856,
+        "Memorability": 3.0501,
+        "Clarity": 2.8695,
+        "Naturalness": 2.7639,
+        "Overall_Aesthetics": 2.9145
+    },
+    "udio_427f4100-3278-4d60-89be-0b3b43805981": {
+        "Coherence": 2.9118,
+        "Musicality": 2.593,
+        "Memorability": 2.7035,
+        "Clarity": 2.6423,
+        "Naturalness": 2.6077,
+        "Overall_Aesthetics": 2.6917
+    },
+    "udio_4444a2c0-aa4d-4665-b08e-fca631b0e7fd": {
+        "Coherence": 3.6274,
+        "Musicality": 3.4388,
+        "Memorability": 3.5408,
+        "Clarity": 3.3418,
+        "Naturalness": 3.3005,
+        "Overall_Aesthetics": 3.4499
+    },
+    "udio_4552e798-871f-4e13-b3cb-f234ce0ed23b": {
+        "Coherence": 3.0324,
+        "Musicality": 2.7194,
+        "Memorability": 2.8669,
+        "Clarity": 2.7386,
+        "Naturalness": 2.7046,
+        "Overall_Aesthetics": 2.8124
+    },
+    "udio_4f0f9c43-1adc-4999-8566-3e8d2d2af653": {
+        "Coherence": 3.2634,
+        "Musicality": 3.0055,
+        "Memorability": 3.1518,
+        "Clarity": 3.0228,
+        "Naturalness": 2.9601,
+        "Overall_Aesthetics": 3.0807
+    },
+    "udio_520bd78a-c5c6-4cbb-9622-1f9fead66a1b": {
+        "Coherence": 3.9613,
+        "Musicality": 3.8423,
+        "Memorability": 3.9672,
+        "Clarity": 3.6557,
+        "Naturalness": 3.6183,
+        "Overall_Aesthetics": 3.809
+    },
+    "udio_5343ca17-b184-4af4-89bd-f2a91cc434a9": {
+        "Coherence": 2.4525,
+        "Musicality": 2.155,
+        "Memorability": 2.1182,
+        "Clarity": 2.103,
+        "Naturalness": 2.1554,
+        "Overall_Aesthetics": 2.1968
+    },
+    "udio_5d39f51f-2439-4471-928f-737736a5f918": {
+        "Coherence": 3.8995,
+        "Musicality": 3.7599,
+        "Memorability": 3.7921,
+        "Clarity": 3.5829,
+        "Naturalness": 3.5377,
+        "Overall_Aesthetics": 3.7144
+    },
+    "udio_5ee31980-dc4c-49ca-b78d-5a55fe7e610e": {
+        "Coherence": 2.6507,
+        "Musicality": 2.341,
+        "Memorability": 2.4447,
+        "Clarity": 2.3765,
+        "Naturalness": 2.3311,
+        "Overall_Aesthetics": 2.4288
+    },
+    "udio_60930596-1947-47d0-90fb-fd0d19a5154f": {
+        "Coherence": 2.572,
+        "Musicality": 2.2418,
+        "Memorability": 2.3194,
+        "Clarity": 2.2351,
+        "Naturalness": 2.2271,
+        "Overall_Aesthetics": 2.3191
+    },
+    "udio_60db38f6-caa5-4296-9494-3fcc5c55da04": {
+        "Coherence": 3.0776,
+        "Musicality": 2.7531,
+        "Memorability": 3.0139,
+        "Clarity": 2.8429,
+        "Naturalness": 2.733,
+        "Overall_Aesthetics": 2.8841
+    },
+    "udio_612eaea3-2e3f-4a08-8f95-6327b11729ae": {
+        "Coherence": 2.6598,
+        "Musicality": 2.327,
+        "Memorability": 2.4373,
+        "Clarity": 2.3635,
+        "Naturalness": 2.3239,
+        "Overall_Aesthetics": 2.4223
+    },
+    "udio_62d0bc91-4518-4e2a-8fc5-9496a14f8dea": {
+        "Coherence": 3.0117,
+        "Musicality": 2.7095,
+        "Memorability": 2.8647,
+        "Clarity": 2.7208,
+        "Naturalness": 2.6786,
+        "Overall_Aesthetics": 2.7971
+    },
+    "udio_645bac8d-958e-43f8-9d02-8c0de00c9a78": {
+        "Coherence": 3.8514,
+        "Musicality": 3.6715,
+        "Memorability": 3.8064,
+        "Clarity": 3.5345,
+        "Naturalness": 3.5058,
+        "Overall_Aesthetics": 3.6739
+    },
+    "udio_64a3538a-da63-43d1-a8b1-1749b4bc63e2": {
+        "Coherence": 2.652,
+        "Musicality": 2.3123,
+        "Memorability": 2.4263,
+        "Clarity": 2.3487,
+        "Naturalness": 2.3108,
+        "Overall_Aesthetics": 2.41
+    },
+    "udio_69ed9c00-a50a-4d24-9352-004a12d42094": {
+        "Coherence": 4.308,
+        "Musicality": 4.3302,
+        "Memorability": 4.3163,
+        "Clarity": 4.0251,
+        "Naturalness": 4.0262,
+        "Overall_Aesthetics": 4.2012
+    },
+    "udio_6be94cfb-d4a8-477a-9c07-a9949c259236": {
+        "Coherence": 2.6114,
+        "Musicality": 2.2994,
+        "Memorability": 2.2516,
+        "Clarity": 2.2932,
+        "Naturalness": 2.3215,
+        "Overall_Aesthetics": 2.3554
+    },
+    "udio_6e599aff-0394-4ee0-a48e-f85a8f2b79a5": {
+        "Coherence": 2.3587,
+        "Musicality": 2.0048,
+        "Memorability": 2.0203,
+        "Clarity": 1.9417,
+        "Naturalness": 1.9773,
+        "Overall_Aesthetics": 2.0606
+    },
+    "udio_707781aa-5966-4720-b01d-e599914fda21": {
+        "Coherence": 3.6766,
+        "Musicality": 3.4754,
+        "Memorability": 3.6088,
+        "Clarity": 3.4355,
+        "Naturalness": 3.366,
+        "Overall_Aesthetics": 3.5125
+    },
+    "udio_7363f403-f6bd-479a-9c35-9cc2d75ad088": {
+        "Coherence": 4.1323,
+        "Musicality": 4.0961,
+        "Memorability": 4.2375,
+        "Clarity": 3.8501,
+        "Naturalness": 3.862,
+        "Overall_Aesthetics": 4.0356
+    },
+    "udio_74d3e5d2-0192-4f30-89f0-760d3d305446": {
+        "Coherence": 3.6078,
+        "Musicality": 3.4092,
+        "Memorability": 3.601,
+        "Clarity": 3.3862,
+        "Naturalness": 3.3151,
+        "Overall_Aesthetics": 3.4639
+    },
+    "udio_755c8c40-5b47-4cd4-a774-e603c6002522": {
+        "Coherence": 4.0885,
+        "Musicality": 4.046,
+        "Memorability": 4.0962,
+        "Clarity": 3.7793,
+        "Naturalness": 3.7664,
+        "Overall_Aesthetics": 3.9553
+    },
+    "udio_76964945-9b5a-4cea-8029-365e76370dea": {
+        "Coherence": 2.7009,
+        "Musicality": 2.3543,
+        "Memorability": 2.4331,
+        "Clarity": 2.3484,
+        "Naturalness": 2.3558,
+        "Overall_Aesthetics": 2.4385
+    },
+    "udio_79e659e5-05df-4102-a0de-c6f64b966abd": {
+        "Coherence": 3.9103,
+        "Musicality": 3.7451,
+        "Memorability": 3.892,
+        "Clarity": 3.6185,
+        "Naturalness": 3.5616,
+        "Overall_Aesthetics": 3.7455
+    },
+    "udio_7b2044f5-af08-421b-8066-ec14dbb8fb8c": {
+        "Coherence": 2.6984,
+        "Musicality": 2.3509,
+        "Memorability": 2.5085,
+        "Clarity": 2.4024,
+        "Naturalness": 2.3592,
+        "Overall_Aesthetics": 2.4639
+    },
+    "udio_7e0583f7-0889-43b9-aa69-75954c2f6dc9": {
+        "Coherence": 3.4855,
+        "Musicality": 3.233,
+        "Memorability": 3.4222,
+        "Clarity": 3.2349,
+        "Naturalness": 3.1614,
+        "Overall_Aesthetics": 3.3074
+    },
+    "udio_7ea85bef-28f8-437c-9936-c49e7139156d": {
+        "Coherence": 3.9596,
+        "Musicality": 3.821,
+        "Memorability": 4.0206,
+        "Clarity": 3.69,
+        "Naturalness": 3.6487,
+        "Overall_Aesthetics": 3.828
+    },
+    "udio_8133208e-e702-463a-89ef-7da442d0ce4a": {
+        "Coherence": 2.8804,
+        "Musicality": 2.5357,
+        "Memorability": 2.6985,
+        "Clarity": 2.6013,
+        "Naturalness": 2.5462,
+        "Overall_Aesthetics": 2.6524
+    },
+    "udio_83f4c680-8497-4299-9225-dd44f477b600": {
+        "Coherence": 2.5769,
+        "Musicality": 2.2574,
+        "Memorability": 2.3034,
+        "Clarity": 2.2329,
+        "Naturalness": 2.2569,
+        "Overall_Aesthetics": 2.3255
+    },
+    "udio_88201e71-aedd-4dc0-8f0b-b1d405fdee20": {
+        "Coherence": 3.5247,
+        "Musicality": 3.263,
+        "Memorability": 3.5736,
+        "Clarity": 3.3187,
+        "Naturalness": 3.2135,
+        "Overall_Aesthetics": 3.3787
+    },
+    "udio_883d9ecb-a9b1-4256-9fb6-14cf5ce3b675": {
+        "Coherence": 3.2898,
+        "Musicality": 3.0387,
+        "Memorability": 3.2367,
+        "Clarity": 3.0456,
+        "Naturalness": 2.9766,
+        "Overall_Aesthetics": 3.1175
+    },
+    "udio_8878eead-39c9-436a-824e-9ca0e4605e07": {
+        "Coherence": 4.593,
+        "Musicality": 4.6366,
+        "Memorability": 4.6939,
+        "Clarity": 4.3686,
+        "Naturalness": 4.363,
+        "Overall_Aesthetics": 4.531
+    },
+    "udio_8e06d246-be4c-456c-9c16-c86d0af5eb85": {
+        "Coherence": 3.8295,
+        "Musicality": 3.6767,
+        "Memorability": 3.8226,
+        "Clarity": 3.5248,
+        "Naturalness": 3.4868,
+        "Overall_Aesthetics": 3.6681
+    },
+    "udio_8e746a81-32e7-475a-8edf-478a3cbfdd80": {
+        "Coherence": 4.4862,
+        "Musicality": 4.5118,
+        "Memorability": 4.5667,
+        "Clarity": 4.2137,
+        "Naturalness": 4.2177,
+        "Overall_Aesthetics": 4.3992
+    },
+    "udio_8ea872ed-3bc7-4387-ba1f-f119ba736194": {
+        "Coherence": 2.508,
+        "Musicality": 2.1828,
+        "Memorability": 2.2343,
+        "Clarity": 2.1533,
+        "Naturalness": 2.1543,
+        "Overall_Aesthetics": 2.2465
+    },
+    "udio_8ecad45d-e874-497d-9bc4-912ff597708b": {
+        "Coherence": 2.876,
+        "Musicality": 2.54,
+        "Memorability": 2.7337,
+        "Clarity": 2.6106,
+        "Naturalness": 2.5327,
+        "Overall_Aesthetics": 2.6586
+    },
+    "udio_8ef91bdf-6754-4614-8f47-00dfd6545644": {
+        "Coherence": 3.2177,
+        "Musicality": 2.9069,
+        "Memorability": 3.2074,
+        "Clarity": 3.0137,
+        "Naturalness": 2.8951,
+        "Overall_Aesthetics": 3.0482
+    },
+    "udio_8fb58303-b6c0-45aa-91a2-8abb757c383b": {
+        "Coherence": 3.5866,
+        "Musicality": 3.3665,
+        "Memorability": 3.4236,
+        "Clarity": 3.2614,
+        "Naturalness": 3.2334,
+        "Overall_Aesthetics": 3.3743
+    },
+    "udio_9168aa37-eb19-4088-bb46-c8369855503f": {
+        "Coherence": 3.8644,
+        "Musicality": 3.7188,
+        "Memorability": 3.9049,
+        "Clarity": 3.6188,
+        "Naturalness": 3.5448,
+        "Overall_Aesthetics": 3.7303
+    },
+    "udio_92ef2fd4-3370-4777-8ac7-5c1b3d7f0886": {
+        "Coherence": 2.245,
+        "Musicality": 1.9227,
+        "Memorability": 1.8978,
+        "Clarity": 1.8315,
+        "Naturalness": 1.8849,
+        "Overall_Aesthetics": 1.9564
+    },
+    "udio_95757cfb-3ec4-4d67-843a-e681a3c75595": {
+        "Coherence": 2.9583,
+        "Musicality": 2.6529,
+        "Memorability": 2.7981,
+        "Clarity": 2.6825,
+        "Naturalness": 2.6424,
+        "Overall_Aesthetics": 2.7468
+    },
+    "udio_987fca14-a936-4740-8d48-9a62d4753329": {
+        "Coherence": 2.3339,
+        "Musicality": 2.0342,
+        "Memorability": 1.9404,
+        "Clarity": 1.9705,
+        "Naturalness": 2.0759,
+        "Overall_Aesthetics": 2.071
+    },
+    "udio_99db0199-fb76-4ff3-9b29-1a34fe50a2ee": {
+        "Coherence": 3.1813,
+        "Musicality": 2.8882,
+        "Memorability": 3.024,
+        "Clarity": 2.8685,
+        "Naturalness": 2.8367,
+        "Overall_Aesthetics": 2.9597
+    },
+    "udio_9a724c2a-19b1-494d-b818-357eeee5b6fc": {
+        "Coherence": 2.4157,
+        "Musicality": 2.0697,
+        "Memorability": 2.1199,
+        "Clarity": 2.0349,
+        "Naturalness": 2.0514,
+        "Overall_Aesthetics": 2.1383
+    },
+    "udio_9d70bb96-a9d0-4e86-b927-f84707d738af": {
+        "Coherence": 3.4947,
+        "Musicality": 3.2601,
+        "Memorability": 3.451,
+        "Clarity": 3.2286,
+        "Naturalness": 3.1677,
+        "Overall_Aesthetics": 3.3204
+    },
+    "udio_a1cf898c-a648-45f9-8f9f-0a5a1a61d694": {
+        "Coherence": 3.2542,
+        "Musicality": 2.9729,
+        "Memorability": 3.1498,
+        "Clarity": 2.9627,
+        "Naturalness": 2.9134,
+        "Overall_Aesthetics": 3.0506
+    },
+    "udio_a2267f64-7aeb-414b-a418-a2f1288c3a12": {
+        "Coherence": 2.8637,
+        "Musicality": 2.5365,
+        "Memorability": 2.7221,
+        "Clarity": 2.6131,
+        "Naturalness": 2.5215,
+        "Overall_Aesthetics": 2.6514
+    },
+    "udio_a24f789b-007a-4d8e-88f4-d6bb6b490a8c": {
+        "Coherence": 3.1504,
+        "Musicality": 2.8594,
+        "Memorability": 2.9379,
+        "Clarity": 2.8526,
+        "Naturalness": 2.815,
+        "Overall_Aesthetics": 2.9231
+    },
+    "udio_a2690b7c-fe56-4628-a3b0-570bb6a191c6": {
+        "Coherence": 2.476,
+        "Musicality": 2.1449,
+        "Memorability": 2.1602,
+        "Clarity": 2.1105,
+        "Naturalness": 2.119,
+        "Overall_Aesthetics": 2.2021
+    },
+    "udio_a2853554-a54f-4e3a-ad38-230d7203d11a": {
+        "Coherence": 2.6044,
+        "Musicality": 2.2928,
+        "Memorability": 2.3415,
+        "Clarity": 2.289,
+        "Naturalness": 2.2672,
+        "Overall_Aesthetics": 2.359
+    },
+    "udio_a311f2b0-70a9-4e1c-ba2a-83484426cdd0": {
+        "Coherence": 2.4684,
+        "Musicality": 2.135,
+        "Memorability": 2.1793,
+        "Clarity": 2.1233,
+        "Naturalness": 2.1197,
+        "Overall_Aesthetics": 2.2051
+    },
+    "udio_a8ae99c2-154b-4e76-8df1-e73f566524dc": {
+        "Coherence": 2.9062,
+        "Musicality": 2.5816,
+        "Memorability": 2.7524,
+        "Clarity": 2.6425,
+        "Naturalness": 2.5604,
+        "Overall_Aesthetics": 2.6886
+    },
+    "udio_aa5070c2-1667-4135-aff7-329c68c304e1": {
+        "Coherence": 2.5828,
+        "Musicality": 2.2548,
+        "Memorability": 2.3406,
+        "Clarity": 2.2733,
+        "Naturalness": 2.2481,
+        "Overall_Aesthetics": 2.3399
+    },
+    "udio_af8891e9-1d76-4d6d-8788-62dba5c72f37": {
+        "Coherence": 2.6236,
+        "Musicality": 2.2947,
+        "Memorability": 2.4029,
+        "Clarity": 2.3067,
+        "Naturalness": 2.2736,
+        "Overall_Aesthetics": 2.3803
+    },
+    "udio_b4565c31-d5e6-499d-afe5-b6d2355b5b13": {
+        "Coherence": 2.6091,
+        "Musicality": 2.2832,
+        "Memorability": 2.3792,
+        "Clarity": 2.296,
+        "Naturalness": 2.2695,
+        "Overall_Aesthetics": 2.3674
+    },
+    "udio_b5ab1463-e9ba-469e-8e90-1727834f1a25": {
+        "Coherence": 3.8006,
+        "Musicality": 3.6165,
+        "Memorability": 3.8521,
+        "Clarity": 3.5914,
+        "Naturalness": 3.5101,
+        "Overall_Aesthetics": 3.6741
+    },
+    "udio_b6627b9f-22dc-44ee-9e85-b6c5c0b5daf6": {
+        "Coherence": 3.0225,
+        "Musicality": 2.7101,
+        "Memorability": 2.9452,
+        "Clarity": 2.7958,
+        "Naturalness": 2.6998,
+        "Overall_Aesthetics": 2.8347
+    },
+    "udio_b8ccd031-97ae-40e9-9a98-3fb15b8c6f45": {
+        "Coherence": 3.5802,
+        "Musicality": 3.3533,
+        "Memorability": 3.4959,
+        "Clarity": 3.2801,
+        "Naturalness": 3.2114,
+        "Overall_Aesthetics": 3.3842
+    },
+    "udio_ba5b01d6-4af9-4ddc-a562-e69afd222dc7": {
+        "Coherence": 2.5681,
+        "Musicality": 2.2552,
+        "Memorability": 2.2199,
+        "Clarity": 2.2224,
+        "Naturalness": 2.2545,
+        "Overall_Aesthetics": 2.304
+    },
+    "udio_bca65851-f377-4d97-9038-12a7db67d665": {
+        "Coherence": 3.8328,
+        "Musicality": 3.674,
+        "Memorability": 3.8149,
+        "Clarity": 3.5833,
+        "Naturalness": 3.5061,
+        "Overall_Aesthetics": 3.6822
+    },
+    "udio_c3d6c422-e842-41ad-9af3-01b69b9794e5": {
+        "Coherence": 2.5792,
+        "Musicality": 2.2416,
+        "Memorability": 2.3232,
+        "Clarity": 2.2485,
+        "Naturalness": 2.2267,
+        "Overall_Aesthetics": 2.3238
+    },
+    "udio_c448e0a6-9856-4acd-8a64-902f71bf8bf4": {
+        "Coherence": 3.7912,
+        "Musicality": 3.618,
+        "Memorability": 3.7293,
+        "Clarity": 3.5235,
+        "Naturalness": 3.4633,
+        "Overall_Aesthetics": 3.6251
+    },
+    "udio_c47d3735-27c9-47c7-9102-36094671241b": {
+        "Coherence": 2.994,
+        "Musicality": 2.6715,
+        "Memorability": 2.8026,
+        "Clarity": 2.6833,
+        "Naturalness": 2.6472,
+        "Overall_Aesthetics": 2.7597
+    },
+    "udio_c6066a0c-c9ea-4031-89f2-351fa50035e6": {
+        "Coherence": 3.4615,
+        "Musicality": 3.2387,
+        "Memorability": 3.4211,
+        "Clarity": 3.2536,
+        "Naturalness": 3.1582,
+        "Overall_Aesthetics": 3.3066
+    },
+    "udio_c7a68f06-f76c-4bbe-ad53-1de1b51bacea": {
+        "Coherence": 2.0522,
+        "Musicality": 1.7765,
+        "Memorability": 1.703,
+        "Clarity": 1.6261,
+        "Naturalness": 1.7781,
+        "Overall_Aesthetics": 1.7872
+    },
+    "udio_c9caf443-fe76-4a21-be70-816f55e4db3b": {
+        "Coherence": 4.0269,
+        "Musicality": 3.935,
+        "Memorability": 4.0681,
+        "Clarity": 3.7334,
+        "Naturalness": 3.6796,
+        "Overall_Aesthetics": 3.8886
+    },
+    "udio_cb0385b4-adc0-440d-a244-c7f2fd154ce8": {
+        "Coherence": 2.9686,
+        "Musicality": 2.665,
+        "Memorability": 2.7376,
+        "Clarity": 2.6279,
+        "Naturalness": 2.6196,
+        "Overall_Aesthetics": 2.7237
+    },
+    "udio_cf7866aa-a771-4b59-80b9-e7d9e8d009dc": {
+        "Coherence": 4.4848,
+        "Musicality": 4.5292,
+        "Memorability": 4.6142,
+        "Clarity": 4.2758,
+        "Naturalness": 4.2569,
+        "Overall_Aesthetics": 4.4322
+    },
+    "udio_d34f55b1-a543-44c0-a1e4-4167b984b46d": {
+        "Coherence": 3.0296,
+        "Musicality": 2.686,
+        "Memorability": 2.932,
+        "Clarity": 2.7704,
+        "Naturalness": 2.6756,
+        "Overall_Aesthetics": 2.8187
+    },
+    "udio_d69e70a3-0da3-40c5-82df-4b35c9abe2ad": {
+        "Coherence": 3.761,
+        "Musicality": 3.5319,
+        "Memorability": 3.7115,
+        "Clarity": 3.4975,
+        "Naturalness": 3.3999,
+        "Overall_Aesthetics": 3.5804
+    },
+    "udio_d7ac83cc-cdc6-41a0-92f5-f15a4990064c": {
+        "Coherence": 2.9087,
+        "Musicality": 2.5715,
+        "Memorability": 2.6442,
+        "Clarity": 2.6083,
+        "Naturalness": 2.5732,
+        "Overall_Aesthetics": 2.6612
+    },
+    "udio_d7ade13d-27e8-434a-b7fc-347aad5aa040": {
+        "Coherence": 3.5142,
+        "Musicality": 3.201,
+        "Memorability": 3.5129,
+        "Clarity": 3.311,
+        "Naturalness": 3.1899,
+        "Overall_Aesthetics": 3.3458
+    },
+    "udio_d8b62f9b-cd9b-44a1-a92a-50b34a15c591": {
+        "Coherence": 4.2833,
+        "Musicality": 4.3023,
+        "Memorability": 4.3354,
+        "Clarity": 4.0131,
+        "Naturalness": 3.99,
+        "Overall_Aesthetics": 4.1848
+    },
+    "udio_d9443309-2850-4269-a044-dcf2c4131d87": {
+        "Coherence": 2.7217,
+        "Musicality": 2.3899,
+        "Memorability": 2.5434,
+        "Clarity": 2.4436,
+        "Naturalness": 2.3775,
+        "Overall_Aesthetics": 2.4952
+    },
+    "udio_e35092da-9739-40d4-b68a-7aa03bb525a5": {
+        "Coherence": 3.2297,
+        "Musicality": 2.8886,
+        "Memorability": 3.1594,
+        "Clarity": 2.9865,
+        "Naturalness": 2.9147,
+        "Overall_Aesthetics": 3.0358
+    },
+    "udio_e510c2bf-1a73-4ae8-bbd8-ce1b6c39aaa5": {
+        "Coherence": 2.5323,
+        "Musicality": 2.2018,
+        "Memorability": 2.2098,
+        "Clarity": 2.1646,
+        "Naturalness": 2.1963,
+        "Overall_Aesthetics": 2.261
+    },
+    "udio_e5d7404e-c491-4a7b-92d7-1a9188e492fe": {
+        "Coherence": 2.8218,
+        "Musicality": 2.4908,
+        "Memorability": 2.6307,
+        "Clarity": 2.5186,
+        "Naturalness": 2.4913,
+        "Overall_Aesthetics": 2.5906
+    },
+    "udio_e6911b69-d853-4fea-ae5d-4680624543b3": {
+        "Coherence": 2.1294,
+        "Musicality": 1.8067,
+        "Memorability": 1.7774,
+        "Clarity": 1.7174,
+        "Naturalness": 1.7792,
+        "Overall_Aesthetics": 1.842
+    },
+    "udio_e9ed8efc-e5e6-466b-a534-15d2a6a1abf1": {
+        "Coherence": 2.5003,
+        "Musicality": 2.1615,
+        "Memorability": 2.2352,
+        "Clarity": 2.1642,
+        "Naturalness": 2.1544,
+        "Overall_Aesthetics": 2.2431
+    },
+    "udio_ec661023-e74f-4c5a-bf61-cb1979df33db": {
+        "Coherence": 2.3613,
+        "Musicality": 2.0735,
+        "Memorability": 1.9921,
+        "Clarity": 1.9734,
+        "Naturalness": 2.0777,
+        "Overall_Aesthetics": 2.0956
+    },
+    "udio_ed21da97-b3b6-4409-a5a9-685428bd574f": {
+        "Coherence": 3.7771,
+        "Musicality": 3.6103,
+        "Memorability": 3.7281,
+        "Clarity": 3.4988,
+        "Naturalness": 3.4597,
+        "Overall_Aesthetics": 3.6148
+    },
+    "udio_f3ada5b7-efeb-4772-a0d9-cef40432a8e4": {
+        "Coherence": 2.0046,
+        "Musicality": 1.7404,
+        "Memorability": 1.6751,
+        "Clarity": 1.6332,
+        "Naturalness": 1.7137,
+        "Overall_Aesthetics": 1.7534
+    },
+    "udio_f490da7d-fd1c-4a24-b2a9-678562985cfb": {
+        "Coherence": 2.0979,
+        "Musicality": 1.8139,
+        "Memorability": 1.7529,
+        "Clarity": 1.7083,
+        "Naturalness": 1.7753,
+        "Overall_Aesthetics": 1.8297
+    },
+    "udio_f8225e85-e6ab-4ed2-acc6-57832d5586fd": {
+        "Coherence": 4.5529,
+        "Musicality": 4.5946,
+        "Memorability": 4.6769,
+        "Clarity": 4.3416,
+        "Naturalness": 4.316,
+        "Overall_Aesthetics": 4.4964
+    },
+    "udio_fd7d9d5a-aeea-420a-8faf-21fab5954a43": {
+        "Coherence": 2.8913,
+        "Musicality": 2.5848,
+        "Memorability": 2.7832,
+        "Clarity": 2.6582,
+        "Naturalness": 2.5891,
+        "Overall_Aesthetics": 2.7013
+    }
+}
