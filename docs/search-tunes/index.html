@@ -965,6 +965,16 @@ body {
 </div>
 
 <script>
+// ── API base: use absolute URL when served from static hosts (e.g. anonymous.4open.science)
+const API_BASE = (() => {
+    const h = window.location.hostname;
+    if (h === 'localhost' || h === '127.0.0.1' || h.endsWith('.local')) return '';
+    // If served from the Cloudflare tunnel directly, relative URLs work fine
+    if (h.endsWith('trycloudflare.com')) return '';
+    // Static host (anonymous.4open.science, GitHub Pages, etc.) → route to live backend
+    return 'https://regards-financing-proxy-tony.trycloudflare.com';
+})();
+
 // ── State ───────────────────────────────────────────────────────
 let uiMode = 'simple';       // 'simple' | 'advanced'
 let selectedSubset = null; // null | specific subset name
@@ -1595,7 +1605,7 @@ async function doSearch() {
     }
 
     try {
-        const resp = await fetch('/api/search', {
+        const resp = await fetch(API_BASE + '/api/search', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
@@ -1645,7 +1655,7 @@ async function doMusicSimilaritySearch() {
         }
 
         try {
-            const resp = await fetch('/api/search_similar', {
+            const resp = await fetch(API_BASE + '/api/search_similar', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -1694,7 +1704,7 @@ async function doMusicSimilaritySearch() {
         }
 
         try {
-            const resp = await fetch('/api/search_by_audio', {
+            const resp = await fetch(API_BASE + '/api/search_by_audio', {
                 method: 'POST',
                 body: formData,
             });
@@ -1973,7 +1983,7 @@ async function submitTakedown() {
     msg.className = 'td-msg';
 
     try {
-        const resp = await fetch('/api/takedown', {
+        const resp = await fetch(API_BASE + '/api/takedown', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ track_info: trackInfo, reason, statement, name, email, phone })
@@ -1998,7 +2008,7 @@ async function submitTakedown() {
 // ── Init: load stats & language chips ───────────────────────────
 (async function() {
     try {
-        const resp = await fetch('/api/stats');
+        const resp = await fetch(API_BASE + '/api/stats');
         const stats = await resp.json();
         document.getElementById('stat-total').textContent = stats.total_tracks?.toLocaleString() || '--';
         whisperEmbCount = stats.whisper_embeddings || 0;
