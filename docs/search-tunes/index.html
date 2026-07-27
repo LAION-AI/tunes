@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>REDACTED-Tunes Search</title>
+<title>Reviewer Mystery-Tunes Search</title>
 <style>
 /* ── Reset & Base ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -180,6 +180,85 @@ body {
 .help-popup-body code {
     background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 3px;
     font-size: 12px; color: #80cbc4;
+}
+
+/* ── Takedown / Rights-Holder Removal UI ────────────────────── */
+.takedown-header-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255, 87, 87, 0.12); color: #ff9e9e;
+    border: 1px solid rgba(255, 87, 87, 0.45); border-radius: 999px;
+    padding: 6px 12px; font-size: 12px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s; margin-left: 10px;
+}
+.takedown-header-btn:hover { background: rgba(255, 87, 87, 0.22); color: #ffbcbc; border-color: #ff5757; }
+.takedown-header-btn::before { content: "⚠"; }
+
+.takedown-footer {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, rgba(10,20,32,0.85) 0%, rgba(10,20,32,0.98) 100%);
+    border-top: 1px solid #263238;
+    padding: 8px 20px; text-align: center; z-index: 500;
+    font-size: 12px; color: #90a4ae; backdrop-filter: blur(6px);
+}
+.takedown-footer a {
+    color: #ff9e9e; text-decoration: none; font-weight: 600; margin-left: 6px;
+}
+.takedown-footer a:hover { text-decoration: underline; color: #ffbcbc; }
+.results-container { padding-bottom: 60px; }
+
+.btn-takedown-card {
+    background: transparent; color: #ef9a9a;
+    border: 1px solid rgba(255,87,87,0.35); border-radius: 6px;
+    padding: 4px 10px; font-size: 11px; font-weight: 600;
+    cursor: pointer; margin-left: 8px; transition: all 0.15s;
+}
+.btn-takedown-card:hover { background: rgba(255,87,87,0.15); border-color: #ff5757; color: #ffbcbc; }
+
+/* takedown modal — reuses .help-overlay geometry */
+.td-popup { max-width: 640px !important; }
+.td-notice {
+    background: rgba(255,87,87,0.08); border: 1px solid rgba(255,87,87,0.25);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 14px;
+    font-size: 12.5px; color: #cfd8dc; line-height: 1.55;
+}
+.td-notice strong { color: #ffbcbc; }
+.td-form { display: flex; flex-direction: column; gap: 10px; }
+.td-form label { font-size: 11px; font-weight: 600; color: #90a4ae; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; display: block; }
+.td-form label .req { color: #ff8a80; }
+.td-form input[type=text], .td-form input[type=email], .td-form input[type=tel], .td-form textarea, .td-form select {
+    width: 100%; padding: 8px 10px; background: #0e1826; color: #e0e0e0;
+    border: 1px solid #263a55; border-radius: 6px; font-size: 13px; font-family: inherit;
+    box-sizing: border-box;
+}
+.td-form textarea { min-height: 74px; resize: vertical; }
+.td-form input:focus, .td-form textarea:focus, .td-form select:focus { outline: none; border-color: #4fc3f7; }
+.td-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .td-form .row2 { grid-template-columns: 1fr; } }
+.td-form .attest-box { display: flex; align-items: flex-start; gap: 8px; padding: 8px; background: rgba(255,255,255,0.03); border-radius: 6px; font-size: 12px; color: #b0bec5; }
+.td-form .attest-box input { width: auto; margin-top: 3px; }
+.td-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.btn-td-submit {
+    background: #ff5757; color: white; border: none;
+    padding: 9px 20px; border-radius: 7px; font-weight: 700;
+    font-size: 13px; cursor: pointer;
+}
+.btn-td-submit:hover { background: #ff7676; }
+.btn-td-submit:disabled { background: #455a64; cursor: not-allowed; }
+.btn-td-cancel {
+    background: transparent; color: #90a4ae; border: 1px solid #37474f;
+    padding: 9px 16px; border-radius: 7px; font-size: 13px; cursor: pointer;
+}
+.btn-td-cancel:hover { border-color: #607d8b; color: #cfd8dc; }
+.td-msg { margin-top: 10px; font-size: 13px; }
+.td-msg.ok { color: #81c784; }
+.td-msg.err { color: #ff8a80; }
+.td-success-box {
+    background: rgba(129,199,132,0.08); border: 1px solid rgba(129,199,132,0.35);
+    border-radius: 8px; padding: 16px; text-align: center;
+}
+.td-success-box .refid {
+    font-family: monospace; font-size: 15px; color: #a5d6a7;
+    background: rgba(0,0,0,0.25); padding: 4px 10px; border-radius: 5px; display: inline-block; margin-top: 6px;
 }
 
 /* ── Filter Chips ────────────────────────────────────────────── */
@@ -490,10 +569,11 @@ body {
      ════════════════════════════════════════════════════════════ -->
 <div class="header simple-header" id="simple-mode">
     <div class="header-top">
-        <h1>REDACTED-Tunes <span>Search</span></h1>
+        <h1>Reviewer Mystery-<span>Tunes Search</span></h1>
         <div class="mode-toggle">
             <button class="active" onclick="setUIMode('simple')">Simple</button>
             <button onclick="setUIMode('advanced')">Advanced</button>
+            <button class="takedown-header-btn" onclick="openTakedown()" title="Rights holder? Report a track for removal.">Takedown Request</button>
         </div>
     </div>
 
@@ -542,7 +622,7 @@ body {
      ════════════════════════════════════════════════════════════ -->
 <div class="header" id="advanced-mode" style="display:none">
     <div class="header-top">
-        <h1>REDACTED-Tunes <span>Search</span></h1>
+        <h1>Reviewer Mystery-<span>Tunes Search</span></h1>
         <div class="mode-toggle">
             <button onclick="setUIMode('simple')">Simple</button>
             <button class="active" onclick="setUIMode('advanced')">Advanced</button>
@@ -777,7 +857,7 @@ body {
 <div class="results-container" id="results">
     <div class="empty-state">
         <div class="icon">&#9835;</div>
-        <p>Search the REDACTED-Tunes dataset of 1.4M AI-generated music tracks from Suno, Mureka, and Udio. Type a description of the music you're looking for and hit Search. Switch to Advanced mode for more control over search parameters.</p>
+        <p>Search the Redacted-Tunes dataset of 1.4M AI-generated music tracks from Suno, Mureka, and Udio. Type a description of the music you're looking for and hit Search. Switch to Advanced mode for more control over search parameters.</p>
     </div>
 </div>
 
@@ -794,10 +874,97 @@ body {
     </div>
 </div>
 
-<script>
-// ── API Base ─────────────────────────────────────────────────────
-const API_BASE = 'https://tunes-search.duckdns.org';
+<!-- ════════════════════════════════════════════════════════════════
+     TAKEDOWN REQUEST OVERLAY
+     ════════════════════════════════════════════════════════════ -->
+<div class="help-overlay" id="td-overlay" onclick="if(event.target===this)closeTakedown()">
+    <div class="help-popup td-popup">
+        <div class="help-popup-header">
+            <h3>⚠ Takedown / Removal Request</h3>
+            <button class="help-popup-close" onclick="closeTakedown()">&times;</button>
+        </div>
+        <div class="help-popup-body">
 
+            <!-- success state -->
+            <div id="td-success" style="display:none" class="td-success-box">
+                <div style="font-size:15px;font-weight:700;color:#81c784;margin-bottom:6px">Request submitted</div>
+                <div style="font-size:13px;color:#b0bec5;margin-bottom:10px">Your reference ID:</div>
+                <div class="refid" id="td-refid"></div>
+                <div style="margin-top:12px;font-size:12px;color:#90a4ae">We review all requests within 5 business days and will contact you at the e-mail you provided. Please keep this reference ID for follow-up enquiries.</div>
+                <div style="margin-top:14px">
+                    <button class="btn-td-cancel" onclick="closeTakedown()">Close</button>
+                </div>
+            </div>
+
+            <!-- form state -->
+            <div id="td-form-wrap">
+                <div class="td-notice">
+                    <strong>Rights-holder removal request.</strong> If you believe you own rights to a track in this index — or that it contains your voice, likeness, or personal information — you may request its removal. Providing false statements constitutes perjury in many jurisdictions.<br><br>
+                    This index contains <em>AI-generated music metadata</em>. Audio files are hosted by the original platform (Suno, Mureka, Udio, Riffusion, Sonauto); we will forward verified removal requests to the respective platform as well.
+                </div>
+                <form class="td-form" id="td-form" onsubmit="return false">
+                    <div>
+                        <label>Track information (auto-filled from card)</label>
+                        <input type="text" id="td-track-info" placeholder="Track ID / title / URL" readonly style="color:#78909c">
+                    </div>
+                    <div>
+                        <label>Reason for removal <span class="req">*</span></label>
+                        <select id="td-reason">
+                            <option value="">— select —</option>
+                            <option value="copyright">Copyright / intellectual property infringement</option>
+                            <option value="voice_likeness">Unauthorised use of voice or likeness</option>
+                            <option value="personal_data">Personal data / privacy concern (GDPR / CCPA)</option>
+                            <option value="tos_violation">Platform terms-of-service violation</option>
+                            <option value="other">Other (describe below)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Ownership / rights statement <span class="req">*</span></label>
+                        <textarea id="td-statement" placeholder="Describe how you hold rights to this content (e.g. composer, label, voice artist). Include any reference numbers, registration IDs, or links to official records."></textarea>
+                    </div>
+                    <div class="row2">
+                        <div>
+                            <label>Full legal name <span class="req">*</span></label>
+                            <input type="text" id="td-name" placeholder="Jane Doe" autocomplete="name">
+                        </div>
+                        <div>
+                            <label>E-mail address <span class="req">*</span></label>
+                            <input type="email" id="td-email" placeholder="jane@example.com" autocomplete="email">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Phone number <em style="font-weight:400;text-transform:none;font-size:10px">(optional)</em></label>
+                        <input type="tel" id="td-phone" placeholder="+1 555 000 0000" autocomplete="tel">
+                    </div>
+                    <div class="attest-box">
+                        <input type="checkbox" id="td-attest">
+                        <label for="td-attest" style="text-transform:none;letter-spacing:0;font-size:12px;color:#b0bec5;font-weight:400">
+                            I declare under penalty of perjury that the information provided is accurate and that I am the rights holder, or am authorised to act on behalf of the rights holder, for the content described above.
+                        </label>
+                    </div>
+                    <div id="td-msg" class="td-msg"></div>
+                    <div class="td-actions">
+                        <button class="btn-td-cancel" type="button" onclick="closeTakedown()">Cancel</button>
+                        <button class="btn-td-submit" type="button" id="td-submit-btn" onclick="submitTakedown()">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     STICKY FOOTER — takedown notice
+     ════════════════════════════════════════════════════════════ -->
+<div class="takedown-footer">
+    AI-generated music index for research purposes.
+    Rights holders may
+    <a href="#" onclick="event.preventDefault(); openTakedown()">submit a takedown request</a>
+    at any time.
+</div>
+
+<script>
 // ── State ───────────────────────────────────────────────────────
 let uiMode = 'simple';       // 'simple' | 'advanced'
 let selectedSubset = null; // null | specific subset name
@@ -1428,7 +1595,7 @@ async function doSearch() {
     }
 
     try {
-        const resp = await fetch(API_BASE + '/api/search', {
+        const resp = await fetch('/api/search', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
@@ -1478,7 +1645,7 @@ async function doMusicSimilaritySearch() {
         }
 
         try {
-            const resp = await fetch(API_BASE + '/api/search_similar', {
+            const resp = await fetch('/api/search_similar', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -1527,7 +1694,7 @@ async function doMusicSimilaritySearch() {
         }
 
         try {
-            const resp = await fetch(API_BASE + '/api/search_by_audio', {
+            const resp = await fetch('/api/search_by_audio', {
                 method: 'POST',
                 body: formData,
             });
@@ -1662,6 +1829,7 @@ function renderResults(data) {
         const findSimBtn = r.has_whisper_emb
             ? `<button class="btn-find-similar" onclick="event.stopPropagation(); findSimilar(${r.row_id}, '${escA(r.title || 'Untitled')}')">Find Similar</button>`
             : '';
+        const takedownBtn = `<button class="btn-takedown-card" onclick="event.stopPropagation(); openTakedown({row_id:${r.row_id}, title:'${escA(r.title || 'Untitled')}', audio_url:'${escA(r.audio_url || '')}', subset:'${escA(r.subset || '')}'})" title="Report this track for removal (rights holders, subjects of voice/likeness, personal info)">⚠ Report</button>`;
 
         html += `
         <div class="result-card">
@@ -1699,6 +1867,7 @@ function renderResults(data) {
                     <div class="card-audio">
                         ${r.audio_url ? `<audio controls preload="none"><source src="${escA(r.audio_url)}"></audio>` : ''}
                         ${findSimBtn}
+                        ${takedownBtn}
                     </div>
                 </div>
                 ${scoreDisplay}
@@ -1751,10 +1920,85 @@ function buildLangChips(panel) {
     }
 }
 
+// ── Takedown modal ──────────────────────────────────────────────
+function openTakedown(info) {
+    const overlay = document.getElementById('td-overlay');
+    document.getElementById('td-success').style.display = 'none';
+    document.getElementById('td-form-wrap').style.display = '';
+    document.getElementById('td-msg').textContent = '';
+    document.getElementById('td-msg').className = 'td-msg';
+    document.getElementById('td-reason').value = '';
+    document.getElementById('td-statement').value = '';
+    document.getElementById('td-name').value = '';
+    document.getElementById('td-email').value = '';
+    document.getElementById('td-phone').value = '';
+    document.getElementById('td-attest').checked = false;
+    if (info) {
+        const parts = [];
+        if (info.row_id) parts.push('ID:' + info.row_id);
+        if (info.title) parts.push(info.title);
+        if (info.subset) parts.push('[' + info.subset + ']');
+        if (info.audio_url) parts.push(info.audio_url);
+        document.getElementById('td-track-info').value = parts.join(' | ');
+    } else {
+        document.getElementById('td-track-info').value = '';
+    }
+    overlay.classList.add('active');
+}
+
+function closeTakedown() {
+    document.getElementById('td-overlay').classList.remove('active');
+}
+
+async function submitTakedown() {
+    const btn = document.getElementById('td-submit-btn');
+    const msg = document.getElementById('td-msg');
+
+    const reason = document.getElementById('td-reason').value.trim();
+    const statement = document.getElementById('td-statement').value.trim();
+    const name = document.getElementById('td-name').value.trim();
+    const email = document.getElementById('td-email').value.trim();
+    const phone = document.getElementById('td-phone').value.trim();
+    const attest = document.getElementById('td-attest').checked;
+    const trackInfo = document.getElementById('td-track-info').value.trim();
+
+    if (!reason) { msg.textContent = 'Please select a reason.'; msg.className = 'td-msg err'; return; }
+    if (!statement) { msg.textContent = 'Please describe your ownership / rights.'; msg.className = 'td-msg err'; return; }
+    if (!name) { msg.textContent = 'Full legal name is required.'; msg.className = 'td-msg err'; return; }
+    if (!email || !email.includes('@')) { msg.textContent = 'A valid e-mail address is required.'; msg.className = 'td-msg err'; return; }
+    if (!attest) { msg.textContent = 'You must confirm the statutory declaration.'; msg.className = 'td-msg err'; return; }
+
+    btn.disabled = true;
+    msg.textContent = 'Submitting…';
+    msg.className = 'td-msg';
+
+    try {
+        const resp = await fetch('/api/takedown', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ track_info: trackInfo, reason, statement, name, email, phone })
+        });
+        const data = await resp.json();
+        if (resp.ok && data.ref_id) {
+            document.getElementById('td-refid').textContent = data.ref_id;
+            document.getElementById('td-form-wrap').style.display = 'none';
+            document.getElementById('td-success').style.display = '';
+        } else {
+            msg.textContent = data.detail || 'Submission failed. Please try again.';
+            msg.className = 'td-msg err';
+            btn.disabled = false;
+        }
+    } catch(e) {
+        msg.textContent = 'Network error. Please try again.';
+        msg.className = 'td-msg err';
+        btn.disabled = false;
+    }
+}
+
 // ── Init: load stats & language chips ───────────────────────────
 (async function() {
     try {
-        const resp = await fetch(API_BASE + '/api/stats');
+        const resp = await fetch('/api/stats');
         const stats = await resp.json();
         document.getElementById('stat-total').textContent = stats.total_tracks?.toLocaleString() || '--';
         whisperEmbCount = stats.whisper_embeddings || 0;
