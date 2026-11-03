@@ -1,0 +1,20 @@
+analysis,model,params_B,mean,ci_low,ci_high,n_clips,significant
+nongemini_mean,GPT Audio 1.5,,4.895,4.795,4.965,100,
+nongemini_mean,MOSS-Audio 4B-Thinking,5.2,4.775,4.675,4.865,100,
+nongemini_mean,Music Whisper (ours),0.242,4.5,4.37,4.625,100,
+nongemini_mean,MOSS-Audio 8B-Thinking,9.1,4.48,4.32,4.615,100,
+nongemini_mean,Gemini 3 Flash,,4.23,4.105,4.35,100,
+nongemini_mean,Music Flamingo,8.3,4.15,4.005,4.29,100,
+nongemini_mean,MOSS-Audio 8B,9.1,4.005,3.85,4.155,100,
+paired_diff_vs_music_whisper,MOSS-Audio 4B-Thinking,5.2,-0.275,-0.385,-0.17,100,True
+paired_diff_vs_music_whisper,MOSS-Audio 8B-Thinking,9.1,0.02,-0.16,0.215,100,False
+paired_diff_vs_music_whisper,MOSS-Audio 8B,9.1,0.495,0.315,0.675,100,True
+paired_diff_vs_music_whisper,Music Flamingo,8.3,0.35,0.185,0.51,100,True
+paired_diff_vs_music_whisper,GPT Audio 1.5,,-0.395,-0.545,-0.24,100,True
+paired_diff_vs_music_whisper,Gemini 3 Flash,,0.27,0.115,0.425,100,True
+gemini_judged_accuracy,"Music Whisper (ours, 242M)",,4.101,3.848,4.343,99,
+gemini_judged_accuracy,Gemini 2.5 Flash (closed),,4.616,4.414,4.788,99,
+gemini_judged_accuracy,MOSS-Audio 8B-Thinking (9.1B),,4.576,4.384,4.747,99,
+gemini_judged_accuracy,GPT-Audio 1.5 (closed),,4.097,3.796,4.387,93,
+gemini_judged_accuracy,MOSS-Audio 8B (9.1B),,3.12,2.87,3.37,100,
+gemini_judged_accuracy,Music Flamingo (8.3B),,3.02,2.755,3.296,98,

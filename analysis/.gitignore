@@ -1,0 +1,40 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+uv.lock
+
+.claude
+
+# Virtual environments
+.venv
+.env
+
+.DS_Store
+.cache
+.cache_cropped
+
+aesthetics/audiobox/staging
+aesthetics/audiobox/staging/*
+aesthetics/audiobox/run.log
+aesthetics/audiobox/input.jsonl
+aesthetics/audiobox/
+
+aesthetics/SongEval/input.jsonl
+aesthetics/SongEval/input.txt
+aesthetics/SongEval/output/
+aesthetics/SongEval/
+
+ckpt/
+
+features/results/pipeline_state/
+features/results/scores/
+
+output/figures/* copy.png
+
+# A1/A5 rebuttal analysis caches (downloaded artifacts, not source)
+.cache_a1/
+.cache_a5/

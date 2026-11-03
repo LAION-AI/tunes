@@ -1,0 +1,8 @@
+model,type,params_B,size_ratio,voxtral,gpt_audio,nongemini_avg,n_voxtral,n_gpt_audio
+GPT Audio 1.5,closed,,,4.92,4.87,4.895,100,100
+MOSS-Audio 4B-Thinking,open,5.2,21.487603305785125,4.86,4.69,4.775,100,100
+Music Whisper (ours),open,0.242,1.0,4.83,4.17,4.5,100,100
+MOSS-Audio 8B-Thinking,open,9.1,37.603305785123965,4.74,4.22,4.48,100,100
+Gemini 3 Flash,closed,,,4.61,3.85,4.23,100,100
+Music Flamingo,open,8.3,34.29752066115703,4.94,3.36,4.15,100,100
+MOSS-Audio 8B,open,9.1,37.603305785123965,4.9,3.11,4.005,100,100
