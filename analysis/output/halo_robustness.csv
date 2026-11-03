@@ -1,0 +1,15 @@
+analysis,stratum,judged_real_mean,n_real,judged_ai_mean,n_ai,delta,ci_low,ci_high,mwu_p,dimension,perceived_delta,perceived_ci_low,perceived_ci_high,true_delta,true_ci_low,true_ci_high,ratio,model,n,judged_ai_beta,p,attenuation_vs_M0_pct,ctrl_q_ours_z_beta,ctrl_q_ours_z_p,ctrl_q_songeval_z_beta,ctrl_q_songeval_z_p,ctrl_q_audiobox_z_beta,ctrl_q_audiobox_z_p,n_songs,note
+A2a_gap_by_ground_truth,All songs,6.303,225.0,4.36,289.0,1.943,1.598,2.289,2.1823040075865254e-23,,,,,,,,,,,,,,,,,,,,,
+A2a_gap_by_ground_truth,Actually AI,6.359,171.0,4.296,267.0,2.063,1.68,2.44,2.3059157570820438e-21,,,,,,,,,,,,,,,,,,,,,
+A2a_gap_by_ground_truth,Actually human,6.126,54.0,5.141,22.0,0.985,0.301,1.676,0.02820467217141858,,,,,,,,,,,,,,,,,,,,,
+A2b_perceived_vs_true,,,,,,,,,,aesthetic_quality,1.943,1.598,2.289,0.61,0.164,1.058,3.18,,,,,,,,,,,,,
+A2b_perceived_vs_true,,,,,,,,,,playlist_likelihood,1.509,1.121,1.889,0.567,0.093,1.037,2.66,,,,,,,,,,,,,
+A2b_perceived_vs_true,,,,,,,,,,musical_creativity,1.769,1.432,2.116,0.751,0.283,1.218,2.36,,,,,,,,,,,,,
+A2b_perceived_vs_true,,,,,,,,,,production_quality,2.182,1.838,2.515,0.828,0.42,1.241,2.64,,,,,,,,,,,,,
+A2b_perceived_vs_true,,,,,,,,,,emotional_engagement,1.833,1.498,2.167,0.412,-0.038,0.85,4.45,,,,,,,,,,,,,
+A2c_quality_conditioned_lmm,,,,,,,-1.9162,-1.2121,,,,,,,,,,M0: no quality control,514.0,-1.5642,3.1212471712260437e-18,0.0,,,,,,,,
+A2c_quality_conditioned_lmm,,,,,,,-1.9053,-1.2042,,,,,,,,,,M1: + our aesthetics,514.0,-1.5547,3.51247596705398e-18,0.61,0.2175,0.008,,,,,,
+A2c_quality_conditioned_lmm,,,,,,,-1.8743,-1.1756,,,,,,,,,,M2: + SongEval,514.0,-1.525,1.1759203894995835e-17,2.51,,,0.2939,0.0005,,,,
+A2c_quality_conditioned_lmm,,,,,,,-1.8314,-1.1399,,,,,,,,,,M3: + Audiobox CE,514.0,-1.4857,3.6844448263243096e-17,5.02,,,,,0.3928,0.0,,
+A2c_quality_conditioned_lmm,,,,,,,-1.8296,-1.1366,,,,,,,,,,M4: + all three,514.0,-1.4831,4.918946511476734e-17,5.18,0.0022,0.9841,0.0992,0.4198,0.3404,0.0004,,
+A2d_within_song,,,,,,,,,,,,,,,,,,,,,,,,,,,,,8.0,underpowered; not analyzed
