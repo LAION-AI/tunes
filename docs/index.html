@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>REDACTED-Tunes — NeurIPS 2026 D&amp;E</title>
+  <title>LAION-Tunes — NeurIPS 2026 D&amp;E</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -425,7 +425,7 @@
 
 <!-- ── Navbar ── -->
 <nav>
-  <span class="nav-brand">REDACTED-Tunes</span>
+  <span class="nav-brand">LAION-Tunes</span>
   <ul>
     <li><a href="#corpus">Corpus</a></li>
     <li><a href="#model">Model</a></li>
@@ -438,27 +438,27 @@
 <!-- ── Hero ── -->
 <section id="hero">
   <div class="container">
-    <div class="venue-badge">NeurIPS 2026 · Datasets &amp; Evaluations Track · Anonymous Submission</div>
-    <h1>REDACTED-Tunes</h1>
+    <div class="venue-badge">NeurIPS 2026 · Evaluations &amp; Datasets Track</div>
+    <h1>LAION-Tunes</h1>
     <p class="hero-sub">
       A large-scale, richly annotated ecosystem for AI-generated music research —
       1.4M tracks, a perceptual benchmark with human annotations, a music captioning model,
       and a situation-aware RPG music subset.
     </p>
     <div class="btn-row">
-      <a href="https://anonymous-hf.up.railway.app/a/pib3syfuxp02/" class="btn btn-primary" target="_blank">
+      <a href="https://huggingface.co/datasets/laion/laion-tunes" class="btn btn-primary" target="_blank">
         🗄️ Corpus
       </a>
-      <a href="https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/" class="btn btn-secondary" target="_blank">
+      <a href="https://huggingface.co/datasets/laion/laion-tunes-benchmark" class="btn btn-secondary" target="_blank">
         📊 Benchmark
       </a>
-      <a href="https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/" class="btn btn-purple" target="_blank">
+      <a href="https://huggingface.co/datasets/laion/laion-tunes-rpg-music" class="btn btn-purple" target="_blank">
         🎮 RPG Subset
       </a>
-      <a href="https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/" class="btn btn-green" target="_blank">
+      <a href="https://huggingface.co/laion/music-whisper" class="btn btn-green" target="_blank">
         🧠 Music-Whisper
       </a>
-      <a href="https://anonymous.4open.science/r/anonymized-for-double-blind-review" class="btn btn-secondary" target="_blank">
+      <a href="https://github.com/LAION-AI/tunes" class="btn btn-secondary" target="_blank">
         💻 Code
       </a>
     </div>
@@ -502,36 +502,36 @@
       The rapid proliferation of AI music generators has outpaced the availability of structured,
       richly annotated datasets for studying them. Existing benchmarks are small, cover only one
       or two generators, lack human perceptual data, or rely on proprietary audio. 
-      <strong>REDACTED-Tunes</strong> closes this gap at scale.
+      <strong>LAION-Tunes</strong> closes this gap at scale.
     </p>
     <div class="artifact-grid">
       <div class="artifact-card">
         <div class="artifact-icon">🗄️</div>
         <div class="artifact-chip">Dataset · 1.4M tracks</div>
-        <h3>REDACTED-Tunes Corpus</h3>
+        <h3>LAION-Tunes Corpus</h3>
         <p>Annotated metadata for 1,429,734 AI-generated tracks from Suno, Udio &amp; Mureka — captions, ASR, embeddings, aesthetics, NSFW labels, and pre-built search indices.</p>
-        <a href="https://anonymous-hf.up.railway.app/a/pib3syfuxp02/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+        <a href="https://huggingface.co/datasets/laion/laion-tunes" class="artifact-link" target="_blank">View on Hugging Face →</a>
       </div>
       <div class="artifact-card">
         <div class="artifact-icon">📊</div>
         <div class="artifact-chip">Benchmark · 10,521 songs</div>
-        <h3>REDACTED-Tunes-Benchmark</h3>
+        <h3>LAION-Tunes-Benchmark</h3>
         <p>Perceptual evaluation dataset pairing 7 AI generators with human Apple Music previews. 591 annotation trials from 61 participants across 6 perceptual dimensions.</p>
-        <a href="https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+        <a href="https://huggingface.co/datasets/laion/laion-tunes-benchmark" class="artifact-link" target="_blank">View on Hugging Face →</a>
       </div>
       <div class="artifact-card">
         <div class="artifact-icon">🧠</div>
         <div class="artifact-chip">Model · 922 MB</div>
-        <h3>REDACTED-Music-Whisper</h3>
+        <h3>Music-Whisper</h3>
         <p>Whisper Small fine-tuned for music captioning. Generates detailed paragraph-length descriptions covering instrumentation, tempo, mood, vocals, and production quality.</p>
-        <a href="https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+        <a href="https://huggingface.co/laion/music-whisper" class="artifact-link" target="_blank">View on Hugging Face →</a>
       </div>
       <div class="artifact-card">
         <div class="artifact-icon">🎮</div>
         <div class="artifact-chip">Dataset · 2,580 tracks</div>
-        <h3>REDACTED-RPG</h3>
+        <h3>LAION-Tunes-RPG</h3>
         <p>Instrumental subset annotated by Gemini 3 Flash Preview with gameplay situations across 18 RPG genres. Includes per-genre FAISS indices and a purple-themed search UI.</p>
-        <a href="https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/" class="artifact-link" target="_blank">View on Anonymous HF →</a>
+        <a href="https://huggingface.co/datasets/laion/laion-tunes-rpg-music" class="artifact-link" target="_blank">View on Hugging Face →</a>
       </div>
     </div>
   </div>
@@ -541,7 +541,7 @@
 <section id="corpus">
   <div class="container">
     <div class="section-label">Corpus</div>
-    <h2>REDACTED-Tunes Corpus</h2>
+    <h2>LAION-Tunes Corpus</h2>
     <p>
       Metadata and annotations for <strong>1,429,734 AI-generated tracks</strong> from three
       publicly accessible platforms. Audio files are not distributed; all <code>audio_url</code>
@@ -572,7 +572,7 @@
         <div class="step-num">1</div>
         <div>
           <div style="font-size:.875rem;font-weight:600;">Music Captioning</div>
-          <div class="step-model">REDACTED/music-whisper</div>
+          <div class="step-model">laion/music-whisper</div>
         </div>
         <div class="step-output">Free-text music description per track</div>
       </div>
@@ -656,7 +656,7 @@ HF_TOKEN=<span class="s">your_token</span> python server.py --port 7860
 <section id="model">
   <div class="container">
     <div class="section-label">Model</div>
-    <h2>REDACTED-Music-Whisper</h2>
+    <h2>Music-Whisper</h2>
     <p>
       A fine-tuned version of <strong>OpenAI Whisper Small</strong> trained for music captioning.
       The model generates detailed, paragraph-length descriptions of audio tracks and was used to
@@ -670,7 +670,7 @@ HF_TOKEN=<span class="s">your_token</span> python server.py --port 7860
         <div class="kv-row"><span class="kv-key">Task</span><span class="kv-val">Music captioning</span></div>
         <div class="kv-row"><span class="kv-key">Model size</span><span class="kv-val">922 MB</span></div>
         <div class="kv-row"><span class="kv-key">Embedding dim</span><span class="kv-val">768</span></div>
-        <div class="kv-row"><span class="kv-key">License</span><span class="kv-val">CC-BY-4.0</span></div>
+        <div class="kv-row"><span class="kv-key">License</span><span class="kv-val">Apache 2.0</span></div>
       </div>
       <div class="info-card">
         <h3>Caption Covers</h3>
@@ -695,7 +695,7 @@ HF_TOKEN=<span class="s">your_token</span> python server.py --port 7860
 <section id="rpg">
   <div class="container">
     <div class="section-label">RPG Subset</div>
-    <h2>REDACTED-RPG</h2>
+    <h2>LAION-Tunes-RPG</h2>
     <p>
       A curated subset of <strong>2,580 instrumental tracks</strong> from the corpus (Suno + Udio),
       annotated at full audio length by <strong>Gemini 3 Flash Preview</strong> with structured
@@ -762,11 +762,11 @@ python rpg_server.py --port 7862 --no-whisper
 <section id="benchmark">
   <div class="container">
     <div class="section-label">Benchmark</div>
-    <h2>REDACTED-Tunes-Benchmark</h2>
+    <h2>LAION-Tunes-Benchmark</h2>
     <p>
       A <strong>10,521-song perceptual evaluation dataset</strong> for AI music detection and quality
       assessment, pairing AI-generated tracks from seven commercial platforms with 840 human Apple
-      Music previews (30-second clips, genre-matched via the Genius index).
+      Music previews (30-second clips, sourced via the Genius index).
     </p>
 
     <h3>Split Composition</h3>
@@ -811,10 +811,7 @@ python rpg_server.py --port 7862 --no-whisper
 
     <div class="callout gold">
       <strong>Key finding — quality–authenticity halo effect:</strong>
-      Human songs score higher on all five quality dimensions, yet human-detection accuracy is only
-      64.3%. Higher perceived quality does not reliably predict a "real" verdict.
-      Udio's near-chance detection rate (<strong>41.4%</strong>) indicates perceptual near-parity
-      with human recordings on the production quality axis.
+      Songs judged real receive nearly two more aesthetic-quality points than songs judged AI-generated, within both actually-AI and actually-human songs, and the same pattern appears in frontier LLM judges. The halo is an association, not a causal claim: a quality rating collected next to a provenance judgment is not an independent measurement.
     </div>
 
     <h3 style="margin-top:2rem;">Perceptual Quality Ratings (1–10 scale, mean ± σ)</h3>
@@ -840,28 +837,15 @@ python rpg_server.py --port 7862 --no-whisper
   <div class="container">
     <div class="section-label">Citation</div>
     <h2>Cite This Work</h2>
-    <p>If you use any artifact from the REDACTED-Tunes ecosystem, please cite:</p>
+    <p>If you use any artifact from the LAION-Tunes ecosystem, please cite:</p>
 
     <div class="citation-block" id="cite1">
       <button class="copy-btn" onclick="copyBib('cite1')">Copy</button>
-@dataset{redacted_tunes_2026,<br>
-&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp; = {{REDACTED}-Tunes: A Large-Scale Annotated Corpus and Perceptual Benchmark<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for AI-Generated Music},<br>
-&nbsp;&nbsp;author&nbsp;&nbsp;&nbsp; = {REDACTED},<br>
-&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {2026},<br>
-&nbsp;&nbsp;url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {https://anonymous-hf.up.railway.app/a/pib3syfuxp02/},<br>
-&nbsp;&nbsp;license&nbsp;&nbsp; = {Apache-2.0},<br>
-}
-    </div>
-
-    <div class="citation-block" id="cite2" style="margin-top:1rem;">
-      <button class="copy-btn" onclick="copyBib('cite2')">Copy</button>
-@dataset{redacted_tunes_benchmark_2026,<br>
-&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp; = {{REDACTED}-Tunes-Benchmark: A Perceptual Benchmark for AI-Generated Music},<br>
-&nbsp;&nbsp;author&nbsp;&nbsp;&nbsp; = {REDACTED},<br>
-&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {2026},<br>
-&nbsp;&nbsp;url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = {https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/},<br>
-&nbsp;&nbsp;license&nbsp;&nbsp; = {Apache-2.0},<br>
+@inproceedings{kaczmarczyk2026laiontunes,<br>
+&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;&nbsp; = {{LAION-Tunes}: An Open 1.4{M}-Track Dataset and Perceptual Benchmark for {AI}-Generated Music},<br>
+&nbsp;&nbsp;author&nbsp;&nbsp;&nbsp;&nbsp;= {Kaczmarczyk, Robert and Ahmed, Tawsif and Friedrich, Felix and Erickson, Aidan C. and Sharoni, Orian and Herremans, Dorien and Schuhmann, Christoph},<br>
+&nbsp;&nbsp;booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},<br>
+&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= {2026}<br>
 }
     </div>
 
@@ -870,10 +854,12 @@ python rpg_server.py --port 7862 --no-whisper
       <table>
         <thead><tr><th>Artifact</th><th>License</th></tr></thead>
         <tbody>
-          <tr><td>REDACTED-Tunes Corpus</td><td>Apache 2.0</td></tr>
-          <tr><td>REDACTED-Tunes-Benchmark</td><td>Apache 2.0</td></tr>
-          <tr><td>REDACTED-Music-Whisper</td><td>CC-BY-4.0</td></tr>
-          <tr><td>REDACTED-RPG</td><td>CC-BY-4.0</td></tr>
+          <tr><td>LAION-Tunes Corpus</td><td>CC BY-NC 4.0 (gated research access)</td></tr>
+          <tr><td>LAION-Tunes-Benchmark</td><td>CC BY-NC 4.0 song metadata; CC BY 4.0 human annotations</td></tr>
+          <tr><td>Music-Whisper, Music-Popularity</td><td>Apache 2.0</td></tr>
+          <tr><td>Music-Aesthetics</td><td>CC BY-NC-SA 4.0 (inherited from SongEval)</td></tr>
+          <tr><td>LAION-Tunes-RPG</td><td>CC BY-NC 4.0</td></tr>
+          <tr><td>Code in this repository</td><td>Apache 2.0</td></tr>
         </tbody>
       </table>
     </div>
@@ -882,8 +868,8 @@ python rpg_server.py --port 7862 --no-whisper
 
 <!-- ── Footer ── -->
 <footer>
-  <p>Anonymous submission to the <strong>NeurIPS 2026 Datasets &amp; Evaluations Track</strong>.<br>
-  Author identities and institutional affiliations have been redacted in compliance with double-blind review guidelines.</p>
+  <p>Accompanies the NeurIPS 2026 Evaluations &amp; Datasets Track paper <em>LAION-Tunes: An Open 1.4M-Track Dataset and Perceptual Benchmark for AI-Generated Music</em>.<br>
+  LAION e.V. · <a href="https://github.com/LAION-AI/tunes">github.com/LAION-AI/tunes</a></p>
 </footer>
 
 <script>

@@ -1,8 +1,9 @@
-# REDACTED-Tunes Suite
+# LAION-Tunes Suite
 
-> **Anonymous submission — NeurIPS 2026 Datasets and Evaluations Track**
+> Code and analysis for the NeurIPS 2026 Evaluations & Datasets Track paper *LAION-Tunes: An Open 1.4M-Track Dataset and Perceptual Benchmark for AI-Generated Music* (Kaczmarczyk, Ahmed, Friedrich, Erickson, Sharoni, Herremans, Schuhmann).
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Code: Apache 2.0](https://img.shields.io/badge/Code-Apache%202.0-blue.svg)](LICENSE)
+[![Data: CC BY-NC 4.0](https://img.shields.io/badge/Data-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Tracks: 1.4M](https://img.shields.io/badge/Tracks-1%2C429%2C734-brightgreen)]()
 [![Benchmark Songs: 10,521](https://img.shields.io/badge/Benchmark%20Songs-10%2C521-orange)]()
 [![Human Annotations: 591](https://img.shields.io/badge/Human%20Annotations-591-red)]()
@@ -12,14 +13,17 @@
 
 ## Overview
 
-**REDACTED-Tunes Suite** is a large-scale, richly annotated ecosystem for AI-generated music research, released as four interoperable artifacts:
+**LAION-Tunes Suite** is a large-scale, richly annotated ecosystem for AI-generated music research, released as interoperable artifacts:
 
 | Artifact | Description | Size |
 |---|---|---|
-| [REDACTED-Tunes Corpus](https://anonymous-hf.up.railway.app/a/pib3syfuxp02/) | Annotated metadata for 1.4M AI-generated tracks from Suno, Udio & Mureka | 1,429,734 tracks |
-| [REDACTED-Tunes-Benchmark](https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/) | Perceptual benchmark for AI music detection & quality assessment | 10,521 songs / 591 human annotations |
-| [REDACTED-RPG](https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/) | Situation-aware instrumental subset annotated across 18 RPG genres | 2,580 tracks |
-| [REDACTED-Music-Whisper](https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/) | Music captioning model (Whisper Small fine-tune) | 922 MB |
+| [LAION-Tunes Corpus](https://huggingface.co/datasets/laion/laion-tunes) | Annotated metadata for 1.4M AI-generated tracks from Suno, Udio & Mureka | 1,429,734 tracks |
+| [LAION-Tunes-Benchmark](https://huggingface.co/datasets/laion/laion-tunes-benchmark) | Perceptual benchmark for AI music detection & quality assessment | 10,521 songs / 591 human annotations |
+| [LAION-Tunes-RPG](https://huggingface.co/datasets/laion/laion-tunes-rpg-music) | Situation-aware instrumental subset annotated across 18 RPG genres | 2,580 tracks |
+| [Music-Whisper](https://huggingface.co/laion/music-whisper) | Music captioning model (Whisper Small fine-tune) | 922 MB |
+| [Music-Aesthetics](https://huggingface.co/laion/music-aesthetics) | SongEval-calibrated five-dimension quality scorer | 5 expert heads |
+| [Music-Popularity](https://huggingface.co/laion/music-popularity) | Play and upvote count predictor | 91 MB |
+| [Tunes-Search](https://projects.laion.ai/tunes/search-tunes/) | Public web demo over the corpus | |
 
 Together, these resources enable research on text-to-music generation quality, authenticity detection, music retrieval, and human perception of AI-generated audio — at a scale previously unavailable to the open research community.
 
@@ -29,10 +33,10 @@ Together, these resources enable research on text-to-music generation quality, a
 
 The rapid proliferation of AI music generators (Suno, Udio, Mureka, Lyria, …) has outpaced the availability of structured, richly annotated datasets for studying them. Existing benchmarks are small, cover only one or two generators, lack human perceptual data, or rely on proprietary audio that cannot be redistributed.
 
-**REDACTED-Tunes** closes this gap by providing:
+**LAION-Tunes** closes this gap by providing:
 
 1. **Scale** — 1.4M tracks spanning three major platforms, ~68,000 hours of audio.
-2. **Rich annotation** — captions, ASR transcriptions, six-dimensional aesthetics scores, multi-tier NSFW labels, and 768-dim embeddings for every track.
+2. **Rich annotation** — captions, ASR transcription embeddings, five-dimensional aesthetics scores, multi-tier NSFW labels, and 768-dim text and audio embeddings.
 3. **Human grounding** — a dedicated benchmark with 591 perceptual annotation trials from 61 participants across 7 AI platforms + real music.
 4. **Ready-to-use retrieval infrastructure** — pre-built FAISS and BM25 indices served by a FastAPI search server with a full-featured web UI.
 5. **Downstream subsets** — a curated RPG music collection annotated by a frontier LLM for situation-based search and game audio use cases.
@@ -42,22 +46,22 @@ The rapid proliferation of AI music generators (Suno, Udio, Mureka, Lyria, …) 
 ## Key Numbers at a Glance
 
 ```
-REDACTED-Tunes Corpus
+LAION-Tunes Corpus
 ├── 1,429,734 tracks  (Suno 1,037,381 · Mureka 383,549 · Udio 8,804)
 ├── ~68,471 hours of AI-generated audio
 ├── 1,356,009 Music-Whisper captions  (94.8%)
-├── 1,041,488 Parakeet ASR transcriptions  (72.8%)
-├── 6 FAISS vector indices + 3 BM25 text indices
+├── 1,041,488 Parakeet transcription embeddings  (72.8%; text not released)
+├── 6 FAISS vector indices + 2 BM25 text indices
 └── 36-column SQLite database, fully reproducible
 
-REDACTED-Tunes-Benchmark
+LAION-Tunes-Benchmark
 ├── 10,521 songs  (9,681 AI · 840 human Apple Music previews)
 ├── 7 AI platforms  (Suno · Udio · Mureka · Sonauto · Lyria 3 · Riffusion · SilverknightAI)
 ├── 4 splits  (train / validation / test / test_ood)
 ├── 591 annotation trials · 61 participants
 └── 6 perceptual dimensions  (authenticity + 5 quality ratings, 1–10 scale)
 
-REDACTED-RPG
+LAION-Tunes-RPG
 ├── 2,580 instrumental tracks  (Suno 1,489 · Udio 1,091)
 ├── 18 RPG genres  (High Fantasy → Alternate History)
 ├── 39,605 situation vectors  (Gemini 3 Flash Preview annotations)
@@ -66,9 +70,9 @@ REDACTED-RPG
 
 ---
 
-## Corpus: REDACTED-Tunes
+## Corpus: LAION-Tunes
 
-> [https://anonymous-hf.up.railway.app/a/pib3syfuxp02/](https://anonymous-hf.up.railway.app/a/pib3syfuxp02/)
+> [https://huggingface.co/datasets/laion/laion-tunes](https://huggingface.co/datasets/laion/laion-tunes)
 
 ### Source Data
 
@@ -86,10 +90,10 @@ Each track was processed through a seven-stage pipeline:
 
 | Stage | Model | Output |
 |---|---|---|
-| 1. Music Captioning | `REDACTED/music-whisper` (Whisper Small) | Free-text music description |
-| 2. ASR Transcription | `nvidia/parakeet-tdt-0.6b-v3` | Lyric text + word-level timestamps |
+| 1. Music Captioning | `laion/music-whisper` (Whisper Small) | Free-text music description |
+| 2. ASR Transcription | `nvidia/parakeet-tdt-0.6b-v3` | Transcript, embedded with EmbeddingGemma; the text is not released |
 | 3. Text Embeddings | `google/embeddinggemma-300m` | 768-dim L2-normalised vectors (tags, caption, transcription, lyric, mood) |
-| 4. Audio Embeddings | `REDACTED/music-whisper` encoder | 768-dim mean-pooled Whisper encoder hidden states |
+| 4. Audio Embeddings | `laion/music-whisper` encoder | 768-dim mean-pooled Whisper encoder hidden states |
 | 5. Aesthetics Scoring | SongEval MLP | 5-head MLP: coherence, musicality, memorability, clarity, naturalness (1–5) |
 | 6. NSFW Classification | Cosine similarity vs. reference prompts | Three-tier labels × three dimensions (gore, sexual, hate speech) |
 | 7. Language Detection | `langdetect` on ASR | ISO 639-1 language code |
@@ -101,12 +105,12 @@ Each track was processed through a seven-stage pipeline:
 | Total tracks | 1,429,734 |
 | Total audio duration | ~68,471 hours |
 | Has caption | 1,356,009 (94.8%) |
-| Has ASR transcription | 1,041,488 (72.8%) |
+| Has ASR transcription embedding | 1,041,488 (72.8%) |
 | Instrumental | 388,301 (27.2%) |
 | NSFW flagged (≥likely) | 23,591 (1.65%) |
 | Average aesthetics score | 3.29 / 5.0 |
 | FAISS vector indices | 6 (whisper, caption, transcription, tag, lyric, mood) |
-| BM25 text indices | 3 (caption, transcription, tags) |
+| BM25 text indices | 2 (caption, tags) |
 
 ### Aesthetics Scores by Platform
 
@@ -133,9 +137,9 @@ HF_TOKEN=your_token python server.py --port 7860
 
 ---
 
-## Model: REDACTED-Music-Whisper
+## Model: Music-Whisper
 
-> [https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/](https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/)
+> [https://huggingface.co/laion/music-whisper](https://huggingface.co/laion/music-whisper)
 
 A fine-tuned version of **OpenAI Whisper Small** trained for music captioning. The model generates detailed, paragraph-length descriptions of audio tracks, covering:
 
@@ -146,17 +150,17 @@ A fine-tuned version of **OpenAI Whisper Small** trained for music captioning. T
 - Production quality
 - Suggested use-case contexts
 
-Music-Whisper was used to caption **1,356,009 tracks** in the REDACTED-Tunes corpus (94.8% coverage), and its mean-pooled encoder hidden states form the `faiss_whisper` index enabling audio-upload similarity search.
+Music-Whisper was used to caption **1,356,009 tracks** in the LAION-Tunes corpus (94.8% coverage), and its mean-pooled encoder hidden states form the `faiss_whisper` index enabling audio-upload similarity search.
 
-**License**: CC-BY-4.0
+**License**: Apache 2.0
 
 ---
 
-## Subset: REDACTED-RPG
+## Subset: LAION-Tunes-RPG
 
-> [https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/](https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/)
+> [https://huggingface.co/datasets/laion/laion-tunes-rpg-music](https://huggingface.co/datasets/laion/laion-tunes-rpg-music)
 
-A curated subset of **2,580 instrumental tracks** from the REDACTED-Tunes corpus (Suno + Udio), annotated by **Gemini 3 Flash Preview** with structured RPG gameplay situations across 18 genre categories.
+A curated subset of **2,580 instrumental tracks** from the LAION-Tunes corpus (Suno + Udio), annotated by **Gemini 3 Flash Preview** with structured RPG gameplay situations across 18 genre categories.
 
 ### The 18 RPG Genres
 
@@ -198,15 +202,15 @@ python rpg_server.py --port 7862
 
 ---
 
-## Benchmark: REDACTED-Tunes-Benchmark
+## Benchmark: LAION-Tunes-Benchmark
 
-> [https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/](https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/)
+> [https://huggingface.co/datasets/laion/laion-tunes-benchmark](https://huggingface.co/datasets/laion/laion-tunes-benchmark)
 
-A **10,521-song perceptual evaluation dataset** for AI music detection and quality assessment, anchored in the REDACTED-Tunes corpus.
+A **10,521-song perceptual evaluation dataset** for AI music detection and quality assessment, anchored in the LAION-Tunes corpus.
 
 ### Dataset Construction
 
-The benchmark pairs AI-generated tracks from **seven commercial platforms** with **840 human Apple Music previews** (30-second clips, genre-matched to the AI pool via the Genius metadata index):
+The benchmark pairs AI-generated tracks from **seven commercial platforms** with **840 human Apple Music previews** (30-second clips of commercially released songs, sourced via the Genius metadata index):
 
 | Split | Human | Suno | Udio | Mureka | Sonauto | OOD |
 |---|---|---|---|---|---|---|
@@ -216,7 +220,7 @@ The benchmark pairs AI-generated tracks from **seven commercial platforms** with
 | test_ood | 50 | — | — | — | — | Lyria 3 (51) · Riffusion (51) · SilverknightAI (16) |
 | **Total** | **840** | **2,500** | **2,500** | **2,500** | **2,063** | **118** |
 
-Suno, Udio, and Mureka tracks are randomly sampled from the REDACTED-Tunes large-scale corpus. Sonauto, human, and OOD sources were manually collected and are exclusive to this benchmark.
+Suno, Udio, and Mureka tracks are randomly sampled from the LAION-Tunes large-scale corpus. Sonauto, human, and OOD sources were manually collected and are exclusive to this benchmark.
 
 ### Human Annotation Study
 
@@ -241,7 +245,7 @@ Each trial collected:
 | Sonauto | 125 | 69 | 55.2% |
 | **Udio** | 116 | 48 | **41.4%** |
 
-> **Key finding**: Human songs score higher on all five quality dimensions, yet human-detection accuracy is only 64.3% — a *quality–authenticity halo effect* where higher perceived quality does not reliably predict a "real" verdict. Udio's near-chance detection rate (41.4%) indicates perceptual near-parity with human recordings on the production quality axis.
+> **Key finding**: songs judged real receive nearly two more aesthetic-quality points than songs judged AI-generated, within both actually-AI and actually-human songs, and the same pattern appears in frontier LLM judges. This *quality–authenticity halo* is an association, not a causal claim; quality ratings collected next to a provenance judgment are not independent.
 
 #### Perceptual Quality Ratings (1–10 scale, mean ± σ)
 
@@ -258,7 +262,8 @@ Each trial collected:
 ```python
 import datasets
 
-ds = datasets.load_dataset("anonymous_repo")
+# Gated: accept the access conditions on the dataset page and run `hf auth login` first.
+ds = datasets.load_dataset("laion/laion-tunes-benchmark")
 
 # Test split — every row has human annotations
 test = ds["test"]
@@ -312,52 +317,28 @@ No new audio was generated for this benchmark. All AI tracks were collected from
 
 ## Repository Structure
 
+The datasets and models live on Hugging Face (links above). This repository holds the code:
+
 ```
-REDACTED-Tunes/
-│
-├── REDACTED-Tunes Corpus          # HF Dataset — 1.4M track metadata + annotations
-│   ├── public/                    # Annotated parquet files (370 files)
-│   ├── search_index/              # SQLite DB, FAISS indices, BM25 indices
-│   ├── whisper_embeddings/        # NPZ files with Whisper encoder embeddings
-│   ├── server.py                  # FastAPI search server
-│   └── index.html                 # Web UI (Simple + Advanced mode)
-│
-├── REDACTED-Music-Whisper         # HF Model — Whisper Small fine-tune
-│   └── model.safetensors          # 922 MB
-│
-├── REDACTED-RPG                   # HF Dataset — 2,580-track RPG subset
-│   ├── indices/                   # 18 genre FAISS + BM25 + SQLite
-│   ├── rpg_server.py              # FastAPI RPG search server
-│   ├── rpg_index.html             # Purple-themed RPG web UI
-│   └── annotate_gemini.py         # Gemini 3 Flash annotation pipeline
-│
-└── REDACTED-Tunes-Benchmark       # HF Dataset — 10,521-song benchmark
-    ├── parquet/                   # Train / validation / test / test_ood splits
-    └── croissant.json             # MLCommons Croissant 1.1 metadata card
+tunes/
+├── analysis/            # Paper analyses: main.py, model_eval.py and the camera-ready scripts
+│   ├── input/           # Annotation exports, benchmark subsets and model outputs (user-level fields removed)
+│   ├── output/          # Tables and figures used in the paper
+│   ├── features/        # Audio-feature AI-music detectors
+│   └── aesthetics/      # Audio-aesthetics comparisons
+└── docs/                # Project page and the Tunes-Search front end
 ```
 
 ---
 
 ## Citation
 
-If you use any artifact from the REDACTED-Tunes ecosystem, please cite:
-
 ```bibtex
-@dataset{redacted_tunes_2026,
-  title     = {{REDACTED}-Tunes: A Large-Scale Annotated Corpus and Perceptual Benchmark
-               for AI-Generated Music},
-  author    = {REDACTED},
-  year      = {2026},
-  url       = {https://anonymous-hf.up.railway.app/a/pib3syfuxp02/},
-  license   = {Apache-2.0},
-}
-
-@dataset{redacted_tunes_benchmark_2026,
-  title     = {{REDACTED}-Tunes-Benchmark: A Perceptual Benchmark for AI-Generated Music},
-  author    = {REDACTED},
-  year      = {2026},
-  url       = {https://anonymous-hf.up.railway.app/a/8k5dg0m61yir/},
-  license   = {Apache-2.0},
+@inproceedings{kaczmarczyk2026laiontunes,
+  title     = {{LAION-Tunes}: An Open 1.4{M}-Track Dataset and Perceptual Benchmark for {AI}-Generated Music},
+  author    = {Kaczmarczyk, Robert and Ahmed, Tawsif and Friedrich, Felix and Erickson, Aidan C. and Sharoni, Orian and Herremans, Dorien and Schuhmann, Christoph},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},
+  year      = {2026}
 }
 ```
 
@@ -367,11 +348,11 @@ If you use any artifact from the REDACTED-Tunes ecosystem, please cite:
 
 | Artifact | License |
 |---|---|
-| REDACTED-Tunes Corpus | Apache 2.0 |
-| REDACTED-Tunes-Benchmark | Apache 2.0 |
-| REDACTED-Music-Whisper | CC-BY-4.0 |
-| REDACTED-RPG | CC-BY-4.0 |
+| Code in this repository | Apache 2.0 ([LICENSE](LICENSE)) |
+| LAION-Tunes Corpus | CC BY-NC 4.0, gated research access |
+| LAION-Tunes-Benchmark | CC BY-NC 4.0 song metadata; CC BY 4.0 human annotations |
+| Music-Whisper, Music-Popularity | Apache 2.0 |
+| Music-Aesthetics | CC BY-NC-SA 4.0, inherited from SongEval |
+| LAION-Tunes-RPG | CC BY-NC 4.0 |
 
----
-
-*This repository is part of an anonymous submission to the NeurIPS 2026 Datasets and Evaluations Track. Author identities and institutional affiliations have been redacted in compliance with double-blind review guidelines.*
+Data under `analysis/input` follows the benchmark's terms.

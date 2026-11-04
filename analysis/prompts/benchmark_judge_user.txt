@@ -1,0 +1,32 @@
+Listen to the attached audio and evaluate it.
+
+Return ONLY a single JSON object (no markdown fences, no commentary) that
+exactly matches this schema:
+
+{
+  "authenticity_assessment": "real" | "ai-generated",
+  "authenticity_confidence": integer 1-5,
+  "familiarity_level": string chosen from ["Yes, I know this song", "Sounds familiar", "Never heard it", "Uncertain"],
+  "aesthetic_quality": integer 1-10,
+  "playlist_likelihood": integer 1-10,
+  "musical_creativity": integer 1-10,
+  "production_quality": integer 1-10,
+  "emotional_engagement": integer 1-10,
+  "ai_aspects": array of strings (suggested: ['Singing voice', 'Instrument sounds', 'Lyrics', 'Rhythm', 'Harmony', 'Overall composition', 'Everything'], or add custom free text) OR null,
+  "mood_tags": array of short mood strings (suggested: "Wonder", "Transcendence", "Tenderness", "Nostalgia", "Peacefulness", "Power", "Joyful activation", "Tension", "Sadness", or free text),
+  "aesthetic_comment": string or null,
+  "song_description": string or null
+}
+
+Rules:
+- "authenticity_assessment" is a forced binary choice: always choose either
+  "real" or "ai-generated". Never output "uncertain".
+- "authenticity_confidence" is your confidence in that forced choice:
+  1 = very unsure, 2 = somewhat unsure, 3 = mixed/neutral,
+  4 = fairly confident, 5 = very confident.
+- Rate each of the five dimensions on an integer 1 (worst) to 10 (best) scale.
+- Provide "ai_aspects" (non-empty list) ONLY when authenticity_assessment is
+  "ai-generated"; otherwise set it to null.
+- "mood_tags" may be an empty list.
+- Keep "aesthetic_comment" and "song_description" under 30 words or null.
+- Output must be valid JSON parseable by ``json.loads``.
