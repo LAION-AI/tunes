@@ -1,0 +1,16 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{Accuracy}} & \multicolumn{2}{c}{\textbf{Macro $F_1$}} & \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+\textbf{Linear probe} & \textbf{$n$} & \textbf{Probe} & \textbf{Majority} & \textbf{Probe} & \textbf{Majority} & \textbf{Shuf.} \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{768-d Music-Whisper audio fingerprint}} \\
+P1 vocal vs instrumental & 7211 & \textbf{0.963} & 0.894 & \textbf{0.899} & 0.472 & 0.864 \\
+P2 source platform (3-class) & 780 & \textbf{0.882} & 0.333 & \textbf{0.882} & 0.167 & 0.369 \\
+P3 primary genre (12-class) & 6062 & \textbf{0.569} & 0.355 & \textbf{0.381} & 0.044 & 0.205 \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{Parakeet transcription embedding}} \\
+P4 platform from transcription emb. & 476 & \textbf{0.731} & 0.496 & \textbf{0.731} & 0.332 & 0.496 \\
+P5 genre from transcription emb. (5-class) & 453 & \textbf{0.482} & 0.421 & \textbf{0.399} & 0.118 & 0.360 \\
+\bottomrule
+\end{tabular}

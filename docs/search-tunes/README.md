@@ -1,7 +1,7 @@
 ---
 language:
 - en
-license: apache-2.0
+license: cc-by-nc-4.0
 size_categories:
 - 1M<n<10M
 task_categories:
@@ -19,7 +19,7 @@ tags:
 - nsfw-detection
 - transcription
 - captioning
-pretty_name: REDACTED-Tunes
+pretty_name: LAION-Tunes
 dataset_info:
   features:
   - name: row_id
@@ -99,9 +99,11 @@ dataset_info:
     num_examples: 1429734
 ---
 
-# REDACTED-Tunes
+# LAION-Tunes
 
-**1,429,734 AI-generated music tracks** from 3 platforms (Suno, Mureka, Udio). Annotated with captions, transcriptions, embeddings, aesthetics scores, and NSFW safety labels. Includes a full-text and vector search engine with a web UI featuring both a beginner-friendly Simple mode and a power-user Advanced mode.
+**1,429,734 AI-generated music tracks** from 3 platforms (Suno, Mureka, Udio). Annotated with captions, transcription embeddings, audio and text embeddings, aesthetics scores, and NSFW safety labels. Includes a full-text and vector search engine with a web UI featuring both a beginner-friendly Simple mode and a power-user Advanced mode.
+
+Companion release of the NeurIPS 2026 Evaluations & Datasets Track paper *LAION-Tunes: An Open 1.4M-Track Dataset and Perceptual Benchmark for AI-Generated Music* (Kaczmarczyk, Ahmed, Friedrich, Erickson, Sharoni, Herremans, Schuhmann). Code: [LAION-AI/tunes](https://github.com/LAION-AI/tunes). Demo: [Tunes-Search](https://projects.laion.ai/tunes/search-tunes/).
 
 ## Quick Stats
 
@@ -114,13 +116,13 @@ dataset_info:
 | Instrumental | 388,301 (27.2%) |
 | NSFW flagged (very likely + likely) | 23,591 (1.65%) |
 | FAISS vector indices | 6 (tag, whisper, caption, transcription, lyric, mood) |
-| BM25 text indices | 3 (tags, caption, transcription) |
+| BM25 text indices | 2 (tags, caption) |
 | Average aesthetics score | 3.29 / 5.0 |
 | Total audio duration | ~68,471 hours |
 
 ## Dataset Description
 
-REDACTED-Tunes is a curated metadata and annotation dataset covering publicly available AI-generated music from Suno, Udio, and Mureka.
+LAION-Tunes is a curated metadata and annotation dataset covering publicly available AI-generated music from Suno, Udio, and Mureka.
 
 **This dataset does NOT contain audio files.** It contains metadata, annotations, embeddings, and search indices. Audio URLs pointing to the original hosting platforms are included for reference.
 
@@ -138,10 +140,10 @@ The track metadata was collected from three AI music generation platforms:
 
 For each track:
 - **Metadata**: title, tags, genre, mood, duration, play count, upvote count
-- **Music-Whisper Caption**: AI-generated music description using [Music Whisper](https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/)
-- **Parakeet ASR Transcription**: vocal text for ~1,041,488 tracks
+- **Music-Whisper Caption**: AI-generated music description using [Music Whisper](https://huggingface.co/laion/music-whisper)
+- **Parakeet ASR transcription embeddings**: for 1,041,488 tracks; the transcription text itself is not released
 - **Sentence Embeddings**: 768-dim embeddings via [google/embeddinggemma-300m](https://huggingface.co/google/embeddinggemma-300m) for tags, captions, transcriptions, lyrics, and moods
-- **Whisper Audio Embeddings**: 768-dim mean-pooled encoder embeddings from Music-Whisper
+- **Whisper Audio Embeddings**: 768-dim mean-pooled encoder embeddings from Music-Whisper (402,649 base-subset tracks)
 - **Aesthetics Scores**: coherence, musicality, memorability, clarity, naturalness
 - **NSFW Safety Labels**: three-tier classification across gore, sexual, and hate speech dimensions
 - **Language Detection**: Detected language of vocal content
@@ -149,13 +151,54 @@ For each track:
 
 ### Annotation Pipeline
 
-1. **Music-Whisper** (`REDACTED/music-whisper`): Generates music captions
+1. **Music-Whisper** (`laion/music-whisper`): Generates music captions
 2. **Parakeet TDT 0.6B** (`nvidia/parakeet-tdt-0.6b-v3`): ASR transcription
 3. **EmbeddingGemma 300M** (`google/embeddinggemma-300m`): 768-dim sentence embeddings
 4. **Whisper Encoder Embeddings**: Mean-pooled encoder hidden states for audio similarity
 5. **Aesthetics MLP**: 5-head MLP predicting coherence / musicality / memorability / clarity / naturalness
 6. **NSFW Classification**: Cosine similarity against reference prompts
 7. **Language Detection**: `langdetect` on ASR transcriptions
+
+## Provenance
+
+LAION-Tunes is a metadata layer: it contains public CDN URLs, factual metadata, and embeddings, captions and labels computed by LAION. It contains no audio, no raw lyrics and no raw ASR text.
+
+| Platform | Share | Source of the source layer | Basis |
+|---|---|---|---|
+| Suno | 72.6% | [`nyuuzyou/suno`](https://huggingface.co/datasets/nyuuzyou/suno) (CC0-1.0), plus LAION's own crawl of public suno.com pages | CC0; UrhG §60d |
+| Mureka | 26.8% | LAION's own collection from public mureka.ai web pages (no API) | UrhG §60d |
+| Udio | 0.6% | [`blanchon/udio_dataset`](https://huggingface.co/datasets/blanchon/udio_dataset) (CC0-1.0 for the compilation and metadata) | CC0 |
+
+Collection ended on 2025-08-08. No accounts, credentials, authentication bypass or paywalled content were involved.
+
+### Per field
+
+| Field | Origin |
+|---|---|
+| Title, tags, duration, other platform metadata | Upstream CC0 datasets (Udio, part of Suno) or LAION's collection (rest of Suno, Mureka) |
+| CDN URLs | As above; the audio stays on the platforms' CDNs |
+| Real play / upvote counts | Udio: from `blanchon/udio_dataset`; Suno: under 1% of tracks; Mureka: none |
+| Music-Whisper captions and audio embeddings, EmbeddingGemma text embeddings, Parakeet transcription embeddings, aesthetics, predicted popularity, NSFW and language labels | Computed by LAION |
+
+### Legal basis
+
+LAION e.V. (charitable registered association, Amtsgericht Hamburg, VR 25085) collected the self-collected material as a research organisation under the text-and-data-mining exemption for scientific research (§60d UrhG; Art. 3 of Directive (EU) 2019/790). §60g(1) UrhG makes contractual terms that restrict these uses ineffective against the beneficiary (Art. 7(1) of the Directive). The Hamburg Regional Court (27 September 2024, 310 O 227/23) and the Hanseatic Higher Regional Court (10 December 2025, 5 U 104/24) applied §60d to LAION's LAION-5B dataset. The platform terms in force during collection are listed in the paper's appendix on platform terms and robots.txt. They do not grant permission, and we do not claim that they do.
+
+The exemption covers research use rather than unrestricted redistribution. The release is therefore metadata-only, gated, and licensed CC BY-NC 4.0.
+
+### Personal data
+
+Creator identifiers, display names, handles, avatar URLs, personas and @-mentions present in upstream platform metadata have been removed. Song identifiers remain; they are random opaque tokens, and a CDN URL resolves to audio, not to a creator profile.
+
+### Removal requests
+
+Rights holders can request removal of specific tracks through the form in [Tunes-Search](https://projects.laion.ai/tunes/search-tunes/) or by e-mail to `takedown-request@laion.ai`. Verified requests are removed from the metadata release and the search indices and forwarded to the source platform.
+
+### Attribution
+
+* `nyuuzyou/suno`, CC0-1.0 (Suno metadata)
+* `blanchon/udio_dataset`, CC0-1.0 (Udio metadata and engagement counts)
+* `ASLP-lab/SongEval`, CC BY-NC-SA 4.0 (training data of `laion/music-aesthetics`, which inherits that licence)
 
 ## Web UI
 
@@ -174,38 +217,38 @@ The search engine includes a single-page dark-mode web interface (`index.html`) 
 
 ### Parquet Files (`public/`)
 
-Each parquet file corresponds to one TAR file from the source collection. The base-subset parquets (Mureka, Udio, original Suno) contain the full schema including tag/lyric/mood embeddings; the extended Suno parquets (`suno_*_ai_generated_songs*.tar.parquet`) contain annotation-only columns (captions, transcriptions, caption/transcription embeddings, aesthetics, NSFW).
+The parquets come in two layouts. Aesthetics columns are named `score_Coherence`, `score_Musicality`, `score_Memorability`, `score_Clarity`, `score_Naturalness` and `score_average` (1 to 5) in both.
 
-Common columns:
+**Base shards** (`mureka_*`, `suno_*`, `udio_*`; 383,616 + 10,229 + 8,804 rows):
 
 | Column | Type | Description |
 |--------|------|-------------|
 | `filename` | str | Filename within the source TAR |
-| `tar_file` | str | Source TAR filename |
-| `audio_url` | str | Original audio URL (mp3/m4a/ogg) |
-| `subset` | str | Source platform (suno/udio/mureka) |
-| `title` | str | Track title |
+| `audio_url` | str | Audio URL on the platform's public CDN |
 | `tags_text` | str | Comma-separated genre/style tags |
-| `mood_text` | str | Mood tags |
-| `duration_seconds` | float | Track duration |
-| `play_count` | int | Play count on source platform (base subset) |
-| `upvote_count` | int | Like/upvote count (base subset) |
-| `predicted_play_count` | float | ML-predicted play count (extended Suno) |
-| `predicted_upvote_count` | float | ML-predicted upvote count (extended Suno) |
-| `music_whisper_caption` | str | Music-Whisper generated caption |
-| `parakeet_transcription` | str | Parakeet ASR transcription (plain text) |
-| `parakeet_transcription_with_timestamps` | str | ASR with word-level timestamps (base subset) |
-| `tag_embedding` | list[float] | 768-dim EmbeddingGemma embedding of tags (base subset) |
-| `caption_embedding` | list[float] | 768-dim EmbeddingGemma embedding of caption |
-| `transcription_embedding` | list[float] | 768-dim EmbeddingGemma embedding of transcription |
-| `lyric_embedding` | list[float] | 768-dim EmbeddingGemma embedding of lyrics (base subset) |
-| `mood_embedding` | list[float] | 768-dim EmbeddingGemma embedding of mood (Mureka only) |
-| `score_coherence` / `score_musicality` / `score_memorability` / `score_clarity` / `score_naturalness` | float | Aesthetics sub-scores (1 – 5) |
-| `score_average` | float | Mean of the five aesthetics sub-scores |
-| `has_caption` / `has_transcription` / `is_instrumental` | bool | Annotation flags |
-| `language` | str | Detected language of vocal content |
+| `mood_text` | str | Mood tags (Mureka; null elsewhere) |
+| `genre_tags` / `scene_tags` / `emotion_tags` | list[str] | Normalised tag lists |
+| `has_lyrics` | bool | Whether the platform reported lyrics |
+| `play_count` / `upvote_count` | int | Engagement counts on the source platform, where exposed |
+| `tag_embedding` / `lyric_embedding` / `mood_embedding` | list[float] | 768-dim EmbeddingGemma embeddings of tags, lyrics and mood text (lyrics text is not released) |
+| `metadata_json` | str | Remaining platform metadata (title, duration, model, timestamps, cover-art URLs). User-level fields are removed |
+| `udio_api_*` | various | Udio only: song/video/image paths, likes, plays, created/published timestamps, duration, generation ID |
+
+**Extended Suno shards** (`suno_extended_*`; 1,037,238 rows):
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `filename`, `audio_url`, `subset`, `title`, `duration_seconds` | | Track pointer and factual metadata |
+| `play_count` / `upvote_count` | int | Engagement counts on the source platform, where exposed |
+| `predicted_play_count` / `predicted_upvote_count` | float | Predictions of [laion/music-popularity](https://huggingface.co/laion/music-popularity) |
+| `music_whisper_caption` | str | Music-Whisper caption |
+| `caption_embedding` / `transcription_embedding` | list[float] | 768-dim EmbeddingGemma embeddings of the caption and of the Parakeet transcription |
 | `nsfw_gore_sim` / `nsfw_sexual_sim` / `nsfw_hate_sim` | float | NSFW cosine similarities |
 | `nsfw_gore_label` / `nsfw_sexual_label` / `nsfw_hate_label` / `nsfw_overall_label` | str | NSFW labels |
+| `has_caption` / `has_transcription` / `is_instrumental` | bool | Annotation flags |
+| `language` | str | Detected language of vocal content |
+
+Captions, NSFW and language labels for base-shard tracks are in the SQLite mirror (`search_index/metadata.db`), which holds every track.
 
 ### Whisper Embeddings (`whisper_embeddings/`)
 
@@ -237,13 +280,12 @@ Note: `faiss_tag`, `faiss_lyric`, and `faiss_mood` cover only the base subset be
 | Index | Documents | Coverage |
 |-------|-----------|----------|
 | `bm25_caption` | 1,356,009 | Tracks with captions |
-| `bm25_transcription` | 1,003,949 | Tracks with transcriptions |
 | `bm25_tags` | 401,269 | Base subset tracks |
 
 ## Repository Structure
 
 ```
-REDACTED-tunes/
+laion-tunes/
 ├── README.md                          # This file
 ├── server.py                          # FastAPI search server
 ├── index.html                         # Web UI (dark-mode, single-page app)
@@ -251,7 +293,7 @@ REDACTED-tunes/
 ├── update_indices.py                  # Incremental index updater
 ├── nsfw_safety_report.html            # Interactive NSFW analysis report
 ├── nsfw_analysis_data.json            # Raw NSFW analysis data
-├── REDACTED-tunes-report.txt             # Dataset statistics report
+├── laion-tunes-report.txt             # Dataset statistics report
 │
 ├── public/                            # Annotated metadata parquets
 │   ├── mureka_000000.tar.parquet      # One parquet per source TAR file
@@ -267,7 +309,6 @@ REDACTED-tunes/
 │   ├── faiss_mood.index               # FAISS IndexFlatIP - mood embeddings
 │   ├── idmap_*.npy                    # Row ID mappings for each FAISS index
 │   ├── bm25_caption.pkl               # BM25 text index for captions
-│   ├── bm25_transcription.pkl         # BM25 text index for transcriptions
 │   └── bm25_tags.pkl                  # BM25 text index for tags
 │
 └── whisper_embeddings/                # Raw Whisper encoder embeddings
@@ -470,7 +511,7 @@ Roughly Gaussian centered on ~3.29, with a slightly heavier left tail than right
 
 ### F. Do the Predicted Aesthetics Correlate with Human Reactions?
 
-**Important framing:** we do **not** have SongEval human ratings on the REDACTED-Tunes tracks themselves — SongEval is the *training* dataset for the aesthetics model (2,399 separate songs by the ASLP@NPU group). So we can't directly compare model-vs-rater on these tracks. The closest thing to "human reactions" we have is **real platform play_count and upvote_count** — observable engagement on Suno and Udio (Mureka exposes neither stat).
+**Important framing:** we do **not** have SongEval human ratings on the LAION-Tunes tracks themselves — SongEval is the *training* dataset for the aesthetics model (2,399 separate songs by the ASLP@NPU group). So we can't directly compare model-vs-rater on these tracks. The closest thing to "human reactions" we have is **real platform play_count and upvote_count** — observable engagement on Suno and Udio (Mureka exposes neither stat).
 
 We sampled tracks across non-Mureka platforms with at least one play, computed `log1p(play_count)` and `log1p(upvote_count)` (raw counts are pathologically long-tailed), and ran Pearson correlations against each aesthetics dimension:
 
@@ -483,7 +524,7 @@ We sampled tracks across non-Mureka platforms with at least one play, computed `
 | `score_clarity` | +0.008 | +0.044 |
 | `score_naturalness` | +0.008 | +0.045 |
 
-**The correlation is essentially zero.** This is itself an interesting finding, and not a bug. Predicted aesthetic quality and platform virality are nearly independent because real-world engagement is dominated by factors the audio doesn't carry: artist brand, platform promotion, time-on-platform, genre niche, prompt-trend cycles, social shares. A separate model trained directly on `(audio -> log_plays)` (REDACTED's `music-popularity` head) achieves log-Pearson ~0.41, telling us that audio *is* informative about engagement — but the **aesthetics signal alone is not the same dimension** as engagement. This separation is a feature, not a flaw: it means using `score_average` as a quality filter doesn't accidentally bias toward popular content, and the two scores can be combined as orthogonal signals during downstream training.
+**The correlation is essentially zero.** This is itself an interesting finding, and not a bug. Predicted aesthetic quality and platform virality are nearly independent because real-world engagement is dominated by factors the audio doesn't carry: artist brand, platform promotion, time-on-platform, genre niche, prompt-trend cycles, social shares. A separate model trained directly on `(audio -> log_plays)` (LAION's `music-popularity` head) achieves log-Pearson ~0.41, telling us that audio *is* informative about engagement — but the **aesthetics signal alone is not the same dimension** as engagement. This separation is a feature, not a flaw: it means using `score_average` as a quality filter doesn't accidentally bias toward popular content, and the two scores can be combined as orthogonal signals during downstream training.
 
 If a researcher wants a true human-evaluation comparison they should run their own listener study on a subsample. The infrastructure is in place: every track has aesthetics scores, NSFW labels, transcription embeddings, and stable `row_id`s suitable for evaluator software.
 
@@ -622,7 +663,7 @@ The non-gated [onnx-community/embeddinggemma-300m-ONNX](https://huggingface.co/o
 Only enable this path if you **rebuild** the FAISS indices locally with the same ONNX embedder + mean pooling:
 
 ```bash
-REDACTEDTUNES_USE_ONNX_EMBEDDER=1 python server.py --port 7860 --no-whisper
+LAIONTUNES_USE_ONNX_EMBEDDER=1 python server.py --port 7860 --no-whisper
 # The server will print a WARNING at startup reminding you retrieval will be degraded on the shipped indices.
 ```
 
@@ -640,17 +681,17 @@ REDACTEDTUNES_USE_ONNX_EMBEDDER=1 python server.py --port 7860 --no-whisper
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `HF_TOKEN` | – | Required for `google/embeddinggemma-300m` (and for `REDACTED/music-whisper` if audio-upload search is enabled). |
-| `REDACTEDTUNES_USE_ONNX_EMBEDDER` | `0` | Set to `1` to opt into the ONNX embedder. Retrieval quality on the shipped FAISS indices will be degraded — only set if you have rebuilt the indices with the same ONNX embedder. |
-| `REDACTEDTUNES_SKIP_FAISS` | – | Comma-separated list of FAISS fields to *not* load at startup (e.g. `tag,lyric,mood`). Useful for memory-constrained deployments. Skipped fields still accept query requests but return 404-style empty results. |
-| `REDACTEDTUNES_SKIP_BM25` | – | Comma-separated list of BM25 fields to skip (e.g. `tags,transcription`). |
+| `HF_TOKEN` | – | Required for `google/embeddinggemma-300m` (and for `laion/music-whisper` if audio-upload search is enabled). |
+| `LAIONTUNES_USE_ONNX_EMBEDDER` | `0` | Set to `1` to opt into the ONNX embedder. Retrieval quality on the shipped FAISS indices will be degraded — only set if you have rebuilt the indices with the same ONNX embedder. |
+| `LAIONTUNES_SKIP_FAISS` | – | Comma-separated list of FAISS fields to *not* load at startup (e.g. `tag,lyric,mood`). Useful for memory-constrained deployments. Skipped fields still accept query requests but return 404-style empty results. |
+| `LAIONTUNES_SKIP_BM25` | – | Comma-separated list of BM25 fields to skip (e.g. `tags`). |
 
 ### What Loads at Startup
 
-1. **6 FAISS indices** (tag, whisper, caption, transcription, lyric, mood) — unless listed in `REDACTEDTUNES_SKIP_FAISS`
-2. **3 BM25 indices** (tags, caption, transcription) — unless listed in `REDACTEDTUNES_SKIP_BM25`
+1. **6 FAISS indices** (tag, whisper, caption, transcription, lyric, mood) — unless listed in `LAIONTUNES_SKIP_FAISS`
+2. **2 BM25 indices** (tags, caption) — unless listed in `LAIONTUNES_SKIP_BM25`. No transcription BM25 index is shipped, because it would store the ASR text
 3. **SQLite database** (1,429,734 tracks)
-4. **Text embedder** — in order of preference: TEI if `--tei-url` is set; otherwise `google/embeddinggemma-300m` via SentenceTransformer (default); otherwise `onnx-community/embeddinggemma-300m-ONNX` only if `REDACTEDTUNES_USE_ONNX_EMBEDDER=1`.
+4. **Text embedder** — in order of preference: TEI if `--tei-url` is set; otherwise `google/embeddinggemma-300m` via SentenceTransformer (default); otherwise `onnx-community/embeddinggemma-300m-ONNX` only if `LAIONTUNES_USE_ONNX_EMBEDDER=1`.
 5. **Music-Whisper encoder** (optional, on GPU): for audio-upload similarity search
 
 Total memory: ~25 GB RAM + ~1 GB GPU VRAM when Whisper + EmbeddingGemma are both loaded on GPU.
@@ -679,7 +720,7 @@ Main search endpoint supporting vector similarity, BM25 text search, and combine
 | `negative_query` | str \| null | null | Negative prompt (subtracted from query embedding in vector mode) |
 | `search_type` | str | `"bm25"` | `"vector"` \| `"bm25"` \| `"combined"` |
 | `vector_field` | str | `"caption"` | FAISS index: `"tag"` \| `"caption"` \| `"lyric"` \| `"mood"` \| `"transcription"` |
-| `bm25_field` | str | `"caption"` | BM25 index: `"tags"` \| `"caption"` \| `"transcription"` |
+| `bm25_field` | str | `"caption"` | BM25 index: `"tags"` \| `"caption"` |
 | `rank_by` | str | `"similarity"` | `"similarity"` \| `"aesthetics"` \| `"plays"` \| `"likes"` |
 | `min_aesthetics` | float \| null | null | Minimum aesthetics score (0 – 5 scale) |
 | `min_similarity` | float \| null | null | Minimum cosine similarity score |
@@ -794,8 +835,8 @@ This reads all parquets from `public/`, builds the SQLite database, FAISS indice
 ### 1. Clone and download
 
 ```bash
-git clone https://anonymous-hf.up.railway.app/a/pib3syfuxp02/
-cd REDACTED-tunes
+git clone https://huggingface.co/datasets/laion/laion-tunes
+cd laion-tunes
 ```
 
 ### 2. Start the search server
@@ -811,8 +852,8 @@ Navigate to `http://localhost:7860` in your browser.
 
 ## Related Datasets
 
-- **[REDACTED-Tunes RPG Music](https://anonymous-hf.up.railway.app/a/blpsgfq6xdyk/)** — 2,580 instrumental tracks from REDACTED-Tunes (Suno + Udio) annotated with Gemini 3 Flash Preview across 18 RPG genres (high fantasy, cosmic horror, cyberpunk, ...) and evoked-emotion tags. Each genre has its own FAISS index over per-track "situation" lists, so you can search by natural-language scenario (e.g. *"sneaking through a dark dungeon"*). Includes a dedicated FastAPI server (`rpg_server.py`) and purple-themed web UI (`rpg_index.html`).
-- **[Music Whisper](https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/)** — Music captioning model
+- **[LAION-Tunes RPG Music](https://huggingface.co/datasets/laion/laion-tunes-rpg-music)** — 2,580 instrumental tracks from LAION-Tunes (Suno + Udio) annotated with Gemini 3 Flash Preview across 18 RPG genres (high fantasy, cosmic horror, cyberpunk, ...) and evoked-emotion tags. Each genre has its own FAISS index over per-track "situation" lists, so you can search by natural-language scenario (e.g. *"sneaking through a dark dungeon"*). Includes a dedicated FastAPI server (`rpg_server.py`) and purple-themed web UI (`rpg_index.html`).
+- **[Music Whisper](https://huggingface.co/laion/music-whisper)** — Music captioning model
 - **[blanchon/udio_dataset](https://huggingface.co/datasets/blanchon/udio_dataset)** — Udio audio files
 - **[nyuuzyou/suno](https://huggingface.co/datasets/nyuuzyou/suno)** — Suno user profile metadata
 
@@ -820,24 +861,27 @@ Navigate to `http://localhost:7860` in your browser.
 
 | Model | Purpose | Output |
 |-------|---------|--------|
-| [Music Whisper](https://anonymous-hf.up.railway.app/a/3nbwl9ikw488/) | Music captioning + audio embeddings | Text caption + 768-dim encoder embedding |
-| [nvidia/parakeet-tdt-0.6b-v3](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3) | ASR transcription | Text + word-level timestamps |
+| [Music Whisper](https://huggingface.co/laion/music-whisper) | Music captioning + audio embeddings | Text caption + 768-dim encoder embedding |
+| [nvidia/parakeet-tdt-0.6b-v3](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3) | ASR transcription | Text, embedded with EmbeddingGemma; only the embedding is released |
 | [google/embeddinggemma-300m](https://huggingface.co/google/embeddinggemma-300m) | Text sentence embeddings | 768-dim L2-normalized vectors |
 | [onnx-community/embeddinggemma-300m-ONNX](https://huggingface.co/onnx-community/embeddinggemma-300m-ONNX) | Text embeddings (ONNX, non-gated) | 768-dim L2-normalized vectors (int8 quantized) |
 
 ## License
 
-Apache 2.0
+- Metadata, annotations, embeddings and search indices: **CC BY-NC 4.0**, with gated access for research use.
+- Scripts in this repository (`server.py`, `build_search_index.py`, `update_indices.py`, `rebuild_indices.py`, `index.html`): Apache 2.0.
+- The audio is not part of this dataset and remains with its rights holders on the platforms' CDNs.
 
 ## Citation
 
 If you use this dataset, please cite:
 
 ```bibtex
-@misc{REDACTED-tunes-2026,
-  title={REDACTED-Tunes: Annotated AI-Generated Music Metadata Dataset},
-  author={REDACTED},
-  year={2026},
-  url={https://anonymous-hf.up.railway.app/a/pib3syfuxp02/},
+@inproceedings{kaczmarczyk2026laiontunes,
+  title     = {{LAION-Tunes}: An Open 1.4{M}-Track Dataset and Perceptual Benchmark for {AI}-Generated Music},
+  author    = {Kaczmarczyk, Robert and Ahmed, Tawsif and Friedrich, Felix and Erickson, Aidan C. and Sharoni, Orian and Herremans, Dorien and Schuhmann, Christoph},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},
+  year      = {2026}
 }
 ```
+

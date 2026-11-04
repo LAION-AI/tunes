@@ -3426,7 +3426,7 @@ def _load_songeval_scores():
 
 
 def _load_our_music_aesthetics_scores():
-    """Load our REDACTED music-aesthetics scores joined with staged metadata.
+    """Load our LAION music-aesthetics scores joined with staged metadata.
 
     The model emits 1--5 scores. Returned metric columns are endpoint-rescaled
     to 1--10 for comparability with human ratings and Audiobox; raw values are
@@ -3471,7 +3471,7 @@ def _load_our_music_aesthetics_scores():
 
 
 def _load_our_music_popularity_scores():
-    """Load our REDACTED music-popularity predictions joined with staged metadata."""
+    """Load our LAION music-popularity predictions joined with staged metadata."""
     if not (OUR_MUSIC_POPULARITY_INPUT.exists() and OUR_MUSIC_POPULARITY_OUTPUT.exists()):
         return pd.DataFrame()
     try:
@@ -4996,7 +4996,7 @@ def songeval_aesthetics_analysis(ann, report):
     else:
         frontend_df = pd.DataFrame()
 
-    # ----- Our REDACTED music-aesthetics front-end --------------------------
+    # ----- Our LAION music-aesthetics front-end --------------------------
     our_df = _load_our_music_aesthetics_scores()
     if our_df.empty:
         report.append(

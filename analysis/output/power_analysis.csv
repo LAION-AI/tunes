@@ -1,0 +1,12 @@
+claim,n,estimate,ci_low,ci_high,effect_size_dz,p,mdes_80pct,achieved_power,ci_halfwidth
+C1_per_participant_dprime_gt_0,10,0.904,0.241,1.566,0.976,0.013,0.996,0.784,
+C2_halo_gap,514,1.943,1.598,2.288,0.972,1.8365606361382892e-25,0.25,1.0,
+C3_source_contrast_aesthetic_quality,591,0.61,,,0.279,0.03513349371624827,0.331,0.656,
+C3_source_contrast_playlist_likelihood,591,0.567,,,0.248,0.017085362290421093,0.331,0.557,
+C3_source_contrast_musical_creativity,591,0.751,,,0.355,0.002329599391279624,0.331,0.853,
+C3_source_contrast_production_quality,591,0.828,,,0.375,0.004690183750034043,0.331,0.889,
+C3_source_contrast_emotional_engagement,591,0.412,,,0.193,0.13196156464228925,0.331,0.372,
+C4_subgroup_accuracy_casual,174,0.534,0.46,0.608,,,,,0.074
+C4_subgroup_accuracy_enthusiast,185,0.638,0.567,0.705,,,,,0.069
+C4_subgroup_accuracy_musician,140,0.7,0.621,0.771,,,,,0.075
+C4_subgroup_accuracy_professional,15,0.8,0.556,0.94,,,,,0.192

@@ -1,4 +1,4 @@
-# API-Anleitung für Agenten — Reviewer Mystery-Tunes Search
+# API-Anleitung für Agenten — LAION-Tunes Search
 
 Diese Datei beschreibt, **wie ein Agent (LLM, Tool, Skript) Anfragen an die laufende Such-API stellt** und welche Antworten in welchem Format zurückkommen. Stand: 2026-05-15.
 

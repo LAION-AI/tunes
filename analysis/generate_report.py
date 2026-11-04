@@ -216,7 +216,7 @@ def build_report():
          "and figures 17-18."),
         ("14. SongEval and Audio-Frontend Comparison",
          "Benchmarks SongEval's five perceptual song-aesthetics axes and, when "
-         "available, our released REDACTED/music-aesthetics model "
+         "available, our released laion/music-aesthetics model "
          "(Overall_Aesthetics for aesthetic quality, then Coherence, Memorability, "
          "Clarity, and Naturalness for the nearest remaining questionnaire dimensions) "
          "against human song-level ratings. The same section "
@@ -230,7 +230,7 @@ def build_report():
          "output/audio_aesthetics_frontend_comparison.csv, optional "
          "output/our_music_aesthetics_*.csv files, and figures 19-20."),
         ("15. Music-Popularity Preference-Signal Comparison",
-         "Benchmarks the released REDACTED/music-popularity audio model against the same "
+         "Benchmarks the released laion/music-popularity audio model against the same "
          "song set. Because the human study did not collect true platform play/upvote "
          "counts, the comparison treats predicted log1p plays and log1p upvotes as "
          "audio-only popularity signals and correlates them with human song-level "
@@ -553,14 +553,14 @@ def build_report():
         "Naturalness is unmatched"
     )
     pdf.bullet(
-        " — The released REDACTED/music-aesthetics model is now wired into the same benchmark. "
+        " — The released laion/music-aesthetics model is now wired into the same benchmark. "
         "Once aesthetics/our-music-aesthetics-model/output/result.json exists, main.py adds "
         "it to the SongEval table, writes output/our_music_aesthetics_alignment.csv, and "
         "compares it directly with SongEval and Audiobox on the shared song set.",
         "Our model included when scored"
     )
     pdf.bullet(
-        " — The REDACTED/music-popularity model is now staged as a separate preference-signal "
+        " — The laion/music-popularity model is now staged as a separate preference-signal "
         "comparison. It predicts log1p play and upvote counts rather than 1-10 aesthetic "
         "quality, so main.py reports correlations with human ratings and the three audio "
         "aesthetic front-ends instead of treating it as another direct quality scorer.",
